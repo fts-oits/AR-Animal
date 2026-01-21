@@ -27,23 +27,21 @@ const TimelineItem: React.FC<{ milestone: typeof MILESTONES[0], index: number }>
   const Icon = IconMap[milestone.icon] || Flag;
 
   return (
-    <div 
+    <div
       ref={itemRef}
-      className={`relative flex items-center justify-between mb-24 w-full opacity-0 translate-y-16 transition-all duration-1000 ease-out delay-[100ms] ${
-        index % 2 === 0 ? 'flex-row-reverse' : ''
-      }`}
+      className={`relative flex items-center justify-between mb-24 w-full opacity-0 translate-y-16 transition-all duration-1000 ease-out delay-[100ms] ${index % 2 === 0 ? 'flex-row-reverse' : ''
+        }`}
     >
       <div className="hidden md:block w-5/12"></div>
-      
+
       {/* Circle Icon */}
       <div className="z-20 flex items-center order-1 bg-emerald-600 shadow-2xl w-16 h-16 rounded-full border-4 border-white transition-transform hover:scale-110">
         <Icon className="mx-auto text-white" size={28} />
       </div>
 
       {/* Content Card */}
-      <div className={`order-1 bg-white rounded-[2.5rem] shadow-xl w-full md:w-5/12 px-10 py-10 border border-slate-100 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group ${
-        index % 2 === 0 ? 'text-right' : 'text-left'
-      }`}>
+      <div className={`order-1 bg-white rounded-[2.5rem] shadow-xl w-full md:w-5/12 px-10 py-10 border border-slate-100 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group ${index % 2 === 0 ? 'text-right' : 'text-left'
+        }`}>
         <span className="text-emerald-600 font-black text-3xl block mb-3 group-hover:scale-110 transition-transform origin-left">{milestone.year}</span>
         <h4 className="mb-4 font-black text-slate-900 text-2xl tracking-tight">{milestone.title}</h4>
         <p className="text-slate-600 leading-relaxed text-lg font-medium">{milestone.description}</p>
@@ -87,7 +85,7 @@ const About: React.FC = () => {
             </div>
             <div className="grid grid-cols-2 gap-6">
               <div className="space-y-6 mt-12">
-                <img src="input_file_22.png" alt="Facility Gate" className="rounded-3xl shadow-xl w-full h-auto object-cover aspect-square hover:scale-[1.02] transition-transform" />
+                <img src="img/about.jpg" alt="Facility Gate" className="rounded-3xl shadow-xl w-full h-auto object-cover aspect-square hover:scale-[1.02] transition-transform" />
                 <div className="bg-emerald-600 p-8 rounded-3xl text-white shadow-xl">
                   <h4 className="text-4xl font-black mb-1">2010</h4>
                   <p className="font-bold uppercase tracking-widest text-sm text-emerald-100">Year Founded</p>
@@ -98,7 +96,7 @@ const About: React.FC = () => {
                   <h4 className="text-4xl font-black mb-1">GMP</h4>
                   <p className="font-bold uppercase tracking-widest text-sm text-slate-400">Quality Standards</p>
                 </div>
-                <img src="input_file_21.png" alt="Production Unit" className="rounded-3xl shadow-xl w-full h-auto object-cover aspect-square hover:scale-[1.02] transition-transform" />
+                <img src="img/services-1.jpg" alt="Production Unit" className="rounded-3xl shadow-xl w-full h-auto object-cover aspect-square hover:scale-[1.02] transition-transform" />
               </div>
             </div>
           </div>
@@ -117,7 +115,7 @@ const About: React.FC = () => {
           <div className="relative wrap overflow-hidden p-10 h-full max-w-5xl mx-auto">
             {/* Vertical Line */}
             <div className="absolute border-opacity-20 border-emerald-600 h-full border-l-4 left-1/2 -translate-x-1/2 hidden md:block rounded-full"></div>
-            
+
             {MILESTONES.map((milestone, idx) => (
               <TimelineItem key={idx} milestone={milestone} index={idx} />
             ))}
@@ -133,7 +131,7 @@ const About: React.FC = () => {
             <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">Our Global Partners</h2>
             <p className="text-slate-500 max-w-2xl mx-auto font-medium text-lg">Collaborating with industry leaders to bring world-class biotechnology to Bangladesh.</p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {PARTNER_DETAILS.map((partner, idx) => (
               <div key={idx} className="bg-slate-50 p-8 rounded-[2rem] border border-slate-100 hover:shadow-2xl hover:bg-white transition-all group">

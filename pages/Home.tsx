@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { 
+import {
   Award, Zap, ShieldCheck, Globe, ArrowRight,
   TrendingUp, Leaf, Droplets, Users, Package,
   CheckCircle2
@@ -80,9 +80,9 @@ const Home: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { name: "Feed Additives", count: "20+ Products", icon: Droplets, img: "input_file_21.png" },
-              { name: "Minerals", count: "10+ Products", icon: TrendingUp, img: "input_file_26.png" },
-              { name: "Veterinary Health", count: "15+ Products", icon: ShieldCheck, img: "input_file_22.png" }
+              { name: "Feed Additives", count: "20+ Products", icon: Droplets, img: "img/services-1.jpg" },
+              { name: "Minerals", count: "10+ Products", icon: TrendingUp, img: "img/services-2.jpg" },
+              { name: "Veterinary Health", count: "15+ Products", icon: ShieldCheck, img: "img/services-3.jpg" }
             ].map((cat, idx) => (
               <Link to="/products" key={idx} className="group relative h-[450px] overflow-hidden rounded-[3rem] shadow-lg">
                 <img src={cat.img} alt={cat.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
@@ -106,14 +106,14 @@ const Home: React.FC = () => {
               <div className="absolute -top-10 -left-10 w-40 h-40 bg-emerald-100 rounded-full blur-3xl opacity-60" />
               <div className="absolute -bottom-10 -right-10 w-60 h-60 bg-teal-100 rounded-full blur-3xl opacity-60" />
               <div className="relative rounded-[3rem] overflow-hidden shadow-2xl z-10 aspect-[4/5]">
-                <img src="input_file_16.png" alt="AR Animal Health CEO" className="w-full h-full object-cover" />
+                <img src="img/team/1.jpg" alt="AR Animal Health CEO" className="w-full h-full object-cover" />
               </div>
               <div className="absolute -bottom-6 -left-6 bg-white p-8 rounded-3xl shadow-xl z-20 max-w-[320px] border border-slate-100">
                 <p className="text-slate-600 italic mb-4 leading-relaxed font-medium">"Our mission is to nurture the livestock of our nation with world-class biotechnology and integrity."</p>
-                <p className="font-bold text-slate-900">- Mr. Atiar Rahman, CEO</p>
+                <p className="font-bold text-slate-900">- Mr. Atair Rahman, CEO</p>
               </div>
             </div>
-            
+
             <div>
               <span className="text-emerald-600 font-bold tracking-widest uppercase text-sm mb-4 block">About AR Animal Health</span>
               <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-8 leading-tight tracking-tight">Dedicated to Veterinary & Nutritional Excellence</h2>
