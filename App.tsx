@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { HashRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
-import { 
+import {
   Menu, X, Home as HomeIcon, Info, Package, Image as ImageIcon, Users, Phone,
   ArrowRight, Mail, MapPin, PhoneCall, Facebook, Twitter, Linkedin, Instagram,
   ChevronRight, Search, Filter, Play, CheckCircle2, Award, Globe
@@ -33,7 +33,7 @@ const App: React.FC = () => {
       <ScrollToTop />
       <div className="flex flex-col min-h-screen">
         <Navbar />
-        <main className="flex-grow pt-20">
+        <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />

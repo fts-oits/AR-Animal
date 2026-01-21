@@ -1,55 +1,52 @@
 
 import React from 'react';
-import { Mail, Linkedin, Twitter } from 'lucide-react';
+import { Mail, Linkedin, Twitter, ArrowRight } from 'lucide-react';
 import { TEAM } from '../constants';
 
 const Team: React.FC = () => {
   return (
     <div className="bg-slate-50 min-h-screen">
       {/* Header */}
-      <section className="bg-emerald-700 pt-32 pb-24 text-center">
-        <div className="container mx-auto px-6">
-          <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6 tracking-tight">Expert Leadership</h1>
-          <p className="text-emerald-100 text-xl max-w-2xl mx-auto font-medium">
-            Our team brings over three decades of agricultural expertise to solve modern farming challenges.
+      <section className="bg-emerald-900 pt-32 pb-24 text-center rounded-b-[3rem] overflow-hidden relative">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80')] opacity-10 bg-cover bg-center mix-blend-overlay"></div>
+        <div className="container mx-auto px-6 relative z-10">
+          <span className="text-emerald-400 font-bold tracking-widest uppercase text-xs mb-4 block">Our Leadership</span>
+          <h1 className="text-4xl md:text-7xl font-black text-white mb-6 tracking-tighter">Meet the Experts</h1>
+          <p className="text-emerald-100/80 text-lg md:text-xl max-w-2xl mx-auto font-medium">
+            Driving innovation with over three decades of agricultural expertise.
           </p>
         </div>
       </section>
 
       {/* CEO Special Spotlight */}
-      <section className="py-24">
+      <section className="py-16 md:py-24 -mt-10 md:-mt-20 relative z-20">
         <div className="container mx-auto px-6">
-          <div className="bg-white rounded-[4rem] overflow-hidden shadow-2xl border border-slate-100 grid grid-cols-1 lg:grid-cols-2">
-            <div className="h-[600px] lg:h-full relative overflow-hidden">
+          <div className="bg-white rounded-[2.5rem] md:rounded-[4rem] overflow-hidden shadow-2xl shadow-slate-200/50 border border-slate-100 flex flex-col lg:flex-row">
+            <div className="lg:w-1/2 h-[400px] lg:h-auto relative">
               <img src={TEAM[0].image} alt={TEAM[0].name} className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/60 via-transparent to-transparent"></div>
-              <div className="absolute bottom-10 left-10 text-white">
-                <p className="text-xs font-black uppercase tracking-[0.3em] opacity-80 mb-2">Since 1987</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent lg:hidden"></div>
+              <div className="absolute bottom-6 left-6 lg:hidden text-white">
+                <p className="text-[10px] font-black uppercase tracking-[0.2em] opacity-80 mb-1">Since 1987</p>
                 <h2 className="text-3xl font-black">{TEAM[0].name}</h2>
               </div>
             </div>
-            <div className="p-12 lg:p-24 flex flex-col justify-center">
-              <span className="text-emerald-600 font-black uppercase tracking-widest text-sm mb-6 block">Our Founder & CEO</span>
-              <h2 className="text-4xl lg:text-6xl font-black text-slate-900 mb-8 tracking-tighter leading-none">{TEAM[0].name}</h2>
-              <p className="text-slate-600 text-xl mb-12 leading-relaxed italic font-medium">
-                "{TEAM[0].bio} Our commitment to animal health is the cornerstone of AR Group's vision."
-              </p>
-              <div className="flex items-center space-x-6">
-                <a 
-                  href={`mailto:${TEAM[0].socials.email}`} 
-                  className="bg-slate-900 hover:bg-emerald-600 text-white px-10 py-5 rounded-3xl font-black shadow-2xl shadow-slate-900/20 transition-all flex items-center space-x-3 active:scale-95"
+
+            <div className="lg:w-1/2 p-8 md:p-16 flex flex-col justify-center">
+              <span className="hidden lg:block text-emerald-600 font-black uppercase tracking-widest text-xs mb-4">Founder & CEO</span>
+              <h2 className="hidden lg:block text-5xl font-black text-slate-900 mb-6 tracking-tighter">{TEAM[0].name}</h2>
+              <div className="mb-8">
+                <p className="text-slate-600 text-lg md:text-xl leading-relaxed italic font-medium">
+                  "{TEAM[0].bio} Our commitment to animal health is the cornerstone of AR Group's vision."
+                </p>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href={`mailto:${TEAM[0].socials.email}`}
+                  className="bg-slate-900 hover:bg-emerald-600 text-white px-8 py-4 rounded-xl font-bold shadow-lg transition-all flex items-center justify-center space-x-2"
                 >
-                  <Mail size={20} />
-                  <span>Email CEO</span>
-                </a>
-                <a 
-                  href={TEAM[0].socials.linkedin} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="w-16 h-16 bg-slate-100 hover:bg-emerald-100 text-slate-600 hover:text-emerald-600 flex items-center justify-center rounded-3xl transition-all shadow-md active:scale-95"
-                  title="LinkedIn Profile"
-                >
-                  <Linkedin size={24} />
+                  <Mail size={18} />
+                  <span>Contact CEO</span>
                 </a>
               </div>
             </div>
@@ -58,55 +55,38 @@ const Team: React.FC = () => {
       </section>
 
       {/* Team Grid */}
-      <section className="py-20 bg-white">
+      <section className="py-12 md:py-20">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-24">
-            <span className="text-emerald-600 font-black uppercase tracking-widest text-xs mb-4 block">Our Professionals</span>
+          <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tight">Department Leaders</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
             {TEAM.slice(1).map((member) => (
-              <div key={member.id} className="group flex flex-col items-center text-center">
-                <div className="relative w-72 h-72 mb-10">
-                  <div className="absolute inset-0 bg-emerald-600 rounded-[4rem] rotate-6 group-hover:rotate-12 transition-transform duration-700"></div>
-                  <div className="relative w-full h-full overflow-hidden rounded-[4rem] shadow-2xl border-8 border-white">
-                    <img src={member.image} alt={member.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" />
-                  </div>
+              <div key={member.id} className="group bg-white p-6 rounded-[2.5rem] border border-slate-100 hover:shadow-xl hover:border-emerald-100 transition-all duration-300">
+                <div className="relative mb-6 overflow-hidden rounded-[2rem] aspect-square">
+                  <div className="absolute inset-0 bg-emerald-600/0 group-hover:bg-emerald-600/10 transition-colors z-10 transition-all"></div>
+                  <img src={member.image} alt={member.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                 </div>
-                <h3 className="text-3xl font-black text-slate-900 mb-2 tracking-tight">{member.name}</h3>
-                <p className="text-emerald-600 font-black tracking-widest uppercase text-xs mb-6">{member.role}</p>
-                <p className="text-slate-500 max-w-xs mb-8 text-lg font-medium leading-relaxed min-h-[4rem]">
-                  {member.bio}
-                </p>
-                <div className="flex items-center justify-center space-x-4">
-                  {member.socials.linkedin && (
-                    <a 
-                      href={member.socials.linkedin} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="w-12 h-12 bg-slate-50 text-slate-400 hover:bg-emerald-600 hover:text-white rounded-2xl flex items-center justify-center transition-all border border-slate-100 shadow-sm active:scale-90"
-                    >
-                      <Linkedin size={20} />
-                    </a>
-                  )}
-                  {member.socials.twitter && (
-                    <a 
-                      href={member.socials.twitter} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="w-12 h-12 bg-slate-50 text-slate-400 hover:bg-emerald-500 hover:text-white rounded-2xl flex items-center justify-center transition-all border border-slate-100 shadow-sm active:scale-90"
-                    >
-                      <Twitter size={20} />
-                    </a>
-                  )}
-                  {member.socials.email && (
-                    <a 
-                      href={`mailto:${member.socials.email}`} 
-                      className="w-12 h-12 bg-slate-50 text-slate-400 hover:bg-emerald-500 hover:text-white rounded-2xl flex items-center justify-center transition-all border border-slate-100 shadow-sm active:scale-90"
-                    >
-                      <Mail size={20} />
-                    </a>
-                  )}
+
+                <div className="text-center">
+                  <h3 className="text-2xl font-black text-slate-900 mb-1">{member.name}</h3>
+                  <p className="text-emerald-600 font-bold text-xs uppercase tracking-wider mb-4">{member.role}</p>
+                  <p className="text-slate-500 text-sm leading-relaxed mb-6 font-medium line-clamp-3">
+                    {member.bio}
+                  </p>
+
+                  <div className="flex justify-center space-x-3">
+                    {member.socials.linkedin && (
+                      <a href={member.socials.linkedin} className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 hover:bg-emerald-600 hover:text-white transition-colors">
+                        <Linkedin size={18} />
+                      </a>
+                    )}
+                    {member.socials.email && (
+                      <a href={`mailto:${member.socials.email}`} className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 hover:bg-emerald-600 hover:text-white transition-colors">
+                        <Mail size={18} />
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
             ))}
