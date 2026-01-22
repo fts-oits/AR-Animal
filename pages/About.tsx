@@ -120,8 +120,47 @@ const About: React.FC = () => {
         </div>
       </section>
 
+      {/* Sustainability Section - NEW */}
+      <section className="py-20 md:py-32 bg-emerald-900 overflow-hidden relative">
+        <div className="absolute top-0 right-0 w-full h-full bg-[url('https://images.unsplash.com/photo-1518531933037-9a84706cdd4a?auto=format&fit=crop&q=80')] opacity-10 bg-cover bg-center mix-blend-overlay"></div>
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="flex flex-col lg:flex-row gap-16 items-center">
+            <div className="lg:w-1/2">
+              <span className="text-emerald-400 font-bold tracking-widest uppercase text-xs mb-4 block">Our Commitment</span>
+              <h2 className="text-4xl md:text-6xl font-black text-white mb-8 tracking-tighter">Sustainable Future</h2>
+              <p className="text-emerald-100/90 text-lg leading-relaxed font-medium mb-8">
+                We believe that the future of agriculture lies in the balance between high yield and environmental stewardship. Our manufacturing processes are designed to minimize waste and maximize resource efficiency.
+              </p>
+
+              <div className="space-y-6">
+                {[
+                  { title: "Eco-Friendly Production", desc: "Zero-discharge wastewater treatment and solar-powered facilities." },
+                  { title: "Safe Ingredients", desc: "Phosphate sources free from heavy metals and harmful contaminants." },
+                  { title: "Farmer Education", desc: "Training 5,000+ farmers annually on responsible antibiotic usage." }
+                ].map((item, idx) => (
+                  <div key={idx} className="flex gap-4">
+                    <div className="w-12 h-12 rounded-full bg-emerald-800 flex items-center justify-center flex-shrink-0 text-emerald-400 border border-emerald-700">
+                      <CheckCircle2 size={18} />
+                    </div>
+                    <div>
+                      <h4 className="text-white font-bold text-lg">{item.title}</h4>
+                      <p className="text-emerald-200/70 text-sm">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="lg:w-1/2 relative">
+              <div className="absolute inset-0 bg-emerald-500 rounded-[3rem] rotate-3 opacity-20"></div>
+              <img src="img/about.jpg" alt="Sustainable Factory" className="relative rounded-[3rem] shadow-2xl border-4 border-emerald-800/50 w-full object-cover" />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Vision & Mission */}
-      <section className="py-20 md:py-32 bg-slate-900 text-white rounded-t-[3rem]">
+      <section className="py-20 md:py-32 bg-slate-900 text-white rounded-t-[3rem] -mt-10 relative z-20">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[

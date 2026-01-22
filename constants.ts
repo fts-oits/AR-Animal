@@ -181,3 +181,51 @@ export const MILESTONES = [
     icon: 'Zap'
   }
 ];
+
+export const TESTIMONIALS = [
+  {
+    name: "Rahim Uddin",
+    role: "Poultry Farm Owner",
+    quote: "AR Animal Health's additives increased our broiler weight gain by 15% in just one cycle. Their consulting is invaluable.",
+    image: "img/testimonials/1.jpg"
+  },
+  {
+    name: "Dr. Farhana Ahmed",
+    role: "Veterinary Surgeon",
+    quote: "I consistently recommend their enzyme products. The quality and purity are unmatched in the local market.",
+    image: "img/testimonials/2.jpg"
+  },
+  {
+    name: "Karim Enterprises",
+    role: "Distributor",
+    quote: "Reliable supply chain and excellent dealer support make them our top partner for fertilizer distribution.",
+    image: "img/testimonials/3.jpg"
+  }
+];
+
+export const PROCESS_STEPS = [
+  {
+    id: 1,
+    title: "Sourcing",
+    desc: "We select only ISO-certified raw materials from global leaders.",
+    icon: "Globe"
+  },
+  {
+    id: 2,
+    title: "Quality Control",
+    desc: "Rigorous lab testing ensures purity before any processing begins.",
+    icon: "Shield"
+  },
+  {
+    id: 3,
+    title: "Processing",
+    desc: "Advanced enzyme technology formulation for maximum bioavailability.",
+    icon: "Zap"
+  },
+  {
+    id: 4,
+    title: "Distribution",
+    desc: "Efficient nationwide network delivering fresh stock to farmers.",
+    icon: "TrendingUp"
+  }
+];
