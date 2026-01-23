@@ -19,12 +19,12 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-6 max-w-[1900px]">
           <div className="text-center mb-16 md:mb-24 max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-3 mb-6">
-              <div className="h-px w-8 bg-brand-red" />
-              <span className="text-brand-red font-black tracking-[0.4em] uppercase text-xs">Innovation Hub</span>
-              <div className="h-px w-8 bg-brand-red" />
+              <div className="h-px w-8 bg-brand-emerald" />
+              <span className="font-black tracking-[0.4em] uppercase text-xs"><span className="text-brand-emerald">Innovation</span> <span className="text-red-900">Hub</span></span>
+              <div className="h-px w-8 bg-red-900" />
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-outfit font-bold text-brand-beige-black mb-8 tracking-tighter leading-tight max-w-3xl mx-auto">
-              Biotech For <span className="text-brand-red decoration-brand-gold/30 underline decoration-4 underline-offset-8">Modern</span> Farming.
+              <span className="text-brand-emerald">Biotech</span> For <span className="text-brand-gold">Modern</span> Farming.
             </h2>
             <p className="text-slate-500 leading-relaxed text-lg md:text-xl font-medium max-w-2xl mx-auto">
               Science-backed solutions designed to optimize yield and health across Bangladesh's agricultural sector.
@@ -98,8 +98,8 @@ const Home: React.FC = () => {
                   <img src="img/team/1.jpg" alt="CEO" className="w-full h-full object-cover" />
                 </div>
                 <div>
-                  <p className="font-ubuntu font-bold text-slate-900 leading-none">Atiar Rahman</p>
-                  <p className="text-[10px] text-brand-red font-black uppercase tracking-tighter mt-1">Founder & CEO</p>
+                  <p className="font-ubuntu font-black text-brand-emerald leading-none text-xl">Atiar Rahman</p>
+                  <p className="text-[10px] text-emerald-700 font-black uppercase tracking-tighter mt-1">Founder & CEO</p>
                 </div>
               </div>
             </div>
