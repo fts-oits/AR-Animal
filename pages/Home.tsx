@@ -23,10 +23,10 @@ const Home: React.FC = () => {
               <span className="text-brand-emerald font-black tracking-[0.4em] uppercase text-xs">Innovation Hub</span>
               <div className="h-px w-8 bg-brand-emerald" />
             </div>
-            <h2 className="text-5xl md:text-8xl font-ubuntu font-bold text-brand-beige-black mb-10 tracking-tighter leading-[0.9]">
-              Biotech For <span className="text-brand-emerald">Modern</span> Farming.
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-outfit font-bold text-brand-beige-black mb-8 tracking-tighter leading-tight max-w-3xl mx-auto">
+              Biotech For <span className="text-brand-emerald decoration-brand-gold/30 underline decoration-4 underline-offset-8">Modern</span> Farming.
             </h2>
-            <p className="text-slate-500 leading-relaxed text-xl md:text-2xl font-medium max-w-2xl mx-auto">
+            <p className="text-slate-500 leading-relaxed text-lg md:text-xl font-medium max-w-2xl mx-auto">
               Science-backed solutions designed to optimize yield and health across Bangladesh's agricultural sector.
             </p>
           </div>
@@ -109,11 +109,11 @@ const Home: React.FC = () => {
                   <span className="text-brand-emerald font-black tracking-[0.4em] uppercase text-xs">Our Story</span>
                 </div>
 
-                <h2 className="text-5xl md:text-7xl lg:text-8xl font-ubuntu font-bold text-brand-beige-black mb-10 leading-[0.9] tracking-tighter">
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-outfit font-bold text-brand-beige-black mb-8 leading-tight tracking-tighter max-w-xl">
                   Nurturing <span className="text-brand-emerald">Growth</span> Since 2010.
                 </h2>
 
-                <p className="text-xl md:text-2xl text-slate-600 mb-12 leading-relaxed font-medium">
+                <p className="text-lg md:text-xl text-slate-600 mb-10 leading-relaxed font-medium max-w-xl">
                   AR Animal Health Ltd stands at the intersection of traditional expertise and modern biotechnology. We're not just suppliers; we are partners in Bangladesh's agricultural transformation.
                 </p>
 
@@ -158,12 +158,14 @@ const Home: React.FC = () => {
         <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-brand-beige-white to-transparent opacity-10" />
 
         <div className="container mx-auto px-6 relative z-10 max-w-[1900px]">
-          <div className="text-center mb-24 md:mb-40">
+          <div className="text-center mb-20 md:mb-32">
             <span className="text-brand-emerald font-black tracking-[0.5em] uppercase text-xs mb-6 block">Supply Chain</span>
-            <h2 className="text-5xl md:text-8xl font-ubuntu font-bold mb-10 tracking-tighter leading-none">
+            <h2 className="text-4xl md:text-6xl lg:text-7xl font-outfit font-bold mb-8 tracking-tighter leading-tight max-w-4xl mx-auto">
               Precision In <span className="text-brand-emerald">Execution.</span>
             </h2>
-            <p className="text-slate-400 max-w-2xl mx-auto font-medium text-xl leading-relaxed">From global sourcing to nationwide distribution, we maintain the terminal standards of safety.</p>
+            <p className="text-slate-400 max-w-xl mx-auto font-medium text-lg md:text-xl leading-relaxed">
+              From global sourcing to nationwide distribution, we maintain the terminal standards of safety.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
@@ -202,13 +204,13 @@ const Home: React.FC = () => {
           <div className="flex flex-col md:flex-row justify-between items-end mb-24 md:mb-40">
             <div className="max-w-2xl">
               <span className="text-brand-emerald font-black tracking-[0.5em] uppercase text-xs mb-6 block">Intelligence Center</span>
-              <h2 className="text-5xl md:text-8xl font-ubuntu font-bold text-brand-beige-black tracking-tighter leading-none">
+              <h2 className="text-4xl md:text-6xl lg:text-7xl font-outfit font-bold text-brand-beige-black tracking-tighter leading-tight">
                 Technical <span className="text-brand-emerald">Catalog.</span>
               </h2>
             </div>
-            <Link to="/products" className="mt-12 md:mt-0 group flex items-center gap-6 bg-brand-beige-black text-white px-12 py-6 rounded-2xl font-ubuntu font-bold text-xl hover:bg-brand-emerald transition-all shadow-2xl">
+            <Link to="/products" className="mt-12 md:mt-0 group flex items-center gap-4 bg-brand-beige-black text-white px-8 py-4 rounded-xl font-inter font-bold text-lg hover:bg-brand-emerald transition-all shadow-2xl">
               <span>View Data Sheets</span>
-              <ArrowRight className="group-hover:translate-x-3 transition-transform duration-500" />
+              <ArrowRight className="group-hover:translate-x-3 transition-transform duration-500" size={20} />
             </Link>
           </div>
 
@@ -252,10 +254,10 @@ const Home: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
             <div>
               <span className="text-brand-gold font-black tracking-[0.5em] uppercase text-xs mb-6 block">Validation</span>
-              <h2 className="text-5xl md:text-8xl font-ubuntu font-bold mb-10 tracking-tighter leading-none">
+              <h2 className="text-4xl md:text-6xl lg:text-7xl font-outfit font-bold mb-8 tracking-tighter leading-tight">
                 Field <span className="text-brand-emerald">Intelligence.</span>
               </h2>
-              <p className="text-slate-400 text-xl font-medium leading-relaxed max-w-xl">
+              <p className="text-slate-400 text-lg md:text-xl font-medium leading-relaxed max-w-md">
                 Real-world feedback from leading agricultural conglomerates across the region.
               </p>
             </div>
@@ -333,9 +335,9 @@ const Home: React.FC = () => {
                 <div className="mb-10 w-20 h-20 bg-white/10 rounded-2xl flex items-center justify-center text-white border border-white/20 group-hover:scale-110 transition-transform">
                   <stat.icon size={40} />
                 </div>
-                <h2 className="text-7xl md:text-9xl font-ubuntu font-bold text-white mb-6 tracking-tighter leading-none">{stat.val}</h2>
-                <p className="text-white/80 font-ubuntu font-bold text-2xl tracking-tight">{stat.label}</p>
-                <div className="h-1.5 w-20 bg-brand-gold mt-10 rounded-full" />
+                <h2 className="text-5xl md:text-7xl lg:text-8xl font-outfit font-bold text-white mb-4 tracking-tighter leading-none">{stat.val}</h2>
+                <p className="text-white/80 font-inter font-bold text-xl tracking-tight">{stat.label}</p>
+                <div className="h-1 w-16 bg-brand-gold mt-6 rounded-full" />
               </div>
             ))}
           </div>

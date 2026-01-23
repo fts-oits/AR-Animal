@@ -13,10 +13,10 @@ const Team: React.FC = () => {
         <div className="container mx-auto px-6 relative z-10 max-w-[1900px]">
           <div className="max-w-4xl">
             <span className="text-brand-emerald font-black tracking-[0.5em] uppercase text-xs mb-6 block">Human Intelligence</span>
-            <h1 className="text-6xl md:text-9xl font-ubuntu font-bold text-white mb-8 tracking-tighter leading-none">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-outfit font-bold text-white mb-8 tracking-tighter leading-tight max-w-3xl">
               The <span className="text-brand-emerald">Strategists.</span>
             </h1>
-            <p className="text-slate-400 text-xl md:text-2xl max-w-2xl font-medium leading-relaxed">
+            <p className="text-slate-400 text-lg md:text-xl max-w-xl font-medium leading-relaxed">
               Orchestrating agricultural transformation through decades of deep-sector specialized knowledge.
             </p>
           </div>
@@ -32,7 +32,7 @@ const Team: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-brand-beige-black/80 via-transparent to-transparent lg:hidden"></div>
               <div className="absolute bottom-10 left-10 lg:hidden text-white">
                 <p className="text-[10px] font-black uppercase tracking-[0.4em] text-brand-emerald mb-2">Since 1987</p>
-                <h2 className="text-4xl font-ubuntu font-bold tracking-tighter">{TEAM[0].name}</h2>
+                <h2 className="text-3xl font-outfit font-bold tracking-tighter">{TEAM[0].name}</h2>
               </div>
             </div>
 
@@ -42,7 +42,7 @@ const Team: React.FC = () => {
                 <span className="text-brand-emerald font-black uppercase tracking-[0.4em] text-xs">Founder & Executive Director</span>
               </div>
 
-              <h2 className="hidden lg:block text-5xl md:text-7xl font-ubuntu font-bold text-white mb-10 tracking-tighter leading-tight">
+              <h2 className="hidden lg:block text-4xl md:text-5xl lg:text-6xl font-outfit font-bold text-white mb-8 tracking-tighter leading-tight">
                 {TEAM[0].name}
               </h2>
 
@@ -72,7 +72,7 @@ const Team: React.FC = () => {
         <div className="container mx-auto px-6 max-w-[1900px]">
           <div className="text-center mb-32">
             <span className="text-brand-emerald font-black tracking-[0.5em] uppercase text-xs mb-6 block">Hierarchy Log</span>
-            <h2 className="text-5xl md:text-8xl font-ubuntu font-bold text-brand-beige-black tracking-tighter leading-none">
+            <h2 className="text-4xl md:text-6xl lg:text-7xl font-outfit font-bold text-brand-beige-black tracking-tighter leading-tight max-w-4xl mx-auto">
               Department <span className="text-brand-emerald">Nodes.</span>
             </h2>
           </div>
@@ -92,7 +92,7 @@ const Team: React.FC = () => {
                 </div>
 
                 <div className="text-center px-4">
-                  <h3 className="text-3xl font-ubuntu font-bold text-brand-beige-black mb-2 tracking-tight group-hover:text-brand-emerald transition-colors">{member.name}</h3>
+                  <h3 className="text-2xl font-outfit font-bold text-brand-beige-black mb-2 tracking-tight group-hover:text-brand-emerald transition-colors">{member.name}</h3>
                   <div className="flex items-center justify-center gap-3 mb-8">
                     <div className="w-1.5 h-1.5 rounded-full bg-brand-emerald" />
                     <p className="text-brand-emerald font-black text-[10px] uppercase tracking-[0.3em]">{member.role}</p>

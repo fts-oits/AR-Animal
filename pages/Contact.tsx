@@ -108,10 +108,10 @@ const Contact: React.FC = () => {
         <div className="container mx-auto px-6 relative z-10 max-w-[1900px]">
           <div className="max-w-4xl">
             <span className="text-brand-emerald font-black tracking-[0.5em] uppercase text-xs mb-6 block">Transmission Line</span>
-            <h1 className="text-5xl md:text-8xl lg:text-9xl font-ubuntu font-bold text-white mb-8 tracking-tighter leading-none">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-outfit font-bold text-white mb-8 tracking-tighter leading-tight max-w-3xl">
               Get In <span className="text-brand-emerald">Touch.</span>
             </h1>
-            <p className="text-slate-400 text-xl md:text-2xl max-w-2xl font-medium leading-relaxed">
+            <p className="text-slate-400 text-lg md:text-xl max-w-xl font-medium leading-relaxed">
               Experience the future of biotechnology. Our experts are ready to assist with your agricultural and animal health needs.
             </p>
           </div>
@@ -128,7 +128,7 @@ const Contact: React.FC = () => {
               <div className="absolute top-0 right-0 w-64 h-64 bg-brand-emerald/10 blur-[100px] pointer-events-none" />
               <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-gold/10 blur-[100px] pointer-events-none" />
 
-              <h3 className="text-3xl font-ubuntu font-bold mb-12 flex items-center gap-4">
+              <h3 className="text-2xl font-outfit font-bold mb-10 flex items-center gap-4">
                 <span className="w-12 h-1 bg-brand-emerald" />
                 Information
               </h3>
@@ -151,8 +151,8 @@ const Contact: React.FC = () => {
                     <PhoneCall size={28} />
                   </div>
                   <div>
-                    <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-500 mb-2">Direct Line</h4>
-                    <p className="text-2xl font-ubuntu font-bold">+88-02-58951859</p>
+                    <h4 className="text-[10px] font-inter font-black uppercase tracking-[0.3em] text-slate-500 mb-2">Direct Line</h4>
+                    <p className="text-xl font-outfit font-bold">+88-02-58951859</p>
                     <p className="text-lg text-slate-400 font-medium">Mob: 01777-703240</p>
                   </div>
                 </div>
@@ -199,7 +199,7 @@ const Contact: React.FC = () => {
                 </div>
               ) : (
                 <div className="h-full">
-                  <h3 className="text-4xl font-ubuntu font-bold text-slate-900 mb-10">Leave a Message</h3>
+                  <h3 className="text-3xl font-outfit font-bold text-slate-900 mb-8">Leave a Message</h3>
                   <form onSubmit={handleSubmit} className="space-y-8">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                       <div className="space-y-4">

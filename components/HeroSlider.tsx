@@ -27,7 +27,7 @@ const HeroSlider: React.FC = () => {
           {/* Enhanced Overlay with Gradients */}
           <div className="absolute inset-0 bg-gradient-to-t from-brand-beige-black via-brand-beige-black/40 to-transparent z-10" />
           <div className="absolute inset-0 bg-brand-emerald/10 z-10" />
-          
+
           {/* Background Decorative Text */}
           <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
             <span className="text-[20vw] font-black text-white/[0.03] leading-none whitespace-nowrap transform -rotate-12 translate-y-1/4">
@@ -50,17 +50,17 @@ const HeroSlider: React.FC = () => {
                   <span className="inline-block px-4 py-2 rounded-full bg-brand-emerald/20 backdrop-blur-md border border-brand-emerald/30 text-brand-emerald font-bold uppercase tracking-[0.3em] text-[10px] md:text-xs mb-8 shadow-lg shadow-brand-emerald/10">
                     Premium Agricultural biotech
                   </span>
-                  
-                  <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-ubuntu font-bold mb-8 leading-[0.85] tracking-tighter">
+
+                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-outfit font-bold mb-8 leading-tight tracking-tighter">
                     {slide.title.split(' ').map((word, i) => (
-                      <span key={i} className={i % 2 === 1 ? 'text-brand-emerald block' : 'block'}>{word}</span>
+                      <span key={i} className={i % 2 === 1 ? 'text-brand-emerald' : ''}>{word} </span>
                     ))}
                   </h1>
-                  
-                  <p className="text-lg md:text-2xl text-slate-300 mb-12 leading-relaxed max-w-xl font-medium border-l-4 border-brand-emerald pl-6">
+
+                  <p className="text-base md:text-xl text-slate-300 mb-10 leading-relaxed max-w-xl font-medium border-l-4 border-brand-emerald/50 pl-6">
                     {slide.subtitle}
                   </p>
-                  
+
                   <div className="flex flex-col sm:flex-row gap-6">
                     <Link
                       to="/products"

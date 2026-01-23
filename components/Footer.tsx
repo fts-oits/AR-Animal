@@ -21,8 +21,8 @@ const Footer: React.FC = () => {
                 <img src="img/logo.png" alt="Logo" className="w-full h-full object-contain p-2" />
               </div>
               <div className="flex flex-col">
-                <span className="text-xl font-ubuntu font-bold tracking-tighter leading-none">AR ANIMAL</span>
-                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-brand-emerald">Health Ltd.</span>
+                <span className="text-xl font-outfit font-bold tracking-tighter leading-none">AR ANIMAL</span>
+                <span className="text-[10px] font-inter font-black uppercase tracking-[0.3em] text-brand-emerald">Health Ltd.</span>
               </div>
             </Link>
             <p className="text-slate-400 leading-relaxed font-medium">
@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
 
           {/* Hub Navigation */}
           <div>
-            <h4 className="text-xl font-ubuntu font-bold mb-10 flex items-center gap-3">
+            <h4 className="text-lg font-outfit font-bold mb-8 flex items-center gap-3">
               <span className="w-2 h-2 rounded-full bg-brand-emerald" />
               Hub Navigation
             </h4>
@@ -60,7 +60,7 @@ const Footer: React.FC = () => {
 
           {/* Support Network */}
           <div>
-            <h4 className="text-xl font-ubuntu font-bold mb-10 flex items-center gap-3">
+            <h4 className="text-lg font-outfit font-bold mb-8 flex items-center gap-3">
               <span className="w-2 h-2 rounded-full bg-brand-emerald" />
               Support Network
             </h4>
@@ -87,7 +87,7 @@ const Footer: React.FC = () => {
 
           {/* Transformation Intel */}
           <div>
-            <h4 className="text-xl font-ubuntu font-bold mb-10 flex items-center gap-3">
+            <h4 className="text-lg font-outfit font-bold mb-8 flex items-center gap-3">
               <span className="w-2 h-2 rounded-full bg-brand-emerald" />
               Transformation Intel
             </h4>

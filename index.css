@@ -6,6 +6,9 @@
   --color-brand-gold: #fbbf24;
   --color-brand-beige-white: #f5f5f4;
   --color-brand-beige-black: #1c1917;
+
+  --font-outfit: "Outfit", sans-serif;
+  --font-inter: "Inter", sans-serif;
 }
 
 @layer base {
@@ -18,7 +21,7 @@
   .bg-glass {
     @apply backdrop-blur-xl bg-white/70 border border-white/20;
   }
-  
+
   .bg-glass-dark {
     @apply backdrop-blur-xl bg-brand-beige-black/80 border border-white/10;
   }
@@ -26,7 +29,7 @@
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-emerald via-emerald-400 to-teal-500;
   }
-  
+
   .overlay-brand {
     @apply absolute inset-0 bg-gradient-to-br from-brand-emerald/10 via-brand-beige-white/5 to-brand-gold/5 pointer-events-none;
   }

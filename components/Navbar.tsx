@@ -88,10 +88,10 @@ const Navbar: React.FC = () => {
 
               <Link
                 to="/contact"
-                className="ml-6 bg-brand-emerald hover:bg-emerald-500 text-white px-8 py-4 rounded-xl text-sm font-ubuntu font-bold shadow-2xl shadow-brand-emerald/30 hover:shadow-brand-emerald/50 transform hover:-translate-y-1 transition-all duration-300 flex items-center gap-3 group"
+                className="ml-6 bg-brand-emerald hover:bg-emerald-500 text-white px-6 py-3 rounded-xl text-xs font-inter font-bold shadow-2xl shadow-brand-emerald/30 hover:shadow-brand-emerald/50 transform hover:-translate-y-1 transition-all duration-300 flex items-center gap-2 group whitespace-nowrap"
               >
-                <span>Mission Center</span>
-                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                <span>Contact Us</span>
+                <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
 

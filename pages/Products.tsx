@@ -29,10 +29,10 @@ const Products: React.FC = () => {
         <div className="container mx-auto px-6 relative z-10 max-w-[1900px]">
           <div className="max-w-4xl">
             <span className="text-brand-emerald font-black tracking-[0.5em] uppercase text-xs mb-6 block">Intelligence Index</span>
-            <h1 className="text-6xl md:text-9xl font-ubuntu font-bold text-white mb-8 tracking-tighter leading-none">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-outfit font-bold text-white mb-8 tracking-tighter leading-tight max-w-3xl">
               Technical <span className="text-brand-emerald">Catalog.</span>
             </h1>
-            <p className="text-slate-400 text-xl md:text-2xl max-w-2xl font-medium leading-relaxed">
+            <p className="text-slate-400 text-lg md:text-xl max-w-xl font-medium leading-relaxed">
               Precision-engineered biotechnology solutions for the modern agricultural spectrum.
             </p>
           </div>
@@ -132,7 +132,7 @@ const Products: React.FC = () => {
                   </div>
 
                   <div className="px-6 pb-8 flex flex-col flex-grow">
-                    <h3 className="text-3xl font-ubuntu font-bold text-brand-beige-black mb-4 tracking-tight leading-tight group-hover:text-brand-emerald transition-colors">
+                    <h3 className="text-2xl font-outfit font-bold text-brand-beige-black mb-4 tracking-tight leading-tight group-hover:text-brand-emerald transition-colors">
                       {p.name}
                     </h3>
                     <p className="text-slate-500 mb-10 leading-relaxed flex-grow text-lg font-medium line-clamp-3">
@@ -203,7 +203,7 @@ const Products: React.FC = () => {
                 <span className="text-brand-emerald font-black uppercase tracking-[0.4em] text-xs leading-none">{selectedProduct.category}</span>
               </div>
 
-              <h2 className="text-5xl md:text-7xl font-ubuntu font-bold text-brand-beige-black mb-8 tracking-tighter leading-none">{selectedProduct.name}</h2>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-outfit font-bold text-brand-beige-black mb-8 tracking-tighter leading-tight">{selectedProduct.name}</h2>
 
               <p className="text-slate-500 text-xl mb-12 leading-relaxed font-medium">
                 {selectedProduct.description}

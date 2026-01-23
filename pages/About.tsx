@@ -48,7 +48,7 @@ const About: React.FC = () => {
         <div className="container mx-auto px-6 relative z-10 max-w-[1900px]">
           <div className="max-w-4xl">
             <span className="text-brand-emerald font-black tracking-[0.5em] uppercase text-xs mb-6 block">Legacy Protocol</span>
-            <h1 className="text-6xl md:text-9xl font-ubuntu font-bold text-white mb-8 tracking-tighter leading-none">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-outfit font-bold text-white mb-8 tracking-tighter leading-tight max-w-3xl">
               The Scientific <span className="text-brand-emerald">Odyssey.</span>
             </h1>
             <p className="text-slate-400 text-xl md:text-3xl font-medium leading-relaxed max-w-3xl">
@@ -68,7 +68,7 @@ const About: React.FC = () => {
                   <div className="h-px w-12 bg-brand-emerald" />
                   <span className="text-brand-emerald font-black tracking-[0.4em] uppercase text-xs">Origin Story</span>
                 </div>
-                <h2 className="text-5xl md:text-7xl font-ubuntu font-bold text-brand-beige-black mb-10 tracking-tighter leading-none">
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-outfit font-bold text-brand-beige-black mb-8 tracking-tighter leading-tight max-w-xl">
                   Fulfilling Global <span className="text-brand-emerald">Nutrition.</span>
                 </h2>
                 <div className="space-y-8 text-slate-500 text-xl leading-relaxed font-medium">
@@ -83,13 +83,13 @@ const About: React.FC = () => {
                 <div className="grid grid-cols-2 gap-8 mt-16">
                   <div className="bg-brand-beige-white p-10 rounded-[2.5rem] border border-slate-100 relative group overflow-hidden">
                     <div className="absolute top-0 right-0 w-16 h-16 bg-brand-emerald/10 rounded-full blur-xl group-hover:scale-150 transition-transform" />
-                    <span className="block text-4xl font-ubuntu font-bold text-brand-beige-black mb-2">2010</span>
-                    <span className="text-[10px] font-black uppercase tracking-widest text-brand-emerald">System Launch</span>
+                    <span className="block text-3xl font-outfit font-bold text-brand-beige-black mb-2">2010</span>
+                    <span className="text-[10px] font-inter font-black uppercase tracking-widest text-brand-emerald">System Launch</span>
                   </div>
                   <div className="bg-brand-beige-white p-10 rounded-[2.5rem] border border-slate-100 relative group overflow-hidden">
                     <div className="absolute top-0 right-0 w-16 h-16 bg-brand-gold/10 rounded-full blur-xl group-hover:scale-150 transition-transform" />
-                    <span className="block text-4xl font-ubuntu font-bold text-brand-beige-black mb-2">ISO+</span>
-                    <span className="text-[10px] font-black uppercase tracking-widest text-brand-gold">Terminal Grade</span>
+                    <span className="block text-3xl font-outfit font-bold text-brand-beige-black mb-2">ISO+</span>
+                    <span className="text-[10px] font-inter font-black uppercase tracking-widest text-brand-gold">Terminal Grade</span>
                   </div>
                 </div>
               </div>
@@ -121,7 +121,7 @@ const About: React.FC = () => {
         <div className="container mx-auto px-6 max-w-[1900px]">
           <div className="text-center mb-32 md:mb-48">
             <span className="text-brand-emerald font-black tracking-[0.5em] uppercase text-xs mb-6 block">Evolution Log</span>
-            <h2 className="text-6xl md:text-9xl font-ubuntu font-bold text-brand-beige-black tracking-tighter leading-none mb-10">
+            <h2 className="text-4xl md:text-6xl lg:text-7xl font-outfit font-bold text-brand-beige-black tracking-tighter leading-tight mb-8 max-w-4xl mx-auto">
               Terminal <span className="text-brand-emerald">Scale.</span>
             </h2>
             <div className="inline-flex items-center gap-4 bg-brand-beige-black text-white px-8 py-4 rounded-2xl font-black text-xs uppercase tracking-widest shadow-2xl">

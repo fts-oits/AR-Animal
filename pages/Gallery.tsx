@@ -63,10 +63,10 @@ const Gallery: React.FC = () => {
         <div className="container mx-auto px-6 relative z-10 max-w-[1900px]">
           <div className="max-w-4xl">
             <span className="text-brand-emerald font-black tracking-[0.5em] uppercase text-xs mb-6 block">Optical Feed</span>
-            <h1 className="text-6xl md:text-9xl font-ubuntu font-bold text-white mb-8 tracking-tighter leading-none">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-outfit font-bold text-white mb-8 tracking-tighter leading-tight max-w-3xl">
               Visual <span className="text-brand-emerald">Evidence.</span>
             </h1>
-            <p className="text-slate-400 text-xl md:text-2xl max-w-2xl font-medium leading-relaxed">
+            <p className="text-slate-400 text-lg md:text-xl max-w-xl font-medium leading-relaxed">
               De-coding the physical manifestations of biotechnology. A visual archive of our global footprint.
             </p>
           </div>
@@ -117,7 +117,7 @@ const Gallery: React.FC = () => {
                         {item.category}
                       </span>
                     </div>
-                    <h3 className="text-3xl font-ubuntu font-bold text-white tracking-tight leading-tight">{item.title}</h3>
+                    <h3 className="text-2xl font-outfit font-bold text-white tracking-tight leading-tight">{item.title}</h3>
                   </div>
                 </div>
 
@@ -176,7 +176,7 @@ const Gallery: React.FC = () => {
                     {filteredItems[selectedIndex].category}
                   </span>
                 </div>
-                <h3 className="text-4xl lg:text-6xl font-ubuntu font-bold text-white tracking-tighter leading-none">
+                <h3 className="text-3xl lg:text-5xl font-outfit font-bold text-white tracking-tighter leading-tight">
                   {filteredItems[selectedIndex].title}
                 </h3>
               </div>
