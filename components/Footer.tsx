@@ -36,8 +36,7 @@ const Footer: React.FC = () => {
 
           {/* Hub Navigation */}
           <div>
-            <h4 className="text-lg font-outfit font-bold mb-8 flex items-center gap-3">
-              <span className="w-2 h-2 rounded-full bg-brand-red" />
+            <h4 className="inline-block px-4 py-2 rounded-full bg-red-900/60 backdrop-blur-xl border border-red-900/70 text-amber-50 font-black uppercase tracking-[0.3em] text-[10px] md:text-xs mb-8 shadow-2xl shadow-red-900/30">
               Hub Navigation
             </h4>
             <ul className="space-y-4">
@@ -57,8 +56,7 @@ const Footer: React.FC = () => {
 
           {/* Support Network */}
           <div>
-            <h4 className="text-lg font-outfit font-bold mb-8 flex items-center gap-3">
-              <span className="w-2 h-2 rounded-full bg-brand-red" />
+            <h4 className="inline-block px-4 py-2 rounded-full bg-red-900/60 backdrop-blur-xl border border-red-900/70 text-amber-50 font-black uppercase tracking-[0.3em] text-[10px] md:text-xs mb-8 shadow-2xl shadow-red-900/30">
               Support Network
             </h4>
             <ul className="space-y-8">
@@ -84,8 +82,7 @@ const Footer: React.FC = () => {
 
           {/* Transformation Intel */}
           <div>
-            <h4 className="text-lg font-outfit font-bold mb-8 flex items-center gap-3">
-              <span className="w-2 h-2 rounded-full bg-brand-emerald" />
+            <h4 className="inline-block px-4 py-2 rounded-full bg-red-900/60 backdrop-blur-xl border border-red-900/70 text-amber-50 font-black uppercase tracking-[0.3em] text-[10px] md:text-xs mb-8 shadow-2xl shadow-red-900/30">
               Transformation Intel
             </h4>
             <p className="text-slate-400 mb-8 font-medium">Subscribe to receive technical bulletins and industry insights.</p>
