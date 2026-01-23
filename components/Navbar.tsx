@@ -35,31 +35,31 @@ const Navbar: React.FC = () => {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out px-4 md:px-6 ${scrolled || isOpen ? 'py-4' : 'py-6 md:py-8'
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out px-4 md:px-12 ${scrolled || isOpen ? 'py-4' : 'py-8'
           }`}
       >
         <div
-          className={`max-w-7xl mx-auto rounded-[2rem] transition-all duration-500 border border-transparent ${scrolled || isOpen
-              ? 'bg-white/80 backdrop-blur-xl shadow-lg border-white/20 pl-4 pr-4 py-3 md:pl-8 md:pr-4'
-              : 'bg-transparent pl-0 pr-0'
+          className={`max-w-[1900px] mx-auto rounded-[2rem] transition-all duration-500 border border-transparent ${scrolled || isOpen
+            ? 'bg-brand-beige-white/80 backdrop-blur-xl shadow-2xl border-white/20 pl-4 pr-4 py-3 md:pl-10 md:pr-4'
+            : 'bg-transparent pl-0 pr-0'
             }`}
         >
           <div className="flex justify-between items-center">
             {/* Logo Section */}
-            <Link to="/" className="flex items-center gap-3 group z-50 relative" onClick={() => setIsOpen(false)}>
-              <div className="relative w-10 h-10 md:w-12 md:h-12 bg-white rounded-xl shadow-sm flex items-center justify-center overflow-hidden transition-transform group-hover:scale-105">
+            <Link to="/" className="flex items-center gap-4 group z-50 relative" onClick={() => setIsOpen(false)}>
+              <div className="relative w-12 h-12 bg-white rounded-2xl shadow-xl flex items-center justify-center overflow-hidden transition-transform group-hover:rotate-6">
                 <img
                   src="img/logo.png"
                   alt="AR Animal Health"
-                  className="w-full h-full object-contain p-1"
+                  className="w-full h-full object-contain p-2"
                 />
               </div>
               <div className="flex flex-col">
-                <span className={`text-lg md:text-xl font-black tracking-tighter leading-none transition-colors duration-300 ${scrolled || isOpen ? 'text-slate-900' : 'text-slate-900 md:text-white'
+                <span className={`text-xl font-ubuntu font-bold tracking-tighter leading-none transition-colors duration-300 ${scrolled || isOpen ? 'text-brand-beige-black' : 'text-brand-beige-black md:text-white'
                   }`}>
                   AR ANIMAL
                 </span>
-                <span className={`text-[9px] font-bold uppercase tracking-[0.25em] transition-colors duration-300 ${scrolled || isOpen ? 'text-emerald-600' : 'text-emerald-700 md:text-emerald-300'
+                <span className={`text-[10px] font-black uppercase tracking-[0.3em] transition-colors duration-300 ${scrolled || isOpen ? 'text-brand-emerald' : 'text-brand-emerald md:text-emerald-300'
                   }`}>
                   Health Ltd.
                 </span>
@@ -67,18 +67,18 @@ const Navbar: React.FC = () => {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-1">
-              <div className={`flex items-center gap-1 rounded-full px-2 py-1.5 transition-colors duration-500 ${scrolled ? 'bg-slate-100/50' : 'bg-black/20 backdrop-blur-sm'
+            <div className="hidden md:flex items-center gap-2">
+              <div className={`flex items-center gap-2 rounded-2xl px-3 py-2 transition-colors duration-500 ${scrolled ? 'bg-slate-200/50' : 'bg-white/10 backdrop-blur-md border border-white/10'
                 }`}>
                 {navLinks.map((link) => (
                   <Link
                     key={link.path}
                     to={link.path}
-                    className={`relative px-5 py-2.5 rounded-full text-sm font-bold transition-all duration-300 ${location.pathname === link.path
-                        ? 'bg-white text-emerald-600 shadow-md'
-                        : scrolled
-                          ? 'text-slate-600 hover:text-emerald-600 hover:bg-white/50'
-                          : 'text-white/90 hover:text-white hover:bg-white/20'
+                    className={`relative px-6 py-3 rounded-xl text-sm font-ubuntu font-bold transition-all duration-300 ${location.pathname === link.path
+                      ? 'bg-brand-emerald text-white shadow-lg'
+                      : scrolled
+                        ? 'text-slate-600 hover:text-brand-emerald hover:bg-white/50'
+                        : 'text-white/90 hover:text-white hover:bg-white/20'
                       }`}
                   >
                     {link.name}
@@ -88,30 +88,31 @@ const Navbar: React.FC = () => {
 
               <Link
                 to="/contact"
-                className="ml-4 bg-emerald-600 hover:bg-emerald-700 text-white px-7 py-3 rounded-full text-sm font-bold shadow-lg shadow-emerald-600/20 hover:shadow-emerald-600/40 transform hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-2 group"
+                className="ml-6 bg-brand-emerald hover:bg-emerald-500 text-white px-8 py-4 rounded-xl text-sm font-ubuntu font-bold shadow-2xl shadow-brand-emerald/30 hover:shadow-brand-emerald/50 transform hover:-translate-y-1 transition-all duration-300 flex items-center gap-3 group"
               >
-                <span>Get in Touch</span>
-                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                <span>Mission Center</span>
+                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
 
             {/* Mobile Toggle */}
             <button
-              className={`md:hidden relative z-50 w-12 h-12 rounded-full flex items-center justify-center transition-colors duration-300 ${isOpen
-                  ? 'bg-slate-100 text-slate-900'
-                  : scrolled ? 'bg-slate-100 text-slate-900' : 'bg-white/20 backdrop-blur-md text-slate-900'
+              className={`md:hidden relative z-50 w-12 h-12 rounded-2xl flex items-center justify-center transition-colors duration-300 ${isOpen
+                ? 'bg-brand-beige-black text-white'
+                : scrolled ? 'bg-brand-beige-black text-white' : 'bg-white/90 shadow-xl text-brand-beige-black'
                 }`}
               onClick={() => setIsOpen(!isOpen)}
             >
-              <div className="w-5 flex flex-col items-end gap-1.5 ">
-                <span className={`h-0.5 bg-current rounded-full transition-all duration-300 ${isOpen ? 'w-5 rotate-45 translate-y-2' : 'w-5'}`} />
-                <span className={`h-0.5 bg-current rounded-full transition-all duration-300 ${isOpen ? 'w-5 opacity-0' : 'w-3'}`} />
-                <span className={`h-0.5 bg-current rounded-full transition-all duration-300 ${isOpen ? 'w-5 -rotate-45 -translate-y-2' : 'w-4'}`} />
+              <div className="w-6 flex flex-col items-end gap-1.5 ">
+                <span className={`h-0.5 bg-current rounded-full transition-all duration-300 ${isOpen ? 'w-6 rotate-45 translate-y-2' : 'w-6'}`} />
+                <span className={`h-0.5 bg-current rounded-full transition-all duration-300 ${isOpen ? 'w-6 opacity-0' : 'w-4'}`} />
+                <span className={`h-0.5 bg-current rounded-full transition-all duration-300 ${isOpen ? 'w-6 -rotate-45 -translate-y-2' : 'w-5'}`} />
               </div>
             </button>
           </div>
         </div>
       </nav>
+
 
       {/* Mobile Menu Overlay */}
       <div

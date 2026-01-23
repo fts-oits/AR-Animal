@@ -1,54 +1,56 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  Facebook, Twitter, Linkedin, Instagram, Mail, 
-  MapPin, PhoneCall, ChevronRight, Send 
+import {
+  Facebook, Twitter, Linkedin, Instagram, Mail,
+  MapPin, PhoneCall, ChevronRight, Send
 } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-slate-900 text-white pt-20 pb-10">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+    <footer className="bg-brand-beige-black text-white pt-32 pb-16 relative overflow-hidden">
+      {/* Decorative Gradient Overlay */}
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-brand-emerald to-transparent opacity-30" />
+
+      <div className="container mx-auto px-6 max-w-[1900px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20 mb-20">
           {/* Company Brand */}
-          <div>
-            <div className="flex items-center space-x-2 mb-6">
-              <div className="bg-emerald-500 text-white font-bold text-2xl w-10 h-10 flex items-center justify-center rounded">
-                AR
+          <div className="space-y-8">
+            <Link to="/" className="flex items-center gap-4 group">
+              <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg transform group-hover:-rotate-6 transition-transform">
+                <img src="img/logo.png" alt="Logo" className="w-full h-full object-contain p-2" />
               </div>
-              <span className="text-xl font-extrabold tracking-tight">ANIMAL HEALTH LTD</span>
-            </div>
-            <p className="text-slate-400 mb-8 leading-relaxed">
-              Premium quality fertilizers and feed additives for a sustainable agricultural future. Innovation driven by commitment to excellence.
+              <div className="flex flex-col">
+                <span className="text-xl font-ubuntu font-bold tracking-tighter leading-none">AR ANIMAL</span>
+                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-brand-emerald">Health Ltd.</span>
+              </div>
+            </Link>
+            <p className="text-slate-400 leading-relaxed font-medium">
+              Revolutionizing agriculture through advanced biotechnology and scientific nutritional excellence. Leading the way in animal health solutions across Bangladesh.
             </p>
-            <div className="flex space-x-4">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-slate-800 flex items-center justify-center rounded-full hover:bg-emerald-600 transition-colors">
-                <Facebook size={18} />
-              </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-slate-800 flex items-center justify-center rounded-full hover:bg-emerald-600 transition-colors">
-                <Twitter size={18} />
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-slate-800 flex items-center justify-center rounded-full hover:bg-emerald-600 transition-colors">
-                <Linkedin size={18} />
-              </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-slate-800 flex items-center justify-center rounded-full hover:bg-emerald-600 transition-colors">
-                <Instagram size={18} />
-              </a>
+            <div className="flex gap-4">
+              {[Facebook, Twitter, Linkedin, Instagram].map((Icon, i) => (
+                <a key={i} href="#" className="w-12 h-12 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center hover:bg-brand-emerald hover:border-brand-emerald transition-all duration-500 text-slate-400 hover:text-white">
+                  <Icon size={20} />
+                </a>
+              ))}
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Hub Navigation */}
           <div>
-            <h4 className="text-lg font-bold mb-6 border-b border-emerald-500/30 pb-2 inline-block">Quick Links</h4>
+            <h4 className="text-xl font-ubuntu font-bold mb-10 flex items-center gap-3">
+              <span className="w-2 h-2 rounded-full bg-brand-emerald" />
+              Hub Navigation
+            </h4>
             <ul className="space-y-4">
               {['Home', 'About', 'Products', 'Gallery', 'Team', 'Contact'].map((item) => (
                 <li key={item}>
-                  <Link 
-                    to={item === 'Home' ? '/' : `/${item.toLowerCase()}`} 
-                    className="text-slate-400 hover:text-emerald-500 flex items-center space-x-2 transition-colors"
+                  <Link
+                    to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
+                    className="text-slate-400 hover:text-brand-emerald font-bold transition-all flex items-center gap-3 group"
                   >
-                    <ChevronRight size={14} className="text-emerald-500" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-slate-700 group-hover:bg-brand-emerald group-hover:scale-150 transition-all" />
                     <span>{item}</span>
                   </Link>
                 </li>
@@ -56,52 +58,66 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Support Network */}
           <div>
-            <h4 className="text-lg font-bold mb-6 border-b border-emerald-500/30 pb-2 inline-block">Contact Info</h4>
-            <ul className="space-y-5">
-              <li className="flex items-start space-x-4">
-                <MapPin className="text-emerald-500 flex-shrink-0 mt-1" size={20} />
-                <span className="text-slate-400">House-51, Flat: A-6, Sector-3, Uttara, Dhaka-1230</span>
+            <h4 className="text-xl font-ubuntu font-bold mb-10 flex items-center gap-3">
+              <span className="w-2 h-2 rounded-full bg-brand-emerald" />
+              Support Network
+            </h4>
+            <ul className="space-y-8">
+              <li className="flex gap-5">
+                <div className="w-12 h-12 bg-brand-emerald/10 rounded-xl flex items-center justify-center text-brand-emerald border border-brand-emerald/20 flex-shrink-0">
+                  <MapPin size={22} />
+                </div>
+                <p className="text-slate-400 font-medium text-sm leading-relaxed">
+                  House-51, Flat: A-6, Sector-3, Uttara, Dhaka-1230, Bangladesh.
+                </p>
               </li>
-              <li className="flex items-center space-x-4">
-                <PhoneCall className="text-emerald-500 flex-shrink-0" size={20} />
-                <span className="text-slate-400">+88 01713-011040</span>
-              </li>
-              <li className="flex items-center space-x-4">
-                <Mail className="text-emerald-500 flex-shrink-0" size={20} />
-                <a href="mailto:info@aranimalhealthltd.com" className="text-slate-400 hover:text-emerald-500 transition-colors">info@aranimalhealthltd.com</a>
+              <li className="flex gap-5">
+                <div className="w-12 h-12 bg-brand-emerald/10 rounded-xl flex items-center justify-center text-brand-emerald border border-brand-emerald/20 flex-shrink-0">
+                  <PhoneCall size={22} />
+                </div>
+                <div>
+                  <p className="text-white font-ubuntu font-bold">+88 01713-011040</p>
+                  <p className="text-xs text-slate-500 font-black uppercase mt-1">24/7 Technical Support</p>
+                </div>
               </li>
             </ul>
           </div>
 
-          {/* Newsletter */}
+          {/* Transformation Intel */}
           <div>
-            <h4 className="text-lg font-bold mb-6 border-b border-emerald-500/30 pb-2 inline-block">Newsletter</h4>
-            <p className="text-slate-400 mb-6">Stay updated with our latest products and innovations.</p>
-            <div className="relative">
-              <input 
-                type="email" 
-                placeholder="Email Address" 
-                className="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-emerald-500"
+            <h4 className="text-xl font-ubuntu font-bold mb-10 flex items-center gap-3">
+              <span className="w-2 h-2 rounded-full bg-brand-emerald" />
+              Transformation Intel
+            </h4>
+            <p className="text-slate-400 mb-8 font-medium">Subscribe to receive technical bulletins and industry insights.</p>
+            <form className="relative group">
+              <input
+                type="email"
+                placeholder="Secure Email"
+                className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-brand-emerald transition-all font-bold placeholder:text-slate-600"
               />
-              <button className="absolute right-2 top-2 bg-emerald-600 hover:bg-emerald-700 p-1.5 rounded-md transition-colors">
-                <Send size={18} />
+              <button className="absolute right-2 top-2 bg-brand-emerald hover:bg-emerald-500 text-white p-2.5 rounded-lg transition-all shadow-lg active:scale-95">
+                <Send size={20} />
               </button>
-            </div>
+            </form>
           </div>
         </div>
 
-        {/* Bottom Footer */}
-        <div className="pt-8 border-t border-slate-800 text-center md:flex md:justify-between md:text-left text-slate-500 text-sm">
-          <p>© 2024 AR Animal Health Ltd. All rights reserved.</p>
-          <div className="mt-4 md:mt-0 space-x-6">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+        {/* Legal & Attribution */}
+        <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
+          <p className="text-slate-500 text-sm font-medium">
+            © 2026 <span className="text-brand-emerald font-black">AR ANIMAL HEALTH LTD.</span> All systems operational.
+          </p>
+          <div className="flex gap-10 text-xs font-black uppercase tracking-widest text-slate-500">
+            <a href="#" className="hover:text-brand-emerald transition-colors">Digital Privacy</a>
+            <a href="#" className="hover:text-brand-emerald transition-colors">Protocol Terms</a>
           </div>
         </div>
       </div>
     </footer>
+
   );
 };
 

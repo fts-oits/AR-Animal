@@ -17,51 +17,63 @@ const HeroSlider: React.FC = () => {
   const prevSlide = () => setCurrent((prev) => (prev - 1 + HERO_SLIDES.length) % HERO_SLIDES.length);
 
   return (
-    <section className="relative h-screen min-h-[600px] overflow-hidden bg-slate-900">
+    <section className="relative h-screen min-h-[700px] overflow-hidden bg-brand-beige-black">
       {HERO_SLIDES.map((slide, index) => (
         <div
           key={index}
           className={`absolute inset-0 transition-all duration-1000 ease-in-out transform ${index === current ? 'opacity-100 scale-100 z-10' : 'opacity-0 scale-110 pointer-events-none z-0'
             }`}
         >
-          {/* Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent z-10" />
-          <div className="absolute inset-0 bg-black/20 z-10" />
+          {/* Enhanced Overlay with Gradients */}
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-beige-black via-brand-beige-black/40 to-transparent z-10" />
+          <div className="absolute inset-0 bg-brand-emerald/10 z-10" />
+          
+          {/* Background Decorative Text */}
+          <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
+            <span className="text-[20vw] font-black text-white/[0.03] leading-none whitespace-nowrap transform -rotate-12 translate-y-1/4">
+              AGRICULTURE • INNOVATION • SUSTAINABILITY
+            </span>
+          </div>
 
           <img
             src={slide.image}
             alt={slide.title}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover grayscale-[20%] brightness-[70%]"
           />
 
-          {/* Content */}
-          <div className="absolute inset-0 z-20 flex items-center justify-center md:justify-start">
-            <div className="container mx-auto px-6 mt-16 md:mt-0">
-              <div className="max-w-3xl text-white md:pl-8">
-                <div className={`transition-all duration-700 delay-300 transform ${index === current ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+          {/* Content Container - Increased top padding for mobile to avoid logo overlap */}
+          <div className="absolute inset-0 z-20 flex items-center">
+            <div className="container mx-auto px-6 pt-32 pb-20 md:pt-0">
+              <div className="max-w-4xl text-white">
+                <div className={`transition-all duration-1000 delay-300 transform ${index === current ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
                   }`}>
-                  <span className="inline-block px-4 py-1.5 rounded-full bg-emerald-500/20 backdrop-blur-md border border-emerald-500/30 text-emerald-300 font-bold uppercase tracking-widest text-xs mb-6">
-                    Premium Agriculture
+                  <span className="inline-block px-4 py-2 rounded-full bg-brand-emerald/20 backdrop-blur-md border border-brand-emerald/30 text-brand-emerald font-bold uppercase tracking-[0.3em] text-[10px] md:text-xs mb-8 shadow-lg shadow-brand-emerald/10">
+                    Premium Agricultural biotech
                   </span>
-                  <h1 className="text-5xl md:text-8xl font-black mb-6 leading-[0.9] tracking-tighter">
-                    {slide.title}
+                  
+                  <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-ubuntu font-bold mb-8 leading-[0.85] tracking-tighter">
+                    {slide.title.split(' ').map((word, i) => (
+                      <span key={i} className={i % 2 === 1 ? 'text-brand-emerald block' : 'block'}>{word}</span>
+                    ))}
                   </h1>
-                  <p className="text-lg md:text-2xl text-slate-200 mb-10 leading-relaxed max-w-lg font-medium">
+                  
+                  <p className="text-lg md:text-2xl text-slate-300 mb-12 leading-relaxed max-w-xl font-medium border-l-4 border-brand-emerald pl-6">
                     {slide.subtitle}
                   </p>
-                  <div className="flex flex-col sm:flex-row gap-4">
+                  
+                  <div className="flex flex-col sm:flex-row gap-6">
                     <Link
                       to="/products"
-                      className="bg-emerald-600 hover:bg-emerald-700 text-white px-10 py-5 rounded-full font-bold text-lg flex items-center justify-center space-x-2 shadow-2xl shadow-emerald-600/30 transform hover:scale-105 transition-all"
+                      className="group bg-brand-emerald hover:bg-emerald-500 text-white px-10 py-5 rounded-xl font-bold text-lg flex items-center justify-center space-x-3 shadow-2xl shadow-brand-emerald/50 transform hover:-translate-y-1 transition-all"
                     >
-                      <span>Explore Products</span>
-                      <ArrowRight size={20} />
+                      <span className="font-ubuntu">Our Solutions</span>
+                      <ArrowRight size={22} className="group-hover:translate-x-2 transition-transform" />
                     </Link>
                     <Link
                       to="/about"
-                      className="bg-white/10 hover:bg-white/20 backdrop-blur-xl text-white border border-white/20 px-10 py-5 rounded-full font-bold text-lg flex items-center justify-center transition-all hover:border-white/50"
+                      className="bg-white/5 hover:bg-white/10 backdrop-blur-xl text-white border border-white/20 px-10 py-5 rounded-xl font-bold text-lg flex items-center justify-center transition-all hover:border-brand-gold/50 shadow-xl"
                     >
-                      Our Technology
+                      Scientific Approach
                     </Link>
                   </div>
                 </div>
@@ -71,35 +83,40 @@ const HeroSlider: React.FC = () => {
         </div>
       ))}
 
-      {/* Navigation Buttons - Hidden on very small screens or moved */}
-      <div className="hidden md:flex absolute bottom-12 right-12 z-30 space-x-4">
+      {/* Navigation Buttons - Redesigned */}
+      <div className="hidden lg:flex absolute bottom-20 right-20 z-30 space-x-6">
         <button
           onClick={prevSlide}
-          className="w-14 h-14 rounded-full border border-white/20 bg-white/5 backdrop-blur-md flex items-center justify-center text-white hover:bg-emerald-600 hover:border-emerald-600 transition-all group"
+          className="w-16 h-16 rounded-xl border border-white/10 bg-white/5 backdrop-blur-md flex items-center justify-center text-white hover:bg-brand-emerald hover:border-brand-emerald transition-all group shadow-2xl"
         >
-          <ChevronLeft className="group-hover:-translate-x-1 transition-transform" />
+          <ChevronLeft className="group-hover:-translate-x-1 transition-transform" size={28} />
         </button>
         <button
           onClick={nextSlide}
-          className="w-14 h-14 rounded-full border border-white/20 bg-white/5 backdrop-blur-md flex items-center justify-center text-white hover:bg-emerald-600 hover:border-emerald-600 transition-all group"
+          className="w-16 h-16 rounded-xl border border-white/10 bg-white/5 backdrop-blur-md flex items-center justify-center text-white hover:bg-brand-emerald hover:border-brand-emerald transition-all group shadow-2xl"
         >
-          <ChevronRight className="group-hover:translate-x-1 transition-transform" />
+          <ChevronRight className="group-hover:translate-x-1 transition-transform" size={28} />
         </button>
       </div>
 
-      {/* Slide Indicators */}
-      <div className="absolute bottom-8 left-6 md:left-12 z-30 flex space-x-2">
+      {/* Slide Indicators - Moved and redesigned */}
+      <div className="absolute bottom-12 left-6 md:left-20 z-30 flex items-end space-x-4">
         {HERO_SLIDES.map((_, idx) => (
           <button
             key={idx}
             onClick={() => setCurrent(idx)}
-            className={`h-1.5 rounded-full transition-all duration-500 ${idx === current ? 'bg-emerald-500 w-12' : 'bg-white/30 w-6 hover:bg-white/60'
-              }`}
+            className="group flex flex-col items-center gap-3"
             aria-label={`Go to slide ${idx + 1}`}
-          />
+          >
+            <span className={`text-[10px] font-black transition-colors ${idx === current ? 'text-brand-emerald' : 'text-white/40 group-hover:text-white'}`}>
+              0{idx + 1}
+            </span>
+            <div className={`h-12 w-1 rounded-full transition-all duration-700 ${idx === current ? 'bg-brand-emerald shadow-[0_0_15px_rgba(5,150,105,0.8)]' : 'bg-white/20 group-hover:bg-white/40'}`} />
+          </button>
         ))}
       </div>
     </section>
+
   );
 };
 

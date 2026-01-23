@@ -20,45 +20,50 @@ const Products: React.FC = () => {
   }, [searchTerm, selectedCategory]);
 
   return (
-    <div className="bg-slate-50 min-h-screen pb-24">
-      {/* Header */}
-      <section className="bg-slate-900 pt-32 pb-24 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-full h-full bg-emerald-600/10 opacity-20"></div>
-        <div className="container mx-auto px-6 relative z-10 text-center md:text-left">
-          <span className="text-emerald-500 font-bold tracking-widest uppercase text-xs mb-4 block">Our Portfolio</span>
-          <h1 className="text-4xl md:text-7xl font-black text-white mb-6 tracking-tighter">Premium Catalog</h1>
-          <p className="text-slate-400 text-lg md:text-xl max-w-2xl leading-relaxed font-medium">
-            Explore our range of premium additives, mineral sources, and veterinary solutions.
-          </p>
+    <div className="bg-brand-beige-white min-h-screen pb-32">
+      {/* Terminal Header */}
+      <section className="bg-brand-beige-black pt-48 pb-32 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-emerald/20 via-transparent to-brand-gold/10"></div>
+        <div className="absolute -bottom-1 w-[120%] h-40 bg-brand-beige-white -rotate-2 translate-x-[-10%]"></div>
+
+        <div className="container mx-auto px-6 relative z-10 max-w-[1900px]">
+          <div className="max-w-4xl">
+            <span className="text-brand-emerald font-black tracking-[0.5em] uppercase text-xs mb-6 block">Intelligence Index</span>
+            <h1 className="text-6xl md:text-9xl font-ubuntu font-bold text-white mb-8 tracking-tighter leading-none">
+              Technical <span className="text-brand-emerald">Catalog.</span>
+            </h1>
+            <p className="text-slate-400 text-xl md:text-2xl max-w-2xl font-medium leading-relaxed">
+              Precision-engineered biotechnology solutions for the modern agricultural spectrum.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Mobile Search & Filter Mobile Toggle */}
-      <section className="sticky top-0 z-30 bg-white/90 backdrop-blur-xl shadow-sm border-b border-slate-100 py-4 transition-all">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
-
-            {/* Search Input */}
-            <div className="relative w-full md:w-96">
+      {/* Control Strip */}
+      <section className="sticky top-0 z-40 bg-brand-beige-white/80 backdrop-blur-2xl py-6 border-b border-brand-emerald/10 shadow-2xl">
+        <div className="container mx-auto px-6 max-w-[1900px]">
+          <div className="flex flex-col lg:flex-row gap-8 items-center justify-between">
+            {/* Terminal Search */}
+            <div className="relative w-full lg:w-[400px]">
               <input
                 type="text"
-                placeholder="Search products..."
-                className="w-full bg-slate-100/50 border border-slate-200 rounded-full px-12 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:bg-white transition-all font-bold text-slate-700 placeholder-slate-400"
+                placeholder="Query Database..."
+                className="w-full bg-white border-2 border-slate-100 rounded-2xl px-14 py-4 focus:outline-none focus:border-brand-emerald transition-all font-ubuntu font-bold text-slate-800 placeholder-slate-300 shadow-inner"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
-              <Search className="absolute left-4 top-3.5 text-slate-400" size={18} />
+              <Search className="absolute left-6 top-1/2 -translate-y-1/2 text-brand-emerald" size={20} />
             </div>
 
-            {/* Desktop Filters */}
-            <div className="hidden md:flex items-center space-x-2 overflow-x-auto no-scrollbar max-w-full">
+            {/* Matrix Filters */}
+            <div className="hidden lg:flex items-center gap-3">
               {['All', ...Object.values(Category)].map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`px-6 py-2.5 rounded-full text-sm font-bold whitespace-nowrap transition-all border ${selectedCategory === cat
-                      ? 'bg-slate-900 text-white border-slate-900 shadow-md'
-                      : 'bg-white text-slate-500 border-slate-200 hover:border-emerald-500 hover:text-emerald-600'
+                  className={`px-8 py-4 rounded-2xl text-xs font-black uppercase tracking-widest transition-all border-2 ${selectedCategory === cat
+                    ? 'bg-brand-beige-black text-white border-brand-beige-black shadow-xl shadow-brand-beige-black/20'
+                    : 'bg-white text-slate-400 border-slate-100 hover:border-brand-emerald hover:text-brand-emerald'
                     }`}
                 >
                   {cat}
@@ -66,29 +71,29 @@ const Products: React.FC = () => {
               ))}
             </div>
 
-            {/* Mobile Filter Toggle */}
+            {/* Mobile Interface */}
             <button
-              className="md:hidden w-full flex items-center justify-between bg-white border border-slate-200 px-6 py-3 rounded-full text-sm font-bold text-slate-700"
+              className="lg:hidden w-full flex items-center justify-between bg-white border-2 border-slate-100 px-8 py-5 rounded-2xl text-xs font-black uppercase tracking-widest text-slate-700"
               onClick={() => setIsFilterOpen(!isFilterOpen)}
             >
-              <div className="flex items-center gap-2">
-                <Filter size={16} className="text-emerald-600" />
-                <span>Filter: {selectedCategory}</span>
+              <div className="flex items-center gap-4">
+                <Filter size={18} className="text-brand-emerald" />
+                <span>Node Filter: {selectedCategory}</span>
               </div>
-              <ChevronDown size={16} className={`transform transition-transform ${isFilterOpen ? 'rotate-180' : ''}`} />
+              <ChevronDown size={18} className={`transform transition-transform duration-500 ${isFilterOpen ? 'rotate-180' : ''}`} />
             </button>
           </div>
 
-          {/* Mobile Filter Dropdown */}
-          <div className={`md:hidden overflow-hidden transition-all duration-300 ${isFilterOpen ? 'max-h-60 mt-4' : 'max-h-0'}`}>
-            <div className="flex flex-wrap gap-2 pb-2">
+          {/* Mobile Overlay */}
+          <div className={`lg:hidden overflow-hidden transition-all duration-700 ease-in-out ${isFilterOpen ? 'max-h-96 mt-6 opacity-100' : 'max-h-0 opacity-0'}`}>
+            <div className="grid grid-cols-2 gap-3 pb-4">
               {['All', ...Object.values(Category)].map((cat) => (
                 <button
                   key={cat}
                   onClick={() => { setSelectedCategory(cat); setIsFilterOpen(false); }}
-                  className={`px-4 py-2 rounded-full text-xs font-bold transition-all border ${selectedCategory === cat
-                      ? 'bg-emerald-600 text-white border-emerald-600'
-                      : 'bg-white text-slate-500 border-slate-200'
+                  className={`px-6 py-4 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all border-2 ${selectedCategory === cat
+                    ? 'bg-brand-emerald text-white border-brand-emerald'
+                    : 'bg-white text-slate-400 border-slate-100'
                     }`}
                 >
                   {cat}
@@ -99,114 +104,133 @@ const Products: React.FC = () => {
         </div>
       </section>
 
-      {/* Product Grid */}
-      <section className="py-12 md:py-20 px-4 md:px-0">
-        <div className="container mx-auto px-2 md:px-6">
+      {/* Output Grid */}
+      <section className="py-24">
+        <div className="container mx-auto px-6 max-w-[1900px]">
           {filteredProducts.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
               {filteredProducts.map((p) => (
                 <div
                   key={p.id}
-                  className="bg-white rounded-[2rem] p-4 shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border border-slate-100 group flex flex-col h-full cursor-pointer relative"
+                  className="bg-white rounded-[4rem] p-6 shadow-xl hover:shadow-[0_30px_60px_-15px_rgba(5,150,105,0.2)] hover:-translate-y-3 transition-all duration-700 border border-slate-100 group flex flex-col h-full cursor-pointer overflow-hidden"
                   onClick={() => setSelectedProduct(p)}
                 >
-                  <div className="h-64 rounded-[1.5rem] relative overflow-hidden bg-slate-50 mb-6">
+                  <div className="h-80 rounded-[3rem] relative overflow-hidden bg-brand-beige-white mb-8 border border-slate-100">
                     <img
                       src={p.image}
                       alt={p.name}
-                      className="w-full h-full object-contain p-8 group-hover:scale-110 transition-transform duration-500 mix-blend-multiply"
+                      className="w-full h-full object-contain p-12 group-hover:scale-110 transition-transform duration-700 mix-blend-multiply"
                     />
-                    <div className="absolute top-4 left-4">
-                      <span className="bg-white/80 backdrop-blur text-slate-900 text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full border border-slate-200 shadow-sm">
-                        {p.category}
-                      </span>
+                    <div className="absolute top-6 left-6">
+                      <div className="flex items-center gap-2 bg-white/90 backdrop-blur px-4 py-2 rounded-full border border-slate-200">
+                        <div className="w-1.5 h-1.5 rounded-full bg-brand-emerald" />
+                        <span className="text-brand-beige-black text-[10px] font-black uppercase tracking-widest">
+                          {p.category}
+                        </span>
+                      </div>
                     </div>
                   </div>
 
-                  <div className="px-4 pb-6 flex flex-col flex-grow">
-                    <h3 className="text-2xl font-black text-slate-900 mb-3 tracking-tight leading-tight group-hover:text-emerald-600 transition-colors">
+                  <div className="px-6 pb-8 flex flex-col flex-grow">
+                    <h3 className="text-3xl font-ubuntu font-bold text-brand-beige-black mb-4 tracking-tight leading-tight group-hover:text-brand-emerald transition-colors">
                       {p.name}
                     </h3>
-                    <p className="text-slate-500 mb-6 leading-relaxed flex-grow text-sm font-medium line-clamp-3">
+                    <p className="text-slate-500 mb-10 leading-relaxed flex-grow text-lg font-medium line-clamp-3">
                       {p.description}
                     </p>
 
-                    <button className="w-full bg-slate-100 hover:bg-slate-900 hover:text-white text-slate-900 font-bold py-4 rounded-xl flex items-center justify-center space-x-2 transition-all duration-300">
-                      <span>View Details</span>
-                      <Info size={18} />
-                    </button>
+                    <div className="flex items-center justify-between pt-8 border-t border-slate-50">
+                      <div className="flex items-center gap-2">
+                        <Tag size={16} className="text-brand-emerald" />
+                        <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">Biological Node</span>
+                      </div>
+                      <div className="w-12 h-12 rounded-2xl bg-brand-beige-black text-white flex items-center justify-center group-hover:bg-brand-emerald transition-colors">
+                        <Info size={20} />
+                      </div>
+                    </div>
                   </div>
                 </div>
               ))}
             </div>
           ) : (
-            <div className="flex flex-col items-center justify-center py-24 text-center">
-              <div className="w-24 h-24 bg-slate-100 rounded-full flex items-center justify-center mb-6 text-slate-300">
-                <Search size={40} />
+            <div className="flex flex-col items-center justify-center py-48 text-center bg-white rounded-[4rem] border border-dashed border-slate-200 shadow-inner">
+              <div className="w-32 h-32 bg-brand-beige-white rounded-full flex items-center justify-center mb-8 text-slate-300">
+                <Search size={48} className="animate-pulse" />
               </div>
-              <h3 className="text-2xl font-black text-slate-900 mb-2">No products found</h3>
-              <p className="text-slate-500 font-medium mb-8">Try adjusting your search or filter</p>
+              <h3 className="text-4xl font-ubuntu font-bold text-brand-beige-black mb-4 tracking-tighter">Zero Data Points Found</h3>
+              <p className="text-slate-400 text-xl font-medium mb-12 max-w-md">The requested entity does not exist in our current biotechnology framework.</p>
               <button
                 onClick={() => { setSearchTerm(''); setSelectedCategory('All'); }}
-                className="bg-emerald-600 text-white font-bold px-8 py-3 rounded-full hover:bg-emerald-700 transition-colors shadow-lg shadow-emerald-600/20"
+                className="bg-brand-beige-black text-white font-ubuntu font-bold px-12 py-5 rounded-2xl hover:bg-brand-emerald transition-all shadow-2xl active:scale-95 text-xs uppercase tracking-widest"
               >
-                Clear Filters
+                Reset Engine
               </button>
             </div>
           )}
         </div>
       </section>
 
-      {/* Product Detail Modal */}
+      {/* Logic Modal Interface */}
       {selectedProduct && (
-        <div className="fixed inset-0 z-[100] flex items-end md:items-center justify-center sm:p-6 animate-in fade-in duration-200">
+        <div className="fixed inset-0 z-[100] flex items-end lg:items-center justify-center lg:p-12">
           <div
-            className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity"
+            className="absolute inset-0 bg-brand-beige-black/80 backdrop-blur-xl transition-opacity duration-700"
             onClick={() => setSelectedProduct(null)}
           ></div>
-          <div className="relative bg-white w-full md:max-w-5xl h-[90vh] md:h-auto md:max-h-[90vh] overflow-y-auto rounded-t-[2.5rem] md:rounded-[3rem] shadow-2xl flex flex-col md:flex-row animate-in slide-in-from-bottom-10 duration-300">
+          <div className="relative bg-white w-full lg:max-w-6xl h-[95vh] lg:h-auto lg:max-h-[90vh] overflow-y-auto rounded-t-[4rem] lg:rounded-[5rem] shadow-[0_0_100px_rgba(5,150,105,0.3)] flex flex-col lg:flex-row animate-in slide-in-from-bottom-20 duration-700">
+            {/* Close Command */}
             <button
-              className="absolute top-6 right-6 z-10 w-10 h-10 bg-slate-100 hover:bg-red-50 hover:text-red-500 rounded-full flex items-center justify-center text-slate-500 transition-all"
+              className="absolute top-10 right-10 z-[110] w-14 h-14 bg-brand-beige-white hover:bg-brand-red hover:text-white rounded-3xl flex items-center justify-center text-brand-beige-black transition-all shadow-xl border border-slate-100"
               onClick={() => setSelectedProduct(null)}
             >
-              <X size={20} />
+              <X size={24} />
             </button>
 
-            <div className="md:w-5/12 bg-slate-50 p-10 flex items-center justify-center min-h-[300px]">
+            {/* Visual Node */}
+            <div className="lg:w-1/2 bg-brand-beige-white p-12 lg:p-20 flex items-center justify-center min-h-[400px] relative">
+              <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,rgba(5,150,105,0.4)_0%,transparent_70%)]" />
               <img
                 src={selectedProduct.image}
                 alt={selectedProduct.name}
-                className="w-full h-full object-contain mix-blend-multiply"
+                className="w-full h-full object-contain mix-blend-multiply relative z-10"
               />
             </div>
 
-            <div className="md:w-7/12 p-8 md:p-12 flex flex-col">
-              <span className="text-emerald-600 font-black uppercase tracking-widest text-xs mb-3">{selectedProduct.category}</span>
-              <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-6 tracking-tighter leading-none">{selectedProduct.name}</h2>
-              <p className="text-slate-600 text-lg mb-8 leading-relaxed font-medium">
+            {/* Data Node */}
+            <div className="lg:w-1/2 p-12 lg:p-20 flex flex-col">
+              <div className="inline-flex items-center gap-3 mb-8">
+                <div className="w-1.5 h-1.5 rounded-full bg-brand-emerald" />
+                <span className="text-brand-emerald font-black uppercase tracking-[0.4em] text-xs leading-none">{selectedProduct.category}</span>
+              </div>
+
+              <h2 className="text-5xl md:text-7xl font-ubuntu font-bold text-brand-beige-black mb-8 tracking-tighter leading-none">{selectedProduct.name}</h2>
+
+              <p className="text-slate-500 text-xl mb-12 leading-relaxed font-medium">
                 {selectedProduct.description}
               </p>
 
-              <div className="mb-10 bg-slate-50 p-6 rounded-3xl border border-slate-100">
-                <h4 className="text-xs font-black text-slate-400 uppercase tracking-widest mb-4">Specifications</h4>
-                <div className="grid grid-cols-1 gap-3">
+              <div className="mb-12 bg-brand-beige-white p-10 rounded-[3rem] border border-slate-100 shadow-inner">
+                <h4 className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-6">Technical Specifications</h4>
+                <div className="grid grid-cols-1 gap-4">
                   {selectedProduct.specifications.map((spec, i) => (
-                    <div key={i} className="flex items-start space-x-3">
-                      <CheckCircle className="text-emerald-500 mt-0.5" size={16} />
-                      <span className="text-slate-700 font-bold text-sm">{spec}</span>
+                    <div key={i} className="flex items-start gap-4 group">
+                      <div className="w-6 h-6 rounded-full bg-brand-emerald/10 border border-brand-emerald/20 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-brand-emerald group-hover:text-white transition-colors">
+                        <CheckCircle className="text-brand-emerald group-hover:text-white" size={14} />
+                      </div>
+                      <span className="text-brand-beige-black font-bold text-lg leading-tight">{spec}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className="mt-auto grid grid-cols-1 md:grid-cols-2 gap-4">
-                <button className="bg-slate-900 hover:bg-slate-800 text-white font-bold py-4 rounded-2xl flex items-center justify-center space-x-2 transition-all active:scale-95">
-                  <MessageSquare size={18} />
-                  <span>Request Quote</span>
+              <div className="mt-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+                <button className="bg-brand-beige-black hover:bg-brand-emerald text-white font-ubuntu font-bold py-6 rounded-3xl flex items-center justify-center gap-4 transition-all active:scale-95 shadow-2xl text-xs uppercase tracking-widest">
+                  <MessageSquare size={20} />
+                  <span>Request Deployment</span>
                 </button>
-                <button className="bg-white border-2 border-slate-200 hover:border-emerald-500 text-slate-700 hover:text-emerald-600 font-bold py-4 rounded-2xl flex items-center justify-center space-x-2 transition-all active:scale-95">
-                  <Download size={18} />
-                  <span>Download Spec</span>
+                <button className="bg-white border-2 border-slate-100 hover:border-brand-emerald text-brand-beige-black hover:text-brand-emerald font-ubuntu font-bold py-6 rounded-3xl flex items-center justify-center gap-4 transition-all active:scale-95 text-xs uppercase tracking-widest">
+                  <Download size={20} />
+                  <span>Data Sheet (PDF)</span>
                 </button>
               </div>
             </div>
@@ -216,5 +240,6 @@ const Products: React.FC = () => {
     </div>
   );
 };
+
 
 export default Products;

@@ -8,26 +8,29 @@ const TimelineItem: React.FC<{ milestone: typeof MILESTONES[0], index: number, i
   const Icon = IconMap[milestone.icon] || Flag;
 
   return (
-    <div className="relative pl-8 md:pl-0 md:mb-24 md:flex md:items-center md:justify-between group">
-      {/* Mobile Vertical Line */}
+    <div className="relative pl-12 md:pl-0 md:mb-32 md:flex md:items-center md:justify-between group">
+      {/* Connector Line */}
       {!isLast && (
-        <div className="absolute top-8 left-[19px] w-0.5 h-[calc(100%+2rem)] bg-slate-200 md:hidden"></div>
+        <div className="absolute top-12 left-[23px] w-px h-[calc(100%+4rem)] bg-brand-emerald opacity-20 md:hidden"></div>
       )}
 
       {/* Desktop Spacer */}
       <div className={`hidden md:block w-5/12 ${index % 2 === 0 ? 'order-1' : 'order-3'}`}></div>
 
-      {/* Icon/Dot */}
-      <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 md:relative z-10 order-2 flex items-center justify-center w-10 h-10 md:w-16 md:h-16 bg-white border-4 md:border-8 border-slate-100 rounded-full shadow-lg group-hover:scale-110 group-hover:border-emerald-100 transition-all duration-300">
-        <Icon className="w-4 h-4 md:w-6 md:h-6 text-emerald-600" />
+      {/* Icon Node */}
+      <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 md:relative z-10 order-2 flex items-center justify-center w-12 h-12 md:w-20 md:h-20 bg-brand-beige-black border-4 border-brand-emerald rounded-2xl shadow-2xl group-hover:rotate-12 transition-all duration-700">
+        <Icon className="w-6 h-6 md:w-8 md:h-8 text-brand-emerald" />
+        <div className="absolute -top-3 -right-3 w-8 h-8 bg-brand-gold rounded-lg flex items-center justify-center text-brand-beige-black font-black text-[10px] shadow-lg">
+          {milestone.year.toString().slice(-2)}
+        </div>
       </div>
 
       {/* Content Card */}
-      <div className={`mb-12 md:mb-0 relative order-1 md:w-5/12 ${index % 2 === 0 ? 'md:order-3 md:text-left md:pl-10' : 'md:text-right md:pr-10'}`}>
-        <div className="bg-white p-6 md:p-8 rounded-[2rem] shadow-sm border border-slate-100 hover:shadow-xl hover:border-emerald-100 transition-all duration-300">
-          <span className="text-emerald-600 font-black text-3xl md:text-4xl block mb-2">{milestone.year}</span>
-          <h4 className="mb-3 font-black text-slate-900 text-xl tracking-tight">{milestone.title}</h4>
-          <p className="text-slate-500 leading-relaxed text-sm md:text-base font-medium">{milestone.description}</p>
+      <div className={`mb-16 md:mb-0 relative order-1 md:w-5/12 ${index % 2 === 0 ? 'md:order-3 md:text-left md:pl-16' : 'md:text-right md:pr-16'}`}>
+        <div className="bg-white p-10 md:p-12 rounded-[3.5rem] shadow-xl border border-slate-100 group-hover:border-brand-emerald hover:shadow-2xl hover:shadow-brand-emerald/10 transition-all duration-700">
+          <span className="text-brand-emerald font-ubuntu font-bold text-4xl md:text-5xl block mb-6 tracking-tighter">{milestone.year}</span>
+          <h4 className="mb-4 font-ubuntu font-bold text-brand-beige-black text-2xl md:text-3xl tracking-tight leading-tight">{milestone.title}</h4>
+          <p className="text-slate-500 leading-relaxed font-medium">{milestone.description}</p>
         </div>
       </div>
     </div>
@@ -36,80 +39,100 @@ const TimelineItem: React.FC<{ milestone: typeof MILESTONES[0], index: number, i
 
 const About: React.FC = () => {
   return (
-    <div className="bg-slate-50 overflow-hidden">
-      {/* Hero Header */}
-      <section className="bg-slate-900 pt-32 pb-20 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full opacity-20 bg-[url('https://images.unsplash.com/photo-1625246333195-58197bd47d26?auto=format&fit=crop&q=80')] bg-cover bg-center"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/50 to-slate-900"></div>
-        <div className="container mx-auto px-6 text-center relative z-10">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-emerald-900/50 border border-emerald-500/30 text-emerald-400 font-bold uppercase tracking-widest text-xs mb-6 backdrop-blur-md">
-            Since 2010
-          </span>
-          <h1 className="text-4xl md:text-7xl font-black text-white mb-6 tracking-tighter">Our Legacy</h1>
-          <p className="text-slate-300 text-lg md:text-xl max-w-2xl mx-auto font-medium leading-relaxed">
-            Pioneering animal health excellence through innovation and global partnerships in Bangladesh.
-          </p>
+    <div className="bg-brand-beige-white min-h-screen">
+      {/* Terminal Hero */}
+      <section className="bg-brand-beige-black pt-48 pb-64 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-emerald/20 via-transparent to-brand-gold/10"></div>
+        <div className="absolute -bottom-1 w-[120%] h-40 bg-brand-beige-white -rotate-3 translate-x-[-10%]"></div>
+
+        <div className="container mx-auto px-6 relative z-10 max-w-[1900px]">
+          <div className="max-w-4xl">
+            <span className="text-brand-emerald font-black tracking-[0.5em] uppercase text-xs mb-6 block">Legacy Protocol</span>
+            <h1 className="text-6xl md:text-9xl font-ubuntu font-bold text-white mb-8 tracking-tighter leading-none">
+              The Scientific <span className="text-brand-emerald">Odyssey.</span>
+            </h1>
+            <p className="text-slate-400 text-xl md:text-3xl font-medium leading-relaxed max-w-3xl">
+              De-coding agricultural excellence since 2010. Orchestrating a future where biotechnology and sustainability converge.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Story Section */}
-      <section className="py-20 bg-white rounded-t-[3rem] -mt-10 relative z-20">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <span className="text-emerald-600 font-bold uppercase tracking-widest text-xs mb-4 block">The Journey</span>
-              <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-8 tracking-tight">Driving Agricultural Prosperity</h2>
-              <div className="space-y-6 text-slate-600 text-lg leading-relaxed font-medium">
-                <p>
-                  AR Animal Health Ltd stands as a young, innovative leader in the global fertilizer and feed additives sector.
-                </p>
-                <p>
-                  Under Mr. Atiar Rahman's visionary leadership (35+ years experience), we've built a legacy of trust, focusing on deep processing of phosphorus resources for national agricultural prosperity.
-                </p>
+      {/* Deep Dive Section */}
+      <section className="-mt-32 pb-32 relative z-20">
+        <div className="container mx-auto px-6 max-w-[1900px]">
+          <div className="bg-white rounded-[4rem] shadow-2xl overflow-hidden border border-slate-100">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+              <div className="p-12 md:p-24 lg:p-32">
+                <div className="inline-flex items-center gap-3 mb-10">
+                  <div className="h-px w-12 bg-brand-emerald" />
+                  <span className="text-brand-emerald font-black tracking-[0.4em] uppercase text-xs">Origin Story</span>
+                </div>
+                <h2 className="text-5xl md:text-7xl font-ubuntu font-bold text-brand-beige-black mb-10 tracking-tighter leading-none">
+                  Fulfilling Global <span className="text-brand-emerald">Nutrition.</span>
+                </h2>
+                <div className="space-y-8 text-slate-500 text-xl leading-relaxed font-medium">
+                  <p>
+                    Under the visionary leadership of <span className="text-brand-beige-black font-bold">Mr. Atiar Rahman</span>, AR Animal Health Ltd has evolved into a strategic nexus for biotechnological advancement in Bangladesh.
+                  </p>
+                  <p>
+                    With over <span className="text-brand-emerald font-black">35 years</span> of deep-sector intelligence, we orchestrate the processing of high-grade phosphorus resources to ensure national agricultural sovereignty.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-2 gap-8 mt-16">
+                  <div className="bg-brand-beige-white p-10 rounded-[2.5rem] border border-slate-100 relative group overflow-hidden">
+                    <div className="absolute top-0 right-0 w-16 h-16 bg-brand-emerald/10 rounded-full blur-xl group-hover:scale-150 transition-transform" />
+                    <span className="block text-4xl font-ubuntu font-bold text-brand-beige-black mb-2">2010</span>
+                    <span className="text-[10px] font-black uppercase tracking-widest text-brand-emerald">System Launch</span>
+                  </div>
+                  <div className="bg-brand-beige-white p-10 rounded-[2.5rem] border border-slate-100 relative group overflow-hidden">
+                    <div className="absolute top-0 right-0 w-16 h-16 bg-brand-gold/10 rounded-full blur-xl group-hover:scale-150 transition-transform" />
+                    <span className="block text-4xl font-ubuntu font-bold text-brand-beige-black mb-2">ISO+</span>
+                    <span className="text-[10px] font-black uppercase tracking-widest text-brand-gold">Terminal Grade</span>
+                  </div>
+                </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-4 mt-8">
-                <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100">
-                  <span className="block text-3xl font-black text-slate-900 mb-1">2010</span>
-                  <span className="text-xs font-bold uppercase tracking-widest text-emerald-600">Founded</span>
+              <div className="relative h-[600px] lg:h-auto">
+                <img
+                  src="img/about.jpg"
+                  alt="Laboratory Facility"
+                  className="absolute inset-0 w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-[2s]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-l from-brand-beige-black/40 to-transparent" />
+                <div className="absolute bottom-12 left-12 right-12 bg-white/10 backdrop-blur-2xl p-10 rounded-3xl border border-white/20">
+                  <div className="flex items-center gap-6 mb-4">
+                    <div className="w-12 h-px bg-white" />
+                    <span className="text-white font-black text-xs uppercase tracking-[0.5em]">Site-01 Status</span>
+                  </div>
+                  <p className="text-white text-lg font-medium leading-relaxed">
+                    Our manufacturing hub in Bangladesh operates at terminal efficiency, integrating Nano-Biotech with global standards.
+                  </p>
                 </div>
-                <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100">
-                  <span className="block text-3xl font-black text-slate-900 mb-1">ISO</span>
-                  <span className="text-xs font-bold uppercase tracking-widest text-emerald-600">Certified</span>
-                </div>
-              </div>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-4 mt-12">
-                <img src="img/about.jpg" alt="Facility" className="rounded-[2rem] shadow-lg w-full h-48 md:h-64 object-cover" />
-                <div className="bg-emerald-600 p-8 rounded-[2rem] text-white shadow-lg flex flex-col justify-center h-48 md:h-64">
-                  <h4 className="text-3xl font-black mb-2">GMP</h4>
-                  <p className="font-bold opacity-80 text-sm">International Quality Standards Compliance</p>
-                </div>
-              </div>
-              <div className="space-y-4">
-                <div className="bg-slate-900 p-8 rounded-[2rem] text-white shadow-lg flex flex-col justify-center h-48 md:h-64">
-                  <h4 className="text-3xl font-black mb-2">R&D</h4>
-                  <p className="font-bold opacity-80 text-sm">Continuous Innovation in Biotechnology</p>
-                </div>
-                <img src="img/services-1.jpg" alt="Production" className="rounded-[2rem] shadow-lg w-full h-48 md:h-64 object-cover" />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Interactive Timeline */}
-      <section className="py-20 md:py-32">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-4 tracking-tight">Milestones of Growth</h2>
-            <p className="text-slate-500 max-w-2xl mx-auto font-medium">A decade of commitment to agricultural excellence.</p>
+      {/* Technical Timeline */}
+      <section className="py-32 md:py-60 relative">
+        <div className="container mx-auto px-6 max-w-[1900px]">
+          <div className="text-center mb-32 md:mb-48">
+            <span className="text-brand-emerald font-black tracking-[0.5em] uppercase text-xs mb-6 block">Evolution Log</span>
+            <h2 className="text-6xl md:text-9xl font-ubuntu font-bold text-brand-beige-black tracking-tighter leading-none mb-10">
+              Terminal <span className="text-brand-emerald">Scale.</span>
+            </h2>
+            <div className="inline-flex items-center gap-4 bg-brand-beige-black text-white px-8 py-4 rounded-2xl font-black text-xs uppercase tracking-widest shadow-2xl">
+              <div className="w-2 h-2 rounded-full bg-brand-emerald animate-pulse" />
+              <span>Real-time Historical Data</span>
+            </div>
           </div>
 
-          <div className="relative max-w-5xl mx-auto">
-            {/* Desktop Vertical Line */}
-            <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-1 bg-slate-200 hidden md:block rounded-full"></div>
+          <div className="relative max-w-6xl mx-auto">
+            {/* Desktop Vertical Axis */}
+            <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-px bg-gradient-to-b from-brand-emerald via-brand-emerald/5 to-transparent hidden md:block"></div>
 
             <div className="relative">
               {MILESTONES.map((milestone, idx) => (
@@ -120,60 +143,74 @@ const About: React.FC = () => {
         </div>
       </section>
 
-      {/* Sustainability Section - NEW */}
-      <section className="py-20 md:py-32 bg-emerald-900 overflow-hidden relative">
-        <div className="absolute top-0 right-0 w-full h-full bg-[url('https://images.unsplash.com/photo-1518531933037-9a84706cdd4a?auto=format&fit=crop&q=80')] opacity-10 bg-cover bg-center mix-blend-overlay"></div>
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="flex flex-col lg:flex-row gap-16 items-center">
-            <div className="lg:w-1/2">
-              <span className="text-emerald-400 font-bold tracking-widest uppercase text-xs mb-4 block">Our Commitment</span>
-              <h2 className="text-4xl md:text-6xl font-black text-white mb-8 tracking-tighter">Sustainable Future</h2>
-              <p className="text-emerald-100/90 text-lg leading-relaxed font-medium mb-8">
-                We believe that the future of agriculture lies in the balance between high yield and environmental stewardship. Our manufacturing processes are designed to minimize waste and maximize resource efficiency.
+      {/* Bio-Equilibrium Section */}
+      <section className="py-32 md:py-60 bg-brand-beige-black relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(5,150,105,0.1)_0%,transparent_50%)]" />
+
+        <div className="container mx-auto px-6 max-w-[1900px] relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+            <div className="order-2 lg:order-1">
+              <div className="relative group">
+                <div className="absolute -inset-4 bg-brand-emerald/20 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
+                <img
+                  src="img/services-1.jpg"
+                  alt="Sustainable Tech"
+                  className="relative rounded-[4rem] border-8 border-white/5 shadow-2xl object-cover w-full h-[600px] grayscale hover:grayscale-0 transition-all duration-[2s]"
+                />
+                <div className="absolute top-12 left-12 flex gap-4">
+                  {[1, 2, 3].map(i => (
+                    <div key={i} className="w-3 h-3 rounded-full bg-brand-emerald animate-pulse" style={{ animationDelay: `${i * 300}ms` }} />
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="order-1 lg:order-2">
+              <span className="text-brand-emerald font-black tracking-[0.5em] uppercase text-xs mb-8 block">Equilibrium Protocol</span>
+              <h2 className="text-5xl md:text-8xl font-ubuntu font-bold text-white mb-10 tracking-tighter leading-none">
+                Sustainable <br /> <span className="text-brand-emerald">Integrity.</span>
+              </h2>
+              <p className="text-slate-400 text-2xl font-medium leading-relaxed mb-16 max-w-xl">
+                Ensuring a terminal balance between high-industrial yield and ecological preservation.
               </p>
 
-              <div className="space-y-6">
+              <div className="space-y-10">
                 {[
-                  { title: "Eco-Friendly Production", desc: "Zero-discharge wastewater treatment and solar-powered facilities." },
-                  { title: "Safe Ingredients", desc: "Phosphate sources free from heavy metals and harmful contaminants." },
-                  { title: "Farmer Education", desc: "Training 5,000+ farmers annually on responsible antibiotic usage." }
+                  { title: "Circular Eco-Matrix", desc: "Terminal zero-discharge water purification systems." },
+                  { title: "Pure Element Sourcing", desc: "Phosphates audited for zero heavy metal contamination." },
+                  { title: "Technical Literacy", desc: "Training 5,000+ nodes in the value chain annually." }
                 ].map((item, idx) => (
-                  <div key={idx} className="flex gap-4">
-                    <div className="w-12 h-12 rounded-full bg-emerald-800 flex items-center justify-center flex-shrink-0 text-emerald-400 border border-emerald-700">
-                      <CheckCircle2 size={18} />
+                  <div key={idx} className="flex gap-8 group">
+                    <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-brand-emerald group-hover:bg-brand-emerald group-hover:text-white transition-all duration-500">
+                      <CheckCircle2 size={24} />
                     </div>
                     <div>
-                      <h4 className="text-white font-bold text-lg">{item.title}</h4>
-                      <p className="text-emerald-200/70 text-sm">{item.desc}</p>
+                      <h4 className="text-white font-ubuntu font-bold text-2xl mb-2">{item.title}</h4>
+                      <p className="text-slate-500 font-medium">{item.desc}</p>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
-
-            <div className="lg:w-1/2 relative">
-              <div className="absolute inset-0 bg-emerald-500 rounded-[3rem] rotate-3 opacity-20"></div>
-              <img src="img/about.jpg" alt="Sustainable Factory" className="relative rounded-[3rem] shadow-2xl border-4 border-emerald-800/50 w-full object-cover" />
-            </div>
           </div>
         </div>
       </section>
 
-      {/* Vision & Mission */}
-      <section className="py-20 md:py-32 bg-slate-900 text-white rounded-t-[3rem] -mt-10 relative z-20">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {/* Mission Hub */}
+      <section className="py-32 md:py-60 bg-brand-beige-white">
+        <div className="container mx-auto px-6 max-w-[1900px]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {[
-              { icon: Target, title: "Our Mission", desc: "To provide high-quality biotechnology that ensures national food security.", color: "bg-emerald-500", delay: "0" },
-              { icon: Eye, title: "Our Vision", desc: "To be the leading innovator in Asian animal health care.", color: "bg-teal-500", delay: "100" },
-              { icon: Shield, title: "Our Values", desc: "Global standards, local integrity, and commitment to farmers.", color: "bg-indigo-500", delay: "200" }
+              { icon: Target, title: "Mission Data", desc: "To provide high-quality biotechnology that ensures national food security.", color: "text-brand-emerald", bg: "bg-brand-emerald/10" },
+              { icon: Eye, title: "Vision Matrix", desc: "To be the leading innovator in Asian animal health care.", color: "text-brand-gold", bg: "bg-brand-gold/10" },
+              { icon: Shield, title: "Core Protocol", desc: "Global standards, local integrity, and commitment to farmers.", color: "text-brand-red", bg: "bg-brand-red/10" }
             ].map((box, idx) => (
-              <div key={idx} className="bg-slate-800/50 p-10 rounded-[2.5rem] border border-slate-700/50 text-center hover:bg-slate-800 transition-colors">
-                <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-lg ${box.color}`}>
-                  <box.icon size={32} className="text-white" />
+              <div key={idx} className="bg-white p-16 rounded-[4rem] border border-slate-100 shadow-xl hover:-translate-y-4 transition-all duration-700 group">
+                <div className={`w-20 h-20 rounded-2xl flex items-center justify-center mb-10 shadow-inner group-hover:rotate-12 transition-transform ${box.bg} ${box.color}`}>
+                  <box.icon size={36} />
                 </div>
-                <h3 className="text-2xl font-black mb-4 tracking-tight">{box.title}</h3>
-                <p className="text-slate-400 leading-relaxed font-medium">{box.desc}</p>
+                <h3 className="text-3xl font-ubuntu font-bold mb-6 text-brand-beige-black tracking-tight">{box.title}</h3>
+                <p className="text-slate-500 text-lg leading-relaxed font-medium">{box.desc}</p>
               </div>
             ))}
           </div>
@@ -182,5 +219,6 @@ const About: React.FC = () => {
     </div>
   );
 };
+
 
 export default About;
