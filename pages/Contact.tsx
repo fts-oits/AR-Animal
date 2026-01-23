@@ -93,23 +93,23 @@ const Contact: React.FC = () => {
       return `${baseClass} border-red-200 bg-red-50 focus:border-red-500`;
     }
     if (touched[field] && !errors[field] && formData[field as keyof FormFields]) {
-      return `${baseClass} border-brand-emerald/20 bg-brand-emerald/5 focus:border-brand-emerald`;
+      return `${baseClass} border-brand-red/20 bg-brand-red/5 focus:border-brand-gold`;
     }
-    return `${baseClass} border-slate-100 focus:border-brand-emerald bg-slate-50/50`;
+    return `${baseClass} border-slate-100 focus:border-brand-gold bg-slate-50/50`;
   };
 
   return (
     <div className="bg-brand-beige-white min-h-screen">
       {/* Premium Header */}
       <section className="bg-brand-beige-black pt-40 pb-60 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-brand-emerald/20 via-transparent to-brand-gold/10"></div>
-        <div className="absolute -bottom-1 w-[120%] h-40 bg-brand-beige-white -rotate-3 translate-x-[-10%]"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-red/20 via-transparent to-brand-gold/10"></div>
+        <div className="absolute -bottom-1 w-[120%] h-40 bg-brand-beige-white -rotate-3 translate-x-[-10%] z-20"></div>
 
-        <div className="container mx-auto px-6 relative z-10 max-w-[1900px]">
+        <div className="container mx-auto px-6 relative z-30 max-w-[1900px]">
           <div className="max-w-4xl">
-            <span className="text-brand-emerald font-black tracking-[0.5em] uppercase text-xs mb-6 block">Transmission Line</span>
+            <span className="text-brand-red font-black tracking-[0.5em] uppercase text-xs mb-6 block">Transmission Line</span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-outfit font-bold text-white mb-8 tracking-tighter leading-tight max-w-3xl">
-              Get In <span className="text-brand-emerald">Touch.</span>
+              Get In <span className="text-brand-red">Touch.</span>
             </h1>
             <p className="text-slate-400 text-lg md:text-xl max-w-xl font-medium leading-relaxed">
               Experience the future of biotechnology. Our experts are ready to assist with your agricultural and animal health needs.
@@ -125,17 +125,17 @@ const Contact: React.FC = () => {
 
             {/* Left Column: Contact Details */}
             <div className="lg:col-span-5 bg-brand-beige-black p-12 md:p-20 text-white relative">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-brand-emerald/10 blur-[100px] pointer-events-none" />
+              <div className="absolute top-0 right-0 w-64 h-64 bg-brand-red/10 blur-[100px] pointer-events-none" />
               <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-gold/10 blur-[100px] pointer-events-none" />
 
               <h3 className="text-2xl font-outfit font-bold mb-10 flex items-center gap-4">
-                <span className="w-12 h-1 bg-brand-emerald" />
+                <span className="w-12 h-1 bg-brand-red" />
                 Information
               </h3>
 
               <div className="space-y-12">
                 <div className="group flex gap-8">
-                  <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center text-brand-emerald group-hover:bg-brand-emerald group-hover:text-white transition-all duration-500 border border-white/10">
+                  <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center text-brand-gold group-hover:bg-brand-red group-hover:text-white transition-all duration-500 border border-white/10">
                     <MapPin size={28} />
                   </div>
                   <div>
@@ -147,7 +147,7 @@ const Contact: React.FC = () => {
                 </div>
 
                 <div className="group flex gap-8">
-                  <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center text-brand-emerald group-hover:bg-brand-emerald group-hover:text-white transition-all duration-500 border border-white/10">
+                  <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center text-brand-gold group-hover:bg-brand-red group-hover:text-white transition-all duration-500 border border-white/10">
                     <PhoneCall size={28} />
                   </div>
                   <div>
@@ -158,7 +158,7 @@ const Contact: React.FC = () => {
                 </div>
 
                 <div className="group flex gap-8">
-                  <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center text-brand-emerald group-hover:bg-brand-emerald group-hover:text-white transition-all duration-500 border border-white/10">
+                  <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center text-brand-gold group-hover:bg-brand-red group-hover:text-white transition-all duration-500 border border-white/10">
                     <Mail size={28} />
                   </div>
                   <div>
@@ -168,9 +168,9 @@ const Contact: React.FC = () => {
                 </div>
               </div>
 
-              <div className="mt-24 p-8 rounded-3xl bg-brand-emerald/10 border border-brand-emerald/20">
+              <div className="mt-24 p-8 rounded-3xl bg-brand-red/10 border border-brand-red/20">
                 <div className="flex items-center gap-4 mb-4">
-                  <Clock className="text-brand-emerald" />
+                  <Clock className="text-brand-gold" />
                   <span className="font-ubuntu font-bold text-lg">Working Hours</span>
                 </div>
                 <p className="text-slate-400 font-medium ml-10">Sat - Thu: 09:00 AM - 07:00 PM</p>
@@ -182,7 +182,7 @@ const Contact: React.FC = () => {
             <div className="lg:col-span-7 p-12 md:p-20 bg-white">
               {sent ? (
                 <div className="h-full flex flex-col items-center justify-center text-center py-20 animate-in zoom-in fade-in duration-700">
-                  <div className="w-32 h-32 bg-brand-emerald/10 text-brand-emerald rounded-full flex items-center justify-center mb-10">
+                  <div className="w-32 h-32 bg-brand-red/10 text-brand-red rounded-full flex items-center justify-center mb-10">
                     <CheckCircle2 size={64} className="animate-bounce" />
                   </div>
                   <h2 className="text-5xl font-ubuntu font-bold text-slate-900 mb-6">Success!</h2>
@@ -191,7 +191,7 @@ const Contact: React.FC = () => {
                   </p>
                   <button
                     onClick={() => setSent(false)}
-                    className="group flex items-center gap-4 bg-brand-beige-black text-white px-10 py-5 rounded-2xl font-ubuntu font-bold text-lg hover:bg-brand-emerald transition-all active:scale-95 shadow-2xl"
+                    className="group flex items-center gap-4 bg-brand-beige-black text-white px-10 py-5 rounded-2xl font-ubuntu font-bold text-lg hover:bg-brand-red transition-all active:scale-95 shadow-2xl"
                   >
                     <RefreshCcw size={22} className="group-hover:rotate-180 transition-transform duration-700" />
                     <span>Resubmit Form</span>
@@ -243,7 +243,7 @@ const Contact: React.FC = () => {
                       <input
                         type="text"
                         placeholder="Partnership Inquiry"
-                        className="w-full bg-slate-50/50 border-2 border-slate-100 rounded-2xl px-6 py-4 focus:outline-none focus:border-brand-emerald transition-all font-ubuntu font-bold text-slate-800 text-lg"
+                        className="w-full bg-slate-50/50 border-2 border-slate-100 rounded-2xl px-6 py-4 focus:outline-none focus:border-brand-gold transition-all font-ubuntu font-bold text-slate-800 text-lg"
                         value={formData.subject}
                         onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                       />
@@ -270,7 +270,7 @@ const Contact: React.FC = () => {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full bg-brand-emerald hover:bg-emerald-600 text-white font-ubuntu font-bold py-6 rounded-2xl flex items-center justify-center gap-4 shadow-2xl shadow-brand-emerald/30 transform active:scale-95 transition-all duration-300 disabled:opacity-50"
+                      className="w-full bg-brand-red hover:bg-red-800 text-white font-ubuntu font-bold py-6 rounded-2xl flex items-center justify-center gap-4 shadow-2xl shadow-brand-red/30 transform active:scale-95 transition-all duration-300 disabled:opacity-50"
                     >
                       {isSubmitting ? (
                         <RefreshCcw className="animate-spin" size={24} />
@@ -307,7 +307,7 @@ const Contact: React.FC = () => {
             <div className="absolute top-12 left-12 bg-white/90 backdrop-blur-xl p-10 rounded-[3rem] shadow-2xl max-w-sm border border-white/50 hidden md:block group-hover:bg-white transition-colors duration-500">
               <h4 className="text-2xl font-ubuntu font-bold text-slate-900 mb-2">Technical Hub</h4>
               <p className="text-slate-500 font-medium mb-6">Our headquarters in Uttara serves as the strategic center for nationwide distribution.</p>
-              <div className="inline-flex items-center gap-3 text-brand-emerald font-black text-xs uppercase tracking-widest">
+              <div className="inline-flex items-center gap-3 text-brand-red font-black text-xs uppercase tracking-widest">
                 <span>View Directions</span>
                 <Globe size={18} />
               </div>

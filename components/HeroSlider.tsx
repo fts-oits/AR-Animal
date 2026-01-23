@@ -26,7 +26,7 @@ const HeroSlider: React.FC = () => {
         >
           {/* Enhanced Overlay with Gradients */}
           <div className="absolute inset-0 bg-gradient-to-t from-brand-beige-black via-brand-beige-black/40 to-transparent z-10" />
-          <div className="absolute inset-0 bg-brand-emerald/10 z-10" />
+          <div className="absolute inset-0 bg-brand-red/10 z-10" />
 
           {/* Background Decorative Text */}
           <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
@@ -47,24 +47,24 @@ const HeroSlider: React.FC = () => {
               <div className="max-w-4xl text-white">
                 <div className={`transition-all duration-1000 delay-300 transform ${index === current ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
                   }`}>
-                  <span className="inline-block px-4 py-2 rounded-full bg-brand-emerald/20 backdrop-blur-md border border-brand-emerald/30 text-brand-emerald font-bold uppercase tracking-[0.3em] text-[10px] md:text-xs mb-8 shadow-lg shadow-brand-emerald/10">
+                  <span className="inline-block px-4 py-2 rounded-full bg-brand-gold/40 backdrop-blur-xl border border-brand-gold/50 text-white font-black uppercase tracking-[0.3em] text-[10px] md:text-xs mb-8 shadow-2xl shadow-brand-gold/20 mt-12 md:mt-24">
                     Premium Agricultural biotech
                   </span>
 
                   <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-outfit font-bold mb-8 leading-tight tracking-tighter">
                     {slide.title.split(' ').map((word, i) => (
-                      <span key={i} className={i % 2 === 1 ? 'text-brand-emerald' : ''}>{word} </span>
+                      <span key={i} className={i % 2 === 1 ? 'text-brand-red' : ''}>{word} </span>
                     ))}
                   </h1>
 
-                  <p className="text-base md:text-xl text-slate-300 mb-10 leading-relaxed max-w-xl font-medium border-l-4 border-brand-emerald/50 pl-6">
+                  <p className="text-base md:text-xl text-white mb-10 leading-relaxed max-w-xl font-medium border-l-4 border-brand-gold/50 pl-6 drop-shadow-[0_2px_10px_rgba(180,83,9,0.5)]">
                     {slide.subtitle}
                   </p>
 
                   <div className="flex flex-col sm:flex-row gap-6">
                     <Link
                       to="/products"
-                      className="group bg-brand-emerald hover:bg-emerald-500 text-white px-10 py-5 rounded-xl font-bold text-lg flex items-center justify-center space-x-3 shadow-2xl shadow-brand-emerald/50 transform hover:-translate-y-1 transition-all"
+                      className="group bg-brand-red hover:bg-red-800 text-white px-10 py-5 rounded-xl font-bold text-lg flex items-center justify-center space-x-3 shadow-2xl shadow-brand-red/30 transform hover:-translate-y-1 transition-all"
                     >
                       <span className="font-ubuntu">Our Solutions</span>
                       <ArrowRight size={22} className="group-hover:translate-x-2 transition-transform" />
@@ -87,13 +87,13 @@ const HeroSlider: React.FC = () => {
       <div className="hidden lg:flex absolute bottom-20 right-20 z-30 space-x-6">
         <button
           onClick={prevSlide}
-          className="w-16 h-16 rounded-xl border border-white/10 bg-white/5 backdrop-blur-md flex items-center justify-center text-white hover:bg-brand-emerald hover:border-brand-emerald transition-all group shadow-2xl"
+          className="w-16 h-16 rounded-xl border border-white/10 bg-white/5 backdrop-blur-md flex items-center justify-center text-white hover:bg-brand-red hover:border-brand-red transition-all group shadow-2xl"
         >
           <ChevronLeft className="group-hover:-translate-x-1 transition-transform" size={28} />
         </button>
         <button
           onClick={nextSlide}
-          className="w-16 h-16 rounded-xl border border-white/10 bg-white/5 backdrop-blur-md flex items-center justify-center text-white hover:bg-brand-emerald hover:border-brand-emerald transition-all group shadow-2xl"
+          className="w-16 h-16 rounded-xl border border-white/10 bg-white/5 backdrop-blur-md flex items-center justify-center text-white hover:bg-brand-red hover:border-brand-red transition-all group shadow-2xl"
         >
           <ChevronRight className="group-hover:translate-x-1 transition-transform" size={28} />
         </button>
@@ -108,10 +108,10 @@ const HeroSlider: React.FC = () => {
             className="group flex flex-col items-center gap-3"
             aria-label={`Go to slide ${idx + 1}`}
           >
-            <span className={`text-[10px] font-black transition-colors ${idx === current ? 'text-brand-emerald' : 'text-white/40 group-hover:text-white'}`}>
+            <span className={`text-[10px] font-black transition-colors ${idx === current ? 'text-brand-gold' : 'text-white/40 group-hover:text-white'}`}>
               0{idx + 1}
             </span>
-            <div className={`h-12 w-1 rounded-full transition-all duration-700 ${idx === current ? 'bg-brand-emerald shadow-[0_0_15px_rgba(5,150,105,0.8)]' : 'bg-white/20 group-hover:bg-white/40'}`} />
+            <div className={`h-12 w-1 rounded-full transition-all duration-700 ${idx === current ? 'bg-brand-gold shadow-[0_0_15px_rgba(180,83,9,0.8)]' : 'bg-white/20 group-hover:bg-white/40'}`} />
           </button>
         ))}
       </div>

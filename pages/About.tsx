@@ -11,15 +11,15 @@ const TimelineItem: React.FC<{ milestone: typeof MILESTONES[0], index: number, i
     <div className="relative pl-12 md:pl-0 md:mb-32 md:flex md:items-center md:justify-between group">
       {/* Connector Line */}
       {!isLast && (
-        <div className="absolute top-12 left-[23px] w-px h-[calc(100%+4rem)] bg-brand-emerald opacity-20 md:hidden"></div>
+        <div className="absolute top-12 left-[23px] w-px h-[calc(100%+4rem)] bg-brand-red opacity-20 md:hidden"></div>
       )}
 
       {/* Desktop Spacer */}
       <div className={`hidden md:block w-5/12 ${index % 2 === 0 ? 'order-1' : 'order-3'}`}></div>
 
       {/* Icon Node */}
-      <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 md:relative z-10 order-2 flex items-center justify-center w-12 h-12 md:w-20 md:h-20 bg-brand-beige-black border-4 border-brand-emerald rounded-2xl shadow-2xl group-hover:rotate-12 transition-all duration-700">
-        <Icon className="w-6 h-6 md:w-8 md:h-8 text-brand-emerald" />
+      <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 md:relative z-10 order-2 flex items-center justify-center w-12 h-12 md:w-20 md:h-20 bg-brand-beige-black border-4 border-brand-red rounded-2xl shadow-2xl group-hover:rotate-12 transition-all duration-700">
+        <Icon className="w-6 h-6 md:w-8 md:h-8 text-brand-red" />
         <div className="absolute -top-3 -right-3 w-8 h-8 bg-brand-gold rounded-lg flex items-center justify-center text-brand-beige-black font-black text-[10px] shadow-lg">
           {milestone.year.toString().slice(-2)}
         </div>
@@ -27,8 +27,8 @@ const TimelineItem: React.FC<{ milestone: typeof MILESTONES[0], index: number, i
 
       {/* Content Card */}
       <div className={`mb-16 md:mb-0 relative order-1 md:w-5/12 ${index % 2 === 0 ? 'md:order-3 md:text-left md:pl-16' : 'md:text-right md:pr-16'}`}>
-        <div className="bg-white p-10 md:p-12 rounded-[3.5rem] shadow-xl border border-slate-100 group-hover:border-brand-emerald hover:shadow-2xl hover:shadow-brand-emerald/10 transition-all duration-700">
-          <span className="text-brand-emerald font-ubuntu font-bold text-4xl md:text-5xl block mb-6 tracking-tighter">{milestone.year}</span>
+        <div className="bg-white p-10 md:p-12 rounded-[3.5rem] shadow-xl border border-slate-100 group-hover:border-brand-red hover:shadow-2xl hover:shadow-brand-red/10 transition-all duration-700">
+          <span className="text-brand-red font-ubuntu font-bold text-4xl md:text-5xl block mb-6 tracking-tighter">{milestone.year}</span>
           <h4 className="mb-4 font-ubuntu font-bold text-brand-beige-black text-2xl md:text-3xl tracking-tight leading-tight">{milestone.title}</h4>
           <p className="text-slate-500 leading-relaxed font-medium">{milestone.description}</p>
         </div>
@@ -41,15 +41,15 @@ const About: React.FC = () => {
   return (
     <div className="bg-brand-beige-white min-h-screen">
       {/* Terminal Hero */}
-      <section className="bg-brand-beige-black pt-48 pb-64 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-brand-emerald/20 via-transparent to-brand-gold/10"></div>
-        <div className="absolute -bottom-1 w-[120%] h-40 bg-brand-beige-white -rotate-3 translate-x-[-10%]"></div>
+      <section className="bg-brand-beige-black pt-48 pb-56 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-red/20 via-transparent to-brand-gold/10"></div>
+        <div className="absolute -bottom-1 w-[120%] h-40 bg-brand-beige-white -rotate-3 translate-x-[-10%] z-20"></div>
 
-        <div className="container mx-auto px-6 relative z-10 max-w-[1900px]">
+        <div className="container mx-auto px-6 relative z-30 max-w-[1900px]">
           <div className="max-w-4xl">
-            <span className="text-brand-emerald font-black tracking-[0.5em] uppercase text-xs mb-6 block">Legacy Protocol</span>
+            <span className="text-brand-red font-black tracking-[0.5em] uppercase text-xs mb-6 block">Legacy Protocol</span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-outfit font-bold text-white mb-8 tracking-tighter leading-tight max-w-3xl">
-              The Scientific <span className="text-brand-emerald">Odyssey.</span>
+              The Scientific <span className="text-brand-red">Odyssey.</span>
             </h1>
             <p className="text-slate-400 text-xl md:text-3xl font-medium leading-relaxed max-w-3xl">
               De-coding agricultural excellence since 2010. Orchestrating a future where biotechnology and sustainability converge.

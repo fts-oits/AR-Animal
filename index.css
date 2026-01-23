@@ -19,7 +19,11 @@
 
 @layer components {
   .bg-glass {
-    @apply backdrop-blur-xl bg-white/70 border border-white/20;
+    @apply backdrop-blur-[32px] bg-white/40 border border-white/20;
+  }
+
+  .bg-glass-orange {
+    @apply backdrop-blur-[32px] bg-brand-gold/5 border border-brand-gold/20 shadow-[0_0_40px_rgba(180, 83, 9, 0.1)];
   }
 
   .bg-glass-dark {
@@ -27,10 +31,10 @@
   }
 
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-emerald via-emerald-400 to-teal-500;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-red via-red-800 to-brand-gold;
   }
 
   .overlay-brand {
-    @apply absolute inset-0 bg-gradient-to-br from-brand-emerald/10 via-brand-beige-white/5 to-brand-gold/5 pointer-events-none;
+    @apply absolute inset-0 bg-gradient-to-br from-brand-red/10 via-brand-beige-white/5 to-brand-gold/5 pointer-events-none;
   }
 }

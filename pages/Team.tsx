@@ -1,4 +1,4 @@
-
+import React from 'react';
 import { Mail, Linkedin, Twitter, ArrowRight, Quote } from 'lucide-react';
 import { TEAM } from '../constants';
 
@@ -6,15 +6,15 @@ const Team: React.FC = () => {
   return (
     <div className="bg-brand-beige-white min-h-screen">
       {/* Leadership Header */}
-      <section className="bg-brand-beige-black pt-48 pb-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-brand-emerald/20 via-transparent to-brand-gold/10"></div>
-        <div className="absolute -bottom-1 w-[120%] h-40 bg-brand-beige-white -rotate-2 translate-x-[-10%]"></div>
+      <section className="bg-brand-beige-black pt-48 pb-48 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-red/20 via-transparent to-brand-gold/10"></div>
+        <div className="absolute -bottom-1 w-[120%] h-40 bg-brand-beige-white -rotate-2 translate-x-[-10%] z-20"></div>
 
-        <div className="container mx-auto px-6 relative z-10 max-w-[1900px]">
+        <div className="container mx-auto px-6 relative z-30 max-w-[1900px]">
           <div className="max-w-4xl">
-            <span className="text-brand-emerald font-black tracking-[0.5em] uppercase text-xs mb-6 block">Human Intelligence</span>
+            <span className="text-brand-red font-black tracking-[0.5em] uppercase text-xs mb-6 block">Human Intelligence</span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-outfit font-bold text-white mb-8 tracking-tighter leading-tight max-w-3xl">
-              The <span className="text-brand-emerald">Strategists.</span>
+              The <span className="text-brand-red">Strategists.</span>
             </h1>
             <p className="text-slate-400 text-lg md:text-xl max-w-xl font-medium leading-relaxed">
               Orchestrating agricultural transformation through decades of deep-sector specialized knowledge.

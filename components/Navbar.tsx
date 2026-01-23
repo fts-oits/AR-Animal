@@ -40,7 +40,7 @@ const Navbar: React.FC = () => {
       >
         <div
           className={`max-w-[1900px] mx-auto rounded-[2rem] transition-all duration-500 border border-transparent ${scrolled || isOpen
-            ? 'bg-brand-beige-white/65 backdrop-blur-xl shadow-2xl border-white/20 pl-4 pr-4 py-1 md:pl-10 md:pr-4'
+            ? 'bg-brand-beige-white/40 bg-glass-orange backdrop-blur-2xl shadow-2xl border-white/20 pl-4 pr-4 py-1 md:pl-10 md:pr-4'
             : 'bg-transparent pl-0 pr-0'
             }`}
         >
@@ -64,10 +64,10 @@ const Navbar: React.FC = () => {
                   <Link
                     key={link.path}
                     to={link.path}
-                    className={`relative px-6 py-3 rounded-xl text-sm font-ubuntu font-bold transition-all duration-300 ${location.pathname === link.path
-                      ? 'bg-brand-emerald text-white shadow-lg'
+                    className={`relative px-4 py-2 rounded-xl text-sm font-ubuntu font-bold transition-all duration-300 ${location.pathname === link.path
+                      ? 'bg-brand-red text-white shadow-lg'
                       : scrolled
-                        ? 'text-slate-600 hover:text-brand-emerald hover:bg-white/50'
+                        ? 'text-slate-600 hover:text-brand-gold hover:bg-white/50'
                         : 'text-white/90 hover:text-white hover:bg-white/20'
                       }`}
                   >
@@ -78,7 +78,7 @@ const Navbar: React.FC = () => {
 
               <Link
                 to="/contact"
-                className="ml-6 bg-brand-emerald hover:bg-emerald-500 text-white px-6 py-3 rounded-xl text-xs font-inter font-bold shadow-2xl shadow-brand-emerald/30 hover:shadow-brand-emerald/50 transform hover:-translate-y-1 transition-all duration-300 flex items-center gap-2 group whitespace-nowrap"
+                className="ml-6 bg-brand-red hover:bg-red-800 text-white px-6 py-2.5 rounded-xl text-xs font-inter font-bold shadow-2xl shadow-brand-red/30 hover:shadow-brand-red/50 transform hover:-translate-y-1 transition-all duration-300 flex items-center gap-2 group whitespace-nowrap"
               >
                 <span>Contact Us</span>
                 <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
@@ -122,13 +122,13 @@ const Navbar: React.FC = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`text-2xl font-black tracking-tight py-4 border-b border-slate-100 flex items-center justify-between group ${location.pathname === link.path ? 'text-emerald-600' : 'text-slate-900'
+                className={`text-2xl font-black tracking-tight py-4 border-b border-slate-100 flex items-center justify-between group ${location.pathname === link.path ? 'text-brand-red' : 'text-slate-900 group-hover:text-brand-gold'
                   }`}
                 onClick={() => setIsOpen(false)}
                 style={{ transitionDelay: `${idx * 50}ms` }}
               >
                 <span>{link.name}</span>
-                <span className={`w-2 h-2 rounded-full transition-all duration-300 ${location.pathname === link.path ? 'bg-emerald-600 scale-100' : 'bg-slate-200 scale-0 group-hover:scale-100'
+                <span className={`w-2 h-2 rounded-full transition-all duration-300 ${location.pathname === link.path ? 'bg-brand-red scale-100' : 'bg-slate-200 scale-0 group-hover:scale-100 group-hover:bg-brand-gold'
                   }`} />
               </Link>
             ))}

@@ -7,6 +7,7 @@ import {
   CheckCircle2, Star, Quote, Shield, RefreshCw, Truck
 } from 'lucide-react';
 import HeroSlider from '../components/HeroSlider';
+import StackedTestimonials from '../components/StackedTestimonials';
 import { PARTNER_DETAILS, TESTIMONIALS, PROCESS_STEPS } from '../constants';
 
 const Home: React.FC = () => {
@@ -19,12 +20,12 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-6 max-w-[1900px]">
           <div className="text-center mb-16 md:mb-24 max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-3 mb-6">
-              <div className="h-px w-8 bg-brand-emerald" />
-              <span className="text-brand-emerald font-black tracking-[0.4em] uppercase text-xs">Innovation Hub</span>
-              <div className="h-px w-8 bg-brand-emerald" />
+              <div className="h-px w-8 bg-brand-red" />
+              <span className="text-brand-red font-black tracking-[0.4em] uppercase text-xs">Innovation Hub</span>
+              <div className="h-px w-8 bg-brand-red" />
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-outfit font-bold text-brand-beige-black mb-8 tracking-tighter leading-tight max-w-3xl mx-auto">
-              Biotech For <span className="text-brand-emerald decoration-brand-gold/30 underline decoration-4 underline-offset-8">Modern</span> Farming.
+              Biotech For <span className="text-brand-red decoration-brand-gold/30 underline decoration-4 underline-offset-8">Modern</span> Farming.
             </h2>
             <p className="text-slate-500 leading-relaxed text-lg md:text-xl font-medium max-w-2xl mx-auto">
               Science-backed solutions designed to optimize yield and health across Bangladesh's agricultural sector.
@@ -40,12 +41,12 @@ const Home: React.FC = () => {
             ].map((feature, idx) => (
               <div
                 key={idx}
-                className="min-w-[320px] md:min-w-0 snap-center bg-white p-10 rounded-[4rem] shadow-xl shadow-slate-200/50 hover:shadow-2xl hover:shadow-brand-emerald/10 hover:-translate-y-4 transition-all duration-700 group border border-slate-100 relative overflow-hidden"
+                className="min-w-[320px] md:min-w-0 snap-center bg-white p-10 rounded-[4rem] shadow-xl shadow-slate-200/50 hover:shadow-2xl hover:shadow-brand-red/10 hover:-translate-y-4 transition-all duration-700 group border border-slate-100 relative overflow-hidden"
               >
                 <div className="absolute top-0 right-0 w-32 h-32 opacity-[0.03] group-hover:opacity-[0.07] transition-opacity pointer-events-none">
                   <img src={feature.img} alt="" className="w-full h-full object-cover" />
                 </div>
-                <div className="w-16 h-16 bg-brand-beige-white text-brand-emerald rounded-2xl flex items-center justify-center mb-8 group-hover:bg-brand-emerald group-hover:text-white transition-all duration-500 shadow-inner">
+                <div className="w-16 h-16 bg-brand-beige-white text-brand-red rounded-2xl flex items-center justify-center mb-8 group-hover:bg-brand-red group-hover:text-white transition-all duration-500 shadow-inner">
                   <feature.icon size={32} />
                 </div>
                 <h3 className="text-2xl font-outfit font-bold text-brand-beige-black mb-4 tracking-tight leading-none">{feature.title}</h3>
@@ -59,7 +60,7 @@ const Home: React.FC = () => {
       {/* Our Story Section - Premium Redesign */}
       <section className="py-20 md:py-32 lg:py-40 bg-brand-beige-white relative overflow-hidden">
         {/* Decorative Background Elements */}
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-brand-emerald/[0.03] -skew-x-12 transform translate-x-1/4" />
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-brand-red/[0.03] -skew-x-12 transform translate-x-1/4" />
         <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-brand-gold/10 rounded-full blur-[120px]" />
 
         <div className="container mx-auto px-6 relative z-10">
@@ -68,7 +69,7 @@ const Home: React.FC = () => {
             {/* Visual Content (Left Side on LG) */}
             <div className="lg:col-span-6 relative">
               <div className="relative group">
-                <div className="absolute -inset-4 bg-gradient-to-tr from-brand-emerald to-brand-gold rounded-[3rem] blur-2xl opacity-20 group-hover:opacity-30 transition-opacity" />
+                <div className="absolute -inset-4 bg-gradient-to-tr from-brand-red to-brand-gold rounded-[3rem] blur-2xl opacity-20 group-hover:opacity-30 transition-opacity" />
                 <div className="relative aspect-[4/5] md:aspect-square lg:aspect-[4/5] rounded-[3rem] overflow-hidden border-8 border-white shadow-2xl">
                   <img
                     src="img/slide/slide-2.jpg"
@@ -80,12 +81,12 @@ const Home: React.FC = () => {
                   {/* Floating Metric Card */}
                   <div className="absolute bottom-10 left-10 right-10 p-8 rounded-3xl bg-white/10 backdrop-blur-2xl border border-white/20 shadow-2xl">
                     <div className="flex items-center gap-6">
-                      <div className="w-16 h-16 bg-brand-emerald rounded-2xl flex items-center justify-center text-white shadow-lg shadow-brand-emerald/30">
+                      <div className="w-16 h-16 bg-brand-red rounded-2xl flex items-center justify-center text-white shadow-lg shadow-brand-red/30">
                         <Users size={32} />
                       </div>
                       <div>
                         <p className="text-4xl font-ubuntu font-bold text-white leading-none">10,000+</p>
-                        <p className="text-emerald-300 font-bold text-xs uppercase tracking-widest mt-1">Farmers Empowered</p>
+                        <p className="text-brand-gold font-bold text-xs uppercase tracking-widest mt-1">Farmers Empowered</p>
                       </div>
                     </div>
                   </div>
@@ -94,12 +95,12 @@ const Home: React.FC = () => {
 
               {/* CEO Small Card - Subtle inclusion */}
               <div className="absolute -top-10 -right-6 md:right-10 bg-white p-6 rounded-[2rem] shadow-xl border border-slate-100 flex items-center gap-4 animate-bounce-slow">
-                <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-brand-emerald">
+                <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-brand-red">
                   <img src="img/team/1.jpg" alt="CEO" className="w-full h-full object-cover" />
                 </div>
                 <div>
                   <p className="font-ubuntu font-bold text-slate-900 leading-none">Atiar Rahman</p>
-                  <p className="text-[10px] text-brand-emerald font-black uppercase tracking-tighter mt-1">Founder & CEO</p>
+                  <p className="text-[10px] text-brand-red font-black uppercase tracking-tighter mt-1">Founder & CEO</p>
                 </div>
               </div>
             </div>
@@ -108,12 +109,12 @@ const Home: React.FC = () => {
             <div className="lg:col-span-6">
               <div className="max-w-2xl">
                 <div className="flex items-center gap-4 mb-8">
-                  <div className="h-[2px] w-12 bg-brand-emerald" />
-                  <span className="text-brand-emerald font-black tracking-[0.4em] uppercase text-xs">Our Story</span>
+                  <div className="h-[2px] w-12 bg-brand-red" />
+                  <span className="text-brand-red font-black tracking-[0.4em] uppercase text-xs">Our Story</span>
                 </div>
 
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-outfit font-bold text-brand-beige-black mb-8 leading-tight tracking-tighter max-w-xl">
-                  Nurturing <span className="text-brand-emerald">Growth</span> Since 2010.
+                  Nurturing <span className="text-brand-red">Growth</span> Since 2010.
                 </h2>
 
                 <p className="text-lg md:text-xl text-slate-600 mb-10 leading-relaxed font-medium max-w-xl">
@@ -133,7 +134,7 @@ const Home: React.FC = () => {
                 </div>
 
                 <div className="flex flex-col sm:flex-row items-center gap-8">
-                  <Link to="/about" className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-brand-beige-black hover:bg-brand-emerald text-white px-12 py-6 rounded-2xl font-ubuntu font-bold text-xl shadow-2xl transition-all duration-500 group">
+                  <Link to="/about" className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-brand-beige-black hover:bg-brand-red text-white px-12 py-6 rounded-2xl font-ubuntu font-bold text-xl shadow-2xl transition-all duration-500 group">
                     <span>Explore History</span>
                     <ArrowRight size={22} className="group-hover:translate-x-2 transition-transform" />
                   </Link>
@@ -143,7 +144,7 @@ const Home: React.FC = () => {
                         <img src={`img/testimonials/${i % 3 + 1}.jpg`} alt="User" className="w-full h-full object-cover" />
                       </div>
                     ))}
-                    <div className="w-12 h-12 rounded-full border-4 border-white bg-brand-emerald flex items-center justify-center text-white text-xs font-bold">+5k</div>
+                    <div className="w-12 h-12 rounded-full border-4 border-white bg-brand-red flex items-center justify-center text-white text-xs font-bold">+5k</div>
                   </div>
                 </div>
               </div>
@@ -157,14 +158,14 @@ const Home: React.FC = () => {
       {/* Process Section - Technical Workflow */}
       <section className="py-20 md:py-40 lg:py-48 bg-brand-beige-black text-white relative overflow-hidden">
         {/* Background Decorative Mesh */}
-        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, #059669 1px, transparent 0)', backgroundSize: '40px 40px' }} />
+        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, #7f1d1d 1px, transparent 0)', backgroundSize: '40px 40px' }} />
         <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-brand-beige-white to-transparent opacity-10" />
 
         <div className="container mx-auto px-6 relative z-10 max-w-[1900px]">
           <div className="text-center mb-20 md:mb-32">
-            <span className="text-brand-emerald font-black tracking-[0.5em] uppercase text-xs mb-6 block">Supply Chain</span>
+            <span className="text-brand-red font-black tracking-[0.5em] uppercase text-xs mb-6 block">Supply Chain</span>
             <h2 className="text-4xl md:text-6xl lg:text-7xl font-outfit font-bold mb-8 tracking-tighter leading-tight max-w-4xl mx-auto">
-              Precision In <span className="text-brand-emerald">Execution.</span>
+              Precision In <span className="text-brand-red">Execution.</span>
             </h2>
             <p className="text-slate-400 max-w-xl mx-auto font-medium text-lg md:text-xl leading-relaxed">
               From global sourcing to nationwide distribution, we maintain the terminal standards of safety.
@@ -178,21 +179,21 @@ const Home: React.FC = () => {
               return (
                 <div key={idx} className="relative group">
                   <div className="bg-white/5 p-12 rounded-[3.5rem] border border-white/10 h-full hover:bg-white/[0.08] transition-all duration-500 hover:-translate-y-4 backdrop-blur-sm">
-                    <div className="w-20 h-20 bg-brand-emerald rounded-2xl flex items-center justify-center mb-10 shadow-2xl shadow-brand-emerald/30 group-hover:rotate-12 transition-transform">
+                    <div className="w-20 h-20 bg-brand-gold rounded-2xl flex items-center justify-center mb-10 shadow-2xl shadow-brand-gold/30 group-hover:rotate-12 transition-transform">
                       <Icon size={36} className="text-white" />
                     </div>
                     <h3 className="text-3xl font-ubuntu font-bold mb-6 tracking-tight">{step.title}</h3>
                     <p className="text-slate-400 font-medium leading-relaxed mb-10">{step.desc}</p>
-                    <div className="absolute top-12 right-12 text-7xl font-ubuntu font-bold text-white/[0.02] group-hover:text-white/[0.05] transition-colors leading-none">0{step.id}</div>
+                    <div className="absolute top-12 right-12 text-7xl font-ubuntu font-bold text-brand-gold/10 group-hover:text-brand-gold/20 transition-colors leading-none">0{step.id}</div>
 
                     {/* Status Light */}
                     <div className="flex items-center gap-3">
-                      <div className="w-2 h-2 rounded-full bg-brand-emerald animate-pulse" />
-                      <span className="text-[10px] font-black uppercase tracking-widest text-emerald-500">Active Node</span>
+                      <div className="w-2 h-2 rounded-full bg-brand-red animate-pulse" />
+                      <span className="text-[10px] font-black uppercase tracking-widest text-brand-red">Active Node</span>
                     </div>
                   </div>
                   {idx < PROCESS_STEPS.length - 1 && (
-                    <div className="hidden md:block absolute top-1/2 -right-6 w-12 h-px bg-gradient-to-r from-brand-emerald to-transparent opacity-30 z-0"></div>
+                    <div className="hidden md:block absolute top-1/2 -right-6 w-12 h-px bg-gradient-to-r from-brand-gold to-transparent opacity-30 z-0"></div>
                   )}
                 </div>
               );
@@ -206,12 +207,12 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-6 max-w-[1900px]">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 md:mb-24">
             <div className="max-w-2xl">
-              <span className="text-brand-emerald font-black tracking-[0.5em] uppercase text-xs mb-6 block">Intelligence Center</span>
+              <span className="text-brand-red font-black tracking-[0.5em] uppercase text-xs mb-6 block">Intelligence Center</span>
               <h2 className="text-4xl md:text-6xl lg:text-7xl font-outfit font-bold text-brand-beige-black tracking-tighter leading-tight">
-                Technical <span className="text-brand-emerald">Catalog.</span>
+                Technical <span className="text-brand-red">Catalog.</span>
               </h2>
             </div>
-            <Link to="/products" className="mt-12 md:mt-0 group flex items-center gap-4 bg-brand-beige-black text-white px-8 py-4 rounded-xl font-inter font-bold text-lg hover:bg-brand-emerald transition-all shadow-2xl">
+            <Link to="/products" className="mt-12 md:mt-0 group flex items-center gap-4 bg-brand-beige-black text-white px-8 py-4 rounded-xl font-inter font-bold text-lg hover:bg-brand-red transition-all shadow-2xl">
               <span>View Data Sheets</span>
               <ArrowRight className="group-hover:translate-x-3 transition-transform duration-500" size={20} />
             </Link>
@@ -231,15 +232,15 @@ const Home: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-beige-black via-brand-beige-black/20 to-transparent opacity-90 group-hover:opacity-70 transition-opacity duration-700" />
 
-                <div className="absolute top-10 right-10 w-16 h-16 bg-white/10 backdrop-blur-xl rounded-2xl flex items-center justify-center text-white border border-white/20 group-hover:bg-brand-emerald group-hover:border-brand-emerald transition-all duration-500">
+                <div className="absolute top-10 right-10 w-16 h-16 bg-white/10 backdrop-blur-xl rounded-2xl flex items-center justify-center text-white border border-white/20 group-hover:bg-brand-red group-hover:border-brand-red transition-all duration-500">
                   <ArrowRight className="-rotate-45 group-hover:rotate-0 transition-transform duration-700" size={24} />
                 </div>
 
                 <div className="absolute bottom-0 left-0 p-12 text-white w-full transform translate-y-6 group-hover:translate-y-0 transition-transform duration-700">
-                  <cat.icon className="text-brand-emerald mb-6" size={56} />
+                  <cat.icon className="text-brand-gold mb-6" size={56} />
                   <h3 className="text-4xl md:text-5xl font-ubuntu font-bold mb-3 tracking-tighter leading-none">{cat.name}</h3>
                   <div className="flex items-center gap-3">
-                    <div className="w-1 h-1 rounded-full bg-brand-emerald" />
+                    <div className="w-1 h-1 rounded-full bg-brand-red" />
                     <p className="text-slate-300 font-black tracking-[0.2em] text-[10px] uppercase">{cat.count}</p>
                   </div>
                 </div>
@@ -249,59 +250,18 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Testimonials - Terminal Feedback */}
-      <section className="py-20 md:py-40 lg:py-48 bg-brand-beige-black text-white relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-brand-emerald to-transparent opacity-20" />
-
-        <div className="container mx-auto px-6 max-w-[1900px] relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-            <div>
-              <span className="text-brand-gold font-black tracking-[0.5em] uppercase text-xs mb-6 block">Validation</span>
-              <h2 className="text-4xl md:text-6xl lg:text-7xl font-outfit font-bold mb-8 tracking-tighter leading-tight">
-                Field <span className="text-brand-emerald">Intelligence.</span>
-              </h2>
-              <p className="text-slate-400 text-lg md:text-xl font-medium leading-relaxed max-w-md">
-                Real-world feedback from leading agricultural conglomerates across the region.
-              </p>
-            </div>
-
-            <div className="h-[500px] overflow-y-auto no-scrollbar snap-y snap-mandatory relative space-y-6">
-              {[...TESTIMONIALS, ...TESTIMONIALS].map((t, idx) => (
-                <div key={idx} className="bg-white/5 p-10 rounded-[3rem] border border-white/10 relative group hover:bg-white/[0.08] transition-all duration-700 snap-center">
-                  <div className="absolute -top-4 -left-4 w-12 h-12 bg-brand-emerald rounded-xl flex items-center justify-center shadow-2xl shadow-brand-emerald/30">
-                    <Quote className="text-white" size={24} />
-                  </div>
-                  <p className="text-xl font-medium text-slate-300 italic mb-8 leading-relaxed">"{t.quote}"</p>
-                  <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 rounded-xl bg-brand-emerald/20 border border-brand-emerald/30 overflow-hidden">
-                      <img src={t.image} alt={t.name} className="w-full h-full object-cover grayscale" />
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-outfit font-bold text-white tracking-tight">{t.name}</h4>
-                      <div className="flex items-center gap-2">
-                        <div className="w-1 h-1 rounded-full bg-brand-emerald" />
-                        <p className="text-brand-gold font-black uppercase tracking-[0.2em] text-[8px]">{t.role}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-              <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-brand-beige-black to-transparent pointer-events-none z-10" />
-              <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-brand-beige-black to-transparent pointer-events-none z-10" />
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Testimonials - Stacked Cards */}
+      <StackedTestimonials />
 
       {/* Partners - Dynamic Grid */}
       <section className="py-20 md:py-40 lg:py-48 bg-brand-beige-white">
         <div className="container mx-auto px-6 max-w-[1900px]">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-24 items-center">
             <div className="lg:col-span-12 mb-16 text-center">
-              <span className="text-brand-emerald font-black tracking-[0.4em] uppercase text-xs mb-6 block">Global Network</span>
-              <h2 className="text-5xl md:text-7xl font-ubuntu font-bold text-brand-beige-black tracking-tighter leading-tight mb-8">Strategic <span className="text-brand-emerald">Allies.</span></h2>
+              <span className="text-brand-red font-black tracking-[0.4em] uppercase text-xs mb-6 block">Global Network</span>
+              <h2 className="text-5xl md:text-7xl font-ubuntu font-bold text-brand-beige-black tracking-tighter leading-tight mb-8">Strategic <span className="text-brand-red">Allies.</span></h2>
               <p className="text-slate-500 font-medium text-lg leading-relaxed max-w-2xl mx-auto mb-10">Collaborating with global leaders in biotechnology to bring terminal solutions to Bangladesh.</p>
-              <Link to="/about" className="inline-flex items-center gap-4 text-brand-beige-black hover:text-brand-emerald font-black uppercase tracking-[0.2em] text-xs transition-colors group">
+              <Link to="/about" className="inline-flex items-center gap-4 text-brand-beige-black hover:text-brand-red font-black uppercase tracking-[0.2em] text-xs transition-colors group">
                 <span>View All Collaborators</span>
                 <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
               </Link>
@@ -315,7 +275,7 @@ const Home: React.FC = () => {
                     <div className="mt-8 flex flex-col items-center gap-2 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
                       <h3 className="text-xl font-outfit font-bold text-brand-beige-black uppercase tracking-tight leading-none">{p.name}</h3>
                       <div className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-brand-emerald" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-brand-red" />
                         <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">Global Provider</span>
                       </div>
                     </div>
@@ -328,7 +288,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Final Stats / Impact */}
-      <section className="py-20 md:py-40 lg:py-48 bg-brand-emerald relative overflow-hidden">
+      <section className="py-20 md:py-40 lg:py-48 bg-brand-red relative overflow-hidden">
         <div className="absolute inset-0 bg-brand-beige-black/5" />
         <div className="absolute top-0 right-0 w-1/2 h-full bg-white/5 skew-x-[-20deg] translate-x-1/4" />
 
