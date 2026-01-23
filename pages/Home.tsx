@@ -7,7 +7,6 @@ import {
   CheckCircle2, Star, Quote, Shield, RefreshCw, Truck
 } from 'lucide-react';
 import HeroSlider from '../components/HeroSlider';
-import StackedTestimonials from '../components/StackedTestimonials';
 import { PARTNER_DETAILS, TESTIMONIALS, PROCESS_STEPS } from '../constants';
 
 const Home: React.FC = () => {
@@ -250,8 +249,88 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Testimonials - Stacked Cards */}
-      <StackedTestimonials />
+      {/* Testimonials & Achievements - Combined Section */}
+      <section className="py-20 md:py-40 lg:py-48 bg-brand-red relative overflow-hidden">
+        <div className="absolute inset-0 bg-brand-beige-black/5" />
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-white/5 skew-x-[-20deg] translate-x-1/4" />
+
+        <div className="container mx-auto px-6 max-w-[1900px] relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
+
+            {/* Left Column - Achievements */}
+            <div className="lg:col-span-5">
+              <span className="text-brand-gold font-black tracking-[0.5em] uppercase text-xs mb-6 block">Validation</span>
+              <h2 className="text-4xl md:text-6xl lg:text-7xl font-outfit font-bold mb-12 tracking-tighter leading-tight text-white">
+                Field <span className="text-brand-gold">Intelligence.</span>
+              </h2>
+
+              {/* Achievement Stats */}
+              <div className="space-y-12">
+                {[
+                  { label: "Technical Leadership", val: "35Y+", icon: Award },
+                  { label: "Units Distributed", val: "1M+", icon: Package },
+                  { label: "Districts Served", val: "64D", icon: Globe }
+                ].map((stat, idx) => (
+                  <div key={idx} className="group flex items-center gap-8">
+                    <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center text-white border border-white/20 group-hover:scale-110 transition-transform flex-shrink-0">
+                      <stat.icon size={32} />
+                    </div>
+                    <div>
+                      <h3 className="text-4xl md:text-5xl font-outfit font-bold text-white mb-2 tracking-tighter leading-none">{stat.val}</h3>
+                      <p className="text-white/80 font-inter font-bold text-base tracking-tight">{stat.label}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right Column - Testimonials */}
+            <div className="lg:col-span-7">
+              <div className="grid grid-cols-1 gap-6">
+                {TESTIMONIALS.map((testimonial, idx) => (
+                  <div
+                    key={idx}
+                    className="bg-white/5 p-8 rounded-3xl border border-white/10 relative group hover:bg-white/10 transition-all duration-500 backdrop-blur-sm"
+                  >
+                    {/* Quote Icon */}
+                    <div className="absolute -top-3 -left-3 w-10 h-10 bg-brand-gold rounded-xl flex items-center justify-center shadow-xl shadow-brand-gold/30">
+                      <Quote className="text-white" size={20} />
+                    </div>
+
+                    {/* Quote Text */}
+                    <p className="text-base md:text-lg font-medium text-white/90 italic mb-6 leading-relaxed pl-4">
+                      "{testimonial.quote}"
+                    </p>
+
+                    {/* Author Info */}
+                    <div className="flex items-center gap-3 pl-4">
+                      <div className="w-12 h-12 rounded-xl bg-brand-gold/20 border border-brand-gold/30 overflow-hidden flex-shrink-0">
+                        <img
+                          src={testimonial.image}
+                          alt={testimonial.name}
+                          className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                        />
+                      </div>
+                      <div>
+                        <h4 className="text-base font-outfit font-bold text-white tracking-tight">
+                          {testimonial.name}
+                        </h4>
+                        <div className="flex items-center gap-2">
+                          <div className="w-1 h-1 rounded-full bg-brand-gold" />
+                          <p className="text-brand-gold font-black uppercase tracking-wider text-[9px]">
+                            {testimonial.role}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
 
       {/* Partners - Dynamic Grid */}
       <section className="py-20 md:py-40 lg:py-48 bg-brand-beige-white">
@@ -269,15 +348,23 @@ const Home: React.FC = () => {
 
             <div className="lg:col-span-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {PARTNER_DETAILS.map((p, idx) => (
-                <div key={idx} className="group relative">
-                  <div className="bg-white p-12 rounded-[3.5rem] shadow-xl hover:shadow-2xl transition-all duration-700 hover:-translate-y-3 border border-slate-100 flex flex-col items-center justify-center aspect-video overflow-hidden">
-                    <img src={p.logo} alt={p.name} className="max-w-[85%] max-h-[70%] object-contain grayscale group-hover:grayscale-0 transition-all duration-1000" />
-                    <div className="mt-8 flex flex-col items-center gap-2 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
-                      <h3 className="text-xl font-outfit font-bold text-brand-beige-black uppercase tracking-tight leading-none">{p.name}</h3>
-                      <div className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-brand-red" />
-                        <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">Global Provider</span>
-                      </div>
+                <div key={idx} className="group relative overflow-hidden rounded-[3.5rem] shadow-xl hover:shadow-2xl transition-all duration-700 hover:-translate-y-3 aspect-[4/3]">
+                  {/* Full Background Image */}
+                  <img
+                    src={p.logo}
+                    alt={p.name}
+                    className="absolute inset-0 w-full h-full object-cover transition-all duration-1000 group-hover:scale-110"
+                  />
+
+                  {/* Overlay on Hover */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-beige-black/90 via-brand-beige-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 backdrop-blur-sm" />
+
+                  {/* Text Content */}
+                  <div className="absolute bottom-0 left-0 right-0 p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                    <h3 className="text-xl md:text-2xl font-outfit font-bold text-white uppercase tracking-tight leading-none mb-2 drop-shadow-lg">{p.name}</h3>
+                    <div className="flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-brand-gold" />
+                      <span className="text-[10px] font-black uppercase tracking-widest text-brand-gold">Global Provider</span>
                     </div>
                   </div>
                 </div>
@@ -287,30 +374,6 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Final Stats / Impact */}
-      <section className="py-20 md:py-40 lg:py-48 bg-brand-red relative overflow-hidden">
-        <div className="absolute inset-0 bg-brand-beige-black/5" />
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-white/5 skew-x-[-20deg] translate-x-1/4" />
-
-        <div className="container mx-auto px-6 max-w-[1900px] relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-24">
-            {[
-              { label: "Technical Leadership", val: "35Y+", icon: Award },
-              { label: "Units Distributed", val: "1M+", icon: Package },
-              { label: "Districts Served", val: "64D", icon: Globe }
-            ].map((stat, idx) => (
-              <div key={idx} className="text-center md:text-left group">
-                <div className="mb-8 w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center text-white border border-white/20 group-hover:scale-110 transition-transform">
-                  <stat.icon size={32} />
-                </div>
-                <h2 className="text-4xl md:text-5xl lg:text-7xl font-outfit font-bold text-white mb-4 tracking-tighter leading-none">{stat.val}</h2>
-                <p className="text-white/80 font-inter font-bold text-lg lg:text-xl tracking-tight">{stat.label}</p>
-                <div className="h-1 w-16 bg-brand-gold mt-6 rounded-full" />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
     </div>
   );
 };
