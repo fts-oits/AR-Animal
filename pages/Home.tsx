@@ -80,12 +80,12 @@ const Home: React.FC = () => {
                   {/* Floating Metric Card */}
                   <div className="absolute bottom-10 left-10 right-10 p-8 rounded-3xl bg-white/10 backdrop-blur-2xl border border-white/20 shadow-2xl">
                     <div className="flex items-center gap-6">
-                      <div className="w-16 h-16 bg-brand-red rounded-2xl flex items-center justify-center text-white shadow-lg shadow-brand-red/30">
+                      <div className="w-16 h-16 bg-brand-emerald rounded-2xl flex items-center justify-center text-red-900 shadow-lg shadow-emerald-600/30">
                         <Users size={32} />
                       </div>
                       <div>
                         <p className="text-4xl font-ubuntu font-bold text-white leading-none">10,000+</p>
-                        <p className="text-brand-gold font-bold text-xs uppercase tracking-widest mt-1">Farmers Empowered</p>
+                        <p className="text-brand-emerald font-bold text-xs uppercase tracking-widest mt-1">Farmers Empowered</p>
                       </div>
                     </div>
                   </div>
@@ -99,7 +99,7 @@ const Home: React.FC = () => {
                 </div>
                 <div>
                   <p className="font-ubuntu font-black text-brand-emerald leading-none text-xl">Atiar Rahman</p>
-                  <p className="text-[10px] text-emerald-700 font-black uppercase tracking-tighter mt-1">Founder & CEO</p>
+                  <p className="text-[10px] text-red-900 font-black uppercase tracking-tighter mt-1">Founder & CEO</p>
                 </div>
               </div>
             </div>
@@ -108,12 +108,12 @@ const Home: React.FC = () => {
             <div className="lg:col-span-6">
               <div className="max-w-2xl">
                 <div className="flex items-center gap-4 mb-8">
-                  <div className="h-[2px] w-12 bg-brand-red" />
-                  <span className="text-brand-red font-black tracking-[0.4em] uppercase text-xs">Our Story</span>
+                  <div className="h-[2px] w-12 bg-brand-emerald" />
+                  <span className="text-brand-emerald font-black tracking-[0.4em] uppercase text-xs">Our Story</span>
                 </div>
 
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-outfit font-bold text-brand-beige-black mb-8 leading-tight tracking-tighter max-w-xl">
-                  Nurturing <span className="text-brand-red">Growth</span> Since 2010.
+                  Nurturing <span className="text-brand-red">Growth</span> Since <span className="text-brand-emerald">2010</span>.
                 </h2>
 
                 <p className="text-lg md:text-xl text-slate-600 mb-10 leading-relaxed font-medium max-w-xl">
@@ -162,9 +162,9 @@ const Home: React.FC = () => {
 
         <div className="container mx-auto px-6 relative z-10 max-w-[1900px]">
           <div className="text-center mb-20 md:mb-32">
-            <span className="text-brand-red font-black tracking-[0.5em] uppercase text-xs mb-6 block">Supply Chain</span>
+            <span className="text-brand-emerald font-black tracking-[0.5em] uppercase text-xs mb-6 block">Supply Chain</span>
             <h2 className="text-4xl md:text-6xl lg:text-7xl font-outfit font-bold mb-8 tracking-tighter leading-tight max-w-4xl mx-auto">
-              Precision In <span className="text-brand-red">Execution.</span>
+              Precision In <span className="text-brand-emerald">Execution.</span>
             </h2>
             <p className="text-slate-400 max-w-xl mx-auto font-medium text-lg md:text-xl leading-relaxed">
               From global sourcing to nationwide distribution, we maintain the terminal standards of safety.
@@ -181,7 +181,7 @@ const Home: React.FC = () => {
                     <div className="w-20 h-20 bg-brand-gold rounded-2xl flex items-center justify-center mb-10 shadow-2xl shadow-brand-gold/30 group-hover:rotate-12 transition-transform">
                       <Icon size={36} className="text-white" />
                     </div>
-                    <h3 className="text-3xl font-ubuntu font-bold mb-6 tracking-tight">{step.title}</h3>
+                    <h3 className="text-3xl font-ubuntu font-bold mb-6 tracking-tight text-brand-emerald">{step.title}</h3>
                     <p className="text-slate-400 font-medium leading-relaxed mb-10">{step.desc}</p>
                     <div className="absolute top-12 right-12 text-7xl font-ubuntu font-bold text-brand-gold/10 group-hover:text-brand-gold/20 transition-colors leading-none">0{step.id}</div>
 
@@ -259,9 +259,9 @@ const Home: React.FC = () => {
 
             {/* Left Column - Achievements */}
             <div className="lg:col-span-5">
-              <span className="text-brand-gold font-black tracking-[0.5em] uppercase text-xs mb-6 block">Validation</span>
+              <span className="bg-emerald-700 text-white px-4 py-2 rounded-lg font-black tracking-[0.5em] uppercase text-xs mb-6 inline-block">Validation</span>
               <h2 className="text-4xl md:text-6xl lg:text-7xl font-outfit font-bold mb-12 tracking-tighter leading-tight text-white">
-                Field <span className="text-brand-gold">Intelligence.</span>
+                Field <span className="bg-emerald-700 px-3 py-1 rounded-lg">Intelligence.</span>
               </h2>
 
               {/* Achievement Stats */}
@@ -293,8 +293,8 @@ const Home: React.FC = () => {
                     className="bg-white/5 p-8 rounded-3xl border border-white/10 relative group hover:bg-white/10 transition-all duration-500 backdrop-blur-sm"
                   >
                     {/* Quote Icon */}
-                    <div className="absolute -top-3 -left-3 w-10 h-10 bg-brand-gold rounded-xl flex items-center justify-center shadow-xl shadow-brand-gold/30">
-                      <Quote className="text-white" size={20} />
+                    <div className="absolute -top-3 -left-3 w-10 h-10 bg-white/10 border-2 border-brand-emerald rounded-xl flex items-center justify-center shadow-xl shadow-emerald-600/30">
+                      <Quote className="text-brand-emerald" size={20} />
                     </div>
 
                     {/* Quote Text */}
@@ -337,8 +337,8 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-6 max-w-[1900px]">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-24 items-center">
             <div className="lg:col-span-12 mb-16 text-center">
-              <span className="text-brand-red font-black tracking-[0.4em] uppercase text-xs mb-6 block">Global Network</span>
-              <h2 className="text-5xl md:text-7xl font-ubuntu font-bold text-brand-beige-black tracking-tighter leading-tight mb-8">Strategic <span className="text-brand-red">Allies.</span></h2>
+              <span className="text-brand-emerald font-black tracking-[0.4em] uppercase text-xs mb-6 block">Global Network</span>
+              <h2 className="text-5xl md:text-7xl font-ubuntu font-bold text-brand-beige-black tracking-tighter leading-tight mb-8">Strategic <span className="bg-brand-emerald text-white px-4 py-2 rounded-xl">Allies.</span></h2>
               <p className="text-slate-500 font-medium text-lg leading-relaxed max-w-2xl mx-auto mb-10">Collaborating with global leaders in biotechnology to bring terminal solutions to Bangladesh.</p>
               <Link to="/about" className="inline-flex items-center gap-4 text-brand-beige-black hover:text-brand-red font-black uppercase tracking-[0.2em] text-xs transition-colors group">
                 <span>View All Collaborators</span>

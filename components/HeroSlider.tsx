@@ -1,23 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ArrowRight, Sparkles } from 'lucide-react';
 import { HERO_SLIDES } from '../constants';
 import { Link } from 'react-router-dom';
-
-// Helper function to highlight specific words in green
-const highlightWords = (text: string, wordsToHighlight: string[]) => {
-  const words = text.split(' ');
-  return words.map((word, idx) => {
-    const cleanWord = word.replace(/[.,!?]/g, '');
-    const isHighlighted = wordsToHighlight.some(
-      hw => hw.toLowerCase() === cleanWord.toLowerCase()
-    );
-    return (
-      <span key={idx} className={isHighlighted ? 'text-brand-emerald' : ''}>
-        {word}{' '}
-      </span>
-    );
-  });
-};
 
 const HeroSlider: React.FC = () => {
   const [current, setCurrent] = useState(0);
@@ -31,9 +15,6 @@ const HeroSlider: React.FC = () => {
 
   const nextSlide = () => setCurrent((prev) => (prev + 1) % HERO_SLIDES.length);
   const prevSlide = () => setCurrent((prev) => (prev - 1 + HERO_SLIDES.length) % HERO_SLIDES.length);
-
-  // Words to highlight in green across all taglines
-  const greenWords = ['Innovation', 'Greener', 'Health', 'Global', 'Success'];
 
   return (
     <section className="relative h-screen min-h-[700px] overflow-hidden bg-brand-beige-black">
@@ -66,35 +47,38 @@ const HeroSlider: React.FC = () => {
               <div className="max-w-4xl text-white">
                 <div className={`transition-all duration-1000 delay-300 transform ${index === current ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
                   }`}>
-                  {/* Maroon Badge */}
-                  <span className="inline-block px-4 py-2 rounded-full bg-red-900/60 backdrop-blur-xl border border-red-900/70 text-white font-black uppercase tracking-[0.3em] text-[10px] md:text-xs mb-8 shadow-2xl shadow-red-900/30 mt-12 md:mt-24">
+                  {/* Premium Badge */}
+                  <span className="inline-block px-4 py-2 rounded-full bg-red-900/60 backdrop-blur-xl border border-red-900/70 text-amber-50 font-black uppercase tracking-[0.3em] text-[10px] md:text-xs mb-8 shadow-2xl shadow-red-900/30 mt-12 md:mt-24">
                     Premium Agricultural biotech
                   </span>
 
-                  {/* Title with green highlighting */}
-                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-outfit font-bold mb-8 leading-tight tracking-tighter">
-                    {highlightWords(slide.title, greenWords)}
+                  {/* Title - White with shadow */}
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-outfit font-bold mb-8 leading-tight tracking-tighter text-amber-50 drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
+                    {slide.title}
                   </h1>
 
-                  {/* Subtitle with responsive line breaks */}
-                  <p className="text-base md:text-xl text-white mb-10 leading-relaxed max-w-2xl font-medium border-l-4 border-brand-gold/50 pl-6 drop-shadow-[0_2px_10px_rgba(180,83,9,0.5)]">
-                    {highlightWords(slide.subtitle, greenWords)}
+                  {/* Subtitle - White with shadow, responsive line breaks */}
+                  <p className="text-base sm:text-lg md:text-xl text-amber-50 mb-10 leading-relaxed max-w-2xl font-medium border-l-4 border-emerald-500/70 pl-6 drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)]">
+                    {slide.subtitle}
                   </p>
 
-                  {/* CTA Buttons - Transparent with orange blur and maroon border */}
+                  {/* Redesigned CTA Buttons - Premium Gradient Style */}
                   <div className="flex flex-col sm:flex-row gap-6">
                     <Link
                       to="/products"
-                      className="group bg-brand-gold/10 hover:bg-red-900 backdrop-blur-xl text-emerald-800 hover:text-white border-2 border-red-900 px-10 py-5 rounded-xl font-bold text-lg flex items-center justify-center space-x-3 shadow-2xl transform hover:-translate-y-1 transition-all"
+                      className="group relative overflow-hidden bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-500 hover:to-emerald-600 text-white px-10 py-5 rounded-2xl font-bold text-lg flex items-center justify-center space-x-3 shadow-2xl shadow-emerald-900/50 transform hover:-translate-y-1 transition-all border border-emerald-400/30"
                     >
-                      <span className="font-ubuntu">Our Solutions</span>
+                      <Sparkles size={20} className="group-hover:rotate-12 transition-transform" />
+                      <span className="font-ubuntu">Explore Solutions</span>
                       <ArrowRight size={22} className="group-hover:translate-x-2 transition-transform" />
+                      <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700" />
                     </Link>
                     <Link
                       to="/about"
-                      className="group bg-brand-gold/10 hover:bg-red-900 backdrop-blur-xl text-emerald-800 hover:text-white border-2 border-red-900 px-10 py-5 rounded-xl font-bold text-lg flex items-center justify-center transition-all shadow-xl"
+                      className="group relative overflow-hidden bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white px-10 py-5 rounded-2xl font-bold text-lg flex items-center justify-center transition-all shadow-2xl shadow-orange-900/50 border border-amber-400/30"
                     >
-                      Scientific Approach
+                      <span className="font-ubuntu">Our Story</span>
+                      <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700" />
                     </Link>
                   </div>
                 </div>

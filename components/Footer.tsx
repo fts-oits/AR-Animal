@@ -9,8 +9,9 @@ import {
 const Footer: React.FC = () => {
   return (
     <footer className="bg-brand-beige-black text-white pt-32 pb-16 relative overflow-hidden">
-      {/* Decorative Gradient Overlay */}
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-brand-red to-transparent opacity-30" />
+      {/* Emerald Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/20 via-transparent to-orange-900/10 pointer-events-none" />
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-brand-emerald to-transparent opacity-30" />
 
       <div className="container mx-auto px-6 max-w-[1900px]">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20 mb-20">
@@ -26,7 +27,7 @@ const Footer: React.FC = () => {
             </p>
             <div className="flex gap-4">
               {[Facebook, Twitter, Linkedin, Instagram].map((Icon, i) => (
-                <a key={i} href="#" className="w-12 h-12 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center hover:bg-brand-red hover:border-brand-red transition-all duration-500 text-slate-400 hover:text-white">
+                <a key={i} href="#" className="w-12 h-12 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center hover:bg-brand-emerald hover:border-brand-emerald transition-all duration-500 text-slate-400 hover:text-white">
                   <Icon size={20} />
                 </a>
               ))}
@@ -44,9 +45,9 @@ const Footer: React.FC = () => {
                 <li key={item}>
                   <Link
                     to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
-                    className="text-slate-400 hover:text-brand-gold font-bold transition-all flex items-center gap-3 group"
+                    className="text-emerald-200 hover:text-brand-emerald font-bold transition-all flex items-center gap-3 group"
                   >
-                    <div className="w-1.5 h-1.5 rounded-full bg-slate-700 group-hover:bg-brand-gold group-hover:scale-150 transition-all" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-slate-700 group-hover:bg-brand-emerald group-hover:scale-150 transition-all" />
                     <span>{item}</span>
                   </Link>
                 </li>
@@ -62,7 +63,7 @@ const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-8">
               <li className="flex gap-5">
-                <div className="w-12 h-12 bg-brand-red/10 rounded-xl flex items-center justify-center text-brand-red border border-brand-red/20 flex-shrink-0">
+                <div className="w-12 h-12 bg-brand-emerald/20 rounded-xl flex items-center justify-center text-brand-emerald border border-brand-emerald/30 flex-shrink-0 hover:bg-brand-emerald hover:text-white transition-all duration-300 group">
                   <MapPin size={22} />
                 </div>
                 <p className="text-slate-400 font-medium text-sm leading-relaxed">
@@ -70,7 +71,7 @@ const Footer: React.FC = () => {
                 </p>
               </li>
               <li className="flex gap-5">
-                <div className="w-12 h-12 bg-brand-red/10 rounded-xl flex items-center justify-center text-brand-red border border-brand-red/20 flex-shrink-0">
+                <div className="w-12 h-12 bg-brand-emerald/20 rounded-xl flex items-center justify-center text-brand-emerald border border-brand-emerald/30 flex-shrink-0 hover:bg-brand-emerald hover:text-white transition-all duration-300 group">
                   <PhoneCall size={22} />
                 </div>
                 <div>
@@ -109,8 +110,8 @@ const Footer: React.FC = () => {
             © 2026 <span className="text-brand-red font-black">AR ANIMAL HEALTH LTD.</span> All systems operational.
           </p>
           <div className="flex gap-10 text-xs font-black uppercase tracking-widest text-slate-500">
-            <a href="#" className="hover:text-brand-gold transition-colors">Digital Privacy</a>
-            <a href="#" className="hover:text-brand-gold transition-colors">Protocol Terms</a>
+            <a href="#" className="hover:text-brand-emerald transition-colors">Digital Privacy</a>
+            <a href="#" className="hover:text-brand-emerald transition-colors">Protocol Terms</a>
           </div>
         </div>
       </div>

@@ -39,7 +39,7 @@ const Navbar: React.FC = () => {
           }`}
       >
         <div
-          className={`max-w-[1900px] mx-auto rounded-[2rem] transition-all duration-500 border border-transparent ${scrolled || isOpen
+          className={`max-w-[1900px] mx-auto rounded-2xl transition-all duration-500 border border-transparent ${scrolled || isOpen
             ? 'bg-brand-beige-white/40 bg-glass-orange backdrop-blur-2xl shadow-2xl border-white/20 pl-4 pr-4 py-1 md:pl-10 md:pr-4'
             : 'bg-transparent pl-0 pr-0'
             }`}
