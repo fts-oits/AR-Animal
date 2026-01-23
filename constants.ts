@@ -130,22 +130,22 @@ export const PARTNER_DETAILS = [
   {
     name: 'Chanhen',
     desc: 'Asia’s largest supplier of Monocalcium Phosphate and Monopotassium Phosphate. Specilized in mining phosphate rock.',
-    logo: 'img/testimonials/2.jpg'
+    logo: 'img/chanhen2-logo.jpg'
   },
   {
     name: 'Sunward Chemicals',
     desc: 'Invested by Yunnan Copper Industry. Annual production capacity of Feed Grade DCP/MCP of 260,000 tons.',
-    logo: 'img/testimonials/3.jpg'
+    logo: 'img/Sunward-Office-2.jpg'
   },
   {
     name: 'ESIGMA',
     desc: 'Established 1997, a Chinese leading feedstuff pharmaceutical additive factory. Market leader in China.',
-    logo: 'img/testimonials/1.jpg'
+    logo: 'img/EsigmaOffice-1.jpg'
   },
   {
     name: 'VTR Bio-Tech',
     desc: 'The largest animal feed enzyme manufacturer in China. Ranks No. 1 in the feed enzyme industry in Asia.',
-    logo: 'img/testimonials/4.jpg'
+    logo: 'img/vtr-100.jpg'
   }
 ];
 

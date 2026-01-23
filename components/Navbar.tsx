@@ -35,34 +35,24 @@ const Navbar: React.FC = () => {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out px-4 md:px-12 ${scrolled || isOpen ? 'py-4' : 'py-8'
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out px-4 md:px-12 ${scrolled || isOpen ? 'py-1' : 'py-8'
           }`}
       >
         <div
           className={`max-w-[1900px] mx-auto rounded-[2rem] transition-all duration-500 border border-transparent ${scrolled || isOpen
-            ? 'bg-brand-beige-white/80 backdrop-blur-xl shadow-2xl border-white/20 pl-4 pr-4 py-3 md:pl-10 md:pr-4'
+            ? 'bg-brand-beige-white/65 backdrop-blur-xl shadow-2xl border-white/20 pl-4 pr-4 py-1 md:pl-10 md:pr-4'
             : 'bg-transparent pl-0 pr-0'
             }`}
         >
           <div className="flex justify-between items-center">
             {/* Logo Section */}
             <Link to="/" className="flex items-center gap-4 group z-50 relative" onClick={() => setIsOpen(false)}>
-              <div className="relative h-14 w-auto px-4 bg-white rounded-2xl shadow-xl flex items-center justify-center overflow-hidden transition-transform group-hover:rotate-2">
+              <div className="relative h-14 w-auto flex items-center justify-center overflow-hidden transition-transform group-hover:scale-105">
                 <img
                   src="img/logo.png"
                   alt="AR Animal Health"
-                  className="h-full w-auto object-contain py-2"
+                  className="h-full w-auto object-contain"
                 />
-              </div>
-              <div className="flex flex-col">
-                <span className={`text-xl font-ubuntu font-bold tracking-tighter leading-none transition-colors duration-300 ${scrolled || isOpen ? 'text-brand-beige-black' : 'text-brand-beige-black md:text-white'
-                  }`}>
-                  AR ANIMAL
-                </span>
-                <span className={`text-[10px] font-black uppercase tracking-[0.3em] transition-colors duration-300 ${scrolled || isOpen ? 'text-brand-emerald' : 'text-brand-emerald md:text-emerald-300'
-                  }`}>
-                  Health Ltd.
-                </span>
               </div>
             </Link>
 

@@ -15,9 +15,9 @@ const Home: React.FC = () => {
       <HeroSlider />
 
       {/* Feature Section - Horizontal Scroll on Mobile */}
-      <section className="py-24 md:py-48 relative overflow-hidden bg-brand-beige-white">
+      <section className="py-20 md:py-32 lg:py-40 relative overflow-hidden bg-brand-beige-white">
         <div className="container mx-auto px-6 max-w-[1900px]">
-          <div className="text-center mb-20 md:mb-32 max-w-4xl mx-auto">
+          <div className="text-center mb-16 md:mb-24 max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-3 mb-6">
               <div className="h-px w-8 bg-brand-emerald" />
               <span className="text-brand-emerald font-black tracking-[0.4em] uppercase text-xs">Innovation Hub</span>
@@ -33,20 +33,23 @@ const Home: React.FC = () => {
 
           <div className="flex overflow-x-auto pb-12 gap-8 md:grid md:grid-cols-2 lg:grid-cols-4 snap-x snap-mandatory no-scrollbar -mx-6 px-6 md:mx-0 md:px-0">
             {[
-              { icon: Award, title: "Premium Grade", desc: "Rigorous ISO-compliant testing ensures only the highest grade materials." },
-              { icon: Zap, title: "Nano-Tech", desc: "Utilizing advanced enzyme technology from world leaders like VTR Bio-Tech." },
-              { icon: ShieldCheck, title: "Field Advice", desc: "Consultancy from industry leaders with over 35 years of specialized leadership." },
-              { icon: Globe, title: "Global Axis", desc: "Strategic alliances with Sichuan Chanhen for best-in-class mineral sources." }
+              { icon: Award, title: "Premium Grade", desc: "Rigorous ISO-compliant testing ensures only the highest grade materials.", img: "img/gallery/gallery-1.jpg" },
+              { icon: Zap, title: "Nano-Tech", desc: "Utilizing advanced enzyme technology from world leaders like VTR Bio-Tech.", img: "img/gallery/gallery-3.jpg" },
+              { icon: ShieldCheck, title: "Field Advice", desc: "Consultancy from industry leaders with over 35 years of specialized leadership.", img: "img/gallery/gallery-5.jpg" },
+              { icon: Globe, title: "Global Axis", desc: "Strategic alliances with Sichuan Chanhen for best-in-class mineral sources.", img: "img/gallery/gallery-7.jpg" }
             ].map((feature, idx) => (
               <div
                 key={idx}
-                className="min-w-[300px] md:min-w-0 snap-center bg-white p-12 rounded-[3.5rem] shadow-xl shadow-slate-200/50 hover:shadow-2xl hover:shadow-brand-emerald/10 hover:-translate-y-4 transition-all duration-700 group border border-slate-100"
+                className="min-w-[320px] md:min-w-0 snap-center bg-white p-10 rounded-[4rem] shadow-xl shadow-slate-200/50 hover:shadow-2xl hover:shadow-brand-emerald/10 hover:-translate-y-4 transition-all duration-700 group border border-slate-100 relative overflow-hidden"
               >
-                <div className="w-20 h-20 bg-brand-beige-white text-brand-emerald rounded-3xl flex items-center justify-center mb-10 group-hover:bg-brand-emerald group-hover:text-white transition-all duration-500 shadow-inner">
-                  <feature.icon size={40} />
+                <div className="absolute top-0 right-0 w-32 h-32 opacity-[0.03] group-hover:opacity-[0.07] transition-opacity pointer-events-none">
+                  <img src={feature.img} alt="" className="w-full h-full object-cover" />
                 </div>
-                <h3 className="text-3xl font-ubuntu font-bold text-brand-beige-black mb-6 tracking-tight leading-none">{feature.title}</h3>
-                <p className="text-slate-500 leading-relaxed font-medium">{feature.desc}</p>
+                <div className="w-16 h-16 bg-brand-beige-white text-brand-emerald rounded-2xl flex items-center justify-center mb-8 group-hover:bg-brand-emerald group-hover:text-white transition-all duration-500 shadow-inner">
+                  <feature.icon size={32} />
+                </div>
+                <h3 className="text-2xl font-outfit font-bold text-brand-beige-black mb-4 tracking-tight leading-none">{feature.title}</h3>
+                <p className="text-slate-500 leading-relaxed font-medium text-sm">{feature.desc}</p>
               </div>
             ))}
           </div>
@@ -54,7 +57,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Our Story Section - Premium Redesign */}
-      <section className="py-24 md:py-48 bg-brand-beige-white relative overflow-hidden">
+      <section className="py-20 md:py-32 lg:py-40 bg-brand-beige-white relative overflow-hidden">
         {/* Decorative Background Elements */}
         <div className="absolute top-0 right-0 w-1/2 h-full bg-brand-emerald/[0.03] -skew-x-12 transform translate-x-1/4" />
         <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-brand-gold/10 rounded-full blur-[120px]" />
@@ -152,7 +155,7 @@ const Home: React.FC = () => {
 
 
       {/* Process Section - Technical Workflow */}
-      <section className="py-32 md:py-60 bg-brand-beige-black text-white relative overflow-hidden">
+      <section className="py-20 md:py-40 lg:py-48 bg-brand-beige-black text-white relative overflow-hidden">
         {/* Background Decorative Mesh */}
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, #059669 1px, transparent 0)', backgroundSize: '40px 40px' }} />
         <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-brand-beige-white to-transparent opacity-10" />
@@ -199,9 +202,9 @@ const Home: React.FC = () => {
       </section>
 
       {/* Product Categories Preview - Premium Cards */}
-      <section className="py-32 md:py-60 bg-brand-beige-white">
+      <section className="py-20 md:py-40 lg:py-48 bg-brand-beige-white">
         <div className="container mx-auto px-6 max-w-[1900px]">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-24 md:mb-40">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-16 md:mb-24">
             <div className="max-w-2xl">
               <span className="text-brand-emerald font-black tracking-[0.5em] uppercase text-xs mb-6 block">Intelligence Center</span>
               <h2 className="text-4xl md:text-6xl lg:text-7xl font-outfit font-bold text-brand-beige-black tracking-tighter leading-tight">
@@ -247,7 +250,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Testimonials - Terminal Feedback */}
-      <section className="py-32 md:py-60 bg-brand-beige-black text-white relative overflow-hidden">
+      <section className="py-20 md:py-40 lg:py-48 bg-brand-beige-black text-white relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-brand-emerald to-transparent opacity-20" />
 
         <div className="container mx-auto px-6 max-w-[1900px] relative z-10">
@@ -262,22 +265,58 @@ const Home: React.FC = () => {
               </p>
             </div>
 
-            <div className="space-y-10">
-              {TESTIMONIALS.map((t, idx) => (
-                <div key={idx} className="bg-white/5 p-12 rounded-[3.5rem] border border-white/10 relative group hover:bg-white/[0.08] transition-all duration-700">
-                  <div className="absolute -top-6 -left-6 w-16 h-16 bg-brand-emerald rounded-2xl flex items-center justify-center shadow-2xl shadow-brand-emerald/30">
-                    <Quote className="text-white" size={32} />
+            <div className="h-[500px] overflow-y-auto no-scrollbar snap-y snap-mandatory relative space-y-6">
+              {[...TESTIMONIALS, ...TESTIMONIALS].map((t, idx) => (
+                <div key={idx} className="bg-white/5 p-10 rounded-[3rem] border border-white/10 relative group hover:bg-white/[0.08] transition-all duration-700 snap-center">
+                  <div className="absolute -top-4 -left-4 w-12 h-12 bg-brand-emerald rounded-xl flex items-center justify-center shadow-2xl shadow-brand-emerald/30">
+                    <Quote className="text-white" size={24} />
                   </div>
-                  <p className="text-2xl font-medium text-slate-300 italic mb-10 leading-relaxed">"{t.quote}"</p>
-                  <div className="flex items-center gap-6">
-                    <div className="w-16 h-16 rounded-2xl bg-brand-emerald/20 border border-brand-emerald/30 overflow-hidden">
+                  <p className="text-xl font-medium text-slate-300 italic mb-8 leading-relaxed">"{t.quote}"</p>
+                  <div className="flex items-center gap-4">
+                    <div className="w-14 h-14 rounded-xl bg-brand-emerald/20 border border-brand-emerald/30 overflow-hidden">
                       <img src={t.image} alt={t.name} className="w-full h-full object-cover grayscale" />
                     </div>
                     <div>
-                      <h4 className="text-xl font-ubuntu font-bold text-white tracking-tight">{t.name}</h4>
-                      <div className="flex items-center gap-3">
+                      <h4 className="text-lg font-outfit font-bold text-white tracking-tight">{t.name}</h4>
+                      <div className="flex items-center gap-2">
                         <div className="w-1 h-1 rounded-full bg-brand-emerald" />
-                        <p className="text-brand-gold font-black uppercase tracking-[0.2em] text-[10px]">{t.role}</p>
+                        <p className="text-brand-gold font-black uppercase tracking-[0.2em] text-[8px]">{t.role}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+              <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-brand-beige-black to-transparent pointer-events-none z-10" />
+              <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-brand-beige-black to-transparent pointer-events-none z-10" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Partners - Dynamic Grid */}
+      <section className="py-20 md:py-40 lg:py-48 bg-brand-beige-white">
+        <div className="container mx-auto px-6 max-w-[1900px]">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-24 items-center">
+            <div className="lg:col-span-12 mb-16 text-center">
+              <span className="text-brand-emerald font-black tracking-[0.4em] uppercase text-xs mb-6 block">Global Network</span>
+              <h2 className="text-5xl md:text-7xl font-ubuntu font-bold text-brand-beige-black tracking-tighter leading-tight mb-8">Strategic <span className="text-brand-emerald">Allies.</span></h2>
+              <p className="text-slate-500 font-medium text-lg leading-relaxed max-w-2xl mx-auto mb-10">Collaborating with global leaders in biotechnology to bring terminal solutions to Bangladesh.</p>
+              <Link to="/about" className="inline-flex items-center gap-4 text-brand-beige-black hover:text-brand-emerald font-black uppercase tracking-[0.2em] text-xs transition-colors group">
+                <span>View All Collaborators</span>
+                <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
+              </Link>
+            </div>
+
+            <div className="lg:col-span-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              {PARTNER_DETAILS.map((p, idx) => (
+                <div key={idx} className="group relative">
+                  <div className="bg-white p-12 rounded-[3.5rem] shadow-xl hover:shadow-2xl transition-all duration-700 hover:-translate-y-3 border border-slate-100 flex flex-col items-center justify-center aspect-video overflow-hidden">
+                    <img src={p.logo} alt={p.name} className="max-w-[85%] max-h-[70%] object-contain grayscale group-hover:grayscale-0 transition-all duration-1000" />
+                    <div className="mt-8 flex flex-col items-center gap-2 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
+                      <h3 className="text-xl font-outfit font-bold text-brand-beige-black uppercase tracking-tight leading-none">{p.name}</h3>
+                      <div className="flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 rounded-full bg-brand-emerald" />
+                        <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">Global Provider</span>
                       </div>
                     </div>
                   </div>
@@ -288,39 +327,8 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Partners - Dynamic Grid */}
-      <section className="py-32 md:py-60 bg-brand-beige-white">
-        <div className="container mx-auto px-6 max-w-[1900px]">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-24 items-center">
-            <div className="lg:col-span-4">
-              <span className="text-brand-emerald font-black tracking-[0.4em] uppercase text-xs mb-6 block">Global Network</span>
-              <h2 className="text-5xl md:text-7xl font-ubuntu font-bold text-brand-beige-black tracking-tighter leading-tight mb-10">Strategic <br /><span className="text-brand-emerald">Allies.</span></h2>
-              <p className="text-slate-500 font-medium text-lg leading-relaxed mb-12">Collaborating with global leaders in biotechnology to bring terminal solutions to Bangladesh.</p>
-              <Link to="/about" className="inline-flex items-center gap-4 text-brand-beige-black hover:text-brand-emerald font-black uppercase tracking-[0.2em] text-xs transition-colors group">
-                <span>View All Collaborators</span>
-                <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
-              </Link>
-            </div>
-
-            <div className="lg:col-span-8 grid grid-cols-2 lg:grid-cols-4 gap-8">
-              {PARTNER_DETAILS.map((p, idx) => (
-                <div key={idx} className="group relative">
-                  <div className="bg-white p-10 rounded-[3rem] shadow-xl hover:shadow-2xl transition-all duration-700 hover:-translate-y-3 grayscale hover:grayscale-0 border border-slate-100 flex flex-col items-center justify-center aspect-[4/5]">
-                    <h3 className="text-3xl font-ubuntu font-bold text-slate-200 group-hover:text-brand-emerald transition-colors text-center uppercase break-words leading-none">{p.name}</h3>
-                    <div className="mt-6 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                      <div className="w-1 h-1 rounded-full bg-brand-emerald" />
-                      <span className="text-[8px] font-black uppercase tracking-widest text-slate-400">Global Provider</span>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Final Stats / Impact */}
-      <section className="py-32 md:py-60 bg-brand-emerald relative overflow-hidden">
+      <section className="py-20 md:py-40 lg:py-48 bg-brand-emerald relative overflow-hidden">
         <div className="absolute inset-0 bg-brand-beige-black/5" />
         <div className="absolute top-0 right-0 w-1/2 h-full bg-white/5 skew-x-[-20deg] translate-x-1/4" />
 
@@ -332,11 +340,11 @@ const Home: React.FC = () => {
               { label: "Districts Served", val: "64D", icon: Globe }
             ].map((stat, idx) => (
               <div key={idx} className="text-center md:text-left group">
-                <div className="mb-10 w-20 h-20 bg-white/10 rounded-2xl flex items-center justify-center text-white border border-white/20 group-hover:scale-110 transition-transform">
-                  <stat.icon size={40} />
+                <div className="mb-8 w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center text-white border border-white/20 group-hover:scale-110 transition-transform">
+                  <stat.icon size={32} />
                 </div>
-                <h2 className="text-5xl md:text-7xl lg:text-8xl font-outfit font-bold text-white mb-4 tracking-tighter leading-none">{stat.val}</h2>
-                <p className="text-white/80 font-inter font-bold text-xl tracking-tight">{stat.label}</p>
+                <h2 className="text-4xl md:text-5xl lg:text-7xl font-outfit font-bold text-white mb-4 tracking-tighter leading-none">{stat.val}</h2>
+                <p className="text-white/80 font-inter font-bold text-lg lg:text-xl tracking-tight">{stat.label}</p>
                 <div className="h-1 w-16 bg-brand-gold mt-6 rounded-full" />
               </div>
             ))}
