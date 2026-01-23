@@ -308,6 +308,7 @@ const Home: React.FC = () => {
                         <img
                           src={testimonial.image}
                           alt={testimonial.name}
+                          loading="lazy"
                           className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
                         />
                       </div>
@@ -353,6 +354,7 @@ const Home: React.FC = () => {
                   <img
                     src={p.logo}
                     alt={p.name}
+                    loading="lazy"
                     className="absolute inset-0 w-full h-full object-cover transition-all duration-1000 group-hover:scale-110"
                   />
 
