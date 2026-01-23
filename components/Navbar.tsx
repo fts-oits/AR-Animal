@@ -47,11 +47,11 @@ const Navbar: React.FC = () => {
           <div className="flex justify-between items-center">
             {/* Logo Section */}
             <Link to="/" className="flex items-center gap-4 group z-50 relative" onClick={() => setIsOpen(false)}>
-              <div className="relative w-12 h-12 bg-white rounded-2xl shadow-xl flex items-center justify-center overflow-hidden transition-transform group-hover:rotate-6">
+              <div className="relative h-14 w-auto px-4 bg-white rounded-2xl shadow-xl flex items-center justify-center overflow-hidden transition-transform group-hover:rotate-2">
                 <img
                   src="img/logo.png"
                   alt="AR Animal Health"
-                  className="w-full h-full object-contain p-2"
+                  className="h-full w-auto object-contain py-2"
                 />
               </div>
               <div className="flex flex-col">

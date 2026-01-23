@@ -17,8 +17,8 @@ const Footer: React.FC = () => {
           {/* Company Brand */}
           <div className="space-y-8">
             <Link to="/" className="flex items-center gap-4 group">
-              <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg transform group-hover:-rotate-6 transition-transform">
-                <img src="img/logo.png" alt="Logo" className="w-full h-full object-contain p-2" />
+              <div className="h-14 w-auto px-4 bg-white rounded-xl flex items-center justify-center shadow-lg transform group-hover:-rotate-2 transition-transform">
+                <img src="img/logo.png" alt="Logo" className="h-full w-auto object-contain py-2" />
               </div>
               <div className="flex flex-col">
                 <span className="text-xl font-outfit font-bold tracking-tighter leading-none">AR ANIMAL</span>
