@@ -1,8 +1,12 @@
 
 export enum Category {
-  FERTILIZERS = 'Fertilizers',
-  FEED_ADDITIVES = 'Feed Additives',
-  MINERALS = 'Minerals'
+  COCCIDIOSTAT = 'Coccidiostat',
+  GROWTH_PROMOTER = 'Growth Promoter',
+  TOXIN_BINDER = 'Toxin Binder',
+  ENZYME = 'Enzyme',
+  AMINO_ACID = 'Amino Acid',
+  MINERAL = 'Mineral',
+  OTHER = 'Other'
 }
 
 export interface Product {

@@ -53,31 +53,31 @@ const HeroSlider: React.FC = () => {
                   </span>
 
                   {/* Title - White with shadow */}
-                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-outfit font-bold mb-8 leading-tight tracking-tighter text-amber-50 drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
+                  <h1 className="text-3xl md:text-5xl lg:text-7xl font-outfit font-bold mb-6 leading-tight tracking-tighter text-amber-50 drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
                     {slide.title}
                   </h1>
 
-                  {/* Subtitle - White with shadow, responsive line breaks */}
-                  <p className="text-base sm:text-lg md:text-xl text-amber-50 mb-10 leading-relaxed max-w-2xl font-medium border-l-4 border-emerald-500/70 pl-6 drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)]">
+                  {/* Subtitle - White with shadow */}
+                  <p className="text-base md:text-xl text-amber-50 mb-8 leading-relaxed max-w-2xl font-medium border-l-4 border-emerald-500/70 pl-6 drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)]">
                     {slide.subtitle}
                   </p>
 
-                  {/* Redesigned CTA Buttons - Premium Gradient Style */}
-                  <div className="flex flex-col sm:flex-row gap-6">
+                  {/* Redesigned CTA Buttons - Short Labels */}
+                  <div className="flex gap-4">
                     <Link
                       to="/products"
-                      className="group relative overflow-hidden bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-500 hover:to-emerald-600 text-white px-10 py-5 rounded-2xl font-bold text-lg flex items-center justify-center space-x-3 shadow-2xl shadow-emerald-900/50 transform hover:-translate-y-1 transition-all border border-emerald-400/30"
+                      className="group relative overflow-hidden bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-500 hover:to-emerald-600 text-white px-8 py-4 rounded-xl font-bold text-base flex items-center justify-center space-x-2 shadow-xl shadow-emerald-900/50 transform hover:-translate-y-1 transition-all border border-emerald-400/30"
                     >
-                      <Sparkles size={20} className="group-hover:rotate-12 transition-transform" />
-                      <span className="font-ubuntu">Explore Solutions</span>
-                      <ArrowRight size={22} className="group-hover:translate-x-2 transition-transform" />
+                      <Sparkles size={18} className="group-hover:rotate-12 transition-transform" />
+                      <span className="font-ubuntu">Products</span>
+                      <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                       <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700" />
                     </Link>
                     <Link
                       to="/about"
-                      className="group relative overflow-hidden bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white px-10 py-5 rounded-2xl font-bold text-lg flex items-center justify-center transition-all shadow-2xl shadow-orange-900/50 border border-amber-400/30"
+                      className="group relative overflow-hidden bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white px-8 py-4 rounded-xl font-bold text-base flex items-center justify-center transition-all shadow-xl shadow-orange-900/50 border border-amber-400/30"
                     >
-                      <span className="font-ubuntu">Our Story</span>
+                      <span className="font-ubuntu">About Us</span>
                       <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700" />
                     </Link>
                   </div>

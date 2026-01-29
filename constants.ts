@@ -2,54 +2,167 @@
 import { Category, Product, TeamMember, GalleryItem } from './types';
 
 // Updated product catalog using high-quality company assets
+// Updated product catalog based on Animal Health focus
 export const PRODUCTS: Product[] = [
   {
-    id: 'f1',
-    name: 'NPK 15-15-15 Plus',
-    category: Category.FERTILIZERS,
-    description: 'A premium balanced fertilizer designed for general crop growth and soil revitalization. Optimized for maximum absorption in diverse soil conditions.',
+    id: 'p1',
+    name: 'Diclazuril Micro Granular Premix',
+    category: Category.COCCIDIOSTAT,
+    description: '0.5% Diclazuril Premix for potent coccidiosis prevention.',
     image: 'img/services-1.jpg',
-    specifications: ['Nitrogen: 15%', 'Phosphorus: 15%', 'Potassium: 15%', 'Enhanced with Micro-nutrients']
+    specifications: ['Species: Poultry', 'Type: Rx', 'Dosage: 200-400g/MT (Prevention)', 'Origin: China']
   },
   {
-    id: 'f2',
-    name: 'Urea Diamond Grade',
-    category: Category.FERTILIZERS,
-    description: 'High-nitrogen fertilizer essential for the vegetative growth phase of crops. Provides a quick boost to leaf and stem development.',
+    id: 'p2',
+    name: 'Maduramicin Ammonium Premix',
+    category: Category.COCCIDIOSTAT,
+    description: '1% Maduramicin Ammonium for effective coccidiosis control.',
     image: 'img/services-2.jpg',
-    specifications: ['Nitrogen: 46%', 'Slow Release Formula', 'Industrial Grade Purity']
+    specifications: ['Species: Poultry', 'Type: Rx', 'Dosage: 500-600g/MT (Control)', 'Origin: China']
   },
   {
-    id: '1',
-    name: 'Lipidin - Feed Supplement',
-    category: Category.FEED_ADDITIVES,
-    description: 'Advanced nutritional supplement for livestock, enhancing lipid metabolism and growth efficiency. Formulated for high-performance animal health.',
+    id: 'p3',
+    name: 'Robenidine Hydrochloride Premix',
+    category: Category.COCCIDIOSTAT,
+    description: '10% Robenidine HCL for broad-spectrum coccidiosis treatment.',
     image: 'img/services-3.jpg',
-    specifications: ['Lipid metabolism enhancer', 'Growth promoter', 'Highly digestible', 'Optimized for Poultry']
+    specifications: ['Species: Poultry', 'Type: Rx', 'Dosage: 300-600g/MT (Treatment)', 'Origin: China']
   },
   {
-    id: '2',
-    name: 'Loong Dicalcium Phosphate',
-    category: Category.MINERALS,
-    description: 'High-purity feed-grade mineral powder essential for bone development and overall metabolic health in aquatic and livestock feeds.',
+    id: 'p4',
+    name: 'Nicarbazin & Maduramicin Combination',
+    category: Category.COCCIDIOSTAT,
+    description: 'Nicarbazin 8% + 0.07% Maduramicin for dual-action control.',
     image: 'img/services-4.jpg',
-    specifications: ['Phosphorus: 18% min', 'Calcium: 21% min', 'Feed Grade Powder', 'Certified Quality']
+    specifications: ['Species: Poultry', 'Type: Rx', 'Dosage: 500-600g/MT (Dual Action)', 'Origin: China']
   },
   {
-    id: '3',
-    name: 'Huineng Animal Health Supplement',
-    category: Category.FEED_ADDITIVES,
-    description: 'Specialized animal health supplement manufactured under strict global quality standards in Zhejiang. Focuses on immunity and yield.',
+    id: 'p5',
+    name: 'Salinomycin Sodium Premix',
+    category: Category.COCCIDIOSTAT,
+    description: '12% Salinomycin, a trusted ionophore coccidiostat.',
     image: 'img/services-5.jpg',
-    specifications: ['Veterinary Grade', 'Zhejiang Huineng Brand', 'Immunity Booster', 'GMP Certified']
+    specifications: ['Species: Poultry', 'Type: Rx', 'Dosage: 400-500g/MT (Ionophore)', 'Origin: China']
   },
   {
-    id: '4',
-    name: 'Resilience CBD Gummies (Pet Line)',
-    category: Category.FEED_ADDITIVES,
-    description: 'Innovative broad-spectrum wellness supplements for companion animals, focusing on stress relief and joint health.',
+    id: 'p6',
+    name: 'Biomix 3x - Gut Bioregulator',
+    category: Category.GROWTH_PROMOTER,
+    description: 'Organic Acids, Prebiotics & Intestinal Regenerating Factors.',
     image: 'img/services-6.jpg',
-    specifications: ['THC Free', 'Broad Spectrum', 'Vegan Formulations', 'Mixed Fruit Flavor']
+    specifications: ['Species: Poultry', 'Type: OTC', 'Dosage: Broiler/Breeder: 500g/MT; Layer: 250g/MT', 'Origin: India']
+  },
+  {
+    id: 'p7',
+    name: 'Avsorb Mos',
+    category: Category.TOXIN_BINDER,
+    description: 'Organic Acids, MOS & Calcium Montmorillonite blend.',
+    image: 'img/services-1.jpg',
+    specifications: ['Species: General', 'Type: OTC', 'Dosage: 1kg/MT (Mycotoxin Binding)', 'Origin: India']
+  },
+  {
+    id: 'p8',
+    name: 'Avsorb Plus',
+    category: Category.TOXIN_BINDER,
+    description: 'Selected Clays and Organic Acids for broad toxin adsorption.',
+    image: 'img/services-2.jpg',
+    specifications: ['Species: General', 'Type: OTC', 'Dosage: 2kg/MT (Toxin Adsorption)', 'Origin: India']
+  },
+  {
+    id: 'p9',
+    name: 'HY-Bond Pellet Binder',
+    category: Category.OTHER,
+    description: 'Polymethylolcarbamide (PMC) 95% for durable pellets.',
+    image: 'img/services-3.jpg',
+    specifications: ['Species: Aqua', 'Type: OTC', 'Dosage: Poultry: 1-2kg; Fish: 2-5kg; Shrimp: 4-7kg', 'Origin: China']
+  },
+  {
+    id: 'p10',
+    name: 'Nutriox',
+    category: Category.OTHER,
+    description: 'Ethoxyquin/Propyl Gallate/Synergism for feed stabilization.',
+    image: 'img/services-4.jpg',
+    specifications: ['Species: General', 'Type: OTC', 'Dosage: 75-225g/MT (Feed Stabilization)', 'Origin: India']
+  },
+  {
+    id: 'p11',
+    name: 'Yiduozyme P-8601',
+    category: Category.ENZYME,
+    description: 'A powerful multi-enzyme complex for improved digestion.',
+    image: 'img/services-5.jpg',
+    specifications: ['Species: Poultry', 'Type: OTC', 'Dosage: 150-180g/MT (Broilers/Layers/Breeders)', 'Origin: China']
+  },
+  {
+    id: 'p12',
+    name: 'Microtech 5000 Plus',
+    category: Category.ENZYME,
+    description: 'Heat Tolerant Phytase (Granular) for phosphorus liberation.',
+    image: 'img/services-6.jpg',
+    specifications: ['Species: Poultry', 'Type: OTC', 'Dosage: 80-100g/MT (Phosphorus Liberation)', 'Origin: China']
+  },
+  {
+    id: 'p13',
+    name: 'Lipidin',
+    category: Category.OTHER,
+    description: 'LPC, LPE, PLA & LPI Complex to improve fat absorption.',
+    image: 'img/services-1.jpg',
+    specifications: ['Species: General', 'Type: OTC', 'Dosage: 500g/MT (Fat Absorption)', 'Origin: India']
+  },
+  {
+    id: 'p14',
+    name: 'Choline Chloride 60%',
+    category: Category.OTHER,
+    description: '60% concentration on a corn cob carrier.',
+    image: 'img/services-2.jpg',
+    specifications: ['Species: General', 'Type: OTC', 'Dosage: As per Nutritionist (Methyl Donor)', 'Origin: China']
+  },
+  {
+    id: 'p15',
+    name: 'Avilyte',
+    category: Category.OTHER,
+    description: 'Balanced Electrolyte with Vitamin C for stress and hydration.',
+    image: 'img/services-3.jpg',
+    specifications: ['Species: Poultry', 'Type: OTC', 'Dosage: Feed: 500g/MT; Water: 0.5-1.0g/L', 'Origin: India']
+  },
+  {
+    id: 'p16',
+    name: 'DL-Methionine',
+    category: Category.AMINO_ACID,
+    description: '99% Pure DL-Methionine, a critical essential amino acid.',
+    image: 'img/services-4.jpg',
+    specifications: ['Species: General', 'Type: OTC', 'Dosage: As per Nutritionist', 'Origin: Germany']
+  },
+  {
+    id: 'p17',
+    name: 'L-Lysine',
+    category: Category.AMINO_ACID,
+    description: '98.5% Pure L-Lysine, a vital building block for protein.',
+    image: 'img/services-5.jpg',
+    specifications: ['Species: General', 'Type: OTC', 'Dosage: As per Nutritionist', 'Origin: Singapore']
+  },
+  {
+    id: 'p18',
+    name: 'DCP Granular (New Hope)',
+    category: Category.MINERAL,
+    description: 'Dicalcium Phosphate with P=18% Min, Ca=22.5%.',
+    image: 'img/services-6.jpg',
+    specifications: ['Species: General', 'Type: OTC', 'Dosage: As per Nutritionist', 'Origin: China']
+  },
+  {
+    id: 'p19',
+    name: 'DCP Granular (Sunward)',
+    category: Category.MINERAL,
+    description: 'Dicalcium Phosphate with P=18% Min, Ca=22.5%.',
+    image: 'img/services-1.jpg',
+    specifications: ['Species: General', 'Type: OTC', 'Dosage: As per Nutritionist', 'Origin: China']
+  },
+  {
+    id: 'p20',
+    name: 'MCP Micro Granular',
+    category: Category.MINERAL,
+    description: 'Monocalcium Phosphate with P=22% Min, Ca=13% Min.',
+    image: 'img/services-2.jpg',
+    specifications: ['Species: General', 'Type: OTC', 'Dosage: As per Nutritionist', 'Origin: China']
   }
 ];
 
@@ -57,43 +170,11 @@ export const PRODUCTS: Product[] = [
 export const TEAM: TeamMember[] = [
   {
     id: 'ceo',
-    name: 'Mr. Atair Rahman',
+    name: 'Mr. Atiar Rahman',
     role: 'Chief Executive Officer',
     image: 'img/team/1.jpg',
     bio: 'Visionary leader with 35+ years of experience in the agricultural and poultry sector. Former specialist at Biman Poultry Complex since 1987.',
     socials: { linkedin: 'https://linkedin.com/in/atiar-rahman', email: 'atiar@aranimalhealthltd.com' }
-  },
-  {
-    id: 'medical-consultant',
-    name: 'Dr. Sarah Wilson',
-    role: 'Chief Veterinary Consultant',
-    image: 'img/doctors/doctors-1.jpg',
-    bio: 'Renowned expert in animal pathology and nutritional therapy with over 20 years of international field experience.',
-    socials: { linkedin: 'https://linkedin.com', email: 'sarah.wilson@aranimalhealthltd.com' }
-  },
-  {
-    id: 'ops-director',
-    name: 'Engr. David Chen',
-    role: 'Director of Operations',
-    image: 'img/doctors/doctors-2.jpg',
-    bio: 'Strategic lead for manufacturing excellence and supply chain logistics across South Asia.',
-    socials: { linkedin: 'https://linkedin.com', twitter: 'https://twitter.com' }
-  },
-  {
-    id: 'research-lead',
-    name: 'Dr. Michael Lau',
-    role: 'Lead Researcher',
-    image: 'img/doctors/doctors-3.jpg',
-    bio: 'Pioneering new bio-enzyme applications and sustainable mineral additives for modern poultry farming.',
-    socials: { linkedin: 'https://linkedin.com', email: 'michael.lau@aranimalhealthltd.com' }
-  },
-  {
-    id: 'clinical-specialist',
-    name: 'Jessica Adams',
-    role: 'Clinical Health Specialist',
-    image: 'img/doctors/doctors-4.jpg',
-    bio: 'Specializing in preventative health measures and vaccine distribution networks.',
-    socials: { linkedin: 'https://linkedin.com', twitter: 'https://twitter.com' }
   }
 ];
 

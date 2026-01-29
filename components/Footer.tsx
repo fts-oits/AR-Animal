@@ -65,16 +65,18 @@ const Footer: React.FC = () => {
                   <MapPin size={22} />
                 </div>
                 <p className="text-slate-400 font-medium text-sm leading-relaxed">
-                  House-51, Flat: A-6, Sector-3, Uttara, Dhaka-1230, Bangladesh.
+                  Rabindra Sarani Road, Sector-3, Uttara, Dhaka-1230, Flat A-7, Bangladesh
                 </p>
               </li>
               <li className="flex gap-5">
                 <div className="w-12 h-12 bg-brand-emerald/20 rounded-xl flex items-center justify-center text-brand-emerald border border-brand-emerald/30 flex-shrink-0 hover:bg-brand-emerald hover:text-white transition-all duration-300 group">
-                  <PhoneCall size={22} />
+                  <Mail size={22} />
                 </div>
                 <div>
-                  <p className="text-white font-ubuntu font-bold">+88 01713-011040</p>
-                  <p className="text-xs text-slate-500 font-black uppercase mt-1">24/7 Technical Support</p>
+                  <a href="mailto:aranimalhealth@gmail.com" className="text-white font-ubuntu font-bold hover:text-brand-gold transition-colors block mt-1">
+                    aranimalhealth@gmail.com
+                  </a>
+                  <p className="text-xs text-slate-500 font-black uppercase mt-1">Official Inbox</p>
                 </div>
               </li>
             </ul>

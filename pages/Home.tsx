@@ -202,28 +202,28 @@ const Home: React.FC = () => {
       </section>
 
       {/* Product Categories Preview - Premium Cards */}
-      <section className="py-20 md:py-40 lg:py-48 bg-brand-beige-white">
+      <section className="py-20 md:py-32 bg-brand-beige-white">
         <div className="container mx-auto px-6 max-w-[1900px]">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 md:mb-24">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-12 md:mb-16">
             <div className="max-w-2xl">
-              <span className="text-brand-red font-black tracking-[0.5em] uppercase text-xs mb-6 block">Intelligence Center</span>
-              <h2 className="text-4xl md:text-6xl lg:text-7xl font-outfit font-bold text-brand-beige-black tracking-tighter leading-tight">
+              <span className="text-brand-red font-black tracking-[0.5em] uppercase text-xs mb-4 block">Intelligence Center</span>
+              <h2 className="text-4xl md:text-6xl font-outfit font-bold text-brand-beige-black tracking-tighter leading-tight">
                 Technical <span className="text-brand-red">Catalog.</span>
               </h2>
             </div>
-            <Link to="/products" className="mt-12 md:mt-0 group flex items-center gap-4 bg-brand-beige-black text-white px-8 py-4 rounded-xl font-inter font-bold text-lg hover:bg-brand-red transition-all shadow-2xl">
-              <span>View Data Sheets</span>
-              <ArrowRight className="group-hover:translate-x-3 transition-transform duration-500" size={20} />
+            <Link to="/products" className="mt-8 md:mt-0 group flex items-center gap-3 bg-brand-beige-black text-white px-6 py-3 rounded-xl font-inter font-bold text-base hover:bg-brand-red transition-all shadow-xl">
+              <span>Catalog</span>
+              <ArrowRight className="group-hover:translate-x-2 transition-transform duration-500" size={18} />
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
             {[
               { name: "Bio-Additives", count: "20+ Solutions", icon: Droplets, img: "img/services-1.jpg" },
               { name: "Mineral Matrix", count: "10+ Nodes", icon: TrendingUp, img: "img/services-2.jpg" },
               { name: "Vet-Care", count: "15+ Systems", icon: ShieldCheck, img: "img/services-3.jpg" }
             ].map((cat, idx) => (
-              <Link to="/products" key={idx} className="group relative h-[600px] overflow-hidden rounded-[4rem] shadow-2xl border-4 border-white">
+              <Link to="/products" key={idx} className="group relative h-[400px] md:h-[500px] overflow-hidden rounded-[3rem] shadow-xl border-4 border-white">
                 <img
                   src={cat.img}
                   alt={cat.name}
@@ -231,14 +231,14 @@ const Home: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-beige-black via-brand-beige-black/20 to-transparent opacity-90 group-hover:opacity-70 transition-opacity duration-700" />
 
-                <div className="absolute top-10 right-10 w-16 h-16 bg-white/10 backdrop-blur-xl rounded-2xl flex items-center justify-center text-white border border-white/20 group-hover:bg-brand-red group-hover:border-brand-red transition-all duration-500">
-                  <ArrowRight className="-rotate-45 group-hover:rotate-0 transition-transform duration-700" size={24} />
+                <div className="absolute top-8 right-8 w-12 h-12 bg-white/10 backdrop-blur-xl rounded-xl flex items-center justify-center text-white border border-white/20 group-hover:bg-brand-red group-hover:border-brand-red transition-all duration-500">
+                  <ArrowRight className="-rotate-45 group-hover:rotate-0 transition-transform duration-700" size={20} />
                 </div>
 
-                <div className="absolute bottom-0 left-0 p-12 text-white w-full transform translate-y-6 group-hover:translate-y-0 transition-transform duration-700">
-                  <cat.icon className="text-brand-gold mb-6" size={56} />
-                  <h3 className="text-4xl md:text-5xl font-ubuntu font-bold mb-3 tracking-tighter leading-none">{cat.name}</h3>
-                  <div className="flex items-center gap-3">
+                <div className="absolute bottom-0 left-0 p-8 text-white w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-700">
+                  <cat.icon className="text-brand-gold mb-4" size={40} />
+                  <h3 className="text-3xl md:text-4xl font-ubuntu font-bold mb-2 tracking-tighter leading-none">{cat.name}</h3>
+                  <div className="flex items-center gap-2">
                     <div className="w-1 h-1 rounded-full bg-brand-red" />
                     <p className="text-slate-300 font-black tracking-[0.2em] text-[10px] uppercase">{cat.count}</p>
                   </div>

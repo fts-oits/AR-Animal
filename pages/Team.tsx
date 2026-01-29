@@ -56,10 +56,10 @@ const Team: React.FC = () => {
               <div className="flex flex-col sm:flex-row gap-6">
                 <a
                   href={`mailto:${TEAM[0].socials.email}`}
-                  className="bg-brand-emerald hover:bg-white hover:text-brand-beige-black text-white px-12 py-6 rounded-2xl font-ubuntu font-bold text-xs uppercase tracking-widest shadow-2xl transition-all flex items-center justify-center gap-4 active:scale-95"
+                  className="bg-brand-emerald hover:bg-white hover:text-brand-beige-black text-white px-8 py-4 rounded-xl font-ubuntu font-bold text-xs uppercase tracking-widest shadow-xl transition-all flex items-center justify-center gap-3 active:scale-95"
                 >
-                  <Mail size={20} />
-                  <span>Encrypted Channel</span>
+                  <Mail size={18} />
+                  <span>Email CEO</span>
                 </a>
               </div>
             </div>
@@ -67,55 +67,7 @@ const Team: React.FC = () => {
         </div>
       </section>
 
-      {/* Dept Leaders Matrix */}
-      <section className="py-24 md:py-48">
-        <div className="container mx-auto px-6 max-w-[1900px]">
-          <div className="text-center mb-32">
-            <span className="text-brand-emerald font-black tracking-[0.5em] uppercase text-xs mb-6 block">Hierarchy Log</span>
-            <h2 className="text-4xl md:text-6xl lg:text-7xl font-outfit font-bold text-brand-beige-black tracking-tighter leading-tight max-w-4xl mx-auto">
-              Department <span className="text-brand-emerald">Nodes.</span>
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16">
-            {TEAM.slice(1).map((member) => (
-              <div key={member.id} className="group bg-white p-8 rounded-[4rem] border border-slate-100 shadow-xl hover:shadow-brand-emerald/10 transition-all duration-700 hover:-translate-y-4">
-                <div className="relative mb-10 overflow-hidden rounded-[3rem] aspect-[4/5] border border-slate-50">
-                  <div className="absolute inset-0 bg-brand-emerald/0 group-hover:bg-brand-emerald/10 transition-all z-10 duration-700"></div>
-                  <img src={member.image} alt={member.name} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-[2s] group-hover:scale-110" />
-
-                  <div className="absolute bottom-8 left-8 right-8 p-6 bg-brand-beige-black/80 backdrop-blur-2xl rounded-3xl border border-white/10 opacity-0 group-hover:opacity-100 transform translate-y-8 group-hover:translate-y-0 transition-all duration-700 z-20">
-                    <p className="text-white text-xs font-medium leading-relaxed line-clamp-3">
-                      {member.bio}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="text-center px-4">
-                  <h3 className="text-2xl font-outfit font-bold text-brand-beige-black mb-2 tracking-tight group-hover:text-brand-emerald transition-colors">{member.name}</h3>
-                  <div className="flex items-center justify-center gap-3 mb-8">
-                    <div className="w-1.5 h-1.5 rounded-full bg-brand-emerald" />
-                    <p className="text-brand-emerald font-black text-[10px] uppercase tracking-[0.3em]">{member.role}</p>
-                  </div>
-
-                  <div className="flex justify-center gap-4">
-                    {member.socials.linkedin && (
-                      <a href={member.socials.linkedin} className="w-14 h-14 rounded-2xl bg-brand-beige-white flex items-center justify-center text-slate-400 hover:bg-brand-beige-black hover:text-white transition-all shadow-inner hover:-rotate-6">
-                        <Linkedin size={20} />
-                      </a>
-                    )}
-                    {member.socials.email && (
-                      <a href={`mailto:${member.socials.email}`} className="w-14 h-14 rounded-2xl bg-brand-beige-white flex items-center justify-center text-slate-400 hover:bg-brand-beige-black hover:text-white transition-all shadow-inner hover:rotate-6">
-                        <Mail size={20} />
-                      </a>
-                    )}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Dept Leaders Matrix Removed as per updates */}
     </div>
   );
 };

@@ -224,11 +224,11 @@ const Products: React.FC = () => {
               </div>
 
               <div className="mt-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-                <button className="bg-brand-beige-black hover:bg-brand-red text-white font-ubuntu font-bold py-6 rounded-3xl flex items-center justify-center gap-4 transition-all active:scale-95 shadow-2xl text-xs uppercase tracking-widest">
+                <button className="bg-brand-red hover:bg-red-800 text-white font-ubuntu font-bold py-4 rounded-3xl flex items-center justify-center gap-4 transition-all active:scale-95 shadow-2xl shadow-brand-red/30 text-xs uppercase tracking-widest">
                   <MessageSquare size={20} />
-                  <span>Request Deployment</span>
+                  <span>Contact Sales</span>
                 </button>
-                <button className="bg-white border-2 border-slate-100 hover:border-brand-gold text-brand-beige-black hover:text-brand-gold font-ubuntu font-bold py-6 rounded-3xl flex items-center justify-center gap-4 transition-all active:scale-95 text-xs uppercase tracking-widest">
+                <button className="bg-white border-2 border-slate-100 hover:border-brand-gold text-brand-beige-black hover:text-brand-gold font-ubuntu font-bold py-4 rounded-3xl flex items-center justify-center gap-4 transition-all active:scale-95 text-xs uppercase tracking-widest">
                   <Download size={20} />
                   <span>Data Sheet (PDF)</span>
                 </button>

@@ -141,21 +141,11 @@ const Contact: React.FC = () => {
                   <div>
                     <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-500 mb-2">Our Office</h4>
                     <p className="text-xl font-medium leading-relaxed text-slate-300">
-                      House-51, Flat: A-6, Rabindra Sarani Road, Sector-3, Uttara, Dhaka-1230.
+                      Rabindra Sarani Road, Sector-3, Uttara, Dhaka-1230, Flat A-7, Bangladesh
                     </p>
                   </div>
                 </div>
 
-                <div className="group flex gap-8">
-                  <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center text-brand-gold group-hover:bg-brand-red group-hover:text-white transition-all duration-500 border border-white/10">
-                    <PhoneCall size={28} />
-                  </div>
-                  <div>
-                    <h4 className="text-[10px] font-inter font-black uppercase tracking-[0.3em] text-slate-500 mb-2">Direct Line</h4>
-                    <p className="text-xl font-outfit font-bold">+88-02-58951859</p>
-                    <p className="text-lg text-slate-400 font-medium">Mob: 01777-703240</p>
-                  </div>
-                </div>
 
                 <div className="group flex gap-8">
                   <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center text-brand-gold group-hover:bg-brand-red group-hover:text-white transition-all duration-500 border border-white/10">
@@ -163,7 +153,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-500 mb-2">Email</h4>
-                    <p className="text-xl font-medium text-slate-300">info@aranimalhealthltd.com</p>
+                    <p className="text-xl font-medium text-slate-300">aranimalhealth@gmail.com</p>
                   </div>
                 </div>
               </div>
@@ -276,8 +266,8 @@ const Contact: React.FC = () => {
                         <RefreshCcw className="animate-spin" size={24} />
                       ) : (
                         <>
-                          <span className="text-xl">Transmit Message</span>
-                          <Send size={24} />
+                          <span className="text-xl">Send Message</span>
+                          <Send size={22} />
                         </>
                       )}
                     </button>
@@ -296,7 +286,7 @@ const Contact: React.FC = () => {
           <div className="relative h-[600px] rounded-[4rem] overflow-hidden shadow-2xl border-8 border-white group">
             <iframe
               title="AR Animal Health Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3648.6206110909143!2d90.39530651439071!3d23.86760219020718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c4230e6c5687%3A0xbe6a72361efb0bb9!2sRabindra%20Sarani%2C%20Dhaka%201230%2C%20Bangladesh!5e0!3m2!1sen!2sbg!4v1644134617529!5m2!1sen!2sbg"
+              src="https://maps.google.com/maps?q=AR+Animal+Health+Ltd+Uttara+Dhaka&t=&z=16&ie=UTF8&iwloc=&output=embed"
               width="100%"
               height="100%"
               style={{ border: 0 }}
@@ -304,9 +294,18 @@ const Contact: React.FC = () => {
               loading="lazy"
               className="grayscale group-hover:grayscale-0 transition-all duration-1000 scale-105"
             ></iframe>
+
+            {/* Central Pulse Effect to Mark Location */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-10">
+              <span className="relative flex h-8 w-8">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-red opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-8 w-8 bg-brand-red border-4 border-white shadow-xl"></span>
+              </span>
+            </div>
+
             <div className="absolute top-12 left-12 bg-white/90 backdrop-blur-xl p-10 rounded-[3rem] shadow-2xl max-w-sm border border-white/50 hidden md:block group-hover:bg-white transition-colors duration-500">
               <h4 className="text-2xl font-ubuntu font-bold text-slate-900 mb-2">Technical Hub</h4>
-              <p className="text-slate-500 font-medium mb-6">Our headquarters in Uttara serves as the strategic center for nationwide distribution.</p>
+              <p className="text-slate-500 font-medium mb-6">Rabindra Sarani Road, Sector-3, Uttara, Dhaka-1230, Flat A-7, Bangladesh</p>
               <div className="inline-flex items-center gap-3 text-brand-red font-black text-xs uppercase tracking-widest">
                 <span>View Directions</span>
                 <Globe size={18} />
