@@ -24,10 +24,10 @@ const Home: React.FC = () => {
               <div className="h-px w-8 bg-red-900" />
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-outfit font-bold text-brand-beige-black mb-8 tracking-tighter leading-tight max-w-3xl mx-auto">
-              <span className="text-brand-emerald">Biotech</span> For <span className="text-brand-gold">Modern</span> Farming.
+              <span className="text-brand-emerald">Poultry</span> Sector <span className="text-brand-gold">Excellence.</span>
             </h2>
             <p className="text-slate-500 leading-relaxed text-lg md:text-xl font-medium max-w-2xl mx-auto">
-              Science-backed solutions designed to optimize yield and health across Bangladesh's agricultural sector.
+              Science-backed solutions designed to optimize yield and health across Bangladesh's poultry sector.
             </p>
           </div>
 
@@ -57,7 +57,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Our Story Section - Premium Redesign */}
-      <section className="py-20 md:py-32 lg:py-40 bg-brand-beige-white relative overflow-hidden">
+      <section className="py-20 md:py-32 lg:py-48 bg-brand-beige-white relative overflow-hidden mt-10 md:mt-20">
         {/* Decorative Background Elements */}
         <div className="absolute top-0 right-0 w-1/2 h-full bg-brand-red/[0.03] -skew-x-12 transform translate-x-1/4" />
         <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-brand-gold/10 rounded-full blur-[120px]" />

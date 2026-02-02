@@ -26,8 +26,8 @@ const Team: React.FC = () => {
       {/* CEO Spotlight Interface */}
       <section className="-mt-20 pb-32 relative z-20">
         <div className="container mx-auto px-6 max-w-[1900px]">
-          <div className="bg-white rounded-[4rem] shadow-2xl overflow-hidden border border-slate-100 flex flex-col lg:flex-row">
-            <div className="lg:w-1/2 h-[500px] lg:h-auto relative group">
+          <div className="bg-white rounded-[4rem] shadow-2xl overflow-hidden border border-slate-100 flex flex-col lg:flex-row max-w-6xl mx-auto">
+            <div className="lg:w-2/5 h-[400px] lg:h-[600px] relative group">
               <img src={TEAM[0].image} alt={TEAM[0].name} className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-1000" />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-beige-black/80 via-transparent to-transparent lg:hidden"></div>
               <div className="absolute bottom-10 left-10 lg:hidden text-white">
@@ -36,7 +36,7 @@ const Team: React.FC = () => {
               </div>
             </div>
 
-            <div className="lg:w-1/2 p-12 md:p-20 lg:p-24 flex flex-col justify-center bg-brand-beige-black">
+            <div className="lg:w-3/5 p-12 md:p-16 lg:p-20 flex flex-col justify-center bg-brand-beige-black">
               <div className="inline-flex items-center gap-4 mb-8">
                 <div className="h-px w-12 bg-brand-emerald" />
                 <span className="text-brand-emerald font-black uppercase tracking-[0.4em] text-xs">Founder & Executive Director</span>

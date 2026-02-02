@@ -173,8 +173,8 @@ export const TEAM: TeamMember[] = [
     name: 'Mr. Atiar Rahman',
     role: 'Chief Executive Officer',
     image: 'img/team/1.jpg',
-    bio: 'Visionary leader with 35+ years of experience in the agricultural and poultry sector. Former specialist at Biman Poultry Complex since 1987.',
-    socials: { linkedin: 'https://linkedin.com/in/atiar-rahman', email: 'atiar@aranimalhealthltd.com' }
+    bio: 'Visionary leader with 35+ years of experience in the poultry sector. Former specialist at Biman Poultry Complex since 1987.',
+    socials: { linkedin: 'https://linkedin.com/in/atiar-rahman', email: 'aranimalhealth@gmail.com' }
   }
 ];
 
@@ -192,7 +192,7 @@ export const GALLERY: GalleryItem[] = [
 export const HERO_SLIDES = [
   {
     title: "Global Expertise, Local Success",
-    subtitle: "Partnering with world-class manufacturers like Chanhen and VTR to bring biotechnology to Bangladesh.",
+    subtitle: "Partnering with world-class manufacturers like Chanhen and VTR to bring biotechnology to Bangladesh’s poultry sector.",
     image: "img/slide/slide-1.jpg"
   },
   {
@@ -202,7 +202,7 @@ export const HERO_SLIDES = [
   },
   {
     title: "Nurturing a Greener Tomorrow",
-    subtitle: "Sustainable agricultural solutions for the next generation of farmers.",
+    subtitle: "Sustainable solutions for the next generation of poultry farming.",
     image: "img/slide/slide-3.jpg"
   }
 ];
@@ -234,7 +234,7 @@ export const MILESTONES = [
   {
     year: '2010',
     title: 'Founding Year',
-    description: 'AR Animal Health Ltd was established with a vision to revolutionize the animal health care supply chain.',
+    description: 'AR Animal Health Ltd was established with a vision to revolutionize the poultry health care supply chain.',
     icon: 'Flag'
   },
   {

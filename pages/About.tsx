@@ -69,14 +69,14 @@ const About: React.FC = () => {
                   <span className="text-brand-emerald font-black tracking-[0.4em] uppercase text-xs">Origin Story</span>
                 </div>
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-outfit font-bold text-brand-beige-black mb-8 tracking-tighter leading-tight max-w-xl">
-                  Fulfilling Global <span className="text-brand-emerald">Nutrition.</span>
+                  Poultry Sector <span className="text-brand-emerald">Excellence.</span>
                 </h2>
                 <div className="space-y-8 text-slate-500 text-xl leading-relaxed font-medium">
                   <p>
-                    Under the visionary leadership of <span className="text-brand-beige-black font-bold">Mr. Atiar Rahman</span>, AR Animal Health Ltd has evolved into a strategic nexus for biotechnological advancement in Bangladesh.
+                    Under the visionary leadership of <span className="text-brand-beige-black font-bold">Mr. Atiar Rahman</span>, AR Animal Health Ltd has evolved into a strategic nexus for biotechnological advancement in Bangladesh’s poultry sector.
                   </p>
                   <p>
-                    With over <span className="text-brand-emerald font-black">35 years</span> of deep-sector intelligence, we orchestrate the processing of high-grade phosphorus resources to ensure national agricultural sovereignty.
+                    With over <span className="text-brand-emerald font-black">35 years</span> of specialized intelligence in animal feed additives, we orchestrate the processing of high-grade resources to ensure national food security.
                   </p>
                 </div>
 
@@ -94,19 +94,19 @@ const About: React.FC = () => {
                 </div>
               </div>
 
-              <div className="relative h-[600px] lg:h-auto">
+              <div className="relative h-[400px] lg:h-[500px] max-w-3xl mx-auto lg:max-w-none">
                 <img
                   src="img/about.jpg"
                   alt="Laboratory Facility"
                   className="absolute inset-0 w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-[2s]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-l from-brand-beige-black/40 to-transparent" />
-                <div className="absolute bottom-12 left-12 right-12 bg-white/10 backdrop-blur-2xl p-10 rounded-3xl border border-white/20">
-                  <div className="flex items-center gap-6 mb-4">
-                    <div className="w-12 h-px bg-white" />
-                    <span className="text-white font-black text-xs uppercase tracking-[0.5em]">Site-01 Status</span>
+                <div className="absolute bottom-8 left-8 right-8 bg-white/10 backdrop-blur-2xl p-6 rounded-3xl border border-white/20">
+                  <div className="flex items-center gap-4 mb-2">
+                    <div className="w-8 h-px bg-white" />
+                    <span className="text-white font-black text-[10px] uppercase tracking-[0.5em]">Site-01 Status</span>
                   </div>
-                  <p className="text-white text-lg font-medium leading-relaxed">
+                  <p className="text-white text-base font-medium leading-relaxed">
                     Our manufacturing hub in Bangladesh operates at terminal efficiency, integrating Nano-Biotech with global standards.
                   </p>
                 </div>

@@ -141,11 +141,21 @@ const Contact: React.FC = () => {
                   <div>
                     <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-500 mb-2">Our Office</h4>
                     <p className="text-xl font-medium leading-relaxed text-slate-300">
-                      Rabindra Sarani Road, Sector-3, Uttara, Dhaka-1230, Flat A-7, Bangladesh
+                      House-51, Flat: A-7 (7th Floor), Rabindra Sarani Road, Sector-3, Uttara, Dhaka-1230, Bangladesh
                     </p>
                   </div>
                 </div>
 
+
+                <div className="group flex gap-8">
+                  <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center text-brand-gold group-hover:bg-brand-red group-hover:text-white transition-all duration-500 border border-white/10">
+                    <PhoneCall size={28} />
+                  </div>
+                  <div>
+                    <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-500 mb-2">Mobile</h4>
+                    <p className="text-xl font-medium text-slate-300">01777-703243, 01777-703241</p>
+                  </div>
+                </div>
 
                 <div className="group flex gap-8">
                   <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center text-brand-gold group-hover:bg-brand-red group-hover:text-white transition-all duration-500 border border-white/10">
@@ -286,7 +296,7 @@ const Contact: React.FC = () => {
           <div className="relative h-[600px] rounded-[4rem] overflow-hidden shadow-2xl border-8 border-white group">
             <iframe
               title="AR Animal Health Location"
-              src="https://maps.google.com/maps?q=AR+Animal+Health+Ltd+Uttara+Dhaka&t=&z=16&ie=UTF8&iwloc=&output=embed"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3648.4554449856557!2d90.3957805!3d23.8734638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c43d78079a09%3A0xc0fb17684070a27!2sAR%20Animal%20Health%20Ltd.!5e0!3m2!1sen!2sbd!4v1717326082011!5m2!1sen!2sbd"
               width="100%"
               height="100%"
               style={{ border: 0 }}
@@ -304,8 +314,8 @@ const Contact: React.FC = () => {
             </div>
 
             <div className="absolute top-12 left-12 bg-white/90 backdrop-blur-xl p-10 rounded-[3rem] shadow-2xl max-w-sm border border-white/50 hidden md:block group-hover:bg-white transition-colors duration-500">
-              <h4 className="text-2xl font-ubuntu font-bold text-slate-900 mb-2">Technical Hub</h4>
-              <p className="text-slate-500 font-medium mb-6">Rabindra Sarani Road, Sector-3, Uttara, Dhaka-1230, Flat A-7, Bangladesh</p>
+              <h4 className="text-2xl font-ubuntu font-bold text-slate-900 mb-2">Poultry Hub</h4>
+              <p className="text-slate-500 font-medium mb-6">House-51, Flat: A-7 (7th Floor), Rabindra Sarani Road, Sector-3, Uttara, Dhaka-1230, Bangladesh</p>
               <div className="inline-flex items-center gap-3 text-brand-red font-black text-xs uppercase tracking-widest">
                 <span>View Directions</span>
                 <Globe size={18} />
