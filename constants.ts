@@ -3,7 +3,9 @@ import { Category, Product, TeamMember, GalleryItem } from './types';
 
 // Updated product catalog using high-quality company assets
 // Updated product catalog based on Animal Health focus
+// Updated product catalog based on ARAnimalhealthWebsitecontent.html
 export const PRODUCTS: Product[] = [
+  // Coccidiostats
   {
     id: 'p1',
     name: 'Diclazuril Micro Granular Premix',
@@ -18,215 +20,227 @@ export const PRODUCTS: Product[] = [
     category: Category.COCCIDIOSTAT,
     description: '1% Maduramicin Ammonium for effective coccidiosis control.',
     image: 'img/services-2.jpg',
-    specifications: ['Species: Poultry', 'Type: Rx', 'Dosage: 500g/MT', 'Origin: China']
+    specifications: ['Species: Poultry', 'Type: Rx', 'Dosage: 500-600g/MT', 'Origin: China']
   },
   {
     id: 'p3',
-    name: 'S-Gaurd-O (Natural Mould Inhibitor)',
-    category: Category.MOULD_INHIBITOR,
-    description: 'Synergistic organic acid-based mould inhibitor for feed safety.',
+    name: 'Robenidine Hydrochloride Premix',
+    category: Category.COCCIDIOSTAT,
+    description: '10% Robenidine HCL for broad-spectrum coccidiosis treatment.',
     image: 'img/services-3.jpg',
-    specifications: ['Species: Poultry', 'Application: Feed Storage', 'Dosage: 0.5-1.0kg/MT', 'Origin: India']
+    specifications: ['Species: Poultry', 'Type: Rx', 'Dosage: 300-600g/MT', 'Origin: China']
   },
   {
     id: 'p4',
-    name: 'Toxin-O-Plus (Hybrid Toxin Binder)',
-    category: Category.TOXIN_BINDER,
-    description: 'Advanced adsorbent with organic acids for mycotoxin management.',
+    name: 'Nicarbazin & Maduramicin Combination',
+    category: Category.COCCIDIOSTAT,
+    description: 'Nicarbazin 8% + 0.07% Maduramicin for dual-action control.',
     image: 'img/services-4.jpg',
-    specifications: ['Species: Poultry', 'Type: Toxin Adsorbent', 'Origin: India']
+    specifications: ['Species: Poultry', 'Type: Rx', 'Dosage: 500-600g/MT', 'Origin: China']
   },
   {
     id: 'p5',
-    name: 'A-Gaurd (Propionic Acid 70%)',
-    category: Category.TOXIN_BINDER,
-    description: 'Powerful liquid mould inhibitor and preservative.',
+    name: 'Salinomycin Sodium Premix',
+    category: Category.COCCIDIOSTAT,
+    description: '12% Salinomycin, a trusted ionophore coccidiostat.',
     image: 'img/services-5.jpg',
-    specifications: ['Species: Poultry', 'Type: Acidifier', 'Origin: India']
+    specifications: ['Species: Poultry', 'Type: Rx', 'Dosage: 400-500g/MT', 'Origin: China']
   },
+
+  // Growth Promoters
   {
     id: 'p6',
-    name: 'AR-Lysine (L-Lysine HCL 98.5%)',
-    category: Category.AMINO_ACID,
-    description: 'High-purity essential amino acid for poultry growth.',
-    image: 'img/departments-1.jpg',
-    specifications: ['Species: Poultry', 'Purity: 98.5% min', 'Origin: China']
+    name: 'Biomix 3x',
+    category: Category.GROWTH_PROMOTER,
+    description: 'Gut Bioregulator with Organic Acids, Prebiotics & Intestinal Regenerating Factors.',
+    image: 'img/services-6.jpg',
+    specifications: ['Species: Poultry', 'Dosage: Broiler/Breeder 500g/MT, Layer 250g/MT', 'Origin: India']
   },
+
+  // Toxin Binders
   {
     id: 'p7',
-    name: 'AR-Threonine (L-Threonine 98.5%)',
-    category: Category.AMINO_ACID,
-    description: 'Essential amino acid for improved feed conversion.',
-    image: 'img/departments-2.jpg',
-    specifications: ['Species: Poultry', 'Purity: 98.5% min', 'Origin: China']
+    name: 'Avsorb Mos',
+    category: Category.TOXIN_BINDER,
+    description: 'Superior Toxin Binder with Organic Acids, MOS & Calcium Montmorillonite.',
+    image: 'img/departments-1.jpg',
+    specifications: ['Species: General', 'Dosage: 1kg/MT', 'Origin: India']
   },
   {
     id: 'p8',
-    name: 'L-Valine',
-    category: Category.AMINO_ACID,
-    description: 'Critical amino acid for maximizing poultry productivity.',
-    image: 'img/departments-3.jpg',
-    specifications: ['Species: Poultry', 'Origin: China']
+    name: 'Avsorb Plus',
+    category: Category.TOXIN_BINDER,
+    description: 'Selected Clays and Organic Acids for broad toxin adsorption.',
+    image: 'img/departments-2.jpg',
+    specifications: ['Species: General', 'Dosage: 2kg/MT', 'Origin: India']
   },
+
+  // Other Additives
   {
     id: 'p9',
-    name: 'Choline Chloride',
-    category: Category.VITAMIN,
-    description: 'Essential vitamin-like nutrient for fat metabolism and growth.',
-    image: 'img/departments-4.jpg',
-    specifications: ['Species: Poultry', 'Type: 60% Corn Cob/70% Liquid', 'Origin: China']
+    name: 'HY-Bond Pellet Binder',
+    category: Category.OTHER,
+    description: 'Polymethylolcarbamide (PMC) 95% for durable pellets.',
+    image: 'img/departments-3.jpg',
+    specifications: ['Species: Aqua/Poultry', 'Dosage: Poultry 1-2kg, Fish 2-5kg, Shrimp 4-7kg', 'Origin: China']
   },
   {
     id: 'p10',
-    name: 'AR-Methionine (DL-Methionine 99%)',
-    category: Category.AMINO_ACID,
-    description: 'Primary essential amino acid for feathering and growth.',
-    image: 'img/departments-5.jpg',
-    specifications: ['Species: Poultry', 'Purity: 99% min', 'Origin: China']
+    name: 'Nutriox',
+    category: Category.OTHER,
+    description: 'Antioxidant blend (Ethoxyquin/Propyl Gallate) for feed stabilization.',
+    image: 'img/departments-4.jpg',
+    specifications: ['Species: General', 'Dosage: 75-225g/MT', 'Origin: India']
   },
   {
     id: 'p11',
-    name: 'DCP (Dicalcium Phosphate)',
-    category: Category.MINERAL,
-    description: '18% Phosphorus high-availability mineral supplement.',
-    image: 'img/vtr-100.jpg',
-    specifications: ['Species: Poultry', 'Purity: 18% P min', 'Origin: China/Middle East']
+    name: 'Lipidin',
+    category: Category.OTHER,
+    description: 'Natural Absorption Enhancer (Emulsifier) with LPC, LPE, PLA & LPI.',
+    image: 'img/departments-5.jpg',
+    specifications: ['Species: General', 'Dosage: 500g/MT', 'Origin: India']
   },
   {
     id: 'p12',
-    name: 'MCP (Monocalcium Phosphate)',
-    category: Category.MINERAL,
-    description: '22% Phosphorus premium solubility mineral for efficient growth.',
-    image: 'img/vtr2.jpg',
-    specifications: ['Species: Poultry', 'Purity: 22% P min', 'Origin: China']
+    name: 'Choline Chloride 60% Corn Cob',
+    category: Category.VITAMIN,
+    description: 'Essential methyl donor on corn cob carrier.',
+    image: 'img/services-1.jpg',
+    specifications: ['Species: General', 'Dosage: As per Nutritionist', 'Origin: China']
   },
   {
     id: 'p13',
-    name: 'MDCP (Monodicalcium Phosphate)',
-    category: Category.MINERAL,
-    description: '21% Phosphorus mineral blend for optimized feed formulation.',
-    image: 'img/chanhen-2.jpg',
-    specifications: ['Species: Poultry', 'Purity: 21% P min', 'Origin: China']
+    name: 'Avilyte',
+    category: Category.OTHER,
+    description: 'Balanced Electrolyte with Vitamin C for stress and hydration.',
+    image: 'img/services-2.jpg',
+    specifications: ['Species: Poultry', 'Dosage: Feed 500g/MT, Water 0.5-1.0g/L', 'Origin: India']
   },
+
+  // Enzymes
   {
     id: 'p14',
-    name: 'Phytase (5000/10000 FTU)',
+    name: 'Yiduozyme P-8601',
     category: Category.ENZYME,
-    description: 'High-efficiency enzyme to optimize phosphorus utilization.',
-    image: 'img/services-6.jpg',
-    specifications: ['Species: Poultry', 'Activity: 5,000/10,000 FTU/g', 'Origin: China']
+    description: 'Multi-enzyme complex (Proteinase, Xylanase, etc.) for improved digestion.',
+    image: 'img/vtr-100.jpg',
+    specifications: ['Species: Poultry', 'Dosage: 150-180g/MT', 'Origin: China']
   },
   {
     id: 'p15',
-    name: 'Sodium Bicarbonate',
-    category: Category.MINERAL,
-    description: 'Essential buffer for heat stress management and digestive health.',
-    image: 'img/departments-1.jpg',
-    specifications: ['Species: Poultry', 'Purity: 99% min', 'Origin: China/Turkey']
+    name: 'Microtech 5000 Plus',
+    category: Category.ENZYME,
+    description: 'Heat Tolerant Granular Phytase for phosphorus liberation.',
+    image: 'img/vtr2.jpg',
+    specifications: ['Species: Poultry', 'Dosage: 80-100g/MT', 'Origin: China']
   },
+
+  // Amino Acids
   {
     id: 'p16',
-    name: 'Magnesium Oxide',
-    category: Category.MINERAL,
-    description: 'Crucial mineral for metabolic functions and bone development.',
-    image: 'img/departments-2.jpg',
-    specifications: ['Species: Poultry', 'Origin: China']
+    name: 'DL-Methionine',
+    category: Category.AMINO_ACID,
+    description: '99% Pure DL-Methionine, a critical essential amino acid.',
+    image: 'img/departments-1.jpg',
+    specifications: ['Species: General', 'Dosage: As per Nutritionist', 'Origin: Germany']
   },
   {
     id: 'p17',
-    name: 'Vitamin Premix (Customized)',
-    category: Category.VITAMIN,
-    description: 'Precision-blends of essential vitamins for different growth stages.',
-    image: 'img/departments-3.jpg',
-    specifications: ['Species: Poultry', 'Form: Powder', 'Origin: Europe/China']
+    name: 'L-Lysine',
+    category: Category.AMINO_ACID,
+    description: '98.5% Pure L-Lysine for protein synthesis.',
+    image: 'img/departments-2.jpg',
+    specifications: ['Species: General', 'Dosage: As per Nutritionist', 'Origin: Singapore']
   },
+
+  // Minerals
   {
     id: 'p18',
-    name: 'Broad Spectrum Antibiotics',
-    category: Category.THERAPEUTIC,
-    description: 'Effective therapeutic solutions for bacterial disease management.',
-    image: 'img/departments-4.jpg',
-    specifications: ['Species: Poultry', 'Type: Water Soluble/Feed Grade', 'Origin: China']
+    name: 'DCP Granular (New Hope)',
+    category: Category.MINERAL,
+    description: 'Dicalcium Phosphate (P=18% Min, Ca=22.5%).',
+    image: 'img/chanhen-2.jpg',
+    specifications: ['Species: General', 'Dosage: As per Nutritionist', 'Origin: China']
   },
   {
     id: 'p19',
-    name: 'Anthelmintics',
-    category: Category.THERAPEUTIC,
-    description: 'Potent solutions for internal parasite control in poultry flocks.',
-    image: 'img/departments-5.jpg',
-    specifications: ['Species: Poultry', 'Origin: India/China']
+    name: 'DCP Granular (Sunward)',
+    category: Category.MINERAL,
+    description: 'Dicalcium Phosphate (P=18% Min, Ca=22.5%).',
+    image: 'img/Sunward-Office-2.jpg',
+    specifications: ['Species: General', 'Dosage: As per Nutritionist', 'Origin: China']
   },
   {
     id: 'p20',
-    name: 'Liver Tonics',
-    category: Category.THERAPEUTIC,
-    description: 'Bio-stimulants for optimized liver function and detoxification.',
-    image: 'img/services-1.jpg',
-    specifications: ['Species: Poultry', 'Origin: India']
+    name: 'MCP Micro Granular',
+    category: Category.MINERAL,
+    description: 'Monocalcium Phosphate (P=22% Min, Ca=13% Min).',
+    image: 'img/chanhen-2.jpg',
+    specifications: ['Species: General', 'Dosage: As per Nutritionist', 'Origin: China']
   }
 ];
 
-// Expanded team with new professional consultant headshots
-export const TEAM: TeamMember[] = [
-  {
-    id: 'ceo',
-    name: 'Mr. Atiar Rahman',
-    role: 'Chief Executive Officer',
-    image: 'img/team/1.jpg',
-    bio: 'Visionary leader with 35+ years of experience in the poultry sector. Former specialist at Biman Poultry Complex since 1987.',
-    socials: { linkedin: 'https://linkedin.com/in/atiar-rahman', email: 'aranimalhealth@gmail.com' }
-  }
-];
-
-export const GALLERY: GalleryItem[] = [
-  { id: 'g1', title: 'Modern Production Unit', category: 'Facilities', image: 'img/gallery/gallery-1.jpg' },
-  { id: 'g2', title: 'Corporate Headquarters', category: 'Facilities', image: 'img/portfolio/branding-1.jpg' },
-  { id: 'g3', title: 'Digital Health Solutions', category: 'Innovation', image: 'img/gallery/gallery-3.jpg' },
-  { id: 'g4', title: 'Digital Feed Analysis Interface', category: 'Innovation', image: 'img/gallery/gallery-4.jpg' },
-  { id: 'g5', title: 'Annual Scientific Symposium', category: 'Events', image: 'img/gallery/gallery-5.jpg' },
-  { id: 'g6', title: 'Health Management Dashboard', category: 'Innovation', image: 'img/gallery/gallery-6.jpg' },
-  { id: 'g7', title: 'Published Research Manuals', category: 'CSR', image: 'img/gallery/gallery-7.jpg' },
-  { id: 'g8', title: 'Community Training Program', category: 'CSR', image: 'img/gallery/gallery-8.jpg' }
-];
-
-export const HERO_SLIDES = [
-  {
-    title: "Global Expertise, Local Success",
-    subtitle: "Partnering with world-class manufacturers like Chanhen and VTR to bring biotechnology to Bangladesh’s poultry sector.",
-    image: "img/slide/slide-1.jpg"
-  },
-  {
-    title: "Innovation in Animal Health",
-    subtitle: "Leading the market in high-efficiency enzymes and pharmaceutical-grade feed additives.",
-    image: "img/slide/slide-2.jpg"
-  },
-  {
-    title: "Nurturing a Greener Tomorrow",
-    subtitle: "Sustainable solutions for the next generation of poultry farming.",
-    image: "img/slide/slide-3.jpg"
-  }
-];
-
+// Expanded Partner List from requirements
 export const PARTNER_DETAILS = [
   {
-    name: 'Chanhen',
-    desc: 'Asia’s largest supplier of Monocalcium Phosphate and Monopotassium Phosphate. Specilized in mining phosphate rock.',
-    logo: 'img/chanhen2-logo.jpg'
-  },
-  {
-    name: 'Sunward Chemicals',
-    desc: 'Invested by Yunnan Copper Industry. Annual production capacity of Feed Grade DCP/MCP of 260,000 tons.',
-    logo: 'img/Sunward-Office-2.jpg'
-  },
-  {
-    name: 'ESIGMA',
-    desc: 'Established 1997, a Chinese leading feedstuff pharmaceutical additive factory. Market leader in China.',
+    name: 'Zhejiang Esigma Animal Health Co. Ltd.',
+    desc: 'A leading feedstuff pharmaceutical additive factory established in 1997. Market leader in China for coccidiostats.',
     logo: 'img/EsigmaOffice-1.jpg'
   },
   {
-    name: 'VTR Bio-Tech',
+    name: 'Avitech Nutrition Pvt. Ltd.',
+    desc: 'India’s leading animal nutrition company specializing in phytonutrients, enzymes, and toxin binders.',
+    logo: 'img/partner-avitech.jpg' // Placeholder or needs asset
+  },
+  {
+    name: 'Zouping Jujia Choline Industrial Co. Ltd.',
+    desc: 'Specialized manufacturer of Choline Chloride, ensuring high purity and quality for the feed industry.',
+    logo: 'img/partner-jujia.jpg'
+  },
+  {
+    name: 'Sichuan Chuanheng Chemical Corporation',
+    desc: 'Asia’s largest supplier of Monocalcium Phosphate. Specialized in mining and processing phosphate rock.',
+    logo: 'img/chanhen2-logo.jpg'
+  },
+  {
+    name: 'Guangdong VTR Bio-Tech Co. Ltd.',
     desc: 'The largest animal feed enzyme manufacturer in China. Ranks No. 1 in the feed enzyme industry in Asia.',
     logo: 'img/vtr-100.jpg'
+  },
+  {
+    name: 'Yunnan Copper Industry Sunward Chemicals',
+    desc: 'Annual production capacity of Feed Grade DCP/MCP of 260,000 tons. A major player in mineral feeds.',
+    logo: 'img/Sunward-Office-2.jpg'
+  },
+  {
+    name: 'Yunnan Xinlong Mineral Animal Feed',
+    desc: 'Chemical Division of the New Hope Group. Premium producer of Dicalcium Phosphate.',
+    logo: 'img/partner-newhope.jpg'
+  },
+  {
+    name: 'Hengyi Vet Co. Ltd.',
+    desc: 'Specialized in pellet binders like Polymethylolcarbamide (PMC) for aquatic and poultry feeds.',
+    logo: 'img/partner-hengyi.jpg'
+  },
+  {
+    name: 'Integrated World Enterprise (INTEWE)',
+    desc: 'Global trading partner facilitating the supply of premium animal health ingredients.',
+    logo: 'img/partner-intewe.jpg'
+  },
+  {
+    name: 'Zhejiang Shenghua Biok Biology',
+    desc: 'Renowned manufacturer of veterinary pharmaceuticals and feed additives including Salinomycin.',
+    logo: 'img/partner-shenghua.jpg'
+  },
+  {
+    name: 'Evonik Degussa GmbH',
+    desc: 'German leader in specialty chemicals, providing high-purity DL-Methionine.',
+    logo: 'img/partner-evonik.jpg'
+  },
+  {
+    name: 'Ajinomoto Animal Nutrition',
+    desc: 'Singapore-based leader in amino acids, renowned for high-quality L-Lysine production.',
+    logo: 'img/partner-ajinomoto.jpg'
   }
 ];
 

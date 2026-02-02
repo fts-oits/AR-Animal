@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Search, X, ArrowRight, Package, Globe } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { PRODUCTS, PARTNER_DETAILS } from '../constants';
+import { searchProducts, searchPartners } from '../utils/searchUtils';
 
 interface SearchModalProps {
     isOpen: boolean;
@@ -33,14 +34,8 @@ const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => {
         return () => window.removeEventListener('keydown', handleEsc);
     }, [onClose]);
 
-    const filteredProducts = PRODUCTS.filter(p =>
-        p.name.toLowerCase().includes(query.toLowerCase()) ||
-        p.category.toLowerCase().includes(query.toLowerCase())
-    ).slice(0, 5);
-
-    const filteredPartners = PARTNER_DETAILS.filter(p =>
-        p.name.toLowerCase().includes(query.toLowerCase())
-    ).slice(0, 3);
+    const filteredProducts = searchProducts(PRODUCTS, query).slice(0, 5);
+    const filteredPartners = searchPartners(PARTNER_DETAILS, query).slice(0, 3);
 
     const handleProductClick = (productName: string) => {
         navigate(`/products?search=${encodeURIComponent(productName)}`);

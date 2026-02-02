@@ -3,6 +3,7 @@ import { Search, Filter, Download, Info, Tag, X, CheckCircle, MessageSquare, Che
 import { useSearchParams } from 'react-router-dom';
 import { PRODUCTS } from '../constants';
 import { Category, Product } from '../types';
+import { searchProducts } from '../utils/searchUtils';
 
 const Products: React.FC = () => {
   const [searchParams] = useSearchParams();
@@ -22,12 +23,19 @@ const Products: React.FC = () => {
   }, [searchParams]);
 
   const filteredProducts = useMemo(() => {
-    return PRODUCTS.filter((p) => {
-      const matchesSearch = p.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        p.description.toLowerCase().includes(searchTerm.toLowerCase());
-      const matchesCat = selectedCategory === 'All' || p.category === selectedCategory;
-      return matchesSearch && matchesCat;
-    });
+    let results = PRODUCTS;
+
+    // 1. Fuzzy Search
+    if (searchTerm) {
+      results = searchProducts(PRODUCTS, searchTerm);
+    }
+
+    // 2. Category Filter
+    if (selectedCategory !== 'All') {
+      results = results.filter(p => p.category === selectedCategory);
+    }
+
+    return results;
   }, [searchTerm, selectedCategory]);
 
   return (

@@ -42,7 +42,7 @@ const Footer: React.FC = () => {
               Quick Navigation
             </h4>
             <ul className="space-y-4">
-              {['Home', 'About', 'Products', 'Gallery', 'Contact'].map((item) => (
+              {['Home', 'About', 'Products', 'Partners', 'Gallery', 'Contact'].map((item) => (
                 <li key={item}>
                   <Link
                     to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}

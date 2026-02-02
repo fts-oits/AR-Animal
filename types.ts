@@ -40,3 +40,9 @@ export interface GalleryItem {
   category: string;
   image: string;
 }
+
+export interface Partner {
+  name: string;
+  desc: string;
+  logo: string;
+}

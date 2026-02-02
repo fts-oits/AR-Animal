@@ -18,7 +18,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Products from './pages/Products';
 import Gallery from './pages/Gallery';
-import Team from './pages/Team';
+import Partners from './pages/Partners';
 import Contact from './pages/Contact';
 
 const ScrollToTop = () => {
@@ -43,8 +43,8 @@ const App: React.FC = () => {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/products" element={<Products />} />
+            <Route path="/partners" element={<Partners />} />
             <Route path="/gallery" element={<Gallery />} />
-            <Route path="/team" element={<Team />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
