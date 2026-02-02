@@ -14,10 +14,10 @@ const TimelineItem: React.FC<{ milestone: typeof MILESTONES[0], index: number, i
         <div className="absolute top-12 left-[23px] w-px h-[calc(100%+4rem)] bg-brand-red opacity-20 md:hidden"></div>
       )}
 
-      {/* Desktop Spacer (Always on right) */}
-      <div className="hidden md:block w-5/12 order-3"></div>
+      {/* Desktop Spacer */}
+      <div className={`hidden md:block w-5/12 ${index % 2 === 0 ? 'order-3' : 'order-1'}`}></div>
 
-      {/* Icon Node (Always center) */}
+      {/* Icon Node */}
       <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 md:relative z-10 order-2 flex items-center justify-center w-12 h-12 md:w-20 md:h-20 bg-brand-beige-black border-4 border-brand-red rounded-2xl shadow-2xl group-hover:rotate-12 transition-all duration-700">
         <Icon className="w-6 h-6 md:w-8 md:h-8 text-brand-red" />
         <div className="absolute -top-3 -right-3 w-8 h-8 bg-brand-gold rounded-lg flex items-center justify-center text-brand-beige-black font-black text-[10px] shadow-lg">
@@ -25,8 +25,8 @@ const TimelineItem: React.FC<{ milestone: typeof MILESTONES[0], index: number, i
         </div>
       </div>
 
-      {/* Content Card (Always on left) */}
-      <div className="mb-16 md:mb-0 relative order-1 md:w-5/12 md:text-right md:pr-16">
+      {/* Content Card */}
+      <div className={`mb-16 md:mb-0 relative md:w-5/12 ${index % 2 === 0 ? 'order-1 md:text-right md:pr-16' : 'order-3 md:text-left md:pl-16'}`}>
         <div className="bg-white p-10 md:p-12 rounded-[3.5rem] shadow-xl border border-slate-100 group-hover:border-brand-red hover:shadow-2xl hover:shadow-brand-red/10 transition-all duration-700">
           <span className="text-brand-red font-ubuntu font-bold text-4xl md:text-5xl block mb-6 tracking-tighter">{milestone.year}</span>
           <h4 className="mb-4 font-ubuntu font-bold text-brand-beige-black text-2xl md:text-3xl tracking-tight leading-tight">{milestone.title}</h4>
@@ -100,22 +100,22 @@ const About: React.FC = () => {
                 </div>
 
                 {/* Floating CEO Spotlight Card */}
-                <div className="absolute bottom-10 left-10 right-10 p-10 rounded-[3rem] bg-white/10 backdrop-blur-2xl border border-white/20 shadow-2xl z-30 transform hover:-translate-y-2 transition-all duration-500">
-                  <div className="flex flex-col gap-8">
-                    <div className="flex items-center gap-6">
-                      <div className="w-20 h-20 bg-brand-emerald rounded-[2rem] flex items-center justify-center text-brand-beige-black shadow-lg shadow-emerald-500/20">
-                        <Quote size={32} />
+                <div className="absolute bottom-10 left-6 right-6 lg:left-10 lg:right-auto lg:max-w-xl p-8 rounded-3xl bg-white/10 backdrop-blur-2xl border border-white/20 shadow-2xl z-30 transform hover:-translate-y-2 transition-all duration-500">
+                  <div className="flex flex-col gap-6">
+                    <div className="flex items-center gap-5">
+                      <div className="w-16 h-16 bg-brand-emerald rounded-2xl flex items-center justify-center text-brand-beige-black shadow-lg shadow-emerald-500/20">
+                        <Quote size={28} />
                       </div>
                       <div>
-                        <span className="text-brand-emerald font-black uppercase tracking-[0.4em] text-[10px] mb-2 block">Since 1987</span>
-                        <h2 className="text-3xl md:text-4xl font-outfit font-bold text-white tracking-tighter leading-none">
+                        <span className="text-brand-emerald font-black uppercase tracking-[0.4em] text-[10px] mb-1 block">Since 1987</span>
+                        <h2 className="text-2xl md:text-3xl font-outfit font-bold text-white tracking-tighter leading-none">
                           {TEAM[0].name}
                         </h2>
                       </div>
                     </div>
 
                     <div className="relative">
-                      <p className="text-slate-300 text-lg md:text-xl leading-relaxed italic font-medium">
+                      <p className="text-slate-300 text-base md:text-lg leading-relaxed italic font-medium">
                         "{TEAM[0].bio} Our commitment to animal health is the cornerstone of AR Group's vision."
                       </p>
                     </div>
@@ -123,10 +123,10 @@ const About: React.FC = () => {
                     <div className="pt-6 border-t border-white/10">
                       <a
                         href={`mailto:${TEAM[0].socials.email}`}
-                        className="inline-flex items-center gap-3 text-white hover:text-brand-emerald font-ubuntu font-bold text-xs uppercase tracking-widest transition-colors group/btn"
+                        className="inline-flex items-center gap-3 text-white hover:text-brand-emerald font-ubuntu font-bold text-[10px] uppercase tracking-widest transition-colors group/btn"
                       >
-                        <Mail size={18} className="group-hover/btn:translate-x-1 transition-transform" />
-                        <span>Direct Communications Path</span>
+                        <Mail size={16} className="group-hover/btn:translate-x-1 transition-transform" />
+                        <span>Direct Communication Path</span>
                       </a>
                     </div>
                   </div>

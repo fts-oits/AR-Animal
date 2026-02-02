@@ -56,7 +56,7 @@ const Products: React.FC = () => {
             </div>
 
             {/* Matrix Filters */}
-            <div className="hidden lg:flex items-center gap-3">
+            <div className="hidden lg:flex items-center justify-center gap-3 flex-wrap">
               {['All', ...Object.values(Category)].map((cat) => (
                 <button
                   key={cat}
