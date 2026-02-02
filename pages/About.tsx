@@ -93,41 +93,40 @@ const About: React.FC = () => {
                 </div>
               </div>
 
-              <div className="bg-white border-l border-slate-100">
-                <div className="h-full flex flex-col lg:flex-row">
-                  <div className="lg:w-1/2 h-[400px] lg:h-full relative group overflow-hidden">
-                    <img src={TEAM[0].image} alt={TEAM[0].name} className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-1000" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-brand-beige-black/80 via-transparent to-transparent lg:hidden"></div>
-                    <div className="absolute bottom-10 left-10 lg:hidden text-white">
-                      <p className="text-[10px] font-black uppercase tracking-[0.4em] text-brand-emerald mb-2">Since 1987</p>
-                      <h2 className="text-3xl font-outfit font-bold tracking-tighter">{TEAM[0].name}</h2>
+              <div className="bg-brand-beige-black border-l border-white/5 relative group overflow-hidden">
+                <div className="h-[600px] lg:h-full relative overflow-hidden flex items-center justify-center bg-brand-beige-black">
+                  <img src={TEAM[0].image} alt={TEAM[0].name} className="w-full h-full object-contain grayscale-[30%] group-hover:grayscale-0 transition-all duration-1000 z-10" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-beige-black via-transparent to-transparent opacity-60 z-20" />
+                </div>
+
+                {/* Floating CEO Spotlight Card */}
+                <div className="absolute bottom-10 left-10 right-10 p-10 rounded-[3rem] bg-white/10 backdrop-blur-2xl border border-white/20 shadow-2xl z-30 transform hover:-translate-y-2 transition-all duration-500">
+                  <div className="flex flex-col gap-8">
+                    <div className="flex items-center gap-6">
+                      <div className="w-20 h-20 bg-brand-emerald rounded-[2rem] flex items-center justify-center text-brand-beige-black shadow-lg shadow-emerald-500/20">
+                        <Quote size={32} />
+                      </div>
+                      <div>
+                        <span className="text-brand-emerald font-black uppercase tracking-[0.4em] text-[10px] mb-2 block">Since 1987</span>
+                        <h2 className="text-3xl md:text-4xl font-outfit font-bold text-white tracking-tighter leading-none">
+                          {TEAM[0].name}
+                        </h2>
+                      </div>
                     </div>
-                  </div>
 
-                  <div className="lg:w-1/2 p-12 md:p-16 lg:p-20 flex flex-col justify-center bg-brand-beige-black">
-                    <div className="inline-flex items-center gap-4 mb-8">
-                      <div className="h-px w-12 bg-brand-emerald" />
-                      <span className="text-brand-emerald font-black uppercase tracking-[0.4em] text-xs">Founder & Executive Director</span>
-                    </div>
-
-                    <h2 className="hidden lg:block text-3xl md:text-4xl font-outfit font-bold text-white mb-8 tracking-tighter leading-tight">
-                      {TEAM[0].name}
-                    </h2>
-
-                    <div className="mb-12 relative">
-                      <Quote className="absolute -top-8 -left-8 text-brand-emerald opacity-20" size={64} />
-                      <p className="text-slate-400 text-xl md:text-2xl leading-relaxed italic font-medium relative z-10">
+                    <div className="relative">
+                      <p className="text-slate-300 text-lg md:text-xl leading-relaxed italic font-medium">
                         "{TEAM[0].bio} Our commitment to animal health is the cornerstone of AR Group's vision."
                       </p>
                     </div>
 
-                    <div className="flex">
+                    <div className="pt-6 border-t border-white/10">
                       <a
                         href={`mailto:${TEAM[0].socials.email}`}
-                        className="bg-brand-emerald hover:bg-white hover:text-brand-beige-black text-white px-8 py-4 rounded-xl font-ubuntu font-bold text-xs uppercase tracking-widest shadow-xl transition-all flex items-center justify-center gap-3 active:scale-95"
+                        className="inline-flex items-center gap-3 text-white hover:text-brand-emerald font-ubuntu font-bold text-xs uppercase tracking-widest transition-colors group/btn"
                       >
-                        <Mail size={18} />
-                        <span>Email CEO</span>
+                        <Mail size={18} className="group-hover/btn:translate-x-1 transition-transform" />
+                        <span>Direct Communications Path</span>
                       </a>
                     </div>
                   </div>
