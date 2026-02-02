@@ -52,7 +52,7 @@ const About: React.FC = () => {
               The Scientific <span className="text-brand-red">Odyssey.</span>
             </h1>
             <p className="text-slate-400 text-xl md:text-3xl font-medium leading-relaxed max-w-3xl">
-              De-coding agricultural excellence since 2010. Orchestrating a future where biotechnology and sustainability converge.
+              De-coding poultry health excellence since 2010. Orchestrating a future where biotechnology and sustainability converge.
             </p>
           </div>
         </div>
@@ -201,8 +201,8 @@ const About: React.FC = () => {
         <div className="container mx-auto px-6 max-w-[1900px]">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {[
-              { icon: Target, title: "Mission Data", desc: "To provide high-quality biotechnology that ensures national food security.", color: "text-brand-emerald", bg: "bg-brand-emerald/10" },
-              { icon: Eye, title: "Vision Matrix", desc: "To be the leading innovator in Asian animal health care.", color: "text-brand-gold", bg: "bg-brand-gold/10" },
+              { icon: Target, title: "Mission Data", desc: "To provide high-quality biotechnology that ensures poultry health and regional food security.", color: "text-brand-emerald", bg: "bg-brand-emerald/10" },
+              { icon: Eye, title: "Vision Matrix", desc: "To be the leading innovator in Asian poultry animal health care.", color: "text-brand-gold", bg: "bg-brand-gold/10" },
               { icon: Shield, title: "Core Protocol", desc: "Global standards, local integrity, and commitment to farmers.", color: "text-brand-red", bg: "bg-brand-red/10" }
             ].map((box, idx) => (
               <div key={idx} className="bg-white p-16 rounded-[4rem] border border-slate-100 shadow-xl hover:-translate-y-4 transition-all duration-700 group">

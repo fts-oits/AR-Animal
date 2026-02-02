@@ -58,7 +58,7 @@ export const PRODUCTS: Product[] = [
     category: Category.TOXIN_BINDER,
     description: 'Organic Acids, MOS & Calcium Montmorillonite blend.',
     image: 'img/services-1.jpg',
-    specifications: ['Species: General', 'Type: OTC', 'Dosage: 1kg/MT (Mycotoxin Binding)', 'Origin: India']
+    specifications: ['Species: Poultry', 'Type: OTC', 'Dosage: 1kg/MT (Mycotoxin Binding)', 'Origin: India']
   },
   {
     id: 'p8',
@@ -66,7 +66,7 @@ export const PRODUCTS: Product[] = [
     category: Category.TOXIN_BINDER,
     description: 'Selected Clays and Organic Acids for broad toxin adsorption.',
     image: 'img/services-2.jpg',
-    specifications: ['Species: General', 'Type: OTC', 'Dosage: 2kg/MT (Toxin Adsorption)', 'Origin: India']
+    specifications: ['Species: Poultry', 'Type: OTC', 'Dosage: 2kg/MT (Toxin Adsorption)', 'Origin: India']
   },
   {
     id: 'p9',
@@ -74,7 +74,7 @@ export const PRODUCTS: Product[] = [
     category: Category.OTHER,
     description: 'Polymethylolcarbamide (PMC) 95% for durable pellets.',
     image: 'img/services-3.jpg',
-    specifications: ['Species: Aqua', 'Type: OTC', 'Dosage: Poultry: 1-2kg; Fish: 2-5kg; Shrimp: 4-7kg', 'Origin: China']
+    specifications: ['Species: Poultry', 'Type: OTC', 'Dosage: Broiler: 1-2kg; Pullet: 1.5kg', 'Origin: China']
   },
   {
     id: 'p10',
@@ -82,7 +82,7 @@ export const PRODUCTS: Product[] = [
     category: Category.OTHER,
     description: 'Ethoxyquin/Propyl Gallate/Synergism for feed stabilization.',
     image: 'img/services-4.jpg',
-    specifications: ['Species: General', 'Type: OTC', 'Dosage: 75-225g/MT (Feed Stabilization)', 'Origin: India']
+    specifications: ['Species: Poultry', 'Type: OTC', 'Dosage: 75-225g/MT (Feed Stabilization)', 'Origin: India']
   },
   {
     id: 'p11',
@@ -106,7 +106,7 @@ export const PRODUCTS: Product[] = [
     category: Category.OTHER,
     description: 'LPC, LPE, PLA & LPI Complex to improve fat absorption.',
     image: 'img/services-1.jpg',
-    specifications: ['Species: General', 'Type: OTC', 'Dosage: 500g/MT (Fat Absorption)', 'Origin: India']
+    specifications: ['Species: Poultry', 'Type: OTC', 'Dosage: 500g/MT (Fat Absorption)', 'Origin: India']
   },
   {
     id: 'p14',
@@ -114,7 +114,7 @@ export const PRODUCTS: Product[] = [
     category: Category.OTHER,
     description: '60% concentration on a corn cob carrier.',
     image: 'img/services-2.jpg',
-    specifications: ['Species: General', 'Type: OTC', 'Dosage: As per Nutritionist (Methyl Donor)', 'Origin: China']
+    specifications: ['Species: Poultry', 'Type: OTC', 'Dosage: As per Nutritionist (Methyl Donor)', 'Origin: China']
   },
   {
     id: 'p15',
@@ -130,7 +130,7 @@ export const PRODUCTS: Product[] = [
     category: Category.AMINO_ACID,
     description: '99% Pure DL-Methionine, a critical essential amino acid.',
     image: 'img/services-4.jpg',
-    specifications: ['Species: General', 'Type: OTC', 'Dosage: As per Nutritionist', 'Origin: Germany']
+    specifications: ['Species: Poultry', 'Type: OTC', 'Dosage: As per Nutritionist', 'Origin: Germany']
   },
   {
     id: 'p17',
@@ -138,7 +138,7 @@ export const PRODUCTS: Product[] = [
     category: Category.AMINO_ACID,
     description: '98.5% Pure L-Lysine, a vital building block for protein.',
     image: 'img/services-5.jpg',
-    specifications: ['Species: General', 'Type: OTC', 'Dosage: As per Nutritionist', 'Origin: Singapore']
+    specifications: ['Species: Poultry', 'Type: OTC', 'Dosage: As per Nutritionist', 'Origin: Singapore']
   },
   {
     id: 'p18',
@@ -146,7 +146,7 @@ export const PRODUCTS: Product[] = [
     category: Category.MINERAL,
     description: 'Dicalcium Phosphate with P=18% Min, Ca=22.5%.',
     image: 'img/services-6.jpg',
-    specifications: ['Species: General', 'Type: OTC', 'Dosage: As per Nutritionist', 'Origin: China']
+    specifications: ['Species: Poultry', 'Type: OTC', 'Dosage: As per Nutritionist', 'Origin: China']
   },
   {
     id: 'p19',
@@ -154,7 +154,7 @@ export const PRODUCTS: Product[] = [
     category: Category.MINERAL,
     description: 'Dicalcium Phosphate with P=18% Min, Ca=22.5%.',
     image: 'img/services-1.jpg',
-    specifications: ['Species: General', 'Type: OTC', 'Dosage: As per Nutritionist', 'Origin: China']
+    specifications: ['Species: Poultry', 'Type: OTC', 'Dosage: As per Nutritionist', 'Origin: China']
   },
   {
     id: 'p20',
@@ -162,7 +162,7 @@ export const PRODUCTS: Product[] = [
     category: Category.MINERAL,
     description: 'Monocalcium Phosphate with P=22% Min, Ca=13% Min.',
     image: 'img/services-2.jpg',
-    specifications: ['Species: General', 'Type: OTC', 'Dosage: As per Nutritionist', 'Origin: China']
+    specifications: ['Species: Poultry', 'Type: OTC', 'Dosage: As per Nutritionist', 'Origin: China']
   }
 ];
 
@@ -182,7 +182,7 @@ export const GALLERY: GalleryItem[] = [
   { id: 'g1', title: 'Modern Production Unit', category: 'Facilities', image: 'img/gallery/gallery-1.jpg' },
   { id: 'g2', title: 'Corporate Headquarters', category: 'Facilities', image: 'img/portfolio/branding-1.jpg' },
   { id: 'g3', title: 'Digital Health Solutions', category: 'Innovation', image: 'img/gallery/gallery-3.jpg' },
-  { id: 'g4', title: 'Smart Farming App Interface', category: 'Innovation', image: 'img/gallery/gallery-4.jpg' },
+  { id: 'g4', title: 'Digital Feed Analysis Interface', category: 'Innovation', image: 'img/gallery/gallery-4.jpg' },
   { id: 'g5', title: 'Annual Scientific Symposium', category: 'Events', image: 'img/gallery/gallery-5.jpg' },
   { id: 'g6', title: 'Health Management Dashboard', category: 'Innovation', image: 'img/gallery/gallery-6.jpg' },
   { id: 'g7', title: 'Published Research Manuals', category: 'CSR', image: 'img/gallery/gallery-7.jpg' },
@@ -279,7 +279,7 @@ export const TESTIMONIALS = [
   {
     name: "Karim Enterprises",
     role: "Distributor",
-    quote: "Reliable supply chain and excellent dealer support make them our top partner for fertilizer distribution.",
+    quote: "Reliable supply chain and excellent dealer support make them our top partner for poultry feed additive distribution.",
     image: "img/testimonials/3.jpg"
   }
 ];

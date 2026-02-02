@@ -33,7 +33,7 @@ const Products: React.FC = () => {
               Technical <span className="text-brand-red">Catalog.</span>
             </h1>
             <p className="text-slate-400 text-lg md:text-xl max-w-xl font-medium leading-relaxed">
-              Precision-engineered biotechnology solutions for the modern agricultural spectrum.
+              Precision-engineered biotechnology solutions for the modern poultry spectrum.
             </p>
           </div>
         </div>

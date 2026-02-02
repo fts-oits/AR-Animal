@@ -20,7 +20,7 @@ const Home: React.FC = () => {
           <div className="text-center mb-16 md:mb-24 max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-3 mb-6">
               <div className="h-px w-8 bg-brand-emerald" />
-              <span className="font-black tracking-[0.4em] uppercase text-xs"><span className="text-brand-emerald">Innovation</span> <span className="text-red-900">Hub</span></span>
+              <span className="font-black tracking-[0.4em] uppercase text-xs"><span className="text-brand-emerald">Poultry</span> <span className="text-red-900">Health</span></span>
               <div className="h-px w-8 bg-red-900" />
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-outfit font-bold text-brand-beige-black mb-8 tracking-tighter leading-tight max-w-3xl mx-auto">
@@ -72,7 +72,7 @@ const Home: React.FC = () => {
                 <div className="relative aspect-[4/5] md:aspect-square lg:aspect-[4/5] rounded-[3rem] overflow-hidden border-8 border-white shadow-2xl">
                   <img
                     src="img/slide/slide-2.jpg"
-                    alt="Innovation in Agriculture"
+                    alt="Innovation in Poultry Health"
                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-[2s]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-brand-beige-black/80 via-transparent to-transparent" />
@@ -85,7 +85,7 @@ const Home: React.FC = () => {
                       </div>
                       <div>
                         <p className="text-4xl font-ubuntu font-bold text-white leading-none">10,000+</p>
-                        <p className="text-brand-emerald font-bold text-xs uppercase tracking-widest mt-1">Farmers Empowered</p>
+                        <p className="text-brand-emerald font-bold text-xs uppercase tracking-widest mt-1">Poultry Farmers Empowered</p>
                       </div>
                     </div>
                   </div>
@@ -113,11 +113,11 @@ const Home: React.FC = () => {
                 </div>
 
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-outfit font-bold text-brand-beige-black mb-8 leading-tight tracking-tighter max-w-xl">
-                  Nurturing <span className="text-brand-red">Growth</span> Since <span className="text-brand-emerald">2010</span>.
+                  Poultry <span className="text-brand-red">Excellence</span> Since <span className="text-brand-emerald">2010</span>.
                 </h2>
 
                 <p className="text-lg md:text-xl text-slate-600 mb-10 leading-relaxed font-medium max-w-xl">
-                  AR Animal Health Ltd stands at the intersection of traditional expertise and modern biotechnology. We're not just suppliers; we are partners in Bangladesh's agricultural transformation.
+                  AR Animal Health Ltd stands at the intersection of traditional expertise and modern biotechnology. We're not just suppliers; we are partners in Bangladesh's poultry sector transformation.
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-16">
