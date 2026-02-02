@@ -237,11 +237,6 @@ export const PARTNER_DETAILS = [
     logo: 'img/partner-newhope.jpg'
   },
   {
-    name: 'Hengyi Vet Co. Ltd.',
-    desc: 'Specialized in pellet binders like Polymethylolcarbamide (PMC) for aquatic and poultry feeds.',
-    logo: 'img/partner-hengyi.jpg'
-  },
-  {
     name: 'Integrated World Enterprise (INTEWE)',
     desc: 'Global trading partner facilitating the supply of premium animal health ingredients.',
     logo: 'img/partner-intewe.jpg'

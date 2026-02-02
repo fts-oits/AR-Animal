@@ -1,9 +1,10 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { Search, Filter, Download, Info, Tag, X, CheckCircle, MessageSquare, ChevronDown } from 'lucide-react';
+import { Search, Filter, Info, Tag, X, CheckCircle, MessageSquare, ChevronDown } from 'lucide-react';
 import { useSearchParams } from 'react-router-dom';
 import { PRODUCTS } from '../constants';
 import { Category, Product } from '../types';
 import { searchProducts } from '../utils/searchUtils';
+import ContactSalesModal from '../components/ContactSalesModal';
 
 const Products: React.FC = () => {
   const [searchParams] = useSearchParams();
@@ -11,6 +12,7 @@ const Products: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   useEffect(() => {
     const query = searchParams.get('search');
@@ -192,72 +194,98 @@ const Products: React.FC = () => {
 
       {/* Logic Modal Interface */}
       {selectedProduct && (
-        <div className="fixed inset-0 z-[100] flex items-end lg:items-center justify-center lg:p-12">
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-0 sm:p-4 md:p-6 lg:p-8">
           <div
             className="absolute inset-0 bg-brand-beige-black/80 backdrop-blur-xl transition-opacity duration-700"
             onClick={() => setSelectedProduct(null)}
           ></div>
-          <div className="relative bg-white w-full lg:max-w-6xl h-[95vh] lg:h-auto lg:max-h-[90vh] overflow-y-auto rounded-t-[4rem] lg:rounded-[5rem] shadow-[0_0_100px_rgba(5,150,105,0.3)] flex flex-col lg:flex-row animate-in slide-in-from-bottom-20 duration-700">
+          <div className="relative bg-white w-full max-w-5xl max-h-[95vh] overflow-y-auto rounded-t-[3rem] sm:rounded-[4rem] shadow-[0_0_100px_rgba(5,150,105,0.3)] flex flex-col animate-in slide-in-from-bottom-20 duration-700">
             {/* Close Command */}
             <button
-              className="absolute top-10 right-10 z-[110] w-14 h-14 bg-brand-beige-white hover:bg-brand-red hover:text-white rounded-3xl flex items-center justify-center text-brand-beige-black transition-all shadow-xl border border-slate-100"
+              className="absolute top-4 right-4 sm:top-6 sm:right-6 md:top-8 md:right-8 z-[110] w-12 h-12 sm:w-14 sm:h-14 bg-white/90 hover:bg-brand-red hover:text-white rounded-2xl sm:rounded-3xl flex items-center justify-center text-brand-beige-black transition-all shadow-xl border border-slate-100"
               onClick={() => setSelectedProduct(null)}
             >
-              <X size={24} />
+              <X size={20} className="sm:hidden" />
+              <X size={24} className="hidden sm:block" />
             </button>
 
-            {/* Visual Node */}
-            <div className="lg:w-1/2 bg-brand-beige-white p-12 lg:p-20 flex items-center justify-center min-h-[400px] relative overflow-hidden">
+            {/* Visual Node - Large Image Area */}
+            <div className="w-full bg-gradient-to-br from-brand-beige-white to-slate-50 p-8 sm:p-12 md:p-16 lg:p-20 flex items-center justify-center min-h-[350px] sm:min-h-[450px] md:min-h-[500px] relative overflow-hidden">
               <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,rgba(127,29,29,0.4)_0%,transparent_70%)]" />
               <div className="absolute inset-0 bg-grid-slate-200/[0.05] [mask-image:radial-gradient(white,transparent)]" />
+
+              {/* Category Badge */}
+              <div className="absolute top-6 left-6 sm:top-8 sm:left-8 z-20">
+                <div className="inline-flex items-center gap-2 sm:gap-3 bg-white/95 backdrop-blur-xl px-4 sm:px-6 py-2 sm:py-3 rounded-full border border-slate-200 shadow-lg">
+                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-brand-red animate-pulse" />
+                  <span className="text-brand-red font-black uppercase tracking-[0.3em] sm:tracking-[0.4em] text-[10px] sm:text-xs leading-none">{selectedProduct.category}</span>
+                </div>
+              </div>
+
               <img
                 src={selectedProduct.image}
                 alt={selectedProduct.name}
-                className="w-full h-full object-contain mix-blend-multiply relative z-10 p-12 lg:p-20"
+                className="w-full max-w-md sm:max-w-lg md:max-w-xl h-full object-contain drop-shadow-2xl relative z-10"
               />
             </div>
 
-            {/* Data Node */}
-            <div className="lg:w-1/2 p-12 lg:p-20 flex flex-col">
-              <div className="inline-flex items-center gap-3 mb-8">
-                <div className="w-1.5 h-1.5 rounded-full bg-brand-red" />
-                <span className="text-brand-red font-black uppercase tracking-[0.4em] text-xs leading-none">{selectedProduct.category}</span>
-              </div>
+            {/* Data Node - Content Below */}
+            <div className="w-full p-6 sm:p-8 md:p-12 lg:p-16 bg-white">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-outfit font-bold text-brand-beige-black mb-4 sm:mb-6 tracking-tighter leading-tight">{selectedProduct.name}</h2>
 
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-outfit font-bold text-brand-beige-black mb-8 tracking-tighter leading-tight">{selectedProduct.name}</h2>
-
-              <p className="text-slate-500 text-xl mb-12 leading-relaxed font-medium">
+              <p className="text-slate-500 text-base sm:text-lg md:text-xl mb-8 sm:mb-10 leading-relaxed font-medium max-w-4xl">
                 {selectedProduct.description}
               </p>
 
-              <div className="mb-12 bg-brand-beige-white p-10 rounded-[3rem] border border-slate-100 shadow-inner">
-                <h4 className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-6">Technical Specifications</h4>
-                <div className="grid grid-cols-1 gap-4">
+              {/* Technical Specifications */}
+              <div className="mb-8 sm:mb-10 bg-gradient-to-br from-brand-beige-white to-slate-50 p-6 sm:p-8 md:p-10 rounded-[2rem] sm:rounded-[3rem] border border-slate-100 shadow-sm">
+                <h4 className="text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-widest mb-5 sm:mb-6 flex items-center gap-2">
+                  <div className="w-1 h-4 bg-brand-red rounded-full" />
+                  Technical Specifications
+                </h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
                   {selectedProduct.specifications.map((spec, i) => (
-                    <div key={i} className="flex items-start gap-4 group">
-                      <div className="w-6 h-6 rounded-full bg-brand-red/10 border border-brand-red/20 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-brand-red group-hover:text-white transition-colors">
-                        <CheckCircle className="text-brand-red group-hover:text-white" size={14} />
+                    <div key={i} className="flex items-start gap-3 sm:gap-4 group bg-white p-4 sm:p-5 rounded-2xl border border-slate-100 hover:border-brand-red/20 hover:shadow-md transition-all">
+                      <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-xl bg-brand-red/10 border border-brand-red/20 flex items-center justify-center flex-shrink-0 group-hover:bg-brand-red group-hover:border-brand-red transition-colors">
+                        <CheckCircle className="text-brand-red group-hover:text-white transition-colors" size={14} />
                       </div>
-                      <span className="text-brand-beige-black font-bold text-lg leading-tight">{spec}</span>
+                      <span className="text-brand-beige-black font-bold text-sm sm:text-base leading-tight flex-1">{spec}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className="mt-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-                <button className="bg-brand-red hover:bg-red-800 text-white font-ubuntu font-bold py-4 rounded-3xl flex items-center justify-center gap-4 transition-all active:scale-95 shadow-2xl shadow-brand-red/30 text-xs uppercase tracking-widest">
-                  <MessageSquare size={20} />
-                  <span>Contact Sales</span>
+              {/* Contact Button */}
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setIsContactModalOpen(true);
+                  }}
+                  className="flex-1 bg-brand-red hover:bg-red-800 text-white font-ubuntu font-bold py-5 sm:py-6 rounded-2xl sm:rounded-3xl flex items-center justify-center gap-3 sm:gap-4 transition-all active:scale-95 shadow-2xl shadow-brand-red/30 text-xs sm:text-sm uppercase tracking-widest"
+                >
+                  <MessageSquare size={20} className="sm:hidden" />
+                  <MessageSquare size={22} className="hidden sm:block" />
+                  <span>Contact Sales Team</span>
                 </button>
-                <button className="bg-white border-2 border-slate-100 hover:border-brand-gold text-brand-beige-black hover:text-brand-gold font-ubuntu font-bold py-4 rounded-3xl flex items-center justify-center gap-4 transition-all active:scale-95 text-xs uppercase tracking-widest">
-                  <Download size={20} />
-                  <span>Data Sheet (PDF)</span>
+                <button
+                  onClick={() => setSelectedProduct(null)}
+                  className="sm:w-auto px-8 bg-slate-100 hover:bg-slate-200 text-brand-beige-black font-ubuntu font-bold py-5 sm:py-6 rounded-2xl sm:rounded-3xl flex items-center justify-center gap-3 transition-all active:scale-95 text-xs sm:text-sm uppercase tracking-widest"
+                >
+                  <X size={18} />
+                  <span className="sm:inline">Close</span>
                 </button>
               </div>
             </div>
           </div>
         </div>
       )}
+
+      {/* Contact Sales Modal */}
+      <ContactSalesModal
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
+      />
     </div>
   );
 };
