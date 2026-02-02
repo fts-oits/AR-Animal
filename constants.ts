@@ -180,6 +180,25 @@ export const PRODUCTS: Product[] = [
   }
 ];
 
+// Hero Carousel Slides
+export const HERO_SLIDES = [
+  {
+    title: "Global Expertise, Local Success",
+    subtitle: "Partnering with world-class manufacturers like Chanhen and VTR to bring biotechnology to Bangladesh’s poultry sector.",
+    image: "img/slide/slide-1.jpg"
+  },
+  {
+    title: "Innovation in Animal Health",
+    subtitle: "Leading the market in high-efficiency enzymes and pharmaceutical-grade feed additives.",
+    image: "img/slide/slide-2.jpg"
+  },
+  {
+    title: "Nurturing a Greener Tomorrow",
+    subtitle: "Sustainable solutions for the next generation of poultry farming.",
+    image: "img/slide/slide-3.jpg"
+  }
+];
+
 // Expanded Partner List from requirements
 export const PARTNER_DETAILS = [
   {
@@ -242,6 +261,29 @@ export const PARTNER_DETAILS = [
     desc: 'Singapore-based leader in amino acids, renowned for high-quality L-Lysine production.',
     logo: 'img/partner-ajinomoto.jpg'
   }
+];
+
+// Expanded team with new professional consultant headshots
+export const TEAM: TeamMember[] = [
+  {
+    id: 'ceo',
+    name: 'Mr. Atiar Rahman',
+    role: 'Chief Executive Officer',
+    image: 'img/team/1.jpg',
+    bio: 'Visionary leader with 35+ years of experience in the poultry sector. Former specialist at Biman Poultry Complex since 1987.',
+    socials: { linkedin: 'https://linkedin.com/in/atiar-rahman', email: 'aranimalhealth@gmail.com' }
+  }
+];
+
+export const GALLERY: GalleryItem[] = [
+  { id: 'g1', title: 'Modern Production Unit', category: 'Facilities', image: 'img/gallery/gallery-1.jpg' },
+  { id: 'g2', title: 'Corporate Headquarters', category: 'Facilities', image: 'img/portfolio/branding-1.jpg' },
+  { id: 'g3', title: 'Digital Health Solutions', category: 'Innovation', image: 'img/gallery/gallery-3.jpg' },
+  { id: 'g4', title: 'Digital Feed Analysis Interface', category: 'Innovation', image: 'img/gallery/gallery-4.jpg' },
+  { id: 'g5', title: 'Annual Scientific Symposium', category: 'Events', image: 'img/gallery/gallery-5.jpg' },
+  { id: 'g6', title: 'Health Management Dashboard', category: 'Innovation', image: 'img/gallery/gallery-6.jpg' },
+  { id: 'g7', title: 'Published Research Manuals', category: 'CSR', image: 'img/gallery/gallery-7.jpg' },
+  { id: 'g8', title: 'Community Training Program', category: 'CSR', image: 'img/gallery/gallery-8.jpg' }
 ];
 
 export const MILESTONES = [

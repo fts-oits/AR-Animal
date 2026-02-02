@@ -32,6 +32,7 @@ const Navbar: React.FC<NavbarProps> = ({ onSearchClick }) => {
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
     { name: 'Products', path: '/products' },
+    { name: 'Partners', path: '/partners' },
     { name: 'Gallery', path: '/gallery' },
   ];
 

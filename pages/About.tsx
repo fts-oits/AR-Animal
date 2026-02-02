@@ -42,7 +42,7 @@ const About: React.FC = () => {
   return (
     <div className="bg-brand-beige-white min-h-screen">
       {/* Terminal Hero */}
-      <section className="bg-brand-beige-black pt-48 pb-56 relative overflow-hidden">
+      <section className="bg-brand-beige-black pt-48 pb-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-brand-red/20 via-transparent to-brand-gold/10"></div>
         <div className="absolute -bottom-1 w-[120%] h-40 bg-brand-beige-white -rotate-3 translate-x-[-10%] z-20"></div>
 
@@ -59,7 +59,7 @@ const About: React.FC = () => {
         </div>
       </section>
 
-      <section className="-mt-32 pb-32 relative z-20">
+      <section className="py-24 relative z-20">
         <div className="container mx-auto px-6 max-w-[1900px]">
           <div className="bg-brand-beige-black rounded-[4rem] shadow-2xl overflow-hidden border border-white/10">
             <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">

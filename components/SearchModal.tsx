@@ -83,7 +83,7 @@ const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => {
                         <>
                             {/* Products Section */}
                             {filteredProducts.length > 0 && (
-                                <divWrapper title="Products" icon={<Package size={14} />}>
+                                <SectionWrapper title="Products" icon={<Package size={14} />}>
                                     {filteredProducts.map(product => (
                                         <button
                                             key={product.id}
@@ -98,12 +98,12 @@ const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => {
                                             <ArrowRight size={16} className="text-slate-300 group-hover:text-brand-red group-hover:translate-x-1 transition-all" />
                                         </button>
                                     ))}
-                                </divWrapper>
+                                </SectionWrapper>
                             )}
 
                             {/* Partners Section */}
                             {filteredPartners.length > 0 && (
-                                <divWrapper title="Global Partners" icon={<Globe size={14} />}>
+                                <SectionWrapper title="Global Partners" icon={<Globe size={14} />}>
                                     {filteredPartners.map((partner, idx) => (
                                         <div key={idx} className="flex items-center gap-4 p-4 rounded-xl bg-slate-50 border border-slate-100">
                                             <img src={partner.logo} alt={partner.name} className="w-12 h-12 object-contain rounded-lg bg-white p-1" />
@@ -113,7 +113,7 @@ const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => {
                                             </div>
                                         </div>
                                     ))}
-                                </divWrapper>
+                                </SectionWrapper>
                             )}
 
                             {filteredProducts.length === 0 && filteredPartners.length === 0 && (
@@ -129,7 +129,7 @@ const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => {
     );
 };
 
-const divWrapper = ({ title, icon, children }: { title: string, icon: React.ReactNode, children: React.ReactNode }) => (
+const SectionWrapper = ({ title, icon, children }: { title: string, icon: React.ReactNode, children: React.ReactNode }) => (
     <div>
         <h3 className="text-xs font-black uppercase tracking-widest text-slate-400 mb-4 flex items-center gap-2">
             {icon} {title}
