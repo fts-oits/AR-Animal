@@ -11,6 +11,7 @@ import {
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import BackToTop from './components/BackToTop';
+import SearchModal from './components/SearchModal';
 
 // Pages
 import Home from './pages/Home';
@@ -29,11 +30,14 @@ const ScrollToTop = () => {
 };
 
 const App: React.FC = () => {
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+
   return (
     <Router>
       <ScrollToTop />
       <div className="flex flex-col min-h-screen">
-        <Navbar />
+        <Navbar onSearchClick={() => setIsSearchOpen(true)} />
+        <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />

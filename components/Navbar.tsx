@@ -2,10 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ArrowRight, Phone, Mail, Search } from 'lucide-react';
 
-const Navbar: React.FC = () => {
+interface NavbarProps {
+  onSearchClick: () => void;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ onSearchClick }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
   const location = useLocation();
 
   useEffect(() => {
@@ -62,13 +65,12 @@ const Navbar: React.FC = () => {
               {/* Centered Search Bar - Takes up middle space */}
               <div className="flex-1 flex justify-center px-4">
                 <div className={`relative transition-all duration-500 overflow-hidden ${scrolled ? 'w-[300px] opacity-100' : 'w-0 opacity-0'}`}>
-                  <div className="relative w-full">
+                  <div className="relative w-full" onClick={onSearchClick}>
                     <input
                       type="text"
                       placeholder="Search Products"
-                      value={searchQuery}
-                      onChange={(e) => setSearchQuery(e.target.value)}
-                      className="w-full bg-white/80 backdrop-blur-md border border-brand-red rounded-2xl px-12 py-2 focus:outline-none focus:border-brand-gold transition-all font-ubuntu font-bold text-slate-800 placeholder-slate-400 shadow-sm"
+                      readOnly
+                      className="w-full bg-white/80 backdrop-blur-md border border-brand-red rounded-2xl px-12 py-2 focus:outline-none focus:border-brand-gold transition-all font-ubuntu font-bold text-slate-800 placeholder-slate-400 shadow-sm cursor-pointer"
                     />
                     <Search size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-brand-gold" />
                   </div>

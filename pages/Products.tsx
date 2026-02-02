@@ -1,14 +1,25 @@
-
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { Search, Filter, Download, Info, Tag, X, CheckCircle, MessageSquare, ChevronDown } from 'lucide-react';
+import { useSearchParams } from 'react-router-dom';
 import { PRODUCTS } from '../constants';
 import { Category, Product } from '../types';
 
 const Products: React.FC = () => {
+  const [searchParams] = useSearchParams();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [isFilterOpen, setIsFilterOpen] = useState(false);
+
+  useEffect(() => {
+    const query = searchParams.get('search');
+    if (query) {
+      setSearchTerm(query);
+      // Optional: scroll to grid if needed
+      const grid = document.getElementById('product-grid');
+      if (grid) grid.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [searchParams]);
 
   const filteredProducts = useMemo(() => {
     return PRODUCTS.filter((p) => {
@@ -105,7 +116,7 @@ const Products: React.FC = () => {
       </section>
 
       {/* Output Grid */}
-      <section className="py-24">
+      <section className="py-24" id="product-grid">
         <div className="container mx-auto px-6 max-w-[1900px]">
           {filteredProducts.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
