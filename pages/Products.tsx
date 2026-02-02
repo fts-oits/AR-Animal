@@ -120,7 +120,7 @@ const Products: React.FC = () => {
                     <img
                       src={p.image}
                       alt={p.name}
-                      className="w-full h-full object-contain p-16 group-hover:scale-105 transition-transform duration-700 mix-blend-multiply relative z-10"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 relative z-10"
                     />
                     <div className="absolute top-6 left-6 z-20">
                       <div className="flex items-center gap-2 bg-white/90 backdrop-blur px-4 py-2 rounded-full border border-slate-200 shadow-sm">

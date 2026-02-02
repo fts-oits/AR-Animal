@@ -8,29 +8,30 @@ const TimelineItem: React.FC<{ milestone: typeof MILESTONES[0], index: number, i
   const Icon = IconMap[milestone.icon] || Flag;
 
   return (
-    <div className="relative pl-12 md:pl-0 md:mb-32 md:flex md:items-center md:justify-between group">
-      {/* Connector Line */}
+    <div className={`relative mb-32 min-[756px]:flex min-[756px]:items-center min-[756px]:justify-between group ${index % 2 === 0 ? 'min-[756px]:flex-row' : 'min-[756px]:flex-row-reverse'}`}>
+      {/* Mobile Connector */}
       {!isLast && (
-        <div className="absolute top-12 left-[23px] w-px h-[calc(100%+4rem)] bg-brand-red opacity-20 md:hidden"></div>
+        <div className="absolute top-12 left-[23px] w-px h-[calc(100%+4rem)] bg-brand-red opacity-10 min-[756px]:hidden"></div>
       )}
 
       {/* Desktop Spacer */}
-      <div className={`hidden md:block w-5/12 ${index % 2 === 0 ? 'order-3' : 'order-1'}`}></div>
+      <div className="hidden min-[756px]:block w-5/12"></div>
 
-      {/* Icon Node */}
-      <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 md:relative z-10 order-2 flex items-center justify-center w-12 h-12 md:w-20 md:h-20 bg-brand-beige-black border-4 border-brand-red rounded-2xl shadow-2xl group-hover:rotate-12 transition-all duration-700">
-        <Icon className="w-6 h-6 md:w-8 md:h-8 text-brand-red" />
-        <div className="absolute -top-3 -right-3 w-8 h-8 bg-brand-gold rounded-lg flex items-center justify-center text-brand-beige-black font-black text-[10px] shadow-lg">
-          {milestone.year.toString().slice(-2)}
-        </div>
-      </div>
+      {/* Content Card with Integrated Icon */}
+      <div className={`relative min-[756px]:w-5/12 ${index % 2 === 0 ? 'text-left' : 'min-[756px]:text-right text-left'}`}>
+        <div className="bg-white p-10 md:p-14 rounded-[3.5rem] shadow-xl border border-slate-100 group-hover:border-brand-red hover:shadow-2xl hover:shadow-brand-red/10 transition-all duration-700 relative">
 
-      {/* Content Card */}
-      <div className={`mb-16 md:mb-0 relative md:w-5/12 ${index % 2 === 0 ? 'order-1 md:text-right md:pr-16' : 'order-3 md:text-left md:pl-16'}`}>
-        <div className="bg-white p-10 md:p-12 rounded-[3.5rem] shadow-xl border border-slate-100 group-hover:border-brand-red hover:shadow-2xl hover:shadow-brand-red/10 transition-all duration-700">
-          <span className="text-brand-red font-ubuntu font-bold text-4xl md:text-5xl block mb-6 tracking-tighter">{milestone.year}</span>
-          <h4 className="mb-4 font-ubuntu font-bold text-brand-beige-black text-2xl md:text-3xl tracking-tight leading-tight">{milestone.title}</h4>
-          <p className="text-slate-500 leading-relaxed font-medium">{milestone.description}</p>
+          {/* Integrated Icon Node - Positioned based on alignment (Inner side) */}
+          <div className={`absolute -top-6 z-30 flex items-center justify-center w-16 h-16 md:w-24 md:h-24 bg-brand-beige-black border-4 border-brand-red rounded-[2rem] shadow-2xl group-hover:rotate-12 transition-all duration-700 ${index % 2 === 0 ? '-right-6' : 'min-[756px]:-left-6 -right-6'}`}>
+            <Icon className="w-8 h-8 md:w-10 md:h-10 text-brand-red" />
+            <div className="absolute -top-2 -right-2 w-10 h-10 bg-brand-gold rounded-xl flex items-center justify-center text-brand-beige-black font-black text-xs shadow-lg">
+              {milestone.year.toString().slice(-2)}
+            </div>
+          </div>
+
+          <span className="text-brand-red font-ubuntu font-bold text-4xl md:text-6xl block mb-6 tracking-tighter">{milestone.year}</span>
+          <h4 className="mb-6 font-ubuntu font-bold text-brand-beige-black text-2xl md:text-4xl tracking-tight leading-tight">{milestone.title}</h4>
+          <p className="text-slate-500 leading-relaxed font-medium text-lg md:text-xl">{milestone.description}</p>
         </div>
       </div>
     </div>
@@ -61,73 +62,74 @@ const About: React.FC = () => {
       <section className="-mt-32 pb-32 relative z-20">
         <div className="container mx-auto px-6 max-w-[1900px]">
           <div className="bg-brand-beige-black rounded-[4rem] shadow-2xl overflow-hidden border border-white/10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-              <div className="p-12 md:p-24 lg:p-32">
-                <div className="inline-flex items-center gap-3 mb-10">
-                  <div className="h-px w-12 bg-brand-red" />
-                  <span className="text-brand-red font-black tracking-[0.4em] uppercase text-xs">Origin Story</span>
-                </div>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-outfit font-bold text-white mb-8 tracking-tighter leading-tight max-w-3xl">
-                  The <span className="text-brand-red">Strategists.</span>
-                </h1>
-                <div className="space-y-8 text-slate-400 text-xl leading-relaxed font-medium">
-                  <p>
-                    Under the visionary leadership of <span className="text-white font-bold">Mr. Atiar Rahman</span>, AR Animal Health Ltd has evolved into a strategic nexus for biotechnological advancement in Bangladesh’s poultry sector.
-                  </p>
-                  <p>
-                    With over <span className="text-brand-emerald font-black">35 years</span> of specialized intelligence in animal feed additives, we orchestrate the processing of high-grade resources to ensure national food security.
-                  </p>
-                </div>
+            <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
 
-                <div className="grid grid-cols-2 gap-8 mt-16">
-                  <div className="bg-white/5 p-10 rounded-[2.5rem] border border-white/10 relative group overflow-hidden">
-                    <div className="absolute top-0 right-0 w-16 h-16 bg-brand-emerald/10 rounded-full blur-xl group-hover:scale-150 transition-transform" />
-                    <span className="block text-3xl font-outfit font-bold text-white mb-2">2010</span>
-                    <span className="text-[10px] font-inter font-black uppercase tracking-widest text-brand-emerald">System Launch</span>
-                  </div>
-                  <div className="bg-white/5 p-10 rounded-[2.5rem] border border-white/10 relative group overflow-hidden">
-                    <div className="absolute top-0 right-0 w-16 h-16 bg-brand-gold/10 rounded-full blur-xl group-hover:scale-150 transition-transform" />
-                    <span className="block text-3xl font-outfit font-bold text-white mb-2">ISO+</span>
-                    <span className="text-[10px] font-inter font-black uppercase tracking-widest text-brand-gold">Terminal Grade</span>
-                  </div>
-                </div>
-              </div>
+              {/* CEO Portrait Side */}
+              <div className="lg:col-span-6 relative bg-brand-beige-black min-h-[600px] lg:min-h-full overflow-hidden group flex flex-col justify-end p-6 lg:p-10">
+                <img
+                  src={TEAM[0].image}
+                  alt={TEAM[0].name}
+                  className="absolute top-12 md:top-24 lg:top-32 left-0 right-0 bottom-0 w-full h-[calc(100%-3rem)] md:h-[calc(100%-6rem)] lg:h-[calc(100%-8rem)] object-contain object-top grayscale-[30%] group-hover:grayscale-0 transition-all duration-1000 z-10"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-beige-black via-transparent to-transparent opacity-60 z-20" />
 
-              <div className="bg-brand-beige-black border-l border-white/5 relative group overflow-hidden">
-                <div className="h-[600px] lg:h-full relative overflow-hidden flex items-center justify-center bg-brand-beige-black">
-                  <img src={TEAM[0].image} alt={TEAM[0].name} className="w-full h-full object-contain grayscale-[30%] group-hover:grayscale-0 transition-all duration-1000 z-10" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-beige-black via-transparent to-transparent opacity-60 z-20" />
-                </div>
-
-                {/* Floating CEO Spotlight Card */}
-                <div className="absolute bottom-10 left-6 right-6 lg:left-10 lg:right-auto lg:max-w-xl p-8 rounded-3xl bg-white/10 backdrop-blur-2xl border border-white/20 shadow-2xl z-30 transform hover:-translate-y-2 transition-all duration-500">
+                {/* Floating Bio Card - Precision position from red mark */}
+                <div className="relative w-full p-8 rounded-3xl bg-white/10 backdrop-blur-2xl border border-white/20 shadow-2xl z-30 transform hover:-translate-y-2 transition-all duration-500">
                   <div className="flex flex-col gap-6">
                     <div className="flex items-center gap-5">
-                      <div className="w-16 h-16 bg-brand-emerald rounded-2xl flex items-center justify-center text-brand-beige-black shadow-lg shadow-emerald-500/20">
+                      <div className="w-16 h-16 bg-brand-emerald rounded-2xl flex items-center justify-center text-emerald-900 shadow-lg shadow-emerald-500/20">
                         <Quote size={28} />
                       </div>
                       <div>
                         <span className="text-brand-emerald font-black uppercase tracking-[0.4em] text-[10px] mb-1 block">Since 1987</span>
-                        <h2 className="text-2xl md:text-3xl font-outfit font-bold text-white tracking-tighter leading-none">
-                          {TEAM[0].name}
-                        </h2>
+                        <h2 className="text-2xl md:text-3xl font-outfit font-bold text-white tracking-tighter leading-none">{TEAM[0].name}</h2>
                       </div>
                     </div>
-
-                    <div className="relative">
-                      <p className="text-slate-300 text-base md:text-lg leading-relaxed italic font-medium">
-                        "{TEAM[0].bio} Our commitment to animal health is the cornerstone of AR Group's vision."
-                      </p>
-                    </div>
-
+                    <p className="text-slate-300 text-base md:text-lg leading-relaxed italic font-medium">
+                      "{TEAM[0].bio} Our commitment to animal health is the cornerstone of AR Group's vision."
+                    </p>
                     <div className="pt-6 border-t border-white/10">
-                      <a
-                        href={`mailto:${TEAM[0].socials.email}`}
-                        className="inline-flex items-center gap-3 text-white hover:text-brand-emerald font-ubuntu font-bold text-[10px] uppercase tracking-widest transition-colors group/btn"
-                      >
+                      <a href={`mailto:${TEAM[0].socials.email}`} className="inline-flex items-center gap-3 text-white hover:text-brand-emerald font-ubuntu font-bold text-[10px] uppercase tracking-widest transition-colors group/btn">
                         <Mail size={16} className="group-hover/btn:translate-x-1 transition-transform" />
                         <span>Direct Communication Path</span>
                       </a>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              {/* Story Content Side */}
+              <div className="lg:col-span-6 p-12 md:p-24 lg:p-32 flex flex-col bg-brand-beige-black">
+                <div className="max-w-2xl">
+                  <div className="flex items-center gap-4 mb-8">
+                    <div className="h-[2px] w-12 bg-brand-emerald"></div>
+                    <span className="text-brand-emerald font-black tracking-[0.4em] uppercase text-xs">Origin Story</span>
+                  </div>
+
+                  <h2 className="text-4xl md:text-5xl lg:text-7xl font-outfit font-bold text-white mb-8 leading-tight tracking-tighter">
+                    The <span className="text-brand-red">Strategists.</span>
+                  </h2>
+
+                  <div className="space-y-8 text-slate-300 text-xl leading-relaxed font-medium mb-12">
+                    <p>
+                      Under the visionary leadership of <span className="text-white font-bold">Mr. Atiar Rahman</span>, AR Animal Health Ltd has evolved into a strategic nexus for biotechnological advancement in Bangladesh’s poultry sector.
+                    </p>
+                    <p>
+                      With over <span className="text-brand-emerald font-black">35 years</span> of specialized intelligence in animal feed additives, we orchestrate the processing of high-grade resources to ensure national food security.
+                    </p>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-8 mb-16">
+                    <div className="bg-white/5 p-10 rounded-[2.5rem] border border-white/10 shadow-sm hover:shadow-xl transition-all group overflow-hidden relative">
+                      <div className="absolute top-0 right-0 w-16 h-16 bg-brand-emerald/10 rounded-full blur-xl group-hover:scale-150 transition-transform" />
+                      <span className="block text-4xl font-outfit font-bold text-white mb-2">2010</span>
+                      <span className="text-[10px] font-inter font-black uppercase tracking-widest text-brand-emerald">System Launch</span>
+                    </div>
+                    <div className="bg-white/5 p-10 rounded-[2.5rem] border border-white/10 shadow-sm hover:shadow-xl transition-all group overflow-hidden relative">
+                      <div className="absolute top-0 right-0 w-16 h-16 bg-brand-gold/10 rounded-full blur-xl group-hover:scale-150 transition-transform" />
+                      <span className="block text-4xl font-outfit font-bold text-white mb-2">ISO+</span>
+                      <span className="text-[10px] font-inter font-black uppercase tracking-widest text-brand-gold">Terminal Grade</span>
                     </div>
                   </div>
                 </div>
@@ -151,9 +153,9 @@ const About: React.FC = () => {
             </div>
           </div>
 
-          <div className="relative max-w-6xl mx-auto">
-            {/* Desktop Vertical Axis */}
-            <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-px bg-gradient-to-b from-brand-emerald via-brand-emerald/5 to-transparent hidden md:block"></div>
+          <div className="max-w-6xl mx-auto relative px-6 min-[756px]:px-0">
+            {/* Desktop Vertical Axis (> 756px) */}
+            <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-px bg-gradient-to-b from-brand-red via-brand-red/5 to-transparent hidden min-[756px]:block"></div>
 
             <div className="relative">
               {MILESTONES.map((milestone, idx) => (

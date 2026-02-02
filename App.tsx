@@ -10,6 +10,7 @@ import {
 // Components
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import BackToTop from './components/BackToTop';
 
 // Pages
 import Home from './pages/Home';
@@ -44,6 +45,7 @@ const App: React.FC = () => {
           </Routes>
         </main>
         <Footer />
+        <BackToTop />
       </div>
     </Router>
   );

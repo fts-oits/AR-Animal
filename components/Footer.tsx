@@ -19,11 +19,9 @@ const Footer: React.FC = () => {
           <div className="flex flex-col min-[756px]:w-[35%] space-y-8">
             <Link to="/" className="flex items-center gap-4 group">
               <div className="h-20 w-auto flex items-center justify-center transition-transform group-hover:scale-105">
-                <img src="img/logo.png" alt="AR Animal Health Logo" className="h-full w-auto object-contain bg-white rounded-lg p-1" />
+                <img src="img/logo.png" alt="AR Animal Health Logo" className="h-full w-auto object-contain" />
               </div>
               <div className="flex flex-col">
-                <span className="text-xl font-black tracking-tighter leading-none">AR ANIMAL HEALTH LTD.</span>
-                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-emerald-500">Poultry Sector Excellence</span>
               </div>
             </Link>
             <p className="text-slate-400 leading-relaxed font-medium max-w-lg">

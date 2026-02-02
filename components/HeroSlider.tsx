@@ -116,7 +116,7 @@ const HeroSlider: React.FC = () => {
             <span className={`text-[10px] font-black transition-colors ${idx === current ? 'text-brand-gold' : 'text-white/40 group-hover:text-white'}`}>
               0{idx + 1}
             </span>
-            <div className={`h-12 w-1 rounded-full transition-all duration-700 ${idx === current ? 'bg-brand-gold shadow-[0_0_15px_rgba(180,83,9,0.8)]' : 'bg-white/20 group-hover:bg-white/40'}`} />
+            <div className={`h-8 w-1 rounded-full transition-all duration-700 ${idx === current ? 'bg-brand-gold shadow-[0_0_15px_rgba(180,83,9,0.8)]' : 'bg-white/20 group-hover:bg-white/40'}`} />
           </button>
         ))}
       </div>

@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ArrowRight, Phone, Mail } from 'lucide-react';
+import { Menu, X, ArrowRight, Phone, Mail, Search } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
   const location = useLocation();
 
   useEffect(() => {
@@ -55,33 +56,53 @@ const Navbar: React.FC = () => {
               </div>
             </Link>
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-2">
-              <div className={`flex items-center gap-2 rounded-2xl px-3 py-2 transition-colors duration-500 ${scrolled ? 'bg-slate-200/50' : 'bg-white/10 backdrop-blur-md border border-white/10'
-                }`}>
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.path}
-                    to={link.path}
-                    className={`relative px-4 py-2 rounded-xl text-sm font-ubuntu font-bold transition-all duration-300 ${location.pathname === link.path
-                      ? 'bg-brand-red text-white shadow-lg'
-                      : scrolled
-                        ? 'text-slate-600 hover:text-brand-gold hover:bg-white/50'
-                        : 'text-white/90 hover:text-white hover:bg-white/20'
-                      }`}
-                  >
-                    {link.name}
-                  </Link>
-                ))}
+            {/* Desktop Navigation & Search */}
+            <div className="hidden md:flex items-center flex-1">
+
+              {/* Centered Search Bar - Takes up middle space */}
+              <div className="flex-1 flex justify-center px-4">
+                <div className={`relative transition-all duration-500 overflow-hidden ${scrolled ? 'w-[300px] opacity-100' : 'w-0 opacity-0'}`}>
+                  <div className="relative w-full">
+                    <input
+                      type="text"
+                      placeholder="Search Products"
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      className="w-full bg-white/80 backdrop-blur-md border border-brand-red rounded-2xl px-12 py-2 focus:outline-none focus:border-brand-gold transition-all font-ubuntu font-bold text-slate-800 placeholder-slate-400 shadow-sm"
+                    />
+                    <Search size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-brand-gold" />
+                  </div>
+                </div>
               </div>
 
-              <Link
-                to="/contact"
-                className="ml-6 bg-brand-red hover:bg-red-800 text-white px-5 py-2 rounded-xl text-xs font-inter font-bold shadow-xl shadow-brand-red/20 transform hover:-translate-y-1 transition-all duration-300 flex items-center gap-2 group whitespace-nowrap"
-              >
-                <span>Contact</span>
-                <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-              </Link>
+              {/* Right Side Navigation Group */}
+              <div className="flex items-center gap-4">
+                <div className={`flex items-center gap-2 rounded-2xl px-3 py-2 transition-colors duration-500 ${scrolled ? 'bg-slate-200/50' : 'bg-white/10 backdrop-blur-md border border-white/10'
+                  }`}>
+                  {navLinks.map((link) => (
+                    <Link
+                      key={link.path}
+                      to={link.path}
+                      className={`relative px-4 py-2 rounded-xl text-sm font-ubuntu font-bold transition-all duration-300 ${location.pathname === link.path
+                        ? 'bg-brand-red text-white shadow-lg'
+                        : scrolled
+                          ? 'text-slate-600 hover:text-brand-gold hover:bg-white/50'
+                          : 'text-white/90 hover:text-white hover:bg-white/20'
+                        }`}
+                    >
+                      {link.name}
+                    </Link>
+                  ))}
+                </div>
+
+                <Link
+                  to="/contact"
+                  className={`bg-brand-red hover:bg-red-800 text-white px-5 py-2 rounded-xl text-xs font-inter font-bold shadow-xl shadow-brand-red/20 transform hover:-translate-y-1 transition-all duration-300 flex items-center gap-2 group whitespace-nowrap ml-2`}
+                >
+                  <span>Contact</span>
+                  <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
             </div>
 
             {/* Mobile Toggle */}
