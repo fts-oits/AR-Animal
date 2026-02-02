@@ -14,10 +14,10 @@ const TimelineItem: React.FC<{ milestone: typeof MILESTONES[0], index: number, i
         <div className="absolute top-12 left-[23px] w-px h-[calc(100%+4rem)] bg-brand-red opacity-20 md:hidden"></div>
       )}
 
-      {/* Desktop Spacer */}
-      <div className={`hidden md:block w-5/12 ${index % 2 === 0 ? 'order-1' : 'order-3'}`}></div>
+      {/* Desktop Spacer (Always on right) */}
+      <div className="hidden md:block w-5/12 order-3"></div>
 
-      {/* Icon Node */}
+      {/* Icon Node (Always center) */}
       <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 md:relative z-10 order-2 flex items-center justify-center w-12 h-12 md:w-20 md:h-20 bg-brand-beige-black border-4 border-brand-red rounded-2xl shadow-2xl group-hover:rotate-12 transition-all duration-700">
         <Icon className="w-6 h-6 md:w-8 md:h-8 text-brand-red" />
         <div className="absolute -top-3 -right-3 w-8 h-8 bg-brand-gold rounded-lg flex items-center justify-center text-brand-beige-black font-black text-[10px] shadow-lg">
@@ -25,8 +25,8 @@ const TimelineItem: React.FC<{ milestone: typeof MILESTONES[0], index: number, i
         </div>
       </div>
 
-      {/* Content Card */}
-      <div className={`mb-16 md:mb-0 relative order-1 md:w-5/12 ${index % 2 === 0 ? 'md:order-3 md:text-left md:pl-16' : 'md:text-right md:pr-16'}`}>
+      {/* Content Card (Always on left) */}
+      <div className="mb-16 md:mb-0 relative order-1 md:w-5/12 md:text-right md:pr-16">
         <div className="bg-white p-10 md:p-12 rounded-[3.5rem] shadow-xl border border-slate-100 group-hover:border-brand-red hover:shadow-2xl hover:shadow-brand-red/10 transition-all duration-700">
           <span className="text-brand-red font-ubuntu font-bold text-4xl md:text-5xl block mb-6 tracking-tighter">{milestone.year}</span>
           <h4 className="mb-4 font-ubuntu font-bold text-brand-beige-black text-2xl md:text-3xl tracking-tight leading-tight">{milestone.title}</h4>
@@ -93,37 +93,43 @@ const About: React.FC = () => {
                 </div>
               </div>
 
-              <div className="relative group overflow-hidden border-l border-white/10">
-                <div className="h-[400px] lg:h-full relative overflow-hidden">
-                  <img src={TEAM[0].image} alt={TEAM[0].name} className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-1000" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-beige-black via-transparent to-transparent opacity-80" />
-                </div>
-
-                <div className="absolute inset-0 p-12 md:p-16 lg:p-20 flex flex-col justify-end">
-                  <div className="inline-flex items-center gap-4 mb-6">
-                    <div className="h-px w-12 bg-brand-emerald" />
-                    <span className="text-brand-emerald font-black uppercase tracking-[0.4em] text-[10px] md:text-xs">Founder & Executive Director</span>
+              <div className="bg-white border-l border-slate-100">
+                <div className="h-full flex flex-col lg:flex-row">
+                  <div className="lg:w-1/2 h-[400px] lg:h-full relative group overflow-hidden">
+                    <img src={TEAM[0].image} alt={TEAM[0].name} className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-1000" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-brand-beige-black/80 via-transparent to-transparent lg:hidden"></div>
+                    <div className="absolute bottom-10 left-10 lg:hidden text-white">
+                      <p className="text-[10px] font-black uppercase tracking-[0.4em] text-brand-emerald mb-2">Since 1987</p>
+                      <h2 className="text-3xl font-outfit font-bold tracking-tighter">{TEAM[0].name}</h2>
+                    </div>
                   </div>
 
-                  <h3 className="text-3xl md:text-5xl font-outfit font-bold text-white mb-6 tracking-tighter">
-                    {TEAM[0].name}
-                  </h3>
+                  <div className="lg:w-1/2 p-12 md:p-16 lg:p-20 flex flex-col justify-center bg-brand-beige-black">
+                    <div className="inline-flex items-center gap-4 mb-8">
+                      <div className="h-px w-12 bg-brand-emerald" />
+                      <span className="text-brand-emerald font-black uppercase tracking-[0.4em] text-xs">Founder & Executive Director</span>
+                    </div>
 
-                  <div className="mb-8 relative">
-                    <Quote className="absolute -top-6 -left-6 text-brand-emerald opacity-20" size={48} />
-                    <p className="text-slate-300 text-lg md:text-xl leading-relaxed italic font-medium relative z-10">
-                      "{TEAM[0].bio}"
-                    </p>
-                  </div>
+                    <h2 className="hidden lg:block text-3xl md:text-4xl font-outfit font-bold text-white mb-8 tracking-tighter leading-tight">
+                      {TEAM[0].name}
+                    </h2>
 
-                  <div className="flex">
-                    <a
-                      href={`mailto:${TEAM[0].socials.email}`}
-                      className="bg-brand-emerald hover:bg-white hover:text-brand-beige-black text-white px-8 py-4 rounded-xl font-ubuntu font-bold text-xs uppercase tracking-widest shadow-xl transition-all flex items-center justify-center gap-3 active:scale-95"
-                    >
-                      <Mail size={18} />
-                      <span>Email CEO</span>
-                    </a>
+                    <div className="mb-12 relative">
+                      <Quote className="absolute -top-8 -left-8 text-brand-emerald opacity-20" size={64} />
+                      <p className="text-slate-400 text-xl md:text-2xl leading-relaxed italic font-medium relative z-10">
+                        "{TEAM[0].bio} Our commitment to animal health is the cornerstone of AR Group's vision."
+                      </p>
+                    </div>
+
+                    <div className="flex">
+                      <a
+                        href={`mailto:${TEAM[0].socials.email}`}
+                        className="bg-brand-emerald hover:bg-white hover:text-brand-beige-black text-white px-8 py-4 rounded-xl font-ubuntu font-bold text-xs uppercase tracking-widest shadow-xl transition-all flex items-center justify-center gap-3 active:scale-95"
+                      >
+                        <Mail size={18} />
+                        <span>Email CEO</span>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>

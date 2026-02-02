@@ -115,14 +115,15 @@ const Products: React.FC = () => {
                   className="bg-white rounded-[4rem] p-6 shadow-xl hover:shadow-[0_30px_60px_-15px_rgba(127,29,29,0.2)] hover:-translate-y-3 transition-all duration-700 border border-slate-100 group flex flex-col h-full cursor-pointer overflow-hidden"
                   onClick={() => setSelectedProduct(p)}
                 >
-                  <div className="h-80 rounded-[3rem] relative overflow-hidden bg-brand-beige-white mb-8 border border-slate-100">
+                  <div className="aspect-square rounded-[3rem] relative overflow-hidden bg-brand-beige-white mb-8 border border-slate-100 group-hover:border-brand-red/20 transition-colors">
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.02)_0%,transparent_70%)]" />
                     <img
                       src={p.image}
                       alt={p.name}
-                      className="w-full h-full object-contain p-12 group-hover:scale-110 transition-transform duration-700 mix-blend-multiply"
+                      className="w-full h-full object-contain p-16 group-hover:scale-105 transition-transform duration-700 mix-blend-multiply relative z-10"
                     />
-                    <div className="absolute top-6 left-6">
-                      <div className="flex items-center gap-2 bg-white/90 backdrop-blur px-4 py-2 rounded-full border border-slate-200">
+                    <div className="absolute top-6 left-6 z-20">
+                      <div className="flex items-center gap-2 bg-white/90 backdrop-blur px-4 py-2 rounded-full border border-slate-200 shadow-sm">
                         <div className="w-1.5 h-1.5 rounded-full bg-brand-red" />
                         <span className="text-brand-beige-black text-[10px] font-black uppercase tracking-widest">
                           {p.category}
@@ -187,12 +188,13 @@ const Products: React.FC = () => {
             </button>
 
             {/* Visual Node */}
-            <div className="lg:w-1/2 bg-brand-beige-white p-12 lg:p-20 flex items-center justify-center min-h-[400px] relative">
+            <div className="lg:w-1/2 bg-brand-beige-white p-12 lg:p-20 flex items-center justify-center min-h-[400px] relative overflow-hidden">
               <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,rgba(127,29,29,0.4)_0%,transparent_70%)]" />
+              <div className="absolute inset-0 bg-grid-slate-200/[0.05] [mask-image:radial-gradient(white,transparent)]" />
               <img
                 src={selectedProduct.image}
                 alt={selectedProduct.name}
-                className="w-full h-full object-contain mix-blend-multiply relative z-10"
+                className="w-full h-full object-contain mix-blend-multiply relative z-10 p-12 lg:p-20"
               />
             </div>
 

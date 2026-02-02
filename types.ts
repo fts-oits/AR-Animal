@@ -6,6 +6,9 @@ export enum Category {
   ENZYME = 'Enzyme',
   AMINO_ACID = 'Amino Acid',
   MINERAL = 'Mineral',
+  VITAMIN = 'Vitamin',
+  THERAPEUTIC = 'Therapeutic',
+  MOULD_INHIBITOR = 'Mould Inhibitor',
   OTHER = 'Other'
 }
 
