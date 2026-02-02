@@ -1,7 +1,7 @@
 
 import React, { useEffect, useRef } from 'react';
-import { Target, Eye, Shield, Globe, Flag, Factory, TrendingUp, Zap, CheckCircle2 } from 'lucide-react';
-import { MILESTONES, PARTNER_DETAILS } from '../constants';
+import { Target, Eye, Shield, Globe, Flag, Factory, TrendingUp, Zap, CheckCircle2, Quote, Mail } from 'lucide-react';
+import { MILESTONES, PARTNER_DETAILS, TEAM } from '../constants';
 
 const TimelineItem: React.FC<{ milestone: typeof MILESTONES[0], index: number, isLast: boolean }> = ({ milestone, index, isLast }) => {
   const IconMap: any = { Flag, Globe, Factory, TrendingUp, Zap };
@@ -58,22 +58,21 @@ const About: React.FC = () => {
         </div>
       </section>
 
-      {/* Deep Dive Section */}
       <section className="-mt-32 pb-32 relative z-20">
         <div className="container mx-auto px-6 max-w-[1900px]">
-          <div className="bg-white rounded-[4rem] shadow-2xl overflow-hidden border border-slate-100">
+          <div className="bg-brand-beige-black rounded-[4rem] shadow-2xl overflow-hidden border border-white/10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
               <div className="p-12 md:p-24 lg:p-32">
                 <div className="inline-flex items-center gap-3 mb-10">
-                  <div className="h-px w-12 bg-brand-emerald" />
-                  <span className="text-brand-emerald font-black tracking-[0.4em] uppercase text-xs">Origin Story</span>
+                  <div className="h-px w-12 bg-brand-red" />
+                  <span className="text-brand-red font-black tracking-[0.4em] uppercase text-xs">Origin Story</span>
                 </div>
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-outfit font-bold text-brand-beige-black mb-8 tracking-tighter leading-tight max-w-xl">
-                  Poultry Sector <span className="text-brand-emerald">Excellence.</span>
-                </h2>
-                <div className="space-y-8 text-slate-500 text-xl leading-relaxed font-medium">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-outfit font-bold text-white mb-8 tracking-tighter leading-tight max-w-3xl">
+                  The <span className="text-brand-red">Strategists.</span>
+                </h1>
+                <div className="space-y-8 text-slate-400 text-xl leading-relaxed font-medium">
                   <p>
-                    Under the visionary leadership of <span className="text-brand-beige-black font-bold">Mr. Atiar Rahman</span>, AR Animal Health Ltd has evolved into a strategic nexus for biotechnological advancement in Bangladesh’s poultry sector.
+                    Under the visionary leadership of <span className="text-white font-bold">Mr. Atiar Rahman</span>, AR Animal Health Ltd has evolved into a strategic nexus for biotechnological advancement in Bangladesh’s poultry sector.
                   </p>
                   <p>
                     With over <span className="text-brand-emerald font-black">35 years</span> of specialized intelligence in animal feed additives, we orchestrate the processing of high-grade resources to ensure national food security.
@@ -81,34 +80,51 @@ const About: React.FC = () => {
                 </div>
 
                 <div className="grid grid-cols-2 gap-8 mt-16">
-                  <div className="bg-brand-beige-white p-10 rounded-[2.5rem] border border-slate-100 relative group overflow-hidden">
+                  <div className="bg-white/5 p-10 rounded-[2.5rem] border border-white/10 relative group overflow-hidden">
                     <div className="absolute top-0 right-0 w-16 h-16 bg-brand-emerald/10 rounded-full blur-xl group-hover:scale-150 transition-transform" />
-                    <span className="block text-3xl font-outfit font-bold text-brand-beige-black mb-2">2010</span>
+                    <span className="block text-3xl font-outfit font-bold text-white mb-2">2010</span>
                     <span className="text-[10px] font-inter font-black uppercase tracking-widest text-brand-emerald">System Launch</span>
                   </div>
-                  <div className="bg-brand-beige-white p-10 rounded-[2.5rem] border border-slate-100 relative group overflow-hidden">
+                  <div className="bg-white/5 p-10 rounded-[2.5rem] border border-white/10 relative group overflow-hidden">
                     <div className="absolute top-0 right-0 w-16 h-16 bg-brand-gold/10 rounded-full blur-xl group-hover:scale-150 transition-transform" />
-                    <span className="block text-3xl font-outfit font-bold text-brand-beige-black mb-2">ISO+</span>
+                    <span className="block text-3xl font-outfit font-bold text-white mb-2">ISO+</span>
                     <span className="text-[10px] font-inter font-black uppercase tracking-widest text-brand-gold">Terminal Grade</span>
                   </div>
                 </div>
               </div>
 
-              <div className="relative h-[400px] lg:h-[500px] max-w-3xl mx-auto lg:max-w-none">
-                <img
-                  src="img/about.jpg"
-                  alt="Laboratory Facility"
-                  className="absolute inset-0 w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-[2s]"
-                />
-                <div className="absolute inset-0 bg-gradient-to-l from-brand-beige-black/40 to-transparent" />
-                <div className="absolute bottom-8 left-8 right-8 bg-white/10 backdrop-blur-2xl p-6 rounded-3xl border border-white/20">
-                  <div className="flex items-center gap-4 mb-2">
-                    <div className="w-8 h-px bg-white" />
-                    <span className="text-white font-black text-[10px] uppercase tracking-[0.5em]">Site-01 Status</span>
+              <div className="relative group overflow-hidden border-l border-white/10">
+                <div className="h-[400px] lg:h-full relative overflow-hidden">
+                  <img src={TEAM[0].image} alt={TEAM[0].name} className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-1000" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-beige-black via-transparent to-transparent opacity-80" />
+                </div>
+
+                <div className="absolute inset-0 p-12 md:p-16 lg:p-20 flex flex-col justify-end">
+                  <div className="inline-flex items-center gap-4 mb-6">
+                    <div className="h-px w-12 bg-brand-emerald" />
+                    <span className="text-brand-emerald font-black uppercase tracking-[0.4em] text-[10px] md:text-xs">Founder & Executive Director</span>
                   </div>
-                  <p className="text-white text-base font-medium leading-relaxed">
-                    Our manufacturing hub in Bangladesh operates at terminal efficiency, integrating Nano-Biotech with global standards.
-                  </p>
+
+                  <h3 className="text-3xl md:text-5xl font-outfit font-bold text-white mb-6 tracking-tighter">
+                    {TEAM[0].name}
+                  </h3>
+
+                  <div className="mb-8 relative">
+                    <Quote className="absolute -top-6 -left-6 text-brand-emerald opacity-20" size={48} />
+                    <p className="text-slate-300 text-lg md:text-xl leading-relaxed italic font-medium relative z-10">
+                      "{TEAM[0].bio}"
+                    </p>
+                  </div>
+
+                  <div className="flex">
+                    <a
+                      href={`mailto:${TEAM[0].socials.email}`}
+                      className="bg-brand-emerald hover:bg-white hover:text-brand-beige-black text-white px-8 py-4 rounded-xl font-ubuntu font-bold text-xs uppercase tracking-widest shadow-xl transition-all flex items-center justify-center gap-3 active:scale-95"
+                    >
+                      <Mail size={18} />
+                      <span>Email CEO</span>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
