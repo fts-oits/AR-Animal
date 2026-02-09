@@ -82,7 +82,7 @@ const Footer: React.FC = () => {
                   </div>
                 </div>
               </li>
-              <li className="flex gap-5 group pt-8 border-t border-white/5">
+              <li className="flex gap-5 group">
                 <div className="w-12 h-12 bg-emerald-900/20 rounded-xl flex items-center justify-center text-emerald-500 border border-emerald-500/30 flex-shrink-0 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300">
                   <Mail size={22} />
                 </div>

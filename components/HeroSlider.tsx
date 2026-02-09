@@ -31,7 +31,7 @@ const HeroSlider: React.FC = () => {
           {/* Background Decorative Text */}
           <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
             <span className="text-[20vw] font-black text-white/[0.03] leading-none whitespace-nowrap transform -rotate-12 translate-y-1/4">
-              AGRICULTURE • INNOVATION • SUSTAINABILITY
+              POULTRY • INNOVATION • SUSTAINABILITY
             </span>
           </div>
 
@@ -49,7 +49,7 @@ const HeroSlider: React.FC = () => {
                   }`}>
                   {/* Premium Badge */}
                   <span className="inline-block px-4 py-2 rounded-full bg-red-900/60 backdrop-blur-xl border border-red-900/70 text-amber-50 font-black uppercase tracking-[0.3em] text-[10px] md:text-xs mb-8 shadow-2xl shadow-red-900/30 mt-12 md:mt-24">
-                    Premium Agricultural biotech
+                    Premium Poultry biotech
                   </span>
 
                   {/* Title - White with shadow */}

@@ -11,7 +11,7 @@ export const PRODUCTS: Product[] = [
     name: 'Diclazuril Micro Granular Premix',
     category: Category.COCCIDIOSTAT,
     description: '0.5% Diclazuril Premix for potent coccidiosis prevention.',
-    image: 'img/services-1.jpg',
+    image: 'img/products/Diclazuril Micro Granular Premix.png',
     specifications: ['Species: Poultry', 'Type: Rx', 'Dosage: 200-400g/MT (Prevention)', 'Origin: China']
   },
   {
@@ -19,7 +19,7 @@ export const PRODUCTS: Product[] = [
     name: 'Maduramicin Ammonium Premix',
     category: Category.COCCIDIOSTAT,
     description: '1% Maduramicin Ammonium for effective coccidiosis control.',
-    image: 'img/services-2.jpg',
+    image: 'img/products/Maduramicin Ammonium Premix.png',
     specifications: ['Species: Poultry', 'Type: Rx', 'Dosage: 500-600g/MT', 'Origin: China']
   },
   {
@@ -27,7 +27,7 @@ export const PRODUCTS: Product[] = [
     name: 'Robenidine Hydrochloride Premix',
     category: Category.COCCIDIOSTAT,
     description: '10% Robenidine HCL for broad-spectrum coccidiosis treatment.',
-    image: 'img/services-3.jpg',
+    image: 'img/products/Robenidine Hydrochloride Premix.png',
     specifications: ['Species: Poultry', 'Type: Rx', 'Dosage: 300-600g/MT', 'Origin: China']
   },
   {
@@ -35,7 +35,7 @@ export const PRODUCTS: Product[] = [
     name: 'Nicarbazin & Maduramicin Combination',
     category: Category.COCCIDIOSTAT,
     description: 'Nicarbazin 8% + 0.07% Maduramicin for dual-action control.',
-    image: 'img/services-4.jpg',
+    image: 'img/products/Nicarbazin & Maduramicin Combination.png',
     specifications: ['Species: Poultry', 'Type: Rx', 'Dosage: 500-600g/MT', 'Origin: China']
   },
   {
@@ -43,7 +43,7 @@ export const PRODUCTS: Product[] = [
     name: 'Salinomycin Sodium Premix',
     category: Category.COCCIDIOSTAT,
     description: '12% Salinomycin, a trusted ionophore coccidiostat.',
-    image: 'img/services-5.jpg',
+    image: 'img/products/Salinomycin Sodium Premix.png',
     specifications: ['Species: Poultry', 'Type: Rx', 'Dosage: 400-500g/MT', 'Origin: China']
   },
 
@@ -53,7 +53,7 @@ export const PRODUCTS: Product[] = [
     name: 'Biomix 3x',
     category: Category.GROWTH_PROMOTER,
     description: 'Gut Bioregulator with Organic Acids, Prebiotics & Intestinal Regenerating Factors.',
-    image: 'img/services-6.jpg',
+    image: 'img/products/Biomix 3x.png',
     specifications: ['Species: Poultry', 'Dosage: Broiler/Breeder 500g/MT, Layer 250g/MT', 'Origin: India']
   },
 
@@ -63,16 +63,8 @@ export const PRODUCTS: Product[] = [
     name: 'Avsorb Mos',
     category: Category.TOXIN_BINDER,
     description: 'Superior Toxin Binder with Organic Acids, MOS & Calcium Montmorillonite.',
-    image: 'img/departments-1.jpg',
+    image: 'img/products/Avsorb Mos.png',
     specifications: ['Species: General', 'Dosage: 1kg/MT', 'Origin: India']
-  },
-  {
-    id: 'p8',
-    name: 'Avsorb Plus',
-    category: Category.TOXIN_BINDER,
-    description: 'Selected Clays and Organic Acids for broad toxin adsorption.',
-    image: 'img/departments-2.jpg',
-    specifications: ['Species: General', 'Dosage: 2kg/MT', 'Origin: India']
   },
 
   // Other Additives
@@ -81,7 +73,7 @@ export const PRODUCTS: Product[] = [
     name: 'HY-Bond Pellet Binder',
     category: Category.OTHER,
     description: 'Polymethylolcarbamide (PMC) 95% for durable pellets.',
-    image: 'img/departments-3.jpg',
+    image: 'img/products/HY-Bond Pellet Binder.png',
     specifications: ['Species: Aqua/Poultry', 'Dosage: Poultry 1-2kg, Fish 2-5kg, Shrimp 4-7kg', 'Origin: China']
   },
   {
@@ -89,7 +81,7 @@ export const PRODUCTS: Product[] = [
     name: 'Nutriox',
     category: Category.OTHER,
     description: 'Antioxidant blend (Ethoxyquin/Propyl Gallate) for feed stabilization.',
-    image: 'img/departments-4.jpg',
+    image: 'img/products/Nutriox.png',
     specifications: ['Species: General', 'Dosage: 75-225g/MT', 'Origin: India']
   },
   {
@@ -97,7 +89,7 @@ export const PRODUCTS: Product[] = [
     name: 'Lipidin',
     category: Category.OTHER,
     description: 'Natural Absorption Enhancer (Emulsifier) with LPC, LPE, PLA & LPI.',
-    image: 'img/departments-5.jpg',
+    image: 'img/products/Lipidin.png',
     specifications: ['Species: General', 'Dosage: 500g/MT', 'Origin: India']
   },
   {
@@ -105,7 +97,7 @@ export const PRODUCTS: Product[] = [
     name: 'Choline Chloride 60% Corn Cob',
     category: Category.VITAMIN,
     description: 'Essential methyl donor on corn cob carrier.',
-    image: 'img/services-1.jpg',
+    image: 'img/products/Choline Chloride 60_ Corn Cob.png',
     specifications: ['Species: General', 'Dosage: As per Nutritionist', 'Origin: China']
   },
   {
@@ -113,7 +105,7 @@ export const PRODUCTS: Product[] = [
     name: 'Avilyte',
     category: Category.OTHER,
     description: 'Balanced Electrolyte with Vitamin C for stress and hydration.',
-    image: 'img/services-2.jpg',
+    image: 'img/products/Avilyte.png',
     specifications: ['Species: Poultry', 'Dosage: Feed 500g/MT, Water 0.5-1.0g/L', 'Origin: India']
   },
 
@@ -123,7 +115,7 @@ export const PRODUCTS: Product[] = [
     name: 'Yiduozyme P-8601',
     category: Category.ENZYME,
     description: 'Multi-enzyme complex (Proteinase, Xylanase, etc.) for improved digestion.',
-    image: 'img/vtr-100.jpg',
+    image: 'img/products/Yiduozyme P-8601.png',
     specifications: ['Species: Poultry', 'Dosage: 150-180g/MT', 'Origin: China']
   },
   {
@@ -131,7 +123,7 @@ export const PRODUCTS: Product[] = [
     name: 'Microtech 5000 Plus',
     category: Category.ENZYME,
     description: 'Heat Tolerant Granular Phytase for phosphorus liberation.',
-    image: 'img/vtr2.jpg',
+    image: 'img/products/Microtech 5000 Plus.png',
     specifications: ['Species: Poultry', 'Dosage: 80-100g/MT', 'Origin: China']
   },
 
@@ -141,7 +133,7 @@ export const PRODUCTS: Product[] = [
     name: 'DL-Methionine',
     category: Category.AMINO_ACID,
     description: '99% Pure DL-Methionine, a critical essential amino acid.',
-    image: 'img/departments-1.jpg',
+    image: 'img/products/DL-Methionine.png',
     specifications: ['Species: General', 'Dosage: As per Nutritionist', 'Origin: Germany']
   },
   {
@@ -149,33 +141,25 @@ export const PRODUCTS: Product[] = [
     name: 'L-Lysine',
     category: Category.AMINO_ACID,
     description: '98.5% Pure L-Lysine for protein synthesis.',
-    image: 'img/departments-2.jpg',
+    image: 'img/products/L-Lysine.png',
     specifications: ['Species: General', 'Dosage: As per Nutritionist', 'Origin: Singapore']
   },
 
   // Minerals
   {
     id: 'p18',
-    name: 'DCP Granular (New Hope)',
+    name: 'DCP Granular',
     category: Category.MINERAL,
     description: 'Dicalcium Phosphate (P=18% Min, Ca=22.5%).',
-    image: 'img/chanhen-2.jpg',
-    specifications: ['Species: General', 'Dosage: As per Nutritionist', 'Origin: China']
-  },
-  {
-    id: 'p19',
-    name: 'DCP Granular (Sunward)',
-    category: Category.MINERAL,
-    description: 'Dicalcium Phosphate (P=18% Min, Ca=22.5%).',
-    image: 'img/Sunward-Office-2.jpg',
+    image: 'img/products/DCP Granular.png',
     specifications: ['Species: General', 'Dosage: As per Nutritionist', 'Origin: China']
   },
   {
     id: 'p20',
-    name: 'MCP Micro Granular',
+    name: 'MCP',
     category: Category.MINERAL,
     description: 'Monocalcium Phosphate (P=22% Min, Ca=13% Min).',
-    image: 'img/chanhen-2.jpg',
+    image: 'img/products/MCP.png',
     specifications: ['Species: General', 'Dosage: As per Nutritionist', 'Origin: China']
   }
 ];
@@ -207,16 +191,6 @@ export const PARTNER_DETAILS = [
     logo: 'img/EsigmaOffice-1.jpg'
   },
   {
-    name: 'Avitech Nutrition Pvt. Ltd.',
-    desc: 'India’s leading animal nutrition company specializing in phytonutrients, enzymes, and toxin binders.',
-    logo: 'img/partner-avitech.jpg' // Placeholder or needs asset
-  },
-  {
-    name: 'Zouping Jujia Choline Industrial Co. Ltd.',
-    desc: 'Specialized manufacturer of Choline Chloride, ensuring high purity and quality for the feed industry.',
-    logo: 'img/partner-jujia.jpg'
-  },
-  {
     name: 'Sichuan Chuanheng Chemical Corporation',
     desc: 'Asia’s largest supplier of Monocalcium Phosphate. Specialized in mining and processing phosphate rock.',
     logo: 'img/chanhen2-logo.jpg'
@@ -230,33 +204,9 @@ export const PARTNER_DETAILS = [
     name: 'Yunnan Copper Industry Sunward Chemicals',
     desc: 'Annual production capacity of Feed Grade DCP/MCP of 260,000 tons. A major player in mineral feeds.',
     logo: 'img/Sunward-Office-2.jpg'
-  },
-  {
-    name: 'Yunnan Xinlong Mineral Animal Feed',
-    desc: 'Chemical Division of the New Hope Group. Premium producer of Dicalcium Phosphate.',
-    logo: 'img/partner-newhope.jpg'
-  },
-  {
-    name: 'Integrated World Enterprise (INTEWE)',
-    desc: 'Global trading partner facilitating the supply of premium animal health ingredients.',
-    logo: 'img/partner-intewe.jpg'
-  },
-  {
-    name: 'Zhejiang Shenghua Biok Biology',
-    desc: 'Renowned manufacturer of veterinary pharmaceuticals and feed additives including Salinomycin.',
-    logo: 'img/partner-shenghua.jpg'
-  },
-  {
-    name: 'Evonik Degussa GmbH',
-    desc: 'German leader in specialty chemicals, providing high-purity DL-Methionine.',
-    logo: 'img/partner-evonik.jpg'
-  },
-  {
-    name: 'Ajinomoto Animal Nutrition',
-    desc: 'Singapore-based leader in amino acids, renowned for high-quality L-Lysine production.',
-    logo: 'img/partner-ajinomoto.jpg'
   }
 ];
+
 
 // Expanded team with new professional consultant headshots
 export const TEAM: TeamMember[] = [
