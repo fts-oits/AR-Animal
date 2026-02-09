@@ -44,7 +44,7 @@ const About: React.FC = () => {
       {/* Terminal Hero */}
       <section className="bg-brand-beige-black pt-48 pb-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-brand-red/20 via-transparent to-brand-gold/10"></div>
-        <div className="absolute -bottom-1 w-[120%] h-40 bg-brand-beige-white -rotate-3 translate-x-[-10%] z-20"></div>
+        <div className="absolute -bottom-1 w-[120%] h-40 bg-brand-red -rotate-3 translate-x-[-10%] z-20"></div>
 
         <div className="container mx-auto px-6 relative z-30 max-w-[1900px]">
           <div className="max-w-4xl">

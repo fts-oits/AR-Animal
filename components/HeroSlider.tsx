@@ -48,7 +48,7 @@ const HeroSlider: React.FC = () => {
                 <div className={`transition-all duration-1000 delay-300 transform ${index === current ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
                   }`}>
                   {/* Premium Badge */}
-                  <span className="inline-block px-4 py-2 rounded-full bg-red-900/60 backdrop-blur-xl border border-red-900/70 text-amber-50 font-black uppercase tracking-[0.3em] text-[10px] md:text-xs mb-8 shadow-2xl shadow-red-900/30 mt-12 md:mt-24">
+                  <span className="inline-block px-4 py-2 rounded-full bg-red-900/60 backdrop-blur-xl border border-red-900/70 text-brand-emerald font-black uppercase tracking-[0.3em] text-[10px] md:text-xs mb-8 shadow-2xl shadow-red-900/30 mt-12 md:mt-24">
                     Premium Poultry biotech
                   </span>
 

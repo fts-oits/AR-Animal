@@ -199,7 +199,7 @@ const Products: React.FC = () => {
             className="absolute inset-0 bg-brand-beige-black/80 backdrop-blur-xl transition-opacity duration-700"
             onClick={() => setSelectedProduct(null)}
           ></div>
-          <div className="relative bg-white w-full max-w-5xl max-h-[95vh] overflow-y-auto rounded-t-[3rem] sm:rounded-[4rem] shadow-[0_0_100px_rgba(5,150,105,0.3)] flex flex-col animate-in slide-in-from-bottom-20 duration-700">
+          <div className="relative bg-white w-full max-w-7xl max-h-[92vh] md:max-h-[95vh] overflow-y-auto md:overflow-hidden rounded-t-[3rem] sm:rounded-[4rem] shadow-[0_0_100px_rgba(5,150,105,0.3)] flex flex-col md:flex-row animate-in slide-in-from-bottom-20 duration-700">
             {/* Close Command */}
             <button
               className="absolute top-4 right-4 sm:top-6 sm:right-6 md:top-8 md:right-8 z-[110] w-12 h-12 sm:w-14 sm:h-14 bg-white/90 hover:bg-brand-red hover:text-white rounded-2xl sm:rounded-3xl flex items-center justify-center text-brand-beige-black transition-all shadow-xl border border-slate-100"
@@ -209,8 +209,8 @@ const Products: React.FC = () => {
               <X size={24} className="hidden sm:block" />
             </button>
 
-            {/* Visual Node - Large Image Area */}
-            <div className="w-full bg-gradient-to-br from-brand-beige-white to-slate-50 p-8 sm:p-12 md:p-16 lg:p-20 flex items-center justify-center min-h-[350px] sm:min-h-[450px] md:min-h-[500px] relative overflow-hidden">
+            {/* Visual Node - Left Side */}
+            <div className="w-full md:w-5/12 lg:w-4/12 bg-gradient-to-br from-brand-beige-white to-slate-50 p-8 sm:p-12 flex items-center justify-center min-h-[350px] sm:min-h-[450px] md:h-full relative overflow-hidden">
               <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,rgba(127,29,29,0.4)_0%,transparent_70%)]" />
               <div className="absolute inset-0 bg-grid-slate-200/[0.05] [mask-image:radial-gradient(white,transparent)]" />
 
@@ -225,52 +225,53 @@ const Products: React.FC = () => {
               <img
                 src={selectedProduct.image}
                 alt={selectedProduct.name}
-                className="w-full max-w-md sm:max-w-lg md:max-w-xl h-full object-contain drop-shadow-2xl relative z-10"
+                className="w-full max-w-[80%] h-auto md:max-h-[70%] object-contain drop-shadow-2xl relative z-10"
               />
             </div>
 
-            {/* Data Node - Content Below */}
-            <div className="w-full p-6 sm:p-8 md:p-12 lg:p-16 bg-white">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-outfit font-bold text-brand-beige-black mb-4 sm:mb-6 tracking-tighter leading-tight">{selectedProduct.name}</h2>
+            {/* Data Node - Right Side */}
+            <div className="w-full md:w-7/12 lg:w-8/12 p-6 sm:p-8 md:p-12 bg-white flex flex-col h-full overflow-y-auto md:overflow-hidden">
+              <div className="flex-1 flex flex-col justify-center">
+                <h2 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-outfit font-bold text-brand-beige-black mb-4 tracking-tighter leading-tight">{selectedProduct.name}</h2>
 
-              <p className="text-slate-500 text-base sm:text-lg md:text-xl mb-8 sm:mb-10 leading-relaxed font-medium max-w-4xl">
-                {selectedProduct.description}
-              </p>
+                <p className="text-slate-500 text-base sm:text-lg md:text-lg lg:text-xl mb-8 leading-relaxed font-medium">
+                  {selectedProduct.description}
+                </p>
 
-              {/* Technical Specifications */}
-              <div className="mb-8 sm:mb-10 bg-gradient-to-br from-brand-beige-white to-slate-50 p-6 sm:p-8 md:p-10 rounded-[2rem] sm:rounded-[3rem] border border-slate-100 shadow-sm">
-                <h4 className="text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-widest mb-5 sm:mb-6 flex items-center gap-2">
-                  <div className="w-1 h-4 bg-brand-red rounded-full" />
-                  Technical Specifications
-                </h4>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-                  {selectedProduct.specifications.map((spec, i) => (
-                    <div key={i} className="flex items-start gap-3 sm:gap-4 group bg-white p-4 sm:p-5 rounded-2xl border border-slate-100 hover:border-brand-red/20 hover:shadow-md transition-all">
-                      <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-xl bg-brand-red/10 border border-brand-red/20 flex items-center justify-center flex-shrink-0 group-hover:bg-brand-red group-hover:border-brand-red transition-colors">
-                        <CheckCircle className="text-brand-red group-hover:text-white transition-colors" size={14} />
+                {/* Technical Specifications */}
+                <div className="mb-8 bg-gradient-to-br from-brand-beige-white to-slate-50 p-6 rounded-[2rem] border border-slate-100 shadow-sm">
+                  <h4 className="text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+                    <div className="w-1 h-4 bg-brand-red rounded-full" />
+                    Technical Specifications
+                  </h4>
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
+                    {selectedProduct.specifications.map((spec, i) => (
+                      <div key={i} className="flex items-start gap-3 group bg-white p-3 rounded-2xl border border-slate-100 hover:border-brand-red/20 hover:shadow-md transition-all">
+                        <div className="w-6 h-6 rounded-xl bg-brand-red/10 border border-brand-red/20 flex items-center justify-center flex-shrink-0 group-hover:bg-brand-red group-hover:border-brand-red transition-colors">
+                          <CheckCircle className="text-brand-red group-hover:text-white transition-colors" size={14} />
+                        </div>
+                        <span className="text-brand-beige-black font-bold text-sm leading-tight flex-1">{spec}</span>
                       </div>
-                      <span className="text-brand-beige-black font-bold text-sm sm:text-base leading-tight flex-1">{spec}</span>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
               </div>
 
               {/* Contact Button */}
-              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
+              <div className="flex flex-col sm:flex-row gap-4 mt-auto">
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
                     setIsContactModalOpen(true);
                   }}
-                  className="flex-1 bg-brand-red hover:bg-red-800 text-white font-ubuntu font-bold py-5 sm:py-6 rounded-2xl sm:rounded-3xl flex items-center justify-center gap-3 sm:gap-4 transition-all active:scale-95 shadow-2xl shadow-brand-red/30 text-xs sm:text-sm uppercase tracking-widest"
+                  className="flex-1 bg-brand-red hover:bg-red-800 text-white font-ubuntu font-bold py-5 rounded-2xl flex items-center justify-center gap-3 transition-all active:scale-95 shadow-xl shadow-brand-red/20 text-xs sm:text-sm uppercase tracking-widest"
                 >
-                  <MessageSquare size={20} className="sm:hidden" />
-                  <MessageSquare size={22} className="hidden sm:block" />
+                  <MessageSquare size={20} />
                   <span>Contact Sales Team</span>
                 </button>
                 <button
                   onClick={() => setSelectedProduct(null)}
-                  className="sm:w-auto px-8 bg-slate-100 hover:bg-slate-200 text-brand-beige-black font-ubuntu font-bold py-5 sm:py-6 rounded-2xl sm:rounded-3xl flex items-center justify-center gap-3 transition-all active:scale-95 text-xs sm:text-sm uppercase tracking-widest"
+                  className="sm:w-auto px-8 bg-slate-100 hover:bg-slate-200 text-brand-beige-black font-ubuntu font-bold py-5 rounded-2xl flex items-center justify-center gap-3 transition-all active:scale-95 text-xs sm:text-sm uppercase tracking-widest"
                 >
                   <X size={18} />
                   <span className="sm:inline">Close</span>

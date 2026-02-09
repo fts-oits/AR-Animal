@@ -112,7 +112,7 @@ const Contact: React.FC = () => {
               Get In <span className="text-brand-red">Touch.</span>
             </h1>
             <p className="text-slate-400 text-lg md:text-xl max-w-xl font-medium leading-relaxed">
-              Experience the future of biotechnology. Our experts are ready to assist with your agricultural and animal health needs.
+              Experience the future of biotechnology. Our experts are ready to assist with your poultry and animal health needs.
             </p>
           </div>
         </div>

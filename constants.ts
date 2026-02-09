@@ -221,14 +221,45 @@ export const TEAM: TeamMember[] = [
 ];
 
 export const GALLERY: GalleryItem[] = [
-  { id: 'g1', title: 'Modern Production Unit', category: 'Facilities', image: 'img/gallery/gallery-1.jpg' },
-  { id: 'g2', title: 'Corporate Headquarters', category: 'Facilities', image: 'img/portfolio/branding-1.jpg' },
-  { id: 'g3', title: 'Digital Health Solutions', category: 'Innovation', image: 'img/gallery/gallery-3.jpg' },
-  { id: 'g4', title: 'Digital Feed Analysis Interface', category: 'Innovation', image: 'img/gallery/gallery-4.jpg' },
-  { id: 'g5', title: 'Annual Scientific Symposium', category: 'Events', image: 'img/gallery/gallery-5.jpg' },
-  { id: 'g6', title: 'Health Management Dashboard', category: 'Innovation', image: 'img/gallery/gallery-6.jpg' },
-  { id: 'g7', title: 'Published Research Manuals', category: 'CSR', image: 'img/gallery/gallery-7.jpg' },
-  { id: 'g8', title: 'Community Training Program', category: 'CSR', image: 'img/gallery/gallery-8.jpg' }
+  // Existing Gallery Images (Selected)
+  { id: 'g1', title: 'Digital Health Solutions', category: 'Innovation', image: 'img/gallery/gallery-3.jpg' },
+  { id: 'g2', title: 'Health Management Dashboard', category: 'Innovation', image: 'img/gallery/gallery-6.jpg' },
+  { id: 'g3', title: 'Published Research Manuals', category: 'Research', image: 'img/gallery/gallery-7.jpg' },
+
+  // Home Slider Images
+  { id: 's1', title: 'Global Expertise, Local Success', category: 'Facilities', image: 'img/slide/slide-1.jpg' },
+  { id: 's2', title: 'Innovation in Animal Health', category: 'Innovation', image: 'img/slide/slide-2.jpg' },
+  { id: 's3', title: 'Sustainable Poultry Solutions', category: 'Sustainability', image: 'img/slide/slide-3.jpg' },
+
+  // Product Images - Coccidiostats
+  { id: 'p1', title: 'Diclazuril Micro Granular Premix', category: 'Products', image: 'img/products/Diclazuril Micro Granular Premix.png' },
+  { id: 'p2', title: 'Maduramicin Ammonium Premix', category: 'Products', image: 'img/products/Maduramicin Ammonium Premix.png' },
+  { id: 'p3', title: 'Robenidine Hydrochloride Premix', category: 'Products', image: 'img/products/Robenidine Hydrochloride Premix.png' },
+  { id: 'p4', title: 'Nicarbazin & Maduramicin Combination', category: 'Products', image: 'img/products/Nicarbazin & Maduramicin Combination.png' },
+  { id: 'p5', title: 'Salinomycin Sodium Premix', category: 'Products', image: 'img/products/Salinomycin Sodium Premix.png' },
+
+  // Product Images - Growth Promoters & Toxin Binders
+  { id: 'p6', title: 'Biomix 3x', category: 'Products', image: 'img/products/Biomix 3x.png' },
+  { id: 'p7', title: 'Avsorb Mos', category: 'Products', image: 'img/products/Avsorb Mos.png' },
+
+  // Product Images - Other Additives
+  { id: 'p9', title: 'HY-Bond Pellet Binder', category: 'Products', image: 'img/products/HY-Bond Pellet Binder.png' },
+  { id: 'p10', title: 'Nutriox', category: 'Products', image: 'img/products/Nutriox.png' },
+  { id: 'p11', title: 'Lipidin', category: 'Products', image: 'img/products/Lipidin.png' },
+  { id: 'p12', title: 'Choline Chloride 60% Corn Cob', category: 'Products', image: 'img/products/Choline Chloride 60_ Corn Cob.png' },
+  { id: 'p13', title: 'Avilyte', category: 'Products', image: 'img/products/Avilyte.png' },
+
+  // Product Images - Enzymes
+  { id: 'p14', title: 'Yiduozyme P-8601', category: 'Products', image: 'img/products/Yiduozyme P-8601.png' },
+  { id: 'p15', title: 'Microtech 5000 Plus', category: 'Products', image: 'img/products/Microtech 5000 Plus.png' },
+
+  // Product Images - Amino Acids
+  { id: 'p16', title: 'DL-Methionine', category: 'Products', image: 'img/products/DL-Methionine.png' },
+  { id: 'p17', title: 'L-Lysine', category: 'Products', image: 'img/products/L-Lysine.png' },
+
+  // Product Images - Minerals
+  { id: 'p18', title: 'DCP Granular', category: 'Products', image: 'img/products/DCP Granular.png' },
+  { id: 'p20', title: 'MCP', category: 'Products', image: 'img/products/MCP.png' }
 ];
 
 export const MILESTONES = [

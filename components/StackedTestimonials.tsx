@@ -63,7 +63,7 @@ const StackedTestimonials: React.FC = () => {
                             Field <span className="text-brand-gold">Intelligence.</span>
                         </h2>
                         <p className="text-slate-400 text-lg md:text-xl font-medium leading-relaxed max-w-md">
-                            Real-world feedback from leading agricultural conglomerates across the region.
+                            Real-world feedback from leading poultry enterprises across the region.
                         </p>
 
                         {/* Progress Indicator */}
@@ -72,10 +72,10 @@ const StackedTestimonials: React.FC = () => {
                                 <div
                                     key={idx}
                                     className={`h-1 rounded-full transition-all duration-500 ${idx === activeIndex
-                                            ? 'w-12 bg-brand-red'
-                                            : idx < activeIndex
-                                                ? 'w-8 bg-brand-gold/50'
-                                                : 'w-4 bg-white/20'
+                                        ? 'w-12 bg-brand-red'
+                                        : idx < activeIndex
+                                            ? 'w-8 bg-brand-gold/50'
+                                            : 'w-4 bg-white/20'
                                         }`}
                                 />
                             ))}
