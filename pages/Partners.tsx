@@ -9,7 +9,7 @@ const Partners: React.FC = () => {
             {/* Global Network Header */}
             <section className="bg-brand-beige-black pt-48 pb-48 relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-brand-red/20 via-transparent to-brand-gold/10"></div>
-                <div className="absolute -bottom-1 w-[120%] h-40 bg-brand-beige-white -rotate-2 translate-x-[-10%] z-20"></div>
+                <div className="absolute -bottom-1 w-[120%] h-40 bg-emerald-600 -rotate-2 translate-x-[-10%] z-20 shadow-2xl shadow-slate-700/50"></div>
 
                 <div className="container mx-auto px-6 relative z-30 max-w-[1900px]">
                     <div className="max-w-4xl">

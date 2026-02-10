@@ -259,7 +259,19 @@ export const GALLERY: GalleryItem[] = [
 
   // Product Images - Minerals
   { id: 'p18', title: 'DCP Granular', category: 'Products', image: 'img/products/DCP Granular.png' },
-  { id: 'p20', title: 'MCP', category: 'Products', image: 'img/products/MCP.png' }
+  { id: 'p20', title: 'MCP', category: 'Products', image: 'img/products/MCP.png' },
+
+  // New Gallery Images
+  { id: 'ng1', title: 'Field Operations', category: 'Facilities', image: 'Updates/images/Gallery/202e15b1-3da7-4731-bed0-4a427f0a98da.jpeg' },
+  { id: 'ng2', title: 'Quality Assurance', category: 'Facilities', image: 'Updates/images/Gallery/5dbe0efa-a8ec-46f8-8753-cdc191491fff.jpeg' },
+  { id: 'ng3', title: 'Production Excellence', category: 'Facilities', image: 'Updates/images/Gallery/74d041bb-3351-42c0-b10b-9d98d6b54d08.jpeg' },
+  { id: 'ng4', title: 'Industry Leadership', category: 'Facilities', image: 'Updates/images/Gallery/IMG_9012.jpeg' },
+  { id: 'ng5', title: 'Team Collaboration', category: 'Facilities', image: 'Updates/images/Gallery/IMG_9019.jpeg' },
+  { id: 'ng6', title: 'Technical Innovation', category: 'Innovation', image: 'Updates/images/Gallery/IMG_9023.jpeg' },
+  { id: 'ng7', title: 'Manufacturing Process', category: 'Facilities', image: 'Updates/images/Gallery/IMG_9046.jpeg' },
+  { id: 'ng8', title: 'Quality Standards', category: 'Facilities', image: 'Updates/images/Gallery/IMG_9053.jpeg' },
+  { id: 'ng9', title: 'Operational Excellence', category: 'Facilities', image: 'Updates/images/Gallery/e70eb596-6203-496d-a472-64858f0190e0.jpeg' },
+  { id: 'ng10', title: 'Professional Services', category: 'Facilities', image: 'Updates/images/Gallery/f678486e-ddbe-44d8-ad1f-e01e540deb2d.jpeg' }
 ];
 
 export const MILESTONES = [

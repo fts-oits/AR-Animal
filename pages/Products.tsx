@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { Search, Filter, Info, Tag, X, CheckCircle, MessageSquare, ChevronDown } from 'lucide-react';
+import { Filter, Info, Tag, X, CheckCircle, MessageSquare, ChevronDown, Search } from 'lucide-react';
 import { useSearchParams } from 'react-router-dom';
 import { PRODUCTS } from '../constants';
 import { Category, Product } from '../types';
@@ -45,7 +45,7 @@ const Products: React.FC = () => {
       {/* Terminal Header */}
       <section className="bg-brand-beige-black pt-48 pb-56 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-brand-red/20 via-transparent to-brand-gold/10"></div>
-        <div className="absolute -bottom-1 w-[120%] h-40 bg-brand-beige-white -rotate-2 translate-x-[-10%] z-20"></div>
+        <div className="absolute -bottom-1 w-[120%] h-40 bg-emerald-600 -rotate-2 translate-x-[-10%] z-20 shadow-2xl shadow-slate-700/50"></div>
 
         <div className="container mx-auto px-6 relative z-30 max-w-[1900px]">
           <div className="max-w-4xl">
@@ -60,137 +60,135 @@ const Products: React.FC = () => {
         </div>
       </section>
 
-      {/* Control Strip */}
-      <section className="sticky top-0 z-40 bg-brand-beige-white/80 backdrop-blur-2xl py-6 border-b border-brand-red/10 shadow-2xl">
-        <div className="container mx-auto px-6 max-w-[1900px]">
-          <div className="flex flex-col lg:flex-row gap-8 items-center justify-between">
-            {/* Terminal Search */}
-            <div className="relative w-full lg:w-[400px]">
-              <input
-                type="text"
-                placeholder="Query Database..."
-                className="w-full bg-white border-2 border-slate-100 rounded-2xl px-14 py-4 focus:outline-none focus:border-brand-gold transition-all font-ubuntu font-bold text-slate-800 placeholder-slate-300 shadow-inner"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
-              <Search className="absolute left-6 top-1/2 -translate-y-1/2 text-brand-gold" size={20} />
-            </div>
+      {/* Products Content Wrapper - Filter is sticky within this container */}
+      <div>
+        {/* Control Strip */}
+        <section className="sticky top-0 z-40 bg-brand-beige-white/80 backdrop-blur-2xl py-2.5 md:py-3 border-b border-brand-red/10 shadow-2xl">
+          <div className="container mx-auto px-4 md:px-6 max-w-[1900px]">
 
-            {/* Matrix Filters */}
-            <div className="hidden lg:flex items-center justify-center gap-3 flex-wrap">
-              {['All', ...Object.values(Category)].map((cat) => (
+            {/* Desktop Filters - Flex distributed with underline effect */}
+            <div className="hidden lg:flex items-center justify-center gap-1 xl:gap-2">
+              {['All', ...Object.values(Category).filter(c => c !== Category.THERAPEUTIC && c !== Category.MOULD_INHIBITOR)].map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`px-8 py-4 rounded-2xl text-xs font-black uppercase tracking-widest transition-all border-2 ${selectedCategory === cat
-                    ? 'bg-brand-beige-black text-white border-brand-beige-black shadow-xl shadow-brand-beige-black/20'
-                    : 'bg-white text-slate-400 border-slate-100 hover:border-brand-gold hover:text-brand-gold'
+                  className={`relative px-3 xl:px-4 py-2.5 text-[10px] xl:text-xs font-black uppercase tracking-wider xl:tracking-widest transition-all whitespace-nowrap group ${selectedCategory === cat
+                    ? 'text-brand-beige-black'
+                    : 'text-slate-400 hover:text-brand-beige-black'
                     }`}
                 >
                   {cat}
+                  {/* Underline indicator */}
+                  <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] rounded-full transition-all duration-300 ${selectedCategory === cat
+                    ? 'w-3/4 bg-brand-red'
+                    : 'w-0 group-hover:w-1/2 bg-brand-gold'
+                    }`} />
                 </button>
               ))}
             </div>
 
             {/* Mobile Interface */}
-            <button
-              className="lg:hidden w-full flex items-center justify-between bg-white border-2 border-slate-100 px-8 py-5 rounded-2xl text-xs font-black uppercase tracking-widest text-slate-700"
-              onClick={() => setIsFilterOpen(!isFilterOpen)}
-            >
-              <div className="flex items-center gap-4">
-                <Filter size={18} className="text-brand-red" />
-                <span>Node Filter: {selectedCategory}</span>
-              </div>
-              <ChevronDown size={18} className={`transform transition-transform duration-500 ${isFilterOpen ? 'rotate-180' : ''}`} />
-            </button>
-          </div>
-
-          {/* Mobile Overlay */}
-          <div className={`lg:hidden overflow-hidden transition-all duration-700 ease-in-out ${isFilterOpen ? 'max-h-96 mt-6 opacity-100' : 'max-h-0 opacity-0'}`}>
-            <div className="grid grid-cols-2 gap-3 pb-4">
-              {['All', ...Object.values(Category)].map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => { setSelectedCategory(cat); setIsFilterOpen(false); }}
-                  className={`px-6 py-4 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all border-2 ${selectedCategory === cat
-                    ? 'bg-brand-red text-white border-brand-red'
-                    : 'bg-white text-slate-400 border-slate-100'
-                    }`}
-                >
-                  {cat}
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Output Grid */}
-      <section className="py-24" id="product-grid">
-        <div className="container mx-auto px-6 max-w-[1900px]">
-          {filteredProducts.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-              {filteredProducts.map((p) => (
-                <div
-                  key={p.id}
-                  className="bg-white rounded-[4rem] p-6 shadow-xl hover:shadow-[0_30px_60px_-15px_rgba(127,29,29,0.2)] hover:-translate-y-3 transition-all duration-700 border border-slate-100 group flex flex-col h-full cursor-pointer overflow-hidden"
-                  onClick={() => setSelectedProduct(p)}
-                >
-                  <div className="aspect-square rounded-[3rem] relative overflow-hidden bg-brand-beige-white mb-8 border border-slate-100 group-hover:border-brand-red/20 transition-colors">
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.02)_0%,transparent_70%)]" />
-                    <img
-                      src={p.image}
-                      alt={p.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 relative z-10"
-                    />
-                    <div className="absolute top-6 left-6 z-20">
-                      <div className="flex items-center gap-2 bg-white/90 backdrop-blur px-4 py-2 rounded-full border border-slate-200 shadow-sm">
-                        <div className="w-1.5 h-1.5 rounded-full bg-brand-red" />
-                        <span className="text-brand-beige-black text-[10px] font-black uppercase tracking-widest">
-                          {p.category}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="px-6 pb-8 flex flex-col flex-grow">
-                    <h3 className="text-2xl font-outfit font-bold text-brand-beige-black mb-4 tracking-tight leading-tight group-hover:text-brand-red transition-colors">
-                      {p.name}
-                    </h3>
-                    <p className="text-slate-500 mb-10 leading-relaxed flex-grow text-lg font-medium line-clamp-3">
-                      {p.description}
-                    </p>
-
-                    <div className="flex items-center justify-between pt-8 border-t border-slate-50">
-                      <div className="flex items-center gap-2">
-                        <Tag size={16} className="text-brand-gold" />
-                        <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">Biological Node</span>
-                      </div>
-                      <div className="w-12 h-12 rounded-2xl bg-brand-beige-black text-white flex items-center justify-center group-hover:bg-brand-red transition-colors">
-                        <Info size={20} />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          ) : (
-            <div className="flex flex-col items-center justify-center py-48 text-center bg-white rounded-[4rem] border border-dashed border-slate-200 shadow-inner">
-              <div className="w-32 h-32 bg-brand-beige-white rounded-full flex items-center justify-center mb-8 text-slate-300">
-                <Search size={48} className="animate-pulse" />
-              </div>
-              <h3 className="text-4xl font-ubuntu font-bold text-brand-beige-black mb-4 tracking-tighter">Zero Data Points Found</h3>
-              <p className="text-slate-400 text-xl font-medium mb-12 max-w-md">The requested entity does not exist in our current biotechnology framework.</p>
+            <div className="lg:hidden">
               <button
-                onClick={() => { setSearchTerm(''); setSelectedCategory('All'); }}
-                className="bg-brand-beige-black text-white font-ubuntu font-bold px-12 py-5 rounded-2xl hover:bg-brand-red transition-all shadow-2xl active:scale-95 text-xs uppercase tracking-widest"
+                className="w-full flex items-center justify-between bg-white border-2 border-slate-100 px-5 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-widest text-slate-700"
+                onClick={() => setIsFilterOpen(!isFilterOpen)}
               >
-                Reset Engine
+                <div className="flex items-center gap-3">
+                  <Filter size={16} className="text-brand-red" />
+                  <span>Filter: {selectedCategory}</span>
+                </div>
+                <ChevronDown size={16} className={`transform transition-transform duration-500 ${isFilterOpen ? 'rotate-180' : ''}`} />
               </button>
+
+              {/* Mobile Overlay */}
+              <div className={`overflow-hidden transition-all duration-700 ease-in-out ${isFilterOpen ? 'max-h-96 mt-3 opacity-100' : 'max-h-0 opacity-0'}`}>
+                <div className="grid grid-cols-2 gap-2 pb-3">
+                  {['All', ...Object.values(Category).filter(c => c !== Category.THERAPEUTIC && c !== Category.MOULD_INHIBITOR)].map((cat) => (
+                    <button
+                      key={cat}
+                      onClick={() => { setSelectedCategory(cat); setIsFilterOpen(false); }}
+                      className={`px-4 py-2.5 rounded-lg text-[10px] font-black uppercase tracking-widest transition-all border-2 ${selectedCategory === cat
+                        ? 'bg-brand-red text-white border-brand-red'
+                        : 'bg-white text-slate-400 border-slate-100'
+                        }`}
+                    >
+                      {cat}
+                    </button>
+                  ))}
+                </div>
+              </div>
             </div>
-          )}
-        </div>
-      </section>
+
+          </div>
+        </section>
+
+        {/* Output Grid */}
+        <section className="py-24" id="product-grid">
+          <div className="container mx-auto px-6 max-w-[1900px]">
+            {filteredProducts.length > 0 ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                {filteredProducts.map((p) => (
+                  <div
+                    key={p.id}
+                    className="bg-white rounded-[4rem] p-6 shadow-xl hover:shadow-[0_30px_60px_-15px_rgba(127,29,29,0.2)] hover:-translate-y-3 transition-all duration-700 border border-slate-100 group flex flex-col h-full cursor-pointer overflow-hidden"
+                    onClick={() => setSelectedProduct(p)}
+                  >
+                    <div className="aspect-square rounded-[3rem] relative overflow-hidden bg-brand-beige-white mb-8 border border-slate-100 group-hover:border-brand-red/20 transition-colors">
+                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.02)_0%,transparent_70%)]" />
+                      <img
+                        src={p.image}
+                        alt={p.name}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 relative z-10"
+                      />
+                      <div className="absolute top-6 left-6 z-20">
+                        <div className="flex items-center gap-2 bg-white/90 backdrop-blur px-4 py-2 rounded-full border border-slate-200 shadow-sm">
+                          <div className="w-1.5 h-1.5 rounded-full bg-brand-red" />
+                          <span className="text-brand-beige-black text-[10px] font-black uppercase tracking-widest">
+                            {p.category}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="px-6 pb-8 flex flex-col flex-grow">
+                      <h3 className="text-2xl font-outfit font-bold text-brand-beige-black mb-4 tracking-tight leading-tight group-hover:text-brand-red transition-colors">
+                        {p.name}
+                      </h3>
+                      <p className="text-slate-500 mb-10 leading-relaxed flex-grow text-lg font-medium line-clamp-3">
+                        {p.description}
+                      </p>
+
+                      <div className="flex items-center justify-between pt-8 border-t border-slate-50">
+                        <div className="flex items-center gap-2">
+                          <Tag size={16} className="text-brand-gold" />
+                          <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">Biological Node</span>
+                        </div>
+                        <div className="w-12 h-12 rounded-2xl bg-brand-beige-black text-white flex items-center justify-center group-hover:bg-brand-red transition-colors">
+                          <Info size={20} />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="flex flex-col items-center justify-center py-48 text-center bg-white rounded-[4rem] border border-dashed border-slate-200 shadow-inner">
+                <div className="w-32 h-32 bg-brand-beige-white rounded-full flex items-center justify-center mb-8 text-slate-300">
+                  <Search size={48} className="animate-pulse" />
+                </div>
+                <h3 className="text-4xl font-ubuntu font-bold text-brand-beige-black mb-4 tracking-tighter">Zero Data Points Found</h3>
+                <p className="text-slate-400 text-xl font-medium mb-12 max-w-md">The requested entity does not exist in our current biotechnology framework.</p>
+                <button
+                  onClick={() => { setSearchTerm(''); setSelectedCategory('All'); }}
+                  className="bg-brand-beige-black text-white font-ubuntu font-bold px-12 py-5 rounded-2xl hover:bg-brand-red transition-all shadow-2xl active:scale-95 text-xs uppercase tracking-widest"
+                >
+                  Reset Engine
+                </button>
+              </div>
+            )}
+          </div>
+        </section>
+      </div> {/* End Products Content Wrapper */}
 
       {/* Logic Modal Interface */}
       {selectedProduct && (

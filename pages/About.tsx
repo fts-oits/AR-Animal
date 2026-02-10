@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
-import { Target, Eye, Shield, Globe, Flag, Factory, TrendingUp, Zap, CheckCircle2, Quote, Mail } from 'lucide-react';
+import { Target, Eye, Shield, Globe, Flag, Factory, TrendingUp, Zap, CheckCircle2, Quote, Mail, Subtitles } from 'lucide-react';
 import { MILESTONES, PARTNER_DETAILS, TEAM } from '../constants';
 
 const TimelineItem: React.FC<{ milestone: typeof MILESTONES[0], index: number, isLast: boolean }> = ({ milestone, index, isLast }) => {
@@ -59,84 +59,104 @@ const About: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-24 relative z-20">
-        <div className="container mx-auto px-6 max-w-[1900px]">
-          <div className="bg-brand-beige-black rounded-[4rem] shadow-2xl overflow-hidden border border-white/10">
-            <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
+      <section className="py-20 md:py-32 lg:py-48 bg-brand-beige-black relative overflow-visible">
+        {/* Decorative Background Elements */}
+        <div className="absolute top-20 right-10 w-1/2 h-full bg-brand-red/[0.03] -skew-x-12 transform translate-x-1/4" />
+        <div className="absolute top-20 -bottom-20 right-20 w-96 h-96 bg-brand-emerald/10 rounded-full blur-[120px]" />
 
-              {/* CEO Portrait Side */}
-              <div className="lg:col-span-6 relative bg-brand-beige-black min-h-[600px] lg:min-h-full overflow-hidden group flex flex-col justify-end p-6 lg:p-10">
-                <img
-                  src={TEAM[0].image}
-                  alt={TEAM[0].name}
-                  className="absolute top-12 md:top-24 lg:top-32 left-0 right-0 bottom-0 w-full h-[calc(100%-3rem)] md:h-[calc(100%-6rem)] lg:h-[calc(100%-8rem)] object-contain object-top grayscale-[30%] group-hover:grayscale-0 transition-all duration-1000 z-10"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-beige-black via-transparent to-transparent opacity-60 z-20" />
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
 
-                {/* Floating Bio Card - Precision position from red mark */}
-                <div className="relative w-full p-8 rounded-3xl bg-white/10 backdrop-blur-2xl border border-white/20 shadow-2xl z-30 transform hover:-translate-y-2 transition-all duration-500">
-                  <div className="flex flex-col gap-6">
-                    <div className="flex items-center gap-5">
-                      <div className="w-16 h-16 bg-brand-emerald rounded-2xl flex items-center justify-center text-emerald-900 shadow-lg shadow-emerald-500/20">
-                        <Quote size={28} />
-                      </div>
-                      <div>
-                        <span className="text-brand-emerald font-black uppercase tracking-[0.4em] text-[10px] mb-1 block">Since 1987</span>
-                        <h2 className="text-2xl md:text-3xl font-outfit font-bold text-white tracking-tighter leading-none">{TEAM[0].name}</h2>
-                      </div>
-                    </div>
-                    <p className="text-slate-300 text-base md:text-lg leading-relaxed italic font-medium">
-                      "{TEAM[0].bio} Our commitment to animal health is the cornerstone of AR Group's vision."
-                    </p>
-                    <div className="pt-6 border-t border-white/10">
-                      <a href={`mailto:${TEAM[0].socials.email}`} className="inline-flex items-center gap-3 text-white hover:text-brand-emerald font-ubuntu font-bold text-[10px] uppercase tracking-widest transition-colors group/btn">
-                        <Mail size={16} className="group-hover/btn:translate-x-1 transition-transform" />
-                        <span>Direct Communication Path</span>
-                      </a>
-                    </div>
-                  </div>
+            {/* CEO Portrait Side */}
+            <div className="lg:col-span-6 relative">
+              <div className="relative group">
+                <div className="absolute -inset-4 bg-gradient-to-tr from-brand-emerald to-brand-gold rounded-[3rem] blur-2xl opacity-20 group-hover:opacity-30 transition-opacity" />
+                <div className="relative aspect-[4/5] md:aspect-square lg:aspect-[4/5] rounded-[3rem] overflow-hidden border-8 border-white/10 shadow-2xl">
+                  <img
+                    src={TEAM[0].image}
+                    alt={TEAM[0].name}
+                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-[2s]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-beige-black/80 via-transparent to-transparent" />
                 </div>
-
               </div>
 
-              {/* Story Content Side */}
-              <div className="lg:col-span-6 p-12 md:p-24 lg:p-32 flex flex-col bg-brand-beige-black">
-                <div className="max-w-2xl">
-                  <div className="flex items-center gap-4 mb-8">
-                    <div className="h-[2px] w-12 bg-brand-emerald"></div>
-                    <span className="text-brand-emerald font-black tracking-[0.4em] uppercase text-xs">Origin Story</span>
-                  </div>
-
-                  <h2 className="text-4xl md:text-5xl lg:text-7xl font-outfit font-bold text-white mb-8 leading-tight tracking-tighter">
-                    The <span className="text-brand-red">Strategists.</span>
-                  </h2>
-
-                  <div className="space-y-8 text-slate-300 text-xl leading-relaxed font-medium mb-12">
-                    <p>
-                      Under the visionary leadership of <span className="text-white font-bold">Mr. Atiar Rahman</span>, AR Animal Health Ltd has evolved into a strategic nexus for biotechnological advancement in Bangladesh’s poultry sector.
-                    </p>
-                    <p>
-                      With over <span className="text-brand-emerald font-black">35 years</span> of specialized intelligence in animal feed additives, we orchestrate the processing of high-grade resources to ensure national food security.
-                    </p>
-                  </div>
-
-                  <div className="grid grid-cols-2 gap-8 mb-16">
-                    <div className="bg-white/5 p-10 rounded-[2.5rem] border border-white/10 shadow-sm hover:shadow-xl transition-all group overflow-hidden relative">
-                      <div className="absolute top-0 right-0 w-16 h-16 bg-brand-emerald/10 rounded-full blur-xl group-hover:scale-150 transition-transform" />
-                      <span className="block text-4xl font-outfit font-bold text-white mb-2">2010</span>
-                      <span className="text-[10px] font-inter font-black uppercase tracking-widest text-brand-emerald">System Launch</span>
-                    </div>
-                    <div className="bg-white/5 p-10 rounded-[2.5rem] border border-white/10 shadow-sm hover:shadow-xl transition-all group overflow-hidden relative">
-                      <div className="absolute top-0 right-0 w-16 h-16 bg-brand-gold/10 rounded-full blur-xl group-hover:scale-150 transition-transform" />
-                      <span className="block text-4xl font-outfit font-bold text-white mb-2">ISO+</span>
-                      <span className="text-[10px] font-inter font-black uppercase tracking-widest text-brand-gold">Terminal Grade</span>
-                    </div>
-                  </div>
+              {/* Floating Badge Card */}
+              <div className="absolute -top-10 -right-6 md:right-10 bg-white/10 backdrop-blur-xl p-6 rounded-[2rem] shadow-xl border border-white/20 flex items-center gap-4 animate-bounce-slow">
+                <div className="w-14 h-14 bg-brand-emerald rounded-2xl flex items-center justify-center text-emerald-900 shadow-lg shadow-emerald-500/20">
+                  <Quote size={20} />
+                </div>
+                <div>
+                  <p className="font-ubuntu font-black text-white leading-none text-xl">{TEAM[0].name}</p>
+                  <p className="text-[10px] text-brand-emerald font-black uppercase tracking-tighter mt-1">Founder & CEO</p>
                 </div>
               </div>
             </div>
+
+            {/* Story Content Side */}
+            <div className="lg:col-span-6">
+              <div className="max-w-2xl">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="h-[2px] w-12 bg-brand-emerald" />
+                  <span className="text-brand-emerald font-black tracking-[0.4em] uppercase text-xs">Origin Story</span>
+                </div>
+
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-outfit font-bold text-white mb-8 leading-tight tracking-tighter max-w-4xl">
+                  The <span className="text-brand-red">Strategist</span>
+                </h2>
+                <p className="text-lg text-white md:text-lg text-white-500 mb-10 leading-relaxed font-medium max-w-4xl">With over <span className="text-emerald-500 font-bold">35 years</span> of specialized intelligence in animal feed additives, we orchestrate the processing of high-grade resources to ensure national food security.
+                  <hr className="my-4 text-red-500" />Under the Visionary leadership of <span className="text-emerald-500 font-bold">Mr. Atiar Rahman</span>, Former specialist at Biman Poultry Complex since 1987, AR Animal Health Ltd has evolved into a strategic nexus for biotechnological advancement in Bangladesh's poultry sector.</p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-16">
+                  <div className="bg-white/5 p-8 rounded-[2rem] border border-white/10 shadow-sm hover:shadow-xl transition-all group overflow-hidden relative">
+                    <div className="absolute top-0 right-0 w-16 h-16 bg-brand-emerald/10 rounded-full blur-xl group-hover:scale-150 transition-transform" />
+                    <span className="block text-3xl md:text-4xl font-outfit font-bold text-white mb-2">2010</span>
+                    <span className="text-[10px] font-inter font-black uppercase tracking-widest text-brand-emerald leading-tight">System Launch</span>
+                  </div>
+                  <div className="bg-white/5 p-8 rounded-[2rem] border border-white/10 shadow-sm hover:shadow-xl transition-all group overflow-hidden relative">
+                    <div className="absolute top-0 right-0 w-16 h-16 bg-brand-gold/10 rounded-full blur-xl group-hover:scale-150 transition-transform" />
+                    <span className="block text-3xl md:text-4xl font-outfit font-bold text-white mb-2">ISO+</span>
+                    <span className="text-[10px] font-inter font-black uppercase tracking-widest text-brand-gold leading-tight">Terminal Grade</span>
+                  </div>
+                </div>
+                {/* <div className="container mx-auto">
+                  <div className="w-full p-6 md:p-8 rounded-[2rem] md:rounded-3xl bg-white/10 backdrop-blur-2xl border border-white/20 shadow-2xl transform hover:-translate-y-1 transition-all duration-500">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 md:gap-6">
+                      <a href={`mailto:${TEAM[0].socials.email}`} className="inline-flex items-center gap-2 text-white hover:text-brand-emerald font-ubuntu font-bold text-[9px] md:text-[10px] uppercase tracking-widest transition-colors group/btn flex-shrink-0">
+                        <Mail size={14} className="group-hover/btn:translate-x-1 transition-transform" />
+                        <span>Contact</span>
+                      </a>
+                    </div>
+                  </div>
+                </div> */}
+              </div>
+            </div>
+
           </div>
         </div>
+
+        {/* Bio Card - Absolutely positioned at 77% from top of this section, overlapping below */}
+        {/* <div className="absolute top-[77%] left-0 right-0 z-40 px-6">
+          <div className="container mx-auto">
+            <div className="w-full p-6 md:p-8 rounded-[2rem] md:rounded-3xl bg-white/10 backdrop-blur-2xl border border-white/20 shadow-2xl transform hover:-translate-y-1 transition-all duration-500">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 md:gap-6">
+                <div className="flex items-center gap-4 md:gap-5">
+                  <div className="w-12 h-12 md:w-16 md:h-16 bg-brand-emerald rounded-2xl flex items-center justify-center text-emerald-900 shadow-lg shadow-emerald-500/20 flex-shrink-0">
+                    <Quote size={22} className="md:hidden" />
+                    <Quote size={28} className="hidden md:block" />
+                  </div>
+                  <div>
+                    <span className="text-brand-emerald font-black uppercase tracking-[0.3em] text-[9px] md:text-[10px] mb-1 block">Since 1987</span>
+                    <h2 className="text-lg md:text-2xl font-outfit font-bold text-white tracking-tighter leading-none">{TEAM[0].name}</h2>
+                  </div>
+                </div>
+                <a href={`mailto:${TEAM[0].socials.email}`} className="inline-flex items-center gap-2 text-white hover:text-brand-emerald font-ubuntu font-bold text-[9px] md:text-[10px] uppercase tracking-widest transition-colors group/btn flex-shrink-0">
+                  <Mail size={14} className="group-hover/btn:translate-x-1 transition-transform" />
+                  <span>Contact</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div> */}
       </section>
 
       {/* Technical Timeline */}
