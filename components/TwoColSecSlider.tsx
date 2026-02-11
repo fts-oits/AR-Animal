@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Globe, Award, ArrowRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Award, ArrowRight } from 'lucide-react';
 import { PARTNER_DETAILS } from '../constants';
 
 const TwoColSecSlider: React.FC = () => {

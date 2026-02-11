@@ -41,7 +41,7 @@ const About: React.FC = () => {
   return (
     <div className="bg-brand-beige-white min-h-screen">
 
-      <section className="py-10 md:py-20 bg-brand-beige-black relative overflow-visible">
+      <section className="pt-32 pb-10 md:pt-48 md:pb-20 bg-brand-beige-black relative overflow-visible">
         {/* Decorative Background Elements */}
         <div className="absolute top-10 right-10 w-1/2 h-full bg-brand-red/[0.03] -skew-x-12 transform translate-x-1/4" />
         <div className="absolute top-10 -bottom-10 right-10 w-96 h-96 bg-brand-emerald/10 rounded-full blur-[120px]" />
