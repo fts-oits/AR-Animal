@@ -188,22 +188,26 @@ export const PARTNER_DETAILS = [
   {
     name: 'Zhejiang Esigma Animal Health Co. Ltd.',
     desc: 'A leading feedstuff pharmaceutical additive factory established in 1997. Market leader in China for coccidiostats.',
-    logo: 'img/EsigmaOffice-1.jpg'
+    logo: 'img/EsigmaOffice-1.jpg',
+    bgImage: 'img/EsigmaOffice-1.jpg'
   },
   {
     name: 'Sichuan Chuanheng Chemical Corporation',
     desc: 'Asia’s largest supplier of Monocalcium Phosphate. Specialized in mining and processing phosphate rock.',
-    logo: 'img/chanhen2-logo.jpg'
+    logo: 'img/chanhen2-logo.jpg',
+    bgImage: 'img/chanhen-2.jpg'
   },
   {
     name: 'Guangdong VTR Bio-Tech Co. Ltd.',
     desc: 'The largest animal feed enzyme manufacturer in China. Ranks No. 1 in the feed enzyme industry in Asia.',
-    logo: 'img/vtr-100.jpg'
+    logo: 'img/vtr-100.jpg',
+    bgImage: 'img/vtr2.jpg'
   },
   {
     name: 'Yunnan Copper Industry Sunward Chemicals',
     desc: 'Annual production capacity of Feed Grade DCP/MCP of 260,000 tons. A major player in mineral feeds.',
-    logo: 'img/Sunward-Office-2.jpg'
+    logo: 'img/Sunward-Office-2.jpg',
+    bgImage: 'img/Sunward-Office-2.jpg'
   }
 ];
 

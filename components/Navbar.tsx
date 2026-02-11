@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ArrowRight, Phone, Mail, Search } from 'lucide-react';
+import { ArrowRight, Mail } from 'lucide-react';
 
-interface NavbarProps {
-  onSearchClick: () => void;
-}
-
-const Navbar: React.FC<NavbarProps> = ({ onSearchClick }) => {
+const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
@@ -32,20 +28,39 @@ const Navbar: React.FC<NavbarProps> = ({ onSearchClick }) => {
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
     { name: 'Products', path: '/products' },
-    { name: 'Partners', path: '/partners' },
     { name: 'Gallery', path: '/gallery' },
   ];
+
+  const getNavLinkClass = (path: string) => {
+    if (location.pathname === path) {
+      return 'bg-brand-red text-white shadow-lg';
+    }
+    if (scrolled) {
+      return 'text-slate-600 hover:text-brand-gold hover:bg-white/50';
+    }
+    return 'text-white/90 hover:text-white hover:bg-white/20';
+  };
+
+  const getMobileToggleClass = () => {
+    if (isOpen) {
+      return 'bg-brand-beige-black text-white';
+    }
+    if (scrolled) {
+      return 'bg-brand-beige-black text-white';
+    }
+    return 'bg-white/90 shadow-xl text-brand-beige-black';
+  };
 
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out px-4 md:px-12 ${scrolled || isOpen ? 'py-1' : 'py-8'
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out px-4 min-[756px]:px-6 ${scrolled || isOpen ? 'py-1' : 'py-8'
           }`}
       >
         <div
-          className={`max-w-[1900px] mx-auto rounded-2xl transition-all duration-500 border border-transparent ${scrolled || isOpen
-            ? 'bg-brand-beige-white/40 bg-glass-orange backdrop-blur-2xl shadow-2xl border-white/20 pl-4 pr-4 py-1 md:pl-10 md:pr-4'
-            : 'bg-transparent pl-0 pr-0'
+          className={`max-w-[1400px] mx-auto rounded-2xl transition-all duration-500 border border-transparent ${(scrolled || isOpen)
+              ? 'bg-brand-beige-white/40 bg-glass-orange backdrop-blur-2xl shadow-2xl border-white/20 px-4 py-1 min-[756px]:px-8'
+              : 'bg-transparent px-0'
             }`}
         >
           <div className="flex justify-between items-center">
@@ -60,38 +75,16 @@ const Navbar: React.FC<NavbarProps> = ({ onSearchClick }) => {
               </div>
             </Link>
 
-            {/* Desktop Navigation & Search */}
-            <div className="hidden md:flex items-center flex-1">
-
-              {/* Centered Search Bar - Takes up middle space */}
-              <div className="flex-1 flex justify-center px-4">
-                <div className={`relative transition-all duration-500 overflow-hidden ${scrolled ? 'w-[300px] opacity-100' : 'w-0 opacity-0'}`}>
-                  <div className="relative w-full" onClick={onSearchClick}>
-                    <input
-                      type="text"
-                      placeholder="Search Products"
-                      readOnly
-                      className="w-full bg-white/80 backdrop-blur-md border border-brand-red rounded-2xl px-12 py-2 focus:outline-none focus:border-brand-gold transition-all font-ubuntu font-bold text-slate-800 placeholder-slate-400 shadow-sm cursor-pointer"
-                    />
-                    <Search size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-brand-gold" />
-                  </div>
-                </div>
-              </div>
-
-              {/* Right Side Navigation Group */}
+            {/* Desktop Navigation */}
+            <div className="hidden min-[756px]:flex items-center flex-1 justify-end">
               <div className="flex items-center gap-4">
-                <div className={`flex items-center gap-2 rounded-2xl px-3 py-2 transition-colors duration-500 ${scrolled ? 'bg-slate-200/50' : 'bg-white/10 backdrop-blur-md border border-white/10'
+                <div className={`flex items-center gap-1 xl:gap-2 rounded-2xl px-3 py-2 transition-colors duration-500 ${scrolled ? 'bg-slate-200/50' : 'bg-white/10 backdrop-blur-md border border-white/10'
                   }`}>
                   {navLinks.map((link) => (
                     <Link
                       key={link.path}
                       to={link.path}
-                      className={`relative px-4 py-2 rounded-xl text-sm font-ubuntu font-bold transition-all duration-300 ${location.pathname === link.path
-                        ? 'bg-brand-red text-white shadow-lg'
-                        : scrolled
-                          ? 'text-slate-600 hover:text-brand-gold hover:bg-white/50'
-                          : 'text-white/90 hover:text-white hover:bg-white/20'
-                        }`}
+                      className={`relative px-3 xl:px-4 py-2 rounded-xl text-xs xl:text-sm font-ubuntu font-bold transition-all duration-300 whitespace-nowrap ${getNavLinkClass(link.path)}`}
                     >
                       {link.name}
                     </Link>
@@ -100,7 +93,7 @@ const Navbar: React.FC<NavbarProps> = ({ onSearchClick }) => {
 
                 <Link
                   to="/contact"
-                  className={`bg-brand-red hover:bg-red-800 text-white px-5 py-2 rounded-xl text-xs font-inter font-bold shadow-xl shadow-brand-red/20 transform hover:-translate-y-1 transition-all duration-300 flex items-center gap-2 group whitespace-nowrap ml-2`}
+                  className="bg-brand-red hover:bg-red-800 text-white px-5 py-2 rounded-xl text-xs font-inter font-bold shadow-xl shadow-brand-red/20 transform hover:-translate-y-1 transition-all duration-300 flex items-center gap-2 group whitespace-nowrap ml-2"
                 >
                   <span>Contact</span>
                   <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
@@ -110,11 +103,16 @@ const Navbar: React.FC<NavbarProps> = ({ onSearchClick }) => {
 
             {/* Mobile Toggle */}
             <button
-              className={`md:hidden relative z-50 w-12 h-12 rounded-2xl flex items-center justify-center transition-colors duration-300 ${isOpen
-                ? 'bg-brand-beige-black text-white'
-                : scrolled ? 'bg-brand-beige-black text-white' : 'bg-white/90 shadow-xl text-brand-beige-black'
-                }`}
+              type="button"
+              className={`min-[756px]:hidden relative z-50 w-12 h-12 rounded-2xl flex items-center justify-center transition-colors duration-300 ${getMobileToggleClass()}`}
               onClick={() => setIsOpen(!isOpen)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  setIsOpen(!isOpen);
+                }
+              }}
+              aria-expanded={isOpen}
+              aria-label="Toggle navigation menu"
             >
               <div className="w-6 flex flex-col items-end gap-1.5 ">
                 <span className={`h-0.5 bg-current rounded-full transition-all duration-300 ${isOpen ? 'w-6 rotate-45 translate-y-2' : 'w-6'}`} />
@@ -129,14 +127,14 @@ const Navbar: React.FC<NavbarProps> = ({ onSearchClick }) => {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 bg-slate-900/20 backdrop-blur-sm z-40 transition-opacity duration-500 md:hidden ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        className={`fixed inset-0 bg-slate-900/20 backdrop-blur-sm z-40 transition-opacity duration-500 min-[756px]:hidden ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
           }`}
         onClick={() => setIsOpen(false)}
       />
 
       {/* Mobile Menu Drawer */}
       <div
-        className={`fixed top-0 right-0 w-[85%] max-w-sm h-full bg-white z-40 shadow-2xl transition-transform duration-500 cubic-bezier(0.16, 1, 0.3, 1) md:hidden ${isOpen ? 'translate-x-0' : 'translate-x-full'
+        className={`fixed top-0 right-0 w-[85%] max-w-sm h-full bg-white z-40 shadow-2xl transition-transform duration-500 cubic-bezier(0.16, 1, 0.3, 1) min-[756px]:hidden ${isOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
       >
         <div className="flex flex-col h-full pt-28 pb-10 px-8">
