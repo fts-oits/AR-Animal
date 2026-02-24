@@ -1,21 +1,21 @@
-import React, { useState, useEffect, useMemo } from 'react';
-import { GALLERY } from '../constants';
-import { Maximize2, X, ChevronLeft, ChevronRight, Filter } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Maximize2, X, ChevronLeft, ChevronRight } from 'lucide-react';
+
+const NEW_GALLERY = [
+  { id: '1', image: 'img/gallery/new/202e15b1-3da7-4731-bed0-4a427f0a98da.jpeg' },
+  { id: '2', image: 'img/gallery/new/5dbe0efa-a8ec-46f8-8753-cdc191491fff.jpeg' },
+  { id: '3', image: 'img/gallery/new/74d041bb-3351-42c0-b10b-9d98d6b54d08.jpeg' },
+  { id: '4', image: 'img/gallery/new/IMG_9012.jpeg' },
+  { id: '5', image: 'img/gallery/new/IMG_9019.jpeg' },
+  { id: '6', image: 'img/gallery/new/IMG_9023.jpeg' },
+  { id: '7', image: 'img/gallery/new/IMG_9046.jpeg' },
+  { id: '8', image: 'img/gallery/new/IMG_9053.jpeg' },
+  { id: '9', image: 'img/gallery/new/e70eb596-6203-496d-a472-64858f0190e0.jpeg' },
+  { id: '10', image: 'img/gallery/new/f678486e-ddbe-44d8-ad1f-e01e540deb2d.jpeg' },
+];
 
 const Gallery: React.FC = () => {
-  const [activeTab, setActiveTab] = useState('All');
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
-
-  const categories = useMemo(() => {
-    const cats = new Set(GALLERY.map(item => item.category));
-    return ['All', ...Array.from(cats)].sort();
-  }, []);
-
-  const filteredItems = useMemo(() => {
-    return activeTab === 'All'
-      ? GALLERY
-      : GALLERY.filter(item => item.category === activeTab);
-  }, [activeTab]);
 
   const openLightbox = (index: number) => {
     setSelectedIndex(index);
@@ -30,14 +30,14 @@ const Gallery: React.FC = () => {
   const nextImage = (e?: React.MouseEvent) => {
     e?.stopPropagation();
     if (selectedIndex !== null) {
-      setSelectedIndex((selectedIndex + 1) % filteredItems.length);
+      setSelectedIndex((selectedIndex + 1) % NEW_GALLERY.length);
     }
   };
 
   const prevImage = (e?: React.MouseEvent) => {
     e?.stopPropagation();
     if (selectedIndex !== null) {
-      setSelectedIndex((selectedIndex - 1 + filteredItems.length) % filteredItems.length);
+      setSelectedIndex((selectedIndex - 1 + NEW_GALLERY.length) % NEW_GALLERY.length);
     }
   };
 
@@ -50,7 +50,7 @@ const Gallery: React.FC = () => {
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [selectedIndex, filteredItems]);
+  }, [selectedIndex]);
 
   return (
     <div className="bg-brand-beige-white min-h-screen">
@@ -72,31 +72,11 @@ const Gallery: React.FC = () => {
         </div>
       </section>
 
-      {/* Logic Filter Strip */}
-      <section className="sticky top-0 z-40 bg-brand-beige-white/80 backdrop-blur-2xl py-8 border-b border-brand-red/10 shadow-2xl">
-        <div className="container mx-auto px-6 max-w-[1900px]">
-          <div className="flex items-center gap-4 overflow-x-auto no-scrollbar scroll-smooth justify-start lg:justify-center p-2">
-            {categories.map(tab => (
-              <button
-                key={tab}
-                onClick={() => { setActiveTab(tab); setSelectedIndex(null); }}
-                className={`flex-shrink-0 px-8 py-4 rounded-2xl text-xs font-black tracking-widest uppercase transition-all duration-500 border-2 ${activeTab === tab
-                  ? 'bg-brand-beige-black text-white border-brand-beige-black shadow-xl shadow-brand-beige-black/20 scale-105'
-                  : 'bg-white text-slate-400 border-slate-100 hover:border-brand-gold hover:text-brand-gold'
-                  }`}
-              >
-                {tab}
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Grid Interface */}
       <section className="py-24">
         <div className="container mx-auto px-6 max-w-[1900px]">
           <div className="columns-1 md:columns-2 lg:columns-3 gap-12 space-y-12">
-            {filteredItems.map((item, index) => (
+            {NEW_GALLERY.map((item, index) => (
               <div
                 key={item.id}
                 className="group break-inside-avoid relative overflow-hidden rounded-[3.5rem] cursor-pointer shadow-xl hover:shadow-brand-red/20 transition-all duration-700 bg-white border border-slate-100"
@@ -104,7 +84,7 @@ const Gallery: React.FC = () => {
               >
                 <img
                   src={item.image}
-                  alt={item.title}
+                  alt={`Gallery Image ${index + 1}`}
                   className="w-full h-auto object-cover transition-transform duration-[2s] group-hover:scale-110 grayscale-[20%] group-hover:grayscale-0"
                 />
 
@@ -113,10 +93,9 @@ const Gallery: React.FC = () => {
                     <div className="flex items-center gap-3 mb-4">
                       <div className="w-8 h-px bg-brand-red" />
                       <span className="text-[10px] font-black uppercase tracking-[0.3em] text-brand-red">
-                        {item.category}
+                        Gallery
                       </span>
                     </div>
-                    <h3 className="text-2xl font-outfit font-bold text-white tracking-tight leading-tight">{item.title}</h3>
                   </div>
                 </div>
 
@@ -164,26 +143,15 @@ const Gallery: React.FC = () => {
           >
             <div className="relative max-w-6xl w-full max-h-[80vh] rounded-[4rem] overflow-hidden shadow-[0_0_100px_rgba(127,29,29,0.2)] border border-white/10 p-4 bg-white/5">
               <img
-                src={filteredItems[selectedIndex].image}
-                alt={filteredItems[selectedIndex].title}
+                src={NEW_GALLERY[selectedIndex].image}
+                alt={`Gallery Image ${selectedIndex + 1}`}
                 className="w-full h-full object-contain bg-brand-beige-black/50 rounded-[3rem]"
               />
-              <div className="absolute bottom-4 left-4 right-4 bg-brand-beige-black/80 backdrop-blur-3xl p-12 lg:p-16 rounded-[3rem] border-t border-white/10">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-1.5 h-1.5 rounded-full bg-brand-red" />
-                  <span className="text-brand-red font-black tracking-[0.5em] uppercase text-xs">
-                    {filteredItems[selectedIndex].category}
-                  </span>
-                </div>
-                <h3 className="text-3xl lg:text-5xl font-outfit font-bold text-white tracking-tighter leading-tight">
-                  {filteredItems[selectedIndex].title}
-                </h3>
-              </div>
             </div>
 
             {/* Matrix Pagination */}
             <div className="flex items-center gap-4 mt-12 bg-white/5 px-8 py-4 rounded-2xl border border-white/10">
-              {filteredItems.map((_, i) => (
+              {NEW_GALLERY.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => setSelectedIndex(i)}
@@ -197,6 +165,5 @@ const Gallery: React.FC = () => {
     </div>
   );
 };
-
 
 export default Gallery;
