@@ -56,6 +56,54 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+      {/* Product Categories Preview - Premium Cards */}
+      <section className="py-20 md:py-32 bg-brand-beige-white">
+        <div className="container mx-auto px-6 max-w-[1900px]">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-12 md:mb-16">
+            <div className="max-w-2xl">
+              <span className="text-brand-red font-black tracking-[0.5em] uppercase text-xs mb-4 block">Innovation Center</span>
+              <h2 className="text-4xl md:text-6xl font-outfit font-bold text-brand-beige-black tracking-tighter leading-tight">
+                Product <span className="text-brand-red">Catalog.</span>
+              </h2>
+            </div>
+            <Link to="/products" className="mt-8 md:mt-0 group flex items-center gap-3 bg-brand-beige-black text-white px-6 py-3 rounded-xl font-inter font-bold text-base hover:bg-brand-red transition-all shadow-xl">
+              <span>Full Catalog</span>
+              <ArrowRight className="group-hover:translate-x-2 transition-transform duration-500" size={18} />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+            {[
+              { name: "Micro-Biological", count: "20+ Solutions", icon: Droplets, img: "img/doctors/doctors-1.jpg" },
+              { name: "Mineral Equilibrium", count: "10+ Nodes", icon: TrendingUp, img: "img/products/DCP Granular.png" },
+              { name: "Health Intelligence", count: "15+ Systems", icon: ShieldCheck, img: "img/doctors/doctors-2.jpg" }
+            ].map((cat, idx) => (
+              <Link to="/products" key={idx} className="group relative h-[400px] md:h-[500px] overflow-hidden rounded-[3rem] shadow-xl border-4 border-white">
+                <img
+                  src={cat.img}
+                  alt={cat.name}
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-[3s] ease-out grayscale-[30%] group-hover:grayscale-0"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-beige-black via-brand-beige-black/20 to-transparent opacity-90 group-hover:opacity-70 transition-opacity duration-700" />
+
+                <div className="absolute top-8 right-8 w-12 h-12 bg-white/10 backdrop-blur-xl rounded-xl flex items-center justify-center text-white border border-white/20 group-hover:bg-brand-red group-hover:border-brand-red transition-all duration-500">
+                  <ArrowRight className="-rotate-45 group-hover:rotate-0 transition-transform duration-700" size={20} />
+                </div>
+
+                <div className="absolute bottom-0 left-0 p-8 text-white w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-700">
+                  <cat.icon className="text-brand-gold mb-4" size={40} />
+                  <h3 className="text-3xl md:text-4xl font-ubuntu font-bold mb-2 tracking-tighter leading-none">{cat.name}</h3>
+                  <div className="flex items-center gap-2">
+                    <div className="w-1 h-1 rounded-full bg-brand-red" />
+                    <p className="text-slate-300 font-black tracking-[0.2em] text-[10px] uppercase">{cat.count}</p>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Our Story Section - Premium Redesign */}
       <section className="py-20 md:py-32 lg:py-48 bg-brand-beige-white relative overflow-hidden mt-10 md:mt-20">
         {/* Decorative Background Elements */}
@@ -153,7 +201,6 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-
       {/* Process Section - Technical Workflow */}
       <section className="py-20 md:py-40 lg:py-48 bg-brand-beige-black text-white relative overflow-hidden">
         {/* Background Decorative Mesh */}
@@ -197,54 +244,6 @@ const Home: React.FC = () => {
                 </div>
               );
             })}
-          </div>
-        </div>
-      </section>
-
-      {/* Product Categories Preview - Premium Cards */}
-      <section className="py-20 md:py-32 bg-brand-beige-white">
-        <div className="container mx-auto px-6 max-w-[1900px]">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-12 md:mb-16">
-            <div className="max-w-2xl">
-              <span className="text-brand-red font-black tracking-[0.5em] uppercase text-xs mb-4 block">Intelligence Center</span>
-              <h2 className="text-4xl md:text-6xl font-outfit font-bold text-brand-beige-black tracking-tighter leading-tight">
-                Technical <span className="text-brand-red">Catalog.</span>
-              </h2>
-            </div>
-            <Link to="/products" className="mt-8 md:mt-0 group flex items-center gap-3 bg-brand-beige-black text-white px-6 py-3 rounded-xl font-inter font-bold text-base hover:bg-brand-red transition-all shadow-xl">
-              <span>Catalog</span>
-              <ArrowRight className="group-hover:translate-x-2 transition-transform duration-500" size={18} />
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-            {[
-              { name: "Bio-Additives", count: "20+ Solutions", icon: Droplets, img: "img/services-1.jpg" },
-              { name: "Mineral Matrix", count: "10+ Nodes", icon: TrendingUp, img: "img/services-2.jpg" },
-              { name: "Vet-Care", count: "15+ Systems", icon: ShieldCheck, img: "img/services-3.jpg" }
-            ].map((cat, idx) => (
-              <Link to="/products" key={idx} className="group relative h-[400px] md:h-[500px] overflow-hidden rounded-[3rem] shadow-xl border-4 border-white">
-                <img
-                  src={cat.img}
-                  alt={cat.name}
-                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-[3s] ease-outgrayscale-[30%] group-hover:grayscale-0"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-beige-black via-brand-beige-black/20 to-transparent opacity-90 group-hover:opacity-70 transition-opacity duration-700" />
-
-                <div className="absolute top-8 right-8 w-12 h-12 bg-white/10 backdrop-blur-xl rounded-xl flex items-center justify-center text-white border border-white/20 group-hover:bg-brand-red group-hover:border-brand-red transition-all duration-500">
-                  <ArrowRight className="-rotate-45 group-hover:rotate-0 transition-transform duration-700" size={20} />
-                </div>
-
-                <div className="absolute bottom-0 left-0 p-8 text-white w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-700">
-                  <cat.icon className="text-brand-gold mb-4" size={40} />
-                  <h3 className="text-3xl md:text-4xl font-ubuntu font-bold mb-2 tracking-tighter leading-none">{cat.name}</h3>
-                  <div className="flex items-center gap-2">
-                    <div className="w-1 h-1 rounded-full bg-brand-red" />
-                    <p className="text-slate-300 font-black tracking-[0.2em] text-[10px] uppercase">{cat.count}</p>
-                  </div>
-                </div>
-              </Link>
-            ))}
           </div>
         </div>
       </section>
@@ -329,49 +328,6 @@ const Home: React.FC = () => {
               </div>
             </div>
 
-          </div>
-        </div>
-      </section>
-
-      {/* Partners - Dynamic Grid */}
-      <section className="py-20 md:py-40 lg:py-48 bg-brand-beige-white">
-        <div className="container mx-auto px-6 max-w-[1900px]">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-24 items-center">
-            <div className="lg:col-span-12 mb-16 text-center">
-              <span className="text-brand-emerald font-black tracking-[0.4em] uppercase text-xs mb-6 block">Global Network</span>
-              <h2 className="text-5xl md:text-7xl font-ubuntu font-bold text-brand-beige-black tracking-tighter leading-tight mb-8">Strategic <span className="bg-brand-emerald text-white px-4 py-2 rounded-xl">Allies.</span></h2>
-              <p className="text-slate-500 font-medium text-lg leading-relaxed max-w-2xl mx-auto mb-10">Collaborating with global leaders in biotechnology to bring terminal solutions to Bangladesh.</p>
-              <Link to="/about" className="inline-flex items-center gap-4 text-brand-beige-black hover:text-brand-red font-black uppercase tracking-[0.2em] text-xs transition-colors group">
-                <span>View All Collaborators</span>
-                <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
-              </Link>
-            </div>
-
-            <div className="lg:col-span-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-              {PARTNER_DETAILS.map((p, idx) => (
-                <div key={idx} className="group relative overflow-hidden rounded-[3.5rem] shadow-xl hover:shadow-2xl transition-all duration-700 hover:-translate-y-3 aspect-[4/3]">
-                  {/* Full Background Image */}
-                  <img
-                    src={p.logo}
-                    alt={p.name}
-                    loading="lazy"
-                    className="absolute inset-0 w-full h-full object-cover transition-all duration-1000 group-hover:scale-110"
-                  />
-
-                  {/* Overlay on Hover */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-beige-black/90 via-brand-beige-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 backdrop-blur-sm" />
-
-                  {/* Text Content */}
-                  <div className="absolute bottom-0 left-0 right-0 p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                    <h3 className="text-xl md:text-2xl font-outfit font-bold text-white uppercase tracking-tight leading-none mb-2 drop-shadow-lg">{p.name}</h3>
-                    <div className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full bg-brand-gold" />
-                      <span className="text-[10px] font-black uppercase tracking-widest text-brand-gold">Global Provider</span>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>

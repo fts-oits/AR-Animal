@@ -45,4 +45,5 @@ export interface Partner {
   name: string;
   desc: string;
   logo: string;
+  bgImage?: string;
 }
