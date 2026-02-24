@@ -314,14 +314,19 @@ const Contact: React.FC = () => {
               </span>
             </div>
 
-            <div className="absolute top-12 left-12 bg-white/90 backdrop-blur-xl p-10 rounded-[3rem] shadow-2xl max-w-sm border border-white/50 hidden md:block group-hover:bg-white transition-colors duration-500">
+            {/* <div className="absolute top-12 left-12 bg-white/90 backdrop-blur-xl p-10 rounded-[3rem] shadow-2xl max-w-sm border border-white/50 hidden md:block group-hover:bg-white transition-colors duration-500">
               <h4 className="text-2xl font-ubuntu font-bold text-slate-900 mb-2">Poultry Hub</h4>
               <p className="text-slate-500 font-medium mb-6">House-51, Flat: A-7 (7th Floor), Rabindra Sarani Road, Sector-3, Uttara, Dhaka-1230, Bangladesh</p>
-              <div className="inline-flex items-center gap-3 text-brand-red font-black text-xs uppercase tracking-widest">
+              <a 
+                href="https://www.google.com/maps/search/?api=1&query=V98V%2BVP3+Dhaka" 
+                target="_blank" 
+                rel="noreferrer" 
+                className="inline-flex items-center gap-3 text-brand-red font-black text-xs uppercase tracking-widest hover:text-red-700 transition-colors"
+              >
                 <span>View Directions</span>
                 <Globe size={18} />
-              </div>
-            </div>
+              </a>
+            </div> */}
           </div>
         </div>
       </section>
