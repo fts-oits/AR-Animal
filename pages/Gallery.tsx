@@ -17,15 +17,6 @@ const NEW_GALLERY = [
 const Gallery: React.FC = () => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
-  // Only show All, Products, and Facilities filters
-  const categories = ['All', 'Products', 'Facilities'];
-
-  const filteredItems = useMemo(() => {
-    return activeTab === 'All'
-      ? GALLERY
-      : GALLERY.filter(item => item.category === activeTab);
-  }, [activeTab]);
-
   const openLightbox = (index: number) => {
     setSelectedIndex(index);
     document.body.style.overflow = 'hidden';
@@ -81,33 +72,13 @@ const Gallery: React.FC = () => {
         </div>
       </section>
 
-      {/* Gallery Content Wrapper - Filter is sticky within this container */}
+      {/* Gallery Content Wrapper */}
       <div>
-        {/* Logic Filter Strip */}
-        <section className="sticky top-0 z-40 bg-brand-beige-white/80 backdrop-blur-2xl py-2.5 md:py-3 border-b border-brand-red/10 shadow-2xl">
-          <div className="container mx-auto px-4 md:px-6 max-w-[1900px]">
-            <div className="flex items-center gap-2 md:gap-3 overflow-x-auto no-scrollbar scroll-smooth justify-start lg:justify-center">
-              {categories.map(tab => (
-                <button
-                  key={tab}
-                  onClick={() => { setActiveTab(tab); setSelectedIndex(null); }}
-                  className={`flex-shrink-0 px-4 py-2 md:px-6 md:py-2.5 rounded-lg md:rounded-xl text-[10px] md:text-xs font-black tracking-wider md:tracking-widest uppercase transition-all duration-500 border-2 whitespace-nowrap ${activeTab === tab
-                    ? 'bg-brand-beige-black text-white border-brand-beige-black shadow-xl shadow-brand-beige-black/20 scale-105'
-                    : 'bg-white text-slate-400 border-slate-100 hover:border-brand-gold hover:text-brand-gold'
-                    }`}
-                >
-                  {tab}
-                </button>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* Grid Interface */}
         <section className="py-24">
           <div className="container mx-auto px-6 max-w-[1900px]">
             <div className="columns-1 md:columns-2 lg:columns-3 gap-12 space-y-12">
-              {filteredItems.map((item, index) => (
+              {NEW_GALLERY.map((item, index) => (
                 <div
                   key={item.id}
                   className="group break-inside-avoid relative overflow-hidden rounded-[3.5rem] cursor-pointer shadow-xl hover:shadow-brand-red/20 transition-all duration-700 bg-white border border-slate-100"
@@ -115,7 +86,7 @@ const Gallery: React.FC = () => {
                 >
                   <img
                     src={item.image}
-                    alt={item.title}
+                    alt={`Gallery Image ${index + 1}`}
                     className="w-full h-auto object-cover transition-transform duration-[2s] group-hover:scale-110 grayscale-[20%] group-hover:grayscale-0"
                   />
 
@@ -124,10 +95,9 @@ const Gallery: React.FC = () => {
                       <div className="flex items-center gap-3 mb-4">
                         <div className="w-8 h-px bg-brand-red" />
                         <span className="text-[10px] font-black uppercase tracking-[0.3em] text-brand-red">
-                          {item.category}
+                          Gallery
                         </span>
                       </div>
-                      <h3 className="text-2xl font-outfit font-bold text-white tracking-tight leading-tight">{item.title}</h3>
                     </div>
                   </div>
 

@@ -296,12 +296,13 @@ const Contact: React.FC = () => {
           <div className="relative h-[600px] rounded-[4rem] overflow-hidden shadow-2xl border-8 border-white group">
             <iframe
               title="AR Animal Health Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3648.4554449856557!2d90.3957805!3d23.8734638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c43d78079a09%3A0xc0fb17684070a27!2sAR%20Animal%20Health%20Ltd.!5e0!3m2!1sen!2sbd!4v1717326082011!5m2!1sen!2sbd"
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3648.63349286652!2d90.394318!3d23.867144999999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjPCsDUyJzAxLjciTiA5MMKwMjMnMzkuNSJF!5e0!3m2!1sen!2sbd!4v1771923687370!5m2!1sen!2sbd"
               width="100%"
               height="100%"
               style={{ border: 0 }}
               allowFullScreen={true}
               loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
               className="grayscale group-hover:grayscale-0 transition-all duration-1000 scale-105"
             ></iframe>
 
