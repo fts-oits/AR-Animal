@@ -124,7 +124,7 @@ const About: React.FC = () => {
               <div className="relative group">
                 <div className="absolute -inset-4 bg-brand-emerald/20 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
                 <img
-                  src="assets/img/blog/blog-recent-4.jpg"
+                  src="img/blog/blog-recent-4.jpg"
                   alt="Sustainable Tech"
                   className="relative rounded-[4rem] border-8 border-white/5 shadow-2xl object-cover w-full h-[600px] grayscale hover:grayscale-0 transition-all duration-[2s]"
                 />
